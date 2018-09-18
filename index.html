@@ -29,14 +29,12 @@
             + '<' + '/' + 'script' + '>'
         }
 
-        function f({ value }) {
-          console.log(value)
-        }
-
         const markup = RegateColor({ 
           name: 'color',
-          value: '#ff00000',
-          onChange: f
+          value: '#ff6600',
+          onChange: function ({ value }) {
+            console.log(value)
+          }
         })
 
         document.write(markup)
