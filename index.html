@@ -16,7 +16,7 @@
     <script>
       (function () {
         function RegateColor({ name, value, onChange }) {
-          const markup = `
+          const html = `
             <input
               type="color"
               name="${name}"
@@ -25,27 +25,35 @@
             />
           `
 
-          document.write(markup)
+          const css = ``
 
-          const script = `
+          const js = `
             document.getElementById('aaa').oninput = function () {
               const value = this.value
               
               ;(${onChange}({ value: value }));
             }
           `
-          const scriptTag = document.createElement("script");
-          scriptTag.innerHTML = script;
-          document.body.appendChild(scriptTag)
+          // document.write(markup)
+
+          
+          // const scriptTag = document.createElement("script");
+          // scriptTag.innerHTML = script;
+          // document.body.appendChild(scriptTag)
+
+          return { html, css, js }
         }
 
-        RegateColor({ 
+        const { html, css, js } = RegateColor({
           name: 'color',
           value: '#ff6600',
           onChange: function ({ value }) {
             console.log(value)
           }
         })
+
+        document.write(html)
+        document.write('<' + 'script' + '>' + js + '</' + 'script>')
       }())
     </script>
 
