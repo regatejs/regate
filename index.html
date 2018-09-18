@@ -16,31 +16,33 @@
     <script>
       (function () {
         function RegateColor({ name, value, onChange }) {
+          const uniqueId = 'RegateColor__' + 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+          })
+
           const html = `
             <input
               type="color"
               name="${name}"
               value="${value}"
-              id="aaa"
+              id="${uniqueId}"
             />
           `
 
-          const css = ``
+          const css = `
+            #${uniqueId} { width: 21px; }
+          `
 
           const js = `
-            document.getElementById('aaa').oninput = function () {
-              const value = this.value
-              
-              ;(${onChange}({ value: value }));
-            }
+            (function () {
+              document.getElementById('${uniqueId}').oninput = function () {
+                const value = this.value
+                
+                ;(${onChange}({ value: value }));
+              }
+            }())
           `
-          // document.write(markup)
-
-          
-          // const scriptTag = document.createElement("script");
-          // scriptTag.innerHTML = script;
-          // document.body.appendChild(scriptTag)
-
           return { html, css, js }
         }
 
@@ -48,11 +50,13 @@
           name: 'color',
           value: '#ff6600',
           onChange: function ({ value }) {
-            console.log(value)
+            // console.log(value)
+            document.body.style.backgroundColor = value
           }
         })
 
         document.write(html)
+        document.write('<style>' + css + '</style>')
         document.write('<' + 'script' + '>' + js + '</' + 'script>')
       }())
     </script>
