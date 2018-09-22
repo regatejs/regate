@@ -26,6 +26,12 @@
             return v.toString(16);
           })
 
+          window.Regate = window.Regate || {}
+          window.Regate[uniqueId] = {}
+
+          window.Regate[uniqueId].onInitialized = onInitialized
+          window.Regate[uniqueId].onChange = onChange
+
           const html = `
             <input
               type='color'
@@ -44,10 +50,10 @@
               document.getElementById('${uniqueId}').oninput = function () {
                 const value = this.value
                 
-                ;(${onChange}({ value: value }));
+                window.Regate['${uniqueId}'].onChange({ value })
               }
 
-              ;(${onInitialized}({ value: '${value}' }));
+              window.Regate['${uniqueId}'].onInitialized({ value: '${value}' })
             }())
           `
           return { html, css, js }
