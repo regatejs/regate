@@ -59,6 +59,12 @@
           return { html, css, js }
         }
 
+        window.RegateColor = RegateColor
+      }())
+    </script>
+
+    <script>
+      (function () {
         function setColor({ value }) {
           document.body.style.backgroundColor = value
         }
