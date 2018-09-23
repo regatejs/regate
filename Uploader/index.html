@@ -1,7 +1,7 @@
 <div dir='rtl'>
     <form enctype='multipart/form-data' method='get' action=''>
 
-        <input type='text' name="field" id='field' />
+        <input type='hidden' name="field" id='field' />
         <input type='file' name='file' required='required' id='fileUpload' />
         <br />
         <button type='submit' id='submitButton' name='submit' value='true' class='btn btn-success'>آپلود فایل</button>
@@ -27,8 +27,7 @@
     document.getElementById('field').value = qs.field;
 
     if (qs.submit) {
-        var fileName = 'uploaded-file-name.pdf';
-        window.opener['RegateFile__setterCallback'](qs.field, fileName);
+        window.opener['RegateFile__setterCallback'](qs.field, qs.file);
         window.close();
     }
 
