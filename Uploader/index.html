@@ -1,0 +1,35 @@
+<div dir='rtl'>
+    <form enctype='multipart/form-data' method='get' action=''>
+
+        <input type='text' name="field" id='field' />
+        <input type='file' name='file' required='required' id='fileUpload' />
+        <br />
+        <button type='submit' id='submitButton' name='submit' value='true' class='btn btn-success'>آپلود فایل</button>
+
+    </form>
+</div>
+
+<script>
+    var qs = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=', 2);
+            if (p.length == 1)
+                b[p[0]] = "";
+            else
+                b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'));
+
+    document.getElementById('field').value = qs.field;
+
+    if (qs.submit) {
+        var fileName = 'uploaded-file-name.pdf';
+        window.opener['RegateFile__setterCallback'](qs.field, fileName);
+        window.close();
+    }
+
+</script>
