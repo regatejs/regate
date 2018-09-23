@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Regate</title>
+</head>
+<body>
+  <h1>Regate</h1>
+
+  <form method="get">
+
+    Enter Your Color
+
+    <script>
+      (function () {
+        function RegateColor({
+          name,
+          value,
+          onChange,
+          onInitialized,
+        }) {
+          const uniqueId = 'RegateColor__' + 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+          }).replace(/\-/g, '')
+
+          window.Regate = window.Regate || {}
+          window.Regate[uniqueId] = {}
+
+          window.Regate[uniqueId].onInitialized = onInitialized
+          window.Regate[uniqueId].onChange = onChange
+
+          const html = `
+            <input
+              type='color'
+              name='${name}'
+              value='${value}'
+              id='${uniqueId}'
+            />
+          `
+
+          const css = `
+            #${uniqueId} { width: 21px; }
+          `
+
+          const js = `
+            (function () {
+              document.getElementById('${uniqueId}').oninput = function () {
+                const value = this.value
+                
+                window.Regate['${uniqueId}'].onChange({ value })
+              }
+
+              window.Regate['${uniqueId}'].onInitialized({ value: '${value}' })
+            }())
+          `
+          return { html, css, js }
+        }
+
+        window.RegateColor = RegateColor
+      }())
+    </script>
+
+    <script>
+      (function () {
+        function setColor({ value }) {
+          document.body.style.backgroundColor = value
+        }
+
+        const { html, css, js } = RegateColor({
+          name: 'color',
+          value: '#ff6600',
+          onChange: setColor,
+          onInitialized: setColor,
+        })
+
+        document.write(html)
+        document.write('<style>' + css + '</style>')
+        document.write('<' + 'script' + '>' + js + '</' + 'script>')
+      }())
+    </script>
+
+    <button type="submit">SUBMIT</button>
+  </form>
+</body>
+</html>
