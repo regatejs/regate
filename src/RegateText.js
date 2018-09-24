@@ -9,9 +9,13 @@ RegateText.init = function ({
   onInitialized,
   onChange,
 }) {
+
+  if (id === undefined)
+    throw new Error("id is required")
+
   var _container = document.getElementById(id)
   var _input = _container.querySelector('[data-role=input]')
-  
+ 
   _input.name = name
 
   if (isRequired === true)
