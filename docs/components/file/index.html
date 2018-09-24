@@ -93,19 +93,29 @@
         
         
 
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 <form method="get">
   <div class="content">
       <div class="block block-rounded block-bordered">
-          <div class="block-content block-content-full">
-              <div>
-                <div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad">
-                  <div data-role='RegateFile'>
+        <div class="block-header block-header-default">
+          <h3 class="block-title" id="basic">Basic <a class="permalink-anchor" href="/components/file/#basic">#</a></h3>
+        </div>
+        <div class="block-content block-content-full">
+          <div>
+            <div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad">
+              <div data-role='RegateFile'>
   <div class='input-group'>
     <div class='input-group-prepend' data-role='uploadContainer'>
       <button type='button'
           class='btn btn-secondary'
           data-role='upload'>
-        <i class='fa fa-search mr-1'></i> انتخاب فایل
+        <i class='fa fa-search mr-1'></i> CHOOSE
       </button>
     </div>
 
@@ -125,7 +135,7 @@
     </div>
   </div>
 </div>
-                  <script>function initRegateFile({
+              <script>function initRegateFile({
   uniqueId,
   name,
   value,
@@ -195,7 +205,7 @@
   }
 }
 </script>
-                  <style>[data-role='RegateFile'] [data-role='assetContainer'] {
+              <style>[data-role='RegateFile'] [data-role='assetContainer'] {
   display: none;
 }
 
@@ -206,25 +216,26 @@
 [data-role='RegateFile'][data-hasvalue] [data-role='uploadContainer'] {
   display: none;
 }</style>
-                  <script>
-                    initRegateFile({
-                      uniqueId: 'RegateFile__Avatar__735481491eaf478da4e72947495f99ad',
-                      name: 'Avatar',
-                      isRequired: true,
-                      // value: 'salam',
-                      uploaderUrl: '/uploader',
-                      repositoryUrl: '/repository/'
-                    })
-                  </script>
+              <script>
+                initRegateFile({
+                  uniqueId: 'RegateFile__Avatar__735481491eaf478da4e72947495f99ad',
+                  name: 'Avatar',
+                  isRequired: true,
+                  value: 'salam',
+                  uploaderUrl: '/uploader',
+                  repositoryUrl: '/repository/'
+                })
+              </script>
 
-                </div>
-              </div>
+            </div>
           </div>
-          <div class="block-content block-content-full block-content-sm bg-body-light text-right">
-              <button type="submit" class="btn btn-sm btn-success">
-                  ثبت <i class="fa fa-check"></i>
-              </button>
-          </div>
+        </div>
+        <div class="block-content block-content-full block-content-sm bg-body-light text-right">
+          <button type="submit" class="btn btn-sm btn-success">
+            <i class="fa fa-check"></i>
+            SUBMIT
+          </button>
+        </div>
       </div>
   </div>
 </form>
@@ -266,6 +277,14 @@
       }
 
       pre.sample-code-regate {
+      }
+
+      .block-header:hover .permalink-anchor {
+          display: inline;
+      }
+
+      .block-header .permalink-anchor {
+          display: none;
       }
   </style>
 </body>

@@ -4,8 +4,10 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack -w",
-    "start": "./node_modules/.bin/nodemon server.js -e js,css,html,nunjucks --watch views --watch server.js",
-    "build": "node build",
+    "start": "nodemon server.js -e js,css,html,nunjucks --watch views --watch server.js",
+    "build": "npm run build:commonjs && npm run build:umd",
+    "build:commonjs": "babel src --out-dir dist",
+    "build:umd": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,6 +23,7 @@
     ]
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",

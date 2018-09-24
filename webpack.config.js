@@ -23,4 +23,22 @@ var serverConfig = {
   ]
 }
 
-module.exports = [serverConfig]
+var browserConfig = {
+  entry: './src/regate.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'regate.umd.js',
+    libraryTarget: 'umd',
+    library: 'Regate'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        use: 'babel-loader'
+      }
+    ]
+  },
+}
+
+module.exports = [serverConfig, browserConfig]
