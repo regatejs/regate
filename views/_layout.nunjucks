@@ -1,0 +1,9 @@
+<html>
+
+<body>
+
+<div>header</div>
+
+{% block body %}{% endblock %}
+
+FOOTER

@@ -1,3 +1,6 @@
+{% extends '_layout.nunjucks' %}
+
+{% block body %}
 <h1>RegateFile</h1>
 
 <div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad">
@@ -17,3 +20,4 @@
     repositoryUrl: '/repository/'
   })
 </script>
+{% endblock %}
