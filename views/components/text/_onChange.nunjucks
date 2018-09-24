@@ -1,0 +1,35 @@
+<form method="get">
+  <div class="content">
+    <div class="block block-rounded block-bordered">
+      <div class="block-header block-header-default">
+        <h3 class="block-title" id="onChange">
+          onChange <a class="permalink-anchor" href="/components/text/#onChange">#</a>
+        </h3>
+      </div>
+      <div class="block-content block-content-full">
+        <div>
+          <div id="uniqueId_onChange">
+            {% include "./component.html" %}
+            <script>{% include "./component.js" %}</script>
+            <script>
+              initRegateFile({
+                uniqueId: 'uniqueId_onChange',
+                name: 'Title',
+                isRequired: true,
+                onChange: ({value, isValid}) => {
+                  console.log(value, isValid)
+                }
+              })
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="block-content block-content-full block-content-sm bg-body-light text-right">
+        <button type="submit" class="btn btn-sm btn-success">
+          <i class="fa fa-check"></i>
+          SUBMIT
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
