@@ -42,8 +42,9 @@ app.get('/uploader', (req, res) => {
   res.render('uploader')
 })
 
-app.get('/components/file', (req, res) => {
-  res.render('components/file/index')
+app.get('/components/:component', (req, res) => {
+  const { component } = req.params
+  res.render(`components/${component}/index`)
 })
 
 

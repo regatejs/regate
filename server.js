@@ -125,8 +125,10 @@ app.get('/uploader', function (req, res) {
   res.render('uploader');
 });
 
-app.get('/components/file', function (req, res) {
-  res.render('components/file/index');
+app.get('/components/:component', function (req, res) {
+  var component = req.params.component;
+
+  res.render('components/' + component + '/index');
 });
 
 app.listen(port, function () {
