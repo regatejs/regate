@@ -107,6 +107,7 @@ function writeToPath(targetPath, data) {
 
 var app = (0, _express2.default)();
 var port = 3000;
+var siteUrl = '/';
 
 _nunjucks2.default.configure('views', {
   autoescape: true,
@@ -128,7 +129,7 @@ app.get('/uploader', function (req, res) {
 app.get('/components/:component', function (req, res) {
   var component = req.params.component;
 
-  res.render('components/' + component + '/index');
+  res.render('components/' + component + '/index', { siteUrl: siteUrl });
 });
 
 app.listen(port, function () {

@@ -5,8 +5,8 @@
 })"
 %}
 
-<div class="content" id="basic">
-  <h2>Basic <a class="permalink-anchor" href="/components/text/#basic">#</a></h2>
+<div class="content">
+  <h2 id="basic">Basic <a class="permalink-anchor" href="{{ siteUrl }}components/text/#basic">#</a></h2>
   <p>
     This is the most basic usage of <code>RegateText</code>.
   </p>

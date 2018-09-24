@@ -8,8 +8,8 @@
 })"
 %}
 
-<div class="content" id="onchange">
-  <h2>onChange <a class="permalink-anchor" href="/components/text/#onchange">#</a></h2>
+<div class="content">
+  <h2 id="onchange">onChange <a class="permalink-anchor" href="{{ siteUrl }}components/text/#onchange">#</a></h2>
   
 
   <div class="regate-example-container">

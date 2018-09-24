@@ -23,6 +23,7 @@ function writeToPath(targetPath, data) {
 
 const app = express()
 const port = 3000
+const siteUrl = '/'
 
 nunjucks.configure('views', {
   autoescape: true,
@@ -44,7 +45,7 @@ app.get('/uploader', (req, res) => {
 
 app.get('/components/:component', (req, res) => {
   const { component } = req.params
-  res.render(`components/${component}/index`)
+  res.render(`components/${component}/index`, { siteUrl: siteUrl })
 })
 
 
