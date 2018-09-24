@@ -14,9 +14,6 @@ app.use(express.static('docs'))
 app.set('view engine', 'nunjucks')
 
 app.get('/', (req, res) => {
-  const output = nunjucks.render('../views/components/file/index.nunjucks')
-  console.log(output);
-  
   res.render('index')
 })
 
@@ -27,8 +24,6 @@ app.get('/uploader', (req, res) => {
 app.get('/components/file', (req, res) => {
   res.render('components/file/index')
 })
-
-
 
 app.listen(port, () =>
   console.log(`Example app listening on port ${port}!`))

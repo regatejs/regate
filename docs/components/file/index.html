@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>RegateFile - Regate</title>
+
+    <script src="../../dashmix/js/core/jquery.min.js"></script>
+    <script src="../../dashmix/js/core/bootstrap.bundle.min.js"></script>
+    <script src="../../dashmix/js/core/simplebar.min.js"></script>
+    <script src="../../dashmix/js/core/jquery-scrollLock.min.js"></script>
+    <script src="../../dashmix/js/core/jquery.appear.min.js"></script>
+    <script src="../../dashmix/js/core/js.cookie.min.js"></script>
+
+    <link rel="stylesheet" id="css-main" href="../../dashmix/css/dashmix.min.rtl.css">
+</head>
+<body dir="rtl">
+
+  <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-fixed page-header-dark main-content-narrow">
+
+      <!-- Sidebar -->
+      <!--
+          Sidebar Mini Mode - Display Helper classes
+
+          Adding 'smini-hide' class to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
+          Adding 'smini-show' class to an element will make it visible (opacity: 1) when the sidebar is in mini mode
+              If you would like to disable the transition animation, make sure to also add the 'no-transition' class to your element
+
+          Adding 'smini-hidden' to an element will hide it when the sidebar is in mini mode
+          Adding 'smini-visible' to an element will show it (display: inline-block) only when the sidebar is in mini mode
+          Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
+      -->
+      <nav id="sidebar" aria-label="Main Navigation">
+        <!-- Side Header -->
+        <div class="bg-header-dark">
+            <div class="content-header bg-white-10">
+                <!-- Logo -->
+                <a class="link-fx font-w600 font-size-lg text-white" href="/">
+                    <span class="smini-visible">
+                        <span class="text-white-75">D</span><span class="text-white">x</span>
+                    </span>
+                    <span class="smini-hidden">
+                        <span class="text-white-75">Re</span><span class="text-white">gate</span>
+                    </span>
+                </a>
+                <!-- END Logo -->
+                <!-- Options -->
+                <div>
+                    <!-- END Toggle Sidebar Style -->
+                    <!-- Close Sidebar, Visible only on mobile screens -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <a class="d-lg-none text-white ml-2" data-toggle="layout" data-action="sidebar_close" href="javascript:void(0)">
+                        <i class="fa fa-times-circle"></i>
+                    </a>
+                    <!-- END Close Sidebar -->
+                </div>
+                <!-- END Options -->
+            </div>
+        </div>
+        <!-- END Side Header -->
+        <!-- Side Navigation -->
+        <div class="content-side content-side-full">
+            <ul class="nav-main">
+                <li class="nav-main-item">
+                    <a class="nav-main-link" asp-controller="RegateText" asp-action="Index">
+                        <i class="nav-main-link-icon si si-grid"></i>
+                        <span class="nav-main-link-name">RegateText</span>
+                    </a>
+                </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link" asp-controller="RegateFile" asp-action="Index">
+                        <i class="nav-main-link-icon si si-grid"></i>
+                        <span class="nav-main-link-name">RegateFile</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- END Side Navigation -->
+      </nav>
+      <!-- END Sidebar -->
+
+      <!-- Header -->
+      <header id="page-header">
+          <!-- Header Content -->
+          <div class="content-header">
+              <b>RegateFile</b>
+          </div>
+          <!-- END Header Content -->
+      </header>
+      <!-- END Header -->
+      <!-- Main Container -->
+      <main id="main-container">
+        
+        
+
+<form method="get">
+  <div class="content">
+      <div class="block block-rounded block-bordered">
+          <div class="block-content block-content-full">
+              <div>
+                <div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad">
+                  <div data-role='RegateFile'>
+  <div class='input-group'>
+    <div class='input-group-prepend' data-role='uploadContainer'>
+      <button type='button'
+          class='btn btn-secondary'
+          data-role='upload'>
+        <i class='fa fa-search mr-1'></i> انتخاب فایل
+      </button>
+    </div>
+
+    <input type='text'
+      style='pointer-events: none;'
+      onfocus='this.blur();'
+      data-role='input'
+      class='form-control' />
+
+    <div class='input-group-append' data-role='assetContainer'>
+      <button type='button' class='btn btn-outline-secondary' data-role='remove'>
+        <i class='fa fa-fw fa-times'></i>
+      </button>
+      <a href='#' target='_blank' class='btn btn-outline-secondary' data-role='view'>
+        <i class='fa fa-fw fa-download'></i>
+      </a>
+    </div>
+  </div>
+</div>
+                  <script>function initRegateFile({
+  uniqueId,
+  name,
+  value,
+  isRequired,
+  uploaderUrl,
+  repositoryUrl,
+}) {
+  var popup = function (url, title, w, h) {
+    // Fixes dual-screen position             Most browsers    Firefox
+    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+    var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+    var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+    var top = ((height / 2) - (h / 2)) + dualScreenTop;
+    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+    // Puts focus on the newWindow
+    if (window.focus) {
+      newWindow.focus();
+    }
+
+    return false;
+  }
+
+  var _container = document.getElementById(uniqueId);
+  var _regate = _container.querySelector('[data-role=RegateFile]');
+  var _input = _container.querySelector('[data-role=input]');
+  var _remove = _container.querySelector('[data-role=remove]');
+  var _view = _container.querySelector('[data-role=view]');
+  var _upload = _container.querySelector('[data-role=upload]');
+  
+  _input.name = name;
+
+  if (isRequired === true) {
+    _input.required = true;
+  }
+
+  _remove.onclick = function () {
+    _input.value = '';
+    delete _regate.dataset.hasvalue;
+    return false;
+  };
+
+  window['RegateFile__setterCallback'] = function (fieldName, fileName) {
+    var _container = document.getElementById(fieldName);
+    var _input = _container.querySelector('[data-role=input]');
+    var _regate = _container.querySelector('[data-role=RegateFile]');
+    var _view = _container.querySelector('[data-role=view]');
+
+    _input.value = fileName;
+    _regate.dataset.hasvalue = true;
+    _view.href = repositoryUrl + fileName;
+  };
+
+  _upload.onclick = function () {
+    popup(uploaderUrl + '?field=' + uniqueId, 'RegateFileUploader', 400, 600);
+    return false;
+  };
+
+  if (value !== undefined && value !== '') {
+    _input.value = value;
+    _regate.dataset.hasvalue = true;
+    _view.href = repositoryUrl + value;
+  }
+}
+</script>
+                  <style>[data-role='RegateFile'] [data-role='assetContainer'] {
+  display: none;
+}
+
+[data-role='RegateFile'][data-hasvalue] [data-role='assetContainer'] {
+  display: flex;
+}
+
+[data-role='RegateFile'][data-hasvalue] [data-role='uploadContainer'] {
+  display: none;
+}</style>
+                  <script>
+                    initRegateFile({
+                      uniqueId: 'RegateFile__Avatar__735481491eaf478da4e72947495f99ad',
+                      name: 'Avatar',
+                      isRequired: true,
+                      value: 'salam',
+                      uploaderUrl: '/uploader',
+                      repositoryUrl: '/repository/'
+                    })
+                  </script>
+
+                </div>
+              </div>
+          </div>
+          <div class="block-content block-content-full block-content-sm bg-body-light text-right">
+              <button type="submit" class="btn btn-sm btn-success">
+                  ثبت <i class="fa fa-check"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+</form>
+
+
+        
+      </main>
+      <!-- END Main Container -->
+      <!-- Footer -->
+      <footer id="page-footer" class="bg-body-light">
+          <div class="content py-0">
+              <div class="row font-size-sm">
+                  <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-right">
+                      Created with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://github.com/dashtinejad" target="_blank">dashtinejad</a>
+                  </div>
+                  <div class="col-sm-6 order-sm-1 text-center text-sm-left">
+                      <a class="font-w600" href="https://github.com/regatejs" target="_blank">Regate</a> &copy; <span data-toggle="year-copy">2018</span>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <!-- END Footer -->
+  </div>
+
+
+  <script src="../../dashmix/js/dashmix.app.min.js"></script>
+
+
+  <style>
+      pre.sample-code {
+          direction: ltr;
+          text-align: left;
+          color: white;
+          background: #6c757d !important;
+          padding: 20px;
+          margin-top: -20px;
+          margin-left: -20px;
+          margin-right: -20px;
+      }
+
+      pre.sample-code-regate {
+      }
+  </style>
+</body>
+</html>
+
