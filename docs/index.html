@@ -5,14 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>Homepage - Regate</title>
 
-    <script src="../../dashmix/js/core/jquery.min.js"></script>
-    <script src="../../dashmix/js/core/bootstrap.bundle.min.js"></script>
-    <script src="../../dashmix/js/core/simplebar.min.js"></script>
-    <script src="../../dashmix/js/core/jquery-scrollLock.min.js"></script>
-    <script src="../../dashmix/js/core/jquery.appear.min.js"></script>
-    <script src="../../dashmix/js/core/js.cookie.min.js"></script>
+    <script src="/regate/js/core/jquery.min.js"></script>
+    <script src="/regate/js/core/bootstrap.bundle.min.js"></script>
+    <script src="/regate/js/core/simplebar.min.js"></script>
+    <script src="/regate/js/core/jquery-scrollLock.min.js"></script>
+    <script src="/regate/js/core/jquery.appear.min.js"></script>
+    <script src="/regate/js/core/js.cookie.min.js"></script>
 
-    <link rel="stylesheet" id="css-main" href="../../dashmix/css/dashmix.min.css">
+    <script src="/regate/regate.umd.js"></script>
+
+    <script>
+        window.konsoleClear = container => {
+            let $terminal = $('#' + container)
+            $terminal.html('')
+        }
+
+        window.konsoleGroup = (container, groupName) => {
+            let $terminal = $('#' + container)
+            $terminal.append('<style>#' + container + ':before { content: "OUTPUT ' + groupName + '"; }</style>');
+        }
+
+        window.konsole = (container, type, title, value) => {
+            let $terminal = $('#' + container)
+            let $pre = $('<pre></pre>')
+
+            if (type.trim() === 'boolean') {
+            value = value ? 'true' : 'false'
+            }
+
+            $('<code></code>')
+            .attr('data-type', 'title')
+            .text(title)
+            .appendTo($pre)
+
+            $('<code></code>')
+            .attr('data-type', type.trim())
+            .text(type)
+            .appendTo($pre)
+
+
+            $('<code></code>')
+            .attr('data-type', 'value')
+            .text(value)
+            .appendTo($pre)
+
+            $pre.appendTo($terminal)
+        }
+        </script>
+
+    <link rel="stylesheet" id="css-main" href="/regate/css/dashmix.min.css">
+    <link rel="stylesheet" href="/regate/js/plugins/highlightjs/styles/atom-one-light.css">
 </head>
 <body>
 
@@ -62,17 +104,12 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li class="nav-main-item">
-                    <a class="nav-main-link" asp-controller="RegateText" asp-action="Index">
+                    <a class="nav-main-link" href="/components/text">
                         <i class="nav-main-link-icon si si-grid"></i>
                         <span class="nav-main-link-name">RegateText</span>
                     </a>
                 </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" asp-controller="RegateFile" asp-action="Index">
-                        <i class="nav-main-link-icon si si-grid"></i>
-                        <span class="nav-main-link-name">RegateFile</span>
-                    </a>
-                </li>
+                
             </ul>
         </div>
         <!-- END Side Navigation -->
@@ -93,9 +130,6 @@
         
         
 
-<h1>Regate</h1>
-<a href="./components/file">RegateFile</a>
-<a href="./components/text">RegateText</a>
 
 
         
@@ -118,8 +152,11 @@
   </div>
 
 
-  <script src="../../dashmix/js/dashmix.app.min.js"></script>
+  <script src="/regate/js/dashmix.app.min.js"></script>
 
+    <script src="/regate/js/plugins/highlightjs/highlight.pack.min.js"></script>
+
+    <script>jQuery(function(){ Dashmix.helpers('highlightjs'); });</script>
 
   <style>
       pre.sample-code {
@@ -143,6 +180,23 @@
       .block-header .permalink-anchor {
           display: none;
       }
+
+      .regate-example-container{margin:25px 0;background:white}
+    .regate-example-container .regate-example{border:0.2rem solid #e6ebf4;padding:20px 20px}
+    .regate-example-container .regate-code{background:#f9fafc}
+    .regate-example-container .regate-code pre{border-top-left-radius:0;border-top-right-radius:0;margin:0}
+    .regate-example-container .regate-code pre code{padding:15px 20px;background:transparent}
+    .regate-example-container .regate-terminal{background:#e3e3ea;border-radius:0;padding:15px 20px}
+    .regate-example-container .regate-terminal pre{margin:0}
+    .regate-example-container .regate-terminal [data-type="string"]{color:maroon}
+    .regate-example-container .regate-terminal [data-type="boolean"]{color:purple}
+    .regate-example-container .regate-terminal [data-type="number"]{color:blue}
+    .regate-example-container .regate-terminal [data-type="title"]{color:gray}
+    .regate-example-container .regate-terminal [data-type="value"]{color:black}
+    .regate-example-container .regate-terminal code{display:inline-block}
+    .regate-example-container .regate-terminal code+code{margin-left:20px}
+    .regate-example-container .regate-terminal:before{opacity:0.3;font-family:monospace}
+    .regate-example-container .regate-terminal:empty:before{content:'OUTPUT'}
   </style>
 </body>
 </html>

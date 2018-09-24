@@ -114,7 +114,7 @@ _nunjucks2.default.configure('views', {
   express: app
 });
 
-app.use('/dashmix', _express2.default.static('docs/dashmix'));
+app.use(siteUrl, _express2.default.static('docs/dashmix'));
 
 app.set('view engine', 'nunjucks');
 

@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>{{ title }} - Regate</title>
+    <title>RegateText - Regate</title>
 
-    <script src="{{ siteUrl }}js/core/jquery.min.js"></script>
-    <script src="{{ siteUrl }}js/core/bootstrap.bundle.min.js"></script>
-    <script src="{{ siteUrl }}js/core/simplebar.min.js"></script>
-    <script src="{{ siteUrl }}js/core/jquery-scrollLock.min.js"></script>
-    <script src="{{ siteUrl }}js/core/jquery.appear.min.js"></script>
-    <script src="{{ siteUrl }}js/core/js.cookie.min.js"></script>
+    <script src="/regate/js/core/jquery.min.js"></script>
+    <script src="/regate/js/core/bootstrap.bundle.min.js"></script>
+    <script src="/regate/js/core/simplebar.min.js"></script>
+    <script src="/regate/js/core/jquery-scrollLock.min.js"></script>
+    <script src="/regate/js/core/jquery.appear.min.js"></script>
+    <script src="/regate/js/core/js.cookie.min.js"></script>
 
-    <script src="{{ siteUrl }}regate.umd.js"></script>
+    <script src="/regate/regate.umd.js"></script>
 
     <script>
         window.konsoleClear = container => {
@@ -53,8 +53,8 @@
         }
         </script>
 
-    <link rel="stylesheet" id="css-main" href="{{ siteUrl }}css/dashmix.min.css">
-    <link rel="stylesheet" href="{{ siteUrl }}js/plugins/highlightjs/styles/atom-one-light.css">
+    <link rel="stylesheet" id="css-main" href="/regate/css/dashmix.min.css">
+    <link rel="stylesheet" href="/regate/js/plugins/highlightjs/styles/atom-one-light.css">
 </head>
 <body>
 
@@ -109,14 +109,7 @@
                         <span class="nav-main-link-name">RegateText</span>
                     </a>
                 </li>
-                {#
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="/components/text">
-                        <i class="nav-main-link-icon si si-grid"></i>
-                        <span class="nav-main-link-name">RegateFile</span>
-                    </a>
-                </li>
-                #}
+                
             </ul>
         </div>
         <!-- END Side Navigation -->
@@ -127,7 +120,7 @@
       <header id="page-header">
           <!-- Header Content -->
           <div class="content-header">
-              <b>{{ title }}</b>
+              <b>RegateText</b>
           </div>
           <!-- END Header Content -->
       </header>
@@ -135,7 +128,128 @@
       <!-- Main Container -->
       <main id="main-container">
         
-        {% block body %}{% endblock %}
+        
+
+  
+
+<div class="content">
+  <h2 id="basic">Basic <a class="permalink-anchor" href="/regate/components/text/#basic">#</a></h2>
+  <p>
+    This is the most basic usage of <code>RegateText</code>.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div id="basic-example">
+          <div class="input-group">
+            <script>document.write(Regate.RegateText.markup())</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>Regate.RegateText.init({
+  id: 'basic-example',
+  name: 'Title',
+})</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+  id: &#39;basic-example&#39;,
+  name: &#39;Title&#39;,
+})</code></pre></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="value">Value <a class="permalink-anchor" href="/regate/components/text/#value">#</a></h2>
+  <p>
+    With <code>value</code> property you can set an initial value for your textbox.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div id="value-example">
+          <div class="input-group">
+            <script>document.write(Regate.RegateText.markup())</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>Regate.RegateText.init({
+  id: 'value-example',
+  name: 'Title',
+  value: 'Hello World',
+})</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+  id: &#39;value-example&#39;,
+  name: &#39;Title&#39;,
+  value: &#39;Hello World&#39;,
+})</code></pre></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="onchange">onChange <a class="permalink-anchor" href="/regate/components/text/#onchange">#</a></h2>
+  
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div id="onchange-example">
+          <div class="input-group">
+            <script>document.write(Regate.RegateText.markup())</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>
+            Regate.RegateText.init({
+              id: 'onchange-example',
+              name: 'Title',
+              onChange: function ({value, isValid}) {
+                konsoleClear('basic-terminal')
+                konsole('basic-terminal', ' string', '  value', value);
+                konsole('basic-terminal', 'boolean', 'isValid', isValid);
+              }
+            })
+          </script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+  id: &#39;onchange-example&#39;,
+  name: &#39;Title&#39;,
+  onChange: function ({value, isValid}) {
+    console.log(value, isValid)
+  }
+})</code></pre></div>
+
+    <div class="regate-terminal" id="basic-terminal"></div>
+  </div>
+</div>
+
+
+  
+
+
         
       </main>
       <!-- END Main Container -->
@@ -156,9 +270,9 @@
   </div>
 
 
-  <script src="{{ siteUrl }}js/dashmix.app.min.js"></script>
+  <script src="/regate/js/dashmix.app.min.js"></script>
 
-    <script src="{{ siteUrl }}js/plugins/highlightjs/highlight.pack.min.js"></script>
+    <script src="/regate/js/plugins/highlightjs/highlight.pack.min.js"></script>
 
     <script>jQuery(function(){ Dashmix.helpers('highlightjs'); });</script>
 

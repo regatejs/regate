@@ -30,7 +30,7 @@ nunjucks.configure('views', {
   express: app
 })
 
-app.use('/dashmix', express.static('docs/dashmix'))
+app.use(siteUrl, express.static('docs/dashmix'))
 
 
 app.set('view engine', 'nunjucks')

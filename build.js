@@ -2,6 +2,8 @@ const nunjucks = require('nunjucks')
 const fs = require('fs')
 const path = require('path')
 
+const siteUrl = '/regate/'
+
 console.clear()
 console.log('Building')
 
@@ -27,19 +29,19 @@ function writeToPath(targetPath, data) {
 
 
 
-var regateFile = nunjucks.render('components/file/index.nunjucks')
-regateFile = regateFile.replace(/\/dashmix\//g, '../../dashmix/')
-writeToPath('./docs/components/file/index.html', regateFile)
-// console.log(regateFile)
+
+var regate_text = nunjucks.render('components/text/index.nunjucks', { siteUrl: siteUrl })
+writeToPath('./docs/components/text/index.html', regate_text)
+// console.log(regate_text)
 
 
-var uploader = nunjucks.render('uploader.nunjucks')
+/*
+var uploader = nunjucks.render('uploader.nunjucks', { siteUrl: siteUrl })
 uploader = uploader.replace(/\/dashmix\//g, '../../dashmix/')
 writeToPath('./docs/uploader/index.html', uploader)
 // console.log(uploader)
+*/
 
-
-var homepage = nunjucks.render('homepage.nunjucks')
-homepage = homepage.replace(/\/dashmix\//g, '../../dashmix/')
+var homepage = nunjucks.render('homepage.nunjucks', { siteUrl: siteUrl })
 writeToPath('./docs/index.html', homepage)
 // console.log(homepage)
