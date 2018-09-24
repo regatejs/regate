@@ -17,9 +17,15 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.get('/uploader', (req, res) => {
+  res.render('uploader')
+})
+
 app.get('/components/file', (req, res) => {
   res.render('components/file/index')
 })
+
+
 
 app.listen(port, () =>
   console.log(`Example app listening on port ${port}!`))

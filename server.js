@@ -96,6 +96,10 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
+app.get('/uploader', function (req, res) {
+  res.render('uploader');
+});
+
 app.get('/components/file', function (req, res) {
   res.render('components/file/index');
 });

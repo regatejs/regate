@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack -w",
-    "start": "./node_modules/.bin/nodemon server.js -e js,css,html,nunjucks --watch views",
+    "start": "./node_modules/.bin/nodemon server.js -e js,css,html,nunjucks ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
