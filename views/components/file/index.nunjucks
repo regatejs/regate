@@ -3,21 +3,36 @@
 {% block body %}
 <h1>RegateFile</h1>
 
-<div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad">
-  {% include "./component.html" %}
-</div>
-<script>{% include "./component.js" %}</script>
-<style>{% include "./component.css" %}</style>
+<form method="get">
+  <div class="content">
+      <div class="block block-rounded block-bordered">
+          <div class="block-content block-content-full">
+              <div>
+                <div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad">
+                  {% include "./component.html" %}
+                  <script>{% include "./component.js" %}</script>
+                  <style>{% include "./component.css" %}</style>
+                  <script>
+                    initRegateFile({
+                      uniqueId: 'RegateFile__Avatar__735481491eaf478da4e72947495f99ad',
+                      name: 'Avatar',
+                      isRequired: true,
+                      value: 'salam',
+                      uploaderUrl: '/Uploader',
+                      repositoryUrl: '/repository/'
+                    })
+                  </script>
 
+                </div>
+              </div>
+          </div>
+          <div class="block-content block-content-full block-content-sm bg-body-light text-right">
+              <button type="submit" class="btn btn-sm btn-success">
+                  ثبت <i class="fa fa-check"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+</form>
 
-<script>
-  initRegateFile({
-    uniqueId: 'RegateFile__Avatar__735481491eaf478da4e72947495f99ad',
-    name: 'Avatar',
-    isRequired: true,
-    value: 'salam',
-    uploaderUrl: '/Uploader',
-    repositoryUrl: '/repository/'
-  })
-</script>
 {% endblock %}
