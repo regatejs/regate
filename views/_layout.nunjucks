@@ -129,6 +129,14 @@
 
       pre.sample-code-regate {
       }
+
+      .block-header:hover .permalink-anchor {
+          display: inline;
+      }
+
+      .block-header .permalink-anchor {
+          display: none;
+      }
   </style>
 </body>
 </html>
