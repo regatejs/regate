@@ -1,8 +1,10 @@
 <h1>RegateFile</h1>
 
-<div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad"><% include html.html %></div>
-<script><% include script.js %></script>
-<style><% include style.css %></style>
+<div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad">
+  {% include "./component.html" %}
+</div>
+<script>{% include "./component.js" %}</script>
+<style>{% include "./component.css" %}</style>
 
 
 <script>
