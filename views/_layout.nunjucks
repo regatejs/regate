@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>{{ title }} - Regate</title>
 
-    <script src="{{ siteUrl }}js/core/jquery.min.js"></script>
-    <script src="{{ siteUrl }}js/core/bootstrap.bundle.min.js"></script>
-    <script src="{{ siteUrl }}js/core/simplebar.min.js"></script>
-    <script src="{{ siteUrl }}js/core/jquery-scrollLock.min.js"></script>
-    <script src="{{ siteUrl }}js/core/jquery.appear.min.js"></script>
-    <script src="{{ siteUrl }}js/core/js.cookie.min.js"></script>
+    <script src="{{ themeUrl }}js/core/jquery.min.js"></script>
+    <script src="{{ themeUrl }}js/core/bootstrap.bundle.min.js"></script>
+    <script src="{{ themeUrl }}js/core/simplebar.min.js"></script>
+    <script src="{{ themeUrl }}js/core/jquery-scrollLock.min.js"></script>
+    <script src="{{ themeUrl }}js/core/jquery.appear.min.js"></script>
+    <script src="{{ themeUrl }}js/core/js.cookie.min.js"></script>
 
-    <script src="{{ siteUrl }}regate.umd.js"></script>
+    <script src="{{ themeUrl }}regate.umd.js"></script>
 
     <script>
         window.konsoleClear = container => {
@@ -53,8 +53,8 @@
         }
         </script>
 
-    <link rel="stylesheet" id="css-main" href="{{ siteUrl }}css/dashmix.min.css">
-    <link rel="stylesheet" href="{{ siteUrl }}js/plugins/highlightjs/styles/atom-one-light.css">
+    <link rel="stylesheet" id="css-main" href="{{ themeUrl }}css/dashmix.min.css">
+    <link rel="stylesheet" href="{{ themeUrl }}js/plugins/highlightjs/styles/atom-one-light.css">
 </head>
 <body>
 
@@ -156,9 +156,9 @@
   </div>
 
 
-  <script src="{{ siteUrl }}js/dashmix.app.min.js"></script>
+  <script src="{{ themeUrl }}js/dashmix.app.min.js"></script>
 
-    <script src="{{ siteUrl }}js/plugins/highlightjs/highlight.pack.min.js"></script>
+    <script src="{{ themeUrl }}js/plugins/highlightjs/highlight.pack.min.js"></script>
 
     <script>jQuery(function(){ Dashmix.helpers('highlightjs'); });</script>
 

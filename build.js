@@ -3,6 +3,7 @@ const fs = require('fs')
 const path = require('path')
 
 const siteUrl = '/regate/'
+const themeUrl = '/regate/dashmix/'
 
 console.clear()
 console.log('Building')
@@ -30,7 +31,7 @@ function writeToPath(targetPath, data) {
 
 
 
-var regate_text = nunjucks.render('components/text/index.nunjucks', { siteUrl: siteUrl })
+var regate_text = nunjucks.render('components/text/index.nunjucks', { siteUrl, themeUrl })
 writeToPath('./docs/components/text/index.html', regate_text)
 // console.log(regate_text)
 
@@ -42,6 +43,6 @@ writeToPath('./docs/uploader/index.html', uploader)
 // console.log(uploader)
 */
 
-var homepage = nunjucks.render('homepage.nunjucks', { siteUrl: siteUrl })
+var homepage = nunjucks.render('homepage.nunjucks', { siteUrl, themeUrl })
 writeToPath('./docs/index.html', homepage)
 // console.log(homepage)

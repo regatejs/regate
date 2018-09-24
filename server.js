@@ -108,6 +108,7 @@ function writeToPath(targetPath, data) {
 var app = (0, _express2.default)();
 var port = 3000;
 var siteUrl = '/';
+var themeUrl = '/';
 
 _nunjucks2.default.configure('views', {
   autoescape: true,
@@ -119,7 +120,7 @@ app.use(siteUrl, _express2.default.static('docs/dashmix'));
 app.set('view engine', 'nunjucks');
 
 app.get('/', function (req, res) {
-  res.render('homepage');
+  res.render('homepage', { siteUrl: siteUrl, themeUrl: themeUrl });
 });
 
 app.get('/uploader', function (req, res) {
@@ -129,7 +130,7 @@ app.get('/uploader', function (req, res) {
 app.get('/components/:component', function (req, res) {
   var component = req.params.component;
 
-  res.render('components/' + component + '/index', { siteUrl: siteUrl });
+  res.render('components/' + component + '/index', { siteUrl: siteUrl, themeUrl: themeUrl });
 });
 
 app.listen(port, function () {

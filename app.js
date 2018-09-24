@@ -24,6 +24,7 @@ function writeToPath(targetPath, data) {
 const app = express()
 const port = 3000
 const siteUrl = '/'
+const themeUrl = '/'
 
 nunjucks.configure('views', {
   autoescape: true,
@@ -36,7 +37,7 @@ app.use(siteUrl, express.static('docs/dashmix'))
 app.set('view engine', 'nunjucks')
 
 app.get('/', (req, res) => {
-  res.render('homepage')
+  res.render('homepage', { siteUrl, themeUrl })
 })
 
 app.get('/uploader', (req, res) => {
@@ -45,7 +46,7 @@ app.get('/uploader', (req, res) => {
 
 app.get('/components/:component', (req, res) => {
   const { component } = req.params
-  res.render(`components/${component}/index`, { siteUrl: siteUrl })
+  res.render(`components/${component}/index`, { siteUrl, themeUrl })
 })
 
 
