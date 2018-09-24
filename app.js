@@ -9,11 +9,14 @@ nunjucks.configure('views', {
   express: app
 })
 
-app.use(express.static('static'))
+app.use(express.static('docs'))
 
 app.set('view engine', 'nunjucks')
 
 app.get('/', (req, res) => {
+  const output = nunjucks.render('../views/components/file/index.nunjucks')
+  console.log(output);
+  
   res.render('index')
 })
 

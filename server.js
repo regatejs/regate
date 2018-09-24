@@ -88,11 +88,14 @@ _nunjucks2.default.configure('views', {
   express: app
 });
 
-app.use(_express2.default.static('static'));
+app.use(_express2.default.static('docs'));
 
 app.set('view engine', 'nunjucks');
 
 app.get('/', function (req, res) {
+  var output = _nunjucks2.default.render('../views/components/file/index.nunjucks');
+  console.log(output);
+
   res.render('index');
 });
 
