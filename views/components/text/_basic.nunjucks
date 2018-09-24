@@ -5,8 +5,11 @@
 })"
 %}
 
-<div class="content">
-  <h2>Basic</h2>
+<div class="content" id="basic">
+  <h2>Basic <a class="permalink-anchor" href="/components/text/#basic">#</a></h2>
+  <p>
+    This is the most basic usage of <code>RegateText</code>.
+  </p>
 
   <div class="regate-example-container">
     <div class="regate-example">
@@ -21,14 +24,10 @@
           
           <script>{{ script|safe }}</script>
         </div>
-
-        
       </form>
     </div>
     
     <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
-
-    <div class="regate-terminal" id="email-example-basic-terminal"></div>
   </div>
 </div>
 
