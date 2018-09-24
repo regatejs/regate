@@ -44,3 +44,22 @@ Regate.Text.init = function ({
       }
   }
 }
+
+
+Regate.Text.html = (shouldWrite) => {
+  const markup = `
+    <input
+      data-role='input'
+      type='text'
+      class='form-control'
+    />
+  `
+
+  if (shouldWrite) {
+    document.write(markup)
+  }
+
+  return markup
+}
+
+Regate.Text.write

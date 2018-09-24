@@ -9,8 +9,9 @@
       <div class="block-content block-content-full">
         <div>
           <div id="uniqueId_defaultvalue">
-            {% include "./component.html" %}
             <script>{% include "./component.js" %}</script>
+            <script>Regate.Text.html(true)</script>
+            
             <script>
               Regate.Text.init({
                 uniqueId: 'uniqueId_defaultvalue',
