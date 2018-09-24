@@ -84,7 +84,11 @@ app.use(_express2.default.static('static'));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-  res.render('pages/index');
+  res.render('index');
+});
+
+app.get('/components/file', function (req, res) {
+  res.render('components/file');
 });
 
 app.listen(port, function () {

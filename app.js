@@ -8,7 +8,11 @@ app.use(express.static('static'))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  res.render('pages/index')
+  res.render('index')
+})
+
+app.get('/components/file', (req, res) => {
+  res.render('components/file')
 })
 
 app.listen(port, () =>
