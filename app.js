@@ -1,11 +1,17 @@
 import express from 'express'
+import nunjucks from 'nunjucks'
 
 const app = express()
 const port = 3000
 
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+})
+
 app.use(express.static('static'))
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'nunjucks')
 
 app.get('/', (req, res) => {
   res.render('index')

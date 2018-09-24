@@ -74,14 +74,23 @@ var _express = __webpack_require__(1);
 
 var _express2 = _interopRequireDefault(_express);
 
+var _nunjucks = __webpack_require__(2);
+
+var _nunjucks2 = _interopRequireDefault(_nunjucks);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
 var port = 3000;
 
+_nunjucks2.default.configure('views', {
+  autoescape: true,
+  express: app
+});
+
 app.use(_express2.default.static('static'));
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'nunjucks');
 
 app.get('/', function (req, res) {
   res.render('index');
@@ -100,6 +109,12 @@ app.listen(port, function () {
 /***/ (function(module, exports) {
 
 module.exports = require("express");
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = require("nunjucks");
 
 /***/ })
 /******/ ]);
