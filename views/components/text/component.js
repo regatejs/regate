@@ -1,4 +1,7 @@
-function initRegateFile({
+window.Regate = window.Regate || {}
+Regate.Text = Regate.Text || {}
+
+Regate.Text.init = function ({
   uniqueId,
   name,
   value,

@@ -12,7 +12,7 @@
             {% include "./component.html" %}
             <script>{% include "./component.js" %}</script>
             <script>
-              initRegateFile({
+              Regate.Text.init({
                 uniqueId: 'uniqueId_placeholder',
                 name: 'Title',
                 placeholder: 'Please enter your title',
