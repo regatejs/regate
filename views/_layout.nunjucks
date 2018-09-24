@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>@ViewData["Title"] - Regate</title>
+    <title>{{ title }} - Regate</title>
 
     <script src="/dashmix/js/core/jquery.min.js"></script>
     <script src="/dashmix/js/core/bootstrap.bundle.min.js"></script>
@@ -83,7 +83,7 @@
       <header id="page-header">
           <!-- Header Content -->
           <div class="content-header">
-              <b>@ViewData["Title"]</b>
+              <b>{{ title }}</b>
           </div>
           <!-- END Header Content -->
       </header>

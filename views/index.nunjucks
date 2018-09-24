@@ -1,2 +1,10 @@
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'Homepage' %}
+
+{% block body %}
+
 <h1>Regate</h1>
 <a href="./components/file">RegateFile</a>
+
+{% endblock %}
