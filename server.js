@@ -88,7 +88,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/components/file', function (req, res) {
-  res.render('components/file');
+  res.render('components/file/index');
 });
 
 app.listen(port, function () {

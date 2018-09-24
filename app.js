@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/components/file', (req, res) => {
-  res.render('components/file')
+  res.render('components/file/index')
 })
 
 app.listen(port, () =>

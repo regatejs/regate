@@ -1,0 +1,11 @@
+[data-role='RegateFile'] [data-role='assetContainer'] {
+  display: none;
+}
+
+[data-role='RegateFile'][data-hasvalue] [data-role='assetContainer'] {
+  display: flex;
+}
+
+[data-role='RegateFile'][data-hasvalue] [data-role='uploadContainer'] {
+  display: none;
+}
