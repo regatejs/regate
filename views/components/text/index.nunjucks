@@ -1,0 +1,12 @@
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'RegateFile' %}
+
+{% block body %}
+
+  {% include './_basic.nunjucks' %}
+  {% include './_placeholder.nunjucks' %}
+  {% include './_required.nunjucks' %}
+  {% include './_defaultValue.nunjucks' %}
+
+{% endblock %}

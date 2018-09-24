@@ -1,0 +1,32 @@
+<form method="get">
+  <div class="content">
+    <div class="block block-rounded block-bordered">
+      <div class="block-header block-header-default">
+        <h3 class="block-title" id="default-value">
+          Default Value <a class="permalink-anchor" href="/components/text/#default-value">#</a>
+        </h3>
+      </div>
+      <div class="block-content block-content-full">
+        <div>
+          <div id="uniqueId_defaultvalue">
+            {% include "./component.html" %}
+            <script>{% include "./component.js" %}</script>
+            <script>
+              initRegateFile({
+                uniqueId: 'uniqueId_defaultvalue',
+                name: 'Title',
+                value: 'Hello World',
+              })
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="block-content block-content-full block-content-sm bg-body-light text-right">
+        <button type="submit" class="btn btn-sm btn-success">
+          <i class="fa fa-check"></i>
+          SUBMIT
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

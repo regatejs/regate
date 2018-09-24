@@ -1,0 +1,32 @@
+<form method="get">
+  <div class="content">
+    <div class="block block-rounded block-bordered">
+      <div class="block-header block-header-default">
+        <h3 class="block-title" id="required">
+          Required <a class="permalink-anchor" href="/components/text/#required">#</a>
+        </h3>
+      </div>
+      <div class="block-content block-content-full">
+        <div>
+          <div id="uniqueId_required">
+            {% include "./component.html" %}
+            <script>{% include "./component.js" %}</script>
+            <script>
+              initRegateFile({
+                uniqueId: 'uniqueId_required',
+                name: 'Title',
+                isRequired: true,
+              })
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="block-content block-content-full block-content-sm bg-body-light text-right">
+        <button type="submit" class="btn btn-sm btn-success">
+          <i class="fa fa-check"></i>
+          SUBMIT
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
