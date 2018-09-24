@@ -18,7 +18,7 @@ RegateText.init = function (_ref) {
       onChange = _ref.onChange;
 
 
-  if (id === undefined) throw new Error("id is required");
+  if (id === undefined) throw new Error('id is required');
 
   var _container = document.getElementById(id);
   _container.insertAdjacentHTML('afterend', RegateText.markup(id));
