@@ -104,7 +104,7 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="/components/text">
+                    <a class="nav-main-link" href="{{ siteUrl }}components/text">
                         <i class="nav-main-link-icon si si-grid"></i>
                         <span class="nav-main-link-name">RegateText</span>
                     </a>
