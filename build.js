@@ -27,13 +27,19 @@ function writeToPath(targetPath, data) {
 
 
 
-var output = nunjucks.render('components/file/index.nunjucks')
-output = output.replace(/\/dashmix\//g, '../../dashmix/')
-writeToPath('./docs/components/file/index.html', output)
-console.log(output)
+var regateFile = nunjucks.render('components/file/index.nunjucks')
+regateFile = regateFile.replace(/\/dashmix\//g, '../../dashmix/')
+writeToPath('./docs/components/file/index.html', regateFile)
+// console.log(regateFile)
 
 
 var uploader = nunjucks.render('uploader.nunjucks')
 uploader = uploader.replace(/\/dashmix\//g, '../../dashmix/')
 writeToPath('./docs/uploader/index.html', uploader)
-console.log(uploader)
+// console.log(uploader)
+
+
+var homepage = nunjucks.render('homepage.nunjucks')
+homepage = homepage.replace(/\/dashmix\//g, '../../dashmix/')
+writeToPath('./docs/index.html', homepage)
+// console.log(homepage)

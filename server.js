@@ -78,7 +78,32 @@ var _nunjucks = __webpack_require__(2);
 
 var _nunjucks2 = _interopRequireDefault(_nunjucks);
 
+var _fs = __webpack_require__(3);
+
+var _fs2 = _interopRequireDefault(_fs);
+
+var _path = __webpack_require__(4);
+
+var _path2 = _interopRequireDefault(_path);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function mkFullDir(dir) {
+  var fullPath = _path2.default.normalize(dir);
+  var dirName = _path2.default.dirname(fullPath);
+  fullPath.split(_path2.default.sep).reduce(function (acc, elem) {
+    var currDir = _path2.default.join(acc, elem + _path2.default.sep);
+    if (!_fs2.default.existsSync(currDir)) _fs2.default.mkdirSync(currDir);
+    return currDir;
+  }, '');
+}
+
+function writeToPath(targetPath, data) {
+  var dirName = _path2.default.dirname(targetPath);
+  var fileName = _path2.default.basename(targetPath);
+  mkFullDir(dirName);
+  _fs2.default.writeFileSync(targetPath, data);
+}
 
 var app = (0, _express2.default)();
 var port = 3000;
@@ -88,12 +113,12 @@ _nunjucks2.default.configure('views', {
   express: app
 });
 
-app.use(_express2.default.static('docs'));
+app.use('/dashmix', _express2.default.static('docs/dashmix'));
 
 app.set('view engine', 'nunjucks');
 
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('homepage');
 });
 
 app.get('/uploader', function (req, res) {
@@ -119,6 +144,18 @@ module.exports = require("express");
 /***/ (function(module, exports) {
 
 module.exports = require("nunjucks");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("path");
 
 /***/ })
 /******/ ]);

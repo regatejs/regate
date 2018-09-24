@@ -12,9 +12,9 @@
     <script src="/dashmix/js/core/jquery.appear.min.js"></script>
     <script src="/dashmix/js/core/js.cookie.min.js"></script>
 
-    <link rel="stylesheet" id="css-main" href="/dashmix/css/dashmix.min.rtl.css">
+    <link rel="stylesheet" id="css-main" href="/dashmix/css/dashmix.min.css">
 </head>
-<body dir="rtl">
+<body>
 
   <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-fixed page-header-dark main-content-narrow">
 
