@@ -1,7 +1,7 @@
 const RegateText = {}
 
 RegateText.init = function ({
-  uniqueId,
+  id,
   name,
   value,
   isRequired,
@@ -9,7 +9,7 @@ RegateText.init = function ({
   onInitialized,
   onChange,
 }) {
-  var _container = document.getElementById(uniqueId)
+  var _container = document.getElementById(id)
   var _input = _container.querySelector('[data-role=input]')
   
   _input.name = name
@@ -45,20 +45,12 @@ RegateText.init = function ({
 }
 
 
-RegateText.markup = (shouldWrite) => {
-  const markup = `
-    <input
-      data-role='input'
-      type='text'
-      class='form-control'
-    />
-  `
-
-  if (shouldWrite) {
-    document.write(markup)
-  }
-
-  return markup
-}
+RegateText.markup = () => `
+  <input
+    data-role='input'
+    type='text'
+    class='form-control'
+  />
+`
 
 export default RegateText

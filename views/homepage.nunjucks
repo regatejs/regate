@@ -4,8 +4,5 @@
 
 {% block body %}
 
-<h1>Regate</h1>
-<a href="./components/file">RegateFile</a>
-<a href="./components/text">RegateText</a>
 
 {% endblock %}

@@ -23,7 +23,7 @@ var serverConfig = {
   ]
 }
 
-var browserConfig = {
+var umdConfig = {
   entry: './src/regate.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -41,4 +41,22 @@ var browserConfig = {
   },
 }
 
-module.exports = [serverConfig, browserConfig]
+var docsConfig = {
+  entry: './src/regate.js',
+  output: {
+    path: path.resolve(__dirname, 'docs/dashmix'),
+    filename: 'regate.umd.js',
+    libraryTarget: 'umd',
+    library: 'Regate'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        use: 'babel-loader'
+      }
+    ]
+  },
+}
+
+module.exports = [serverConfig, umdConfig, docsConfig]

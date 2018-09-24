@@ -9,8 +9,7 @@
       <div class="block-content block-content-full">
         <div>
           <div id="uniqueId_placeholder">
-            <script>{% include "./component.js" %}</script>
-            <script>Regate.Text.markup(true)</script>
+            <script>Regate.RegateText.markup(true)</script>
             <script>
               Regate.Text.init({
                 uniqueId: 'uniqueId_placeholder',

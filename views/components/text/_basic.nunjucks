@@ -1,29 +1,34 @@
-<form method="get">
-  <div class="content">
-    <div class="block block-rounded block-bordered">
-      <div class="block-header block-header-default">
-        <h3 class="block-title" id="basic">Basic <a class="permalink-anchor" href="/components/text/#basic">#</a></h3>
-      </div>
-      <div class="block-content block-content-full">
-        <div>
-          <div id="uniqueId_text1">
-            <script>{% include "./component.js" %}</script>
-            <script>Regate.Text.markup(true)</script>
-            <script>
-              Regate.Text.init({
-                uniqueId: 'uniqueId_text1',
-                name: 'Title',
-              })
-            </script>
+{% set script = 
+"Regate.RegateText.init({
+  id: 'basic-example',
+  name: 'Title',
+})"
+%}
+
+<div class="content">
+  <h2>Basic</h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div id="basic-example">
+          <div class="input-group">
+            <script>document.write(Regate.RegateText.markup())</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
           </div>
+          
+          <script>{{ script|safe }}</script>
         </div>
-      </div>
-      <div class="block-content block-content-full block-content-sm bg-body-light text-right">
-        <button type="submit" class="btn btn-sm btn-success">
-          <i class="fa fa-check"></i>
-          SUBMIT
-        </button>
-      </div>
+
+        
+      </form>
     </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+
+    <div class="regate-terminal" id="email-example-basic-terminal"></div>
   </div>
-</form>
+</div>
+
