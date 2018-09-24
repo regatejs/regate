@@ -29,6 +29,11 @@ function writeToPath(targetPath, data) {
 
 var output = nunjucks.render('components/file/index.nunjucks')
 output = output.replace(/\/dashmix\//g, '../../dashmix/')
+writeToPath('./docs/components/file/index.html', output)
 console.log(output)
 
-writeToPath('./docs/components/file/index.html', output)
+
+var uploader = nunjucks.render('uploader.nunjucks')
+uploader = uploader.replace(/\/dashmix\//g, '../../dashmix/')
+writeToPath('./docs/uploader/index.html', uploader)
+console.log(uploader)
