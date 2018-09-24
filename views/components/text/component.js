@@ -46,7 +46,7 @@ Regate.Text.init = function ({
 }
 
 
-Regate.Text.html = (shouldWrite) => {
+Regate.Text.markup = (shouldWrite) => {
   const markup = `
     <input
       data-role='input'
@@ -61,5 +61,3 @@ Regate.Text.html = (shouldWrite) => {
 
   return markup
 }
-
-Regate.Text.write

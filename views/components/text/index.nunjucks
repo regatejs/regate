@@ -11,6 +11,6 @@
   {% include './_onInitialized.nunjucks' %}
   {% include './_onChange.nunjucks' %}
 
-  <script>Regate.Text.html(true)</script>
+  <script>Regate.Text.markup(true)</script>
 
 {% endblock %}
