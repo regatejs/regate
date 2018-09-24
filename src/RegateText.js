@@ -14,8 +14,11 @@ RegateText.init = function ({
     throw new Error("id is required")
 
   var _container = document.getElementById(id)
-  var _input = _container.querySelector('[data-role=input]')
- 
+  _container.insertAdjacentHTML('afterend', RegateText.markup(id))
+  _container.parentNode.removeChild(_container)
+
+  var _input = document.getElementById(id + '__input')
+
   _input.name = name
 
   if (isRequired === true)
@@ -36,22 +39,22 @@ RegateText.init = function ({
   }
 
   if (typeof onChange === typeof Function) {
-      _input.oninput = () => {
-        const value = _input.value
+    _input.oninput = () => {
+      const value = _input.value
 
-        const isValid = isRequired
-          ? value !== undefined && value.length > 0
-          : true
+      const isValid = isRequired
+        ? value !== undefined && value.length > 0
+        : true
 
-        onChange({value, isValid})
-      }
+      onChange({value, isValid})
+    }
   }
 }
 
 
-RegateText.markup = () => `
+RegateText.markup = (id) => `
   <input
-    data-role='input'
+    id='${id}__input'
     type='text'
     class='form-control'
   />

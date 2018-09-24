@@ -14,9 +14,9 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div id="basic-example">
+        <div>
           <div class="input-group">
-            <script>document.write(Regate.RegateText.markup())</script>
+            <template id="basic-example"></template>
             <div class="input-group-append">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

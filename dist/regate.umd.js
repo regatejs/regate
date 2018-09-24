@@ -121,7 +121,10 @@ RegateText.init = function (_ref) {
   if (id === undefined) throw new Error("id is required");
 
   var _container = document.getElementById(id);
-  var _input = _container.querySelector('[data-role=input]');
+  _container.insertAdjacentHTML('afterend', RegateText.markup(id));
+  _container.parentNode.removeChild(_container);
+
+  var _input = document.getElementById(id + '__input');
 
   _input.name = name;
 
@@ -131,13 +134,13 @@ RegateText.init = function (_ref) {
 
   if (placeholder !== undefined) _input.placeholder = placeholder;
 
-  if ((typeof onInitialized === "undefined" ? "undefined" : _typeof(onInitialized)) === (typeof Function === "undefined" ? "undefined" : _typeof(Function))) {
+  if ((typeof onInitialized === 'undefined' ? 'undefined' : _typeof(onInitialized)) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
     var isValid = isRequired ? value !== undefined && value.length > 0 : true;
 
     onInitialized({ value: value, isValid: isValid });
   }
 
-  if ((typeof onChange === "undefined" ? "undefined" : _typeof(onChange)) === (typeof Function === "undefined" ? "undefined" : _typeof(Function))) {
+  if ((typeof onChange === 'undefined' ? 'undefined' : _typeof(onChange)) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
     _input.oninput = function () {
       var value = _input.value;
 
@@ -148,8 +151,8 @@ RegateText.init = function (_ref) {
   }
 };
 
-RegateText.markup = function () {
-  return "\n  <input\n    data-role='input'\n    type='text'\n    class='form-control'\n  />\n";
+RegateText.markup = function (id) {
+  return '\n  <input\n    id=\'' + id + '__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
 };
 
 exports.default = RegateText;

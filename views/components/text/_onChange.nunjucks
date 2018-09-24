@@ -15,9 +15,9 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div id="onchange-example">
+        <div>
           <div class="input-group">
-            <script>document.write(Regate.RegateText.markup())</script>
+            <template id="onchange-example"></template>
             <div class="input-group-append">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
