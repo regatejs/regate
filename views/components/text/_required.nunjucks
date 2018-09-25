@@ -7,7 +7,7 @@
 %}
 
 <div class="content">
-  <h2 id="required">Required <a class="permalink-anchor" href="{{ siteUrl }}components/text/#required">#</a></h2>
+  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
   <p>
     You can required your field with <code>isRequired</code> property.
   </p>

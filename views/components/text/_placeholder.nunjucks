@@ -9,7 +9,7 @@
 <div class="content">
   <h2 id="placeholder">
     Placeholder
-    <a class="permalink-anchor" href="{{ siteUrl }}components/text/#placeholder">#</a>
+    <a class="permalink-anchor" href="#placeholder">#</a>
   </h2>
   <p>
     You can set the placeholder of textbox with <code>placeholder</code> property.

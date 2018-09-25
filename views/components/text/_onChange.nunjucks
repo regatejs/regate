@@ -11,7 +11,7 @@
 <div class="content">
   <h2 id="onchange">
     onChange
-    <a class="permalink-anchor" href="{{ siteUrl }}components/text/#onchange">#</a>
+    <a class="permalink-anchor" href="#onchange">#</a>
   </h2>
   <p>
     With <code>onChange</code> event you can get value of textbox on every user interaction with textbox.

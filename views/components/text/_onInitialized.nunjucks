@@ -12,7 +12,7 @@
 <div class="content">
   <h2 id="oninitialized">
     onInitialized
-    <a class="permalink-anchor" href="{{ siteUrl }}components/text/#oninitialized">#</a>
+    <a class="permalink-anchor" href="#oninitialized">#</a>
   </h2>
   <p>
     The <code>onInitialized</code> event is called once when the RegateText is initialized successfully.

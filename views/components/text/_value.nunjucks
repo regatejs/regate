@@ -7,7 +7,7 @@
 %}
 
 <div class="content">
-  <h2 id="value">Value <a class="permalink-anchor" href="{{ siteUrl }}components/text/#value">#</a></h2>
+  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
   <p>
     With <code>value</code> property you can set an initial value for your textbox.
   </p>
