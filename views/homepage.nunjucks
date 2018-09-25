@@ -1,8 +1,99 @@
-{% extends '_layout.nunjucks' %}
+{% extends '_layout-noside.nunjucks' %}
 
-{% set title = 'Homepage' %}
+{% set title = 'Regate' %}
 
 {% block body %}
 
+<!-- Hero -->
+<div class="bg-image bg-gray-dark">
+    <div class="bg-black-25">
+        <div class="content content-full">
+            <div class="py-5 text-center">
+                <img src="{{ themeUrl }}regate-256.png" alt="Regate" style="border-radius: 3px;" />
+
+                <h1 class="font-w700 my-2 text-white">Regate</h1>
+                <h2 class="h4 font-w700 text-white-75">
+                    Web components for building form inputs
+                </h2>
+                <a href="{{ siteUrl }}start" class="btn btn-hero-primary">
+                    Browse Components
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hero -->
+
+
+
+<div class="container" style="margin-top: 50px;">
+  <div class="row">
+    <div class="col-md text-xs-center">
+      <div class="display-3">
+        <i class="far fa-list-alt fa-fw"></i>
+      </div>
+      <h3 class="display-4">Variety</h3>
+      <div>
+        Regate ships with various components.
+        Just browse the
+        <a href="{{ siteUrl }}components">components</a>
+        and find the component which you need. See examples and implement
+        it inside your own project.
+      </div>
+    </div>
+    <div class="col-md text-xs-center">
+      <div class="display-3">
+        <i class="far fa-user fa-fw"></i>
+      </div>
+      <h3 class="display-4">Friendly</h3>
+      <div>
+        Regate is framekwork friendly. So you can style it easily
+        with UI frameworks like
+        <a href="http://getbootstrap.com/">Bootstrap</a>
+        and also use a state manager like
+        <a href="http://redux.js.org/">Redux</a>.
+      </div>
+    </div>
+    <div class="col-md text-xs-center">
+      <div class="display-3">
+        <i class="far fa-file fa-fw"></i>
+      </div>
+      <h3 class="display-4">Simple</h3>
+      <div>
+        Regate philosophy is simplicity. This is on both
+        developing the core itself, or the usage of library.
+        There is no difficult learning curve to use Regate.
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" style="margin-top: 50px;">
+  <div class="_row">
+    <div class="_col-xs">
+      <div class="display-3 text-xs-center">Easy to get started</div>
+      
+      <div class="text-xs-center">
+        Starting with Regate is easy and quick. Just install it, and use the
+        <a href="./docs/">components</a>
+        as your need.
+      </div>
+      
+      <div class="text-xs-left" style="margin-top: 15px;">
+        <pre><code>$ npm install regate --save</code></pre>
+        <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
+
+Regate.RegateText.init({
+  id: 'basic-example',
+  name: 'Title',
+})
+</code></pre>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 {% endblock %}

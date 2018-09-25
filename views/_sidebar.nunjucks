@@ -1,0 +1,14 @@
+<ul class="nav-main">
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl }}components/text">
+            <i class="nav-main-link-icon si si-pencil"></i>
+            <span class="nav-main-link-name">RegateText</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl}}components/file">
+            <i class="nav-main-link-icon si si-book-open"></i>
+            <span class="nav-main-link-name">RegateFile</span>
+        </a>
+    </li>
+</ul>

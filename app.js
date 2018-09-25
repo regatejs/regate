@@ -40,6 +40,10 @@ app.get('/', (req, res) => {
   res.render('homepage', { siteUrl, themeUrl })
 })
 
+app.get('/components', (req, res) => {
+  res.render('components/index', { siteUrl, themeUrl })
+})
+
 app.get('/uploader', (req, res) => {
   res.render('uploader', { siteUrl, themeUrl })
 })
