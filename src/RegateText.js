@@ -3,9 +3,9 @@ const RegateText = {}
 RegateText.init = function ({
   id,
   name,
-  value,
-  isRequired,
-  placeholder,
+  value = '',
+  isRequired = false,
+  placeholder = '',
   onInitialized,
   onChange,
 }) {
@@ -31,7 +31,7 @@ RegateText.init = function ({
 
   if (typeof onInitialized === typeof Function) {
     const isValid = isRequired
-      ? value !== undefined && value.length > 0
+      ? value.length > 0
       : true
 
       onInitialized({value, isValid})
@@ -42,7 +42,7 @@ RegateText.init = function ({
       const value = _input.value
 
       const isValid = isRequired
-        ? value !== undefined && value.length > 0
+        ? value.length > 0
         : true
 
       onChange({value, isValid})
