@@ -1,10 +1,10 @@
 <div dir='rtl'>
     <form enctype='multipart/form-data' method='get' action=''>
 
-        <input type='hidden' name="field" id='field' />
-        <input type='file' name='file' required='required' id='fileUpload' />
+        <input type='hidden' name="id" id='id' />
+        <input type='file' name='file' required='required' id='file' />
         <br />
-        <button type='submit' id='submitButton' name='submit' value='true' class='btn btn-success'>آپلود فایل</button>
+        <button type='submit' id='submit' name='submit' value='true' class='btn btn-success'>آپلود فایل</button>
 
     </form>
 </div>
@@ -24,10 +24,10 @@
         return b;
     })(window.location.search.substr(1).split('&'));
 
-    document.getElementById('field').value = qs.field;
+    document.getElementById('id').value = qs.id;
 
     if (qs.submit) {
-        window.opener['RegateFile__setterCallback'](qs.field, qs.file);
+        window.opener.Regate.RegateFile.set(qs.id, qs.file);
         window.close();
     }
 

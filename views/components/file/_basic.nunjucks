@@ -1,0 +1,54 @@
+{% set script = 
+"Regate.RegateFile.init({
+  id: 'basic-example',
+  name: 'CoverPhoto',
+  uploaderUrl: '/uploader/',
+})"
+%}
+
+<div class="content">
+  <h2 id="basic">Basic <a class="permalink-anchor" href="{{ siteUrl }}components/text/#basic">#</a></h2>
+  <p>
+    This is the most basic usage of <code>RegateFile</code>.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="_input-group">
+            <script>document.write(Regate.RegateFile.markup('basic-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+
+          <div class="input-group">
+                        <div class="input-group-prepend" data-role="uploadContainer">
+                            <button type="button" class="btn btn-secondary" data-role="upload">
+                                <i class="fa fa-search mr-1"></i> انتخاب فایل
+                            </button>
+                        </div>
+
+                        <input type="text" style="pointer-events: none;" onfocus="this.blur();" data-role="input" class="form-control" name="Avatar">
+
+                        <div class="input-group-append" data-role="assetContainer">
+                            <button type="button" class="btn btn-outline-secondary" data-role="remove">
+                                <i class="fa fa-fw fa-times"></i>
+                            </button>
+                            <a href="#" target="_blank" class="btn btn-outline-secondary" data-role="view">
+                                <i class="fa fa-fw fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+          <script>{{ script|safe }}</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

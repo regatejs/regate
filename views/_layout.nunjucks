@@ -109,14 +109,12 @@
                         <span class="nav-main-link-name">RegateText</span>
                     </a>
                 </li>
-                {#
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="/components/text">
+                    <a class="nav-main-link" href="{{ siteUrl}}components/file">
                         <i class="nav-main-link-icon si si-grid"></i>
                         <span class="nav-main-link-name">RegateFile</span>
                     </a>
                 </li>
-                #}
             </ul>
         </div>
         <!-- END Side Navigation -->
