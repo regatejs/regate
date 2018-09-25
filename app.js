@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/uploader', (req, res) => {
-  res.render('uploader')
+  res.render('uploader', { siteUrl, themeUrl })
 })
 
 app.get('/components/:component', (req, res) => {

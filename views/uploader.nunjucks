@@ -1,13 +1,26 @@
-<div dir='rtl'>
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'Uploader' %}
+
+{% block body %}
+
+<div>
     <form enctype='multipart/form-data' method='get' action=''>
 
         <input type='hidden' name="id" id='id' />
         <input type='file' name='file' required='required' id='file' />
         <br />
-        <button type='submit' id='submit' name='submit' value='true' class='btn btn-success'>آپلود فایل</button>
+        <br />
+        <button type='submit' id='submit' name='submit' value='true' class='btn btn-success'>UPLOAD</button>
 
     </form>
 </div>
+
+<style>
+#page-header, #page-footer {
+    display: none;
+}
+</style>
 
 <script>
     var qs = (function(a) {
@@ -32,3 +45,6 @@
     }
 
 </script>
+
+{% endblock %}
+

@@ -124,7 +124,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/uploader', function (req, res) {
-  res.render('uploader');
+  res.render('uploader', { siteUrl: siteUrl, themeUrl: themeUrl });
 });
 
 app.get('/components/:component', function (req, res) {
