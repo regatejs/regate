@@ -9,8 +9,14 @@
 %}
 
 <div class="content">
-  <h2 id="onchange">onChange <a class="permalink-anchor" href="{{ siteUrl }}components/text/#onchange">#</a></h2>
-  
+  <h2 id="onchange">
+    onChange
+    <a class="permalink-anchor" href="{{ siteUrl }}components/text/#onchange">#</a>
+  </h2>
+  <p>
+    With <code>onChange</code> event you can get value of textbox on every user interaction with textbox.
+    Originally, Regate will bind this event to the <code>oninput</code> event of textbox.
+  </p>
 
   <div class="regate-example-container">
     <div class="regate-example">
@@ -41,6 +47,7 @@
     <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
 
     <div class="regate-terminal" id="onchange-terminal"></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
 

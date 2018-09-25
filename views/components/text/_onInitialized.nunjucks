@@ -1,34 +1,57 @@
-<form method="get">
-  <div class="content">
-    <div class="block block-rounded block-bordered">
-      <div class="block-header block-header-default">
-        <h3 class="block-title" id="onInitialized">
-          onInitialized <a class="permalink-anchor" href="/components/text/#onInitialized">#</a>
-        </h3>
-      </div>
-      <div class="block-content block-content-full">
+{% set script = 
+"Regate.RegateText.init({
+  id: 'oninitialized-example',
+  name: 'Title',
+  value: 'Hello World',
+  onInitialized: function ({value, isValid}) {
+    console.log(value, isValid)
+  }
+})"
+%}
+
+<div class="content">
+  <h2 id="oninitialized">
+    onInitialized
+    <a class="permalink-anchor" href="{{ siteUrl }}components/text/#oninitialized">#</a>
+  </h2>
+  <p>
+    The <code>onInitialized</code> event is called once when the RegateText is initialized successfully.
+    You have access to the <code>value</code> of textbox.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
         <div>
-          <div id="uniqueId_onInitialized">
-            <script>Regate.RegateText.markup(true)</script>
-            <script>
-              Regate.Text.init({
-                uniqueId: 'uniqueId_onInitialized',
-                name: 'Title',
-                isRequired: true,
-                onInitialized: ({value, isValid}) => {
-                  console.log(value, isValid)
-                }
-              })
-            </script>
+          <div class="input-group">
+            <script>document.write(Regate.RegateText.markup('oninitialized-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="block-content block-content-full block-content-sm bg-body-light text-right">
-        <button type="submit" class="btn btn-sm btn-success">
-          <i class="fa fa-check"></i>
-          SUBMIT
-        </button>
-      </div>
+      </form>
     </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+
+    <div class="regate-terminal" id="oninitialized-terminal"></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
-</form>
+
+  <script>
+    Regate.RegateText.init({
+      id: 'oninitialized-example',
+      name: 'Title',
+      value: 'Hello World',
+      onInitialized: function ({value, isValid}) {
+        window.onload = function () {
+          konsoleClear('oninitialized-terminal');
+          konsole('oninitialized-terminal', ' string', '  value', value);
+          konsole('oninitialized-terminal', 'boolean', 'isValid', isValid);
+        };
+      }
+    })
+  </script>
+</div>
+
