@@ -5,14 +5,12 @@ const path = require('path')
 const siteUrl = '/regate/'
 const themeUrl = '/regate/dashmix/'
 
-console.clear()
-console.log('Building')
+console.log('Building GitHub pages')
 
 nunjucks.configure('views')
 
 function mkFullDir(dir) {
   const fullPath = path.normalize(dir)
-  const dirName = path.dirname(fullPath)
   fullPath.split(path.sep).reduce((acc, elem) => {
       const currDir = path.join(acc, elem + path.sep)
       if (!fs.existsSync(currDir))
@@ -23,26 +21,21 @@ function mkFullDir(dir) {
 
 function writeToPath(targetPath, data) {
   const dirName = path.dirname(targetPath)
-  const fileName = path.basename(targetPath)
   mkFullDir(dirName)
   fs.writeFileSync(targetPath, data)
 }
 
 
+const views = {
+  'components/text/index.nunjucks': './docs/components/text/index.html',
+  'components/file/index.nunjucks': './docs/components/file/index.html',
 
+  'uploader.nunjucks': './docs/uploader/index.html',
+  'homepage.nunjucks': './docs/index.html',
+  'components/index.nunjucks': './docs/components/index.html',
+}
 
-var regate_text = nunjucks.render('components/text/index.nunjucks', { siteUrl, themeUrl })
-writeToPath('./docs/components/text/index.html', regate_text)
-// console.log(regate_text)
-
-
-/*
-var uploader = nunjucks.render('uploader.nunjucks', { siteUrl: siteUrl })
-uploader = uploader.replace(/\/dashmix\//g, '../../dashmix/')
-writeToPath('./docs/uploader/index.html', uploader)
-// console.log(uploader)
-*/
-
-var homepage = nunjucks.render('homepage.nunjucks', { siteUrl, themeUrl })
-writeToPath('./docs/index.html', homepage)
-// console.log(homepage)
+for (let view in views) {
+  const output = nunjucks.render(view, { siteUrl, themeUrl })
+  writeToPath(views[view], output)
+}

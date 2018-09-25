@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Regate - Regate</title>
+    <title>Regate Components - Regate</title>
 
     <script src="/regate/dashmix/js/core/jquery.min.js"></script>
     <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
@@ -22,14 +22,114 @@
     <meta name="msapplication-config" content="/regate/dashmix/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="/regate/dashmix/regate.umd.js"></script>
+
+    <script>
+        window.konsoleClear = container => {
+            let $terminal = $('#' + container)
+            $terminal.html('')
+        }
+
+        window.konsoleGroup = (container, groupName) => {
+            let $terminal = $('#' + container)
+            $terminal.append('<style>#' + container + ':before { content: "OUTPUT ' + groupName + '"; }</style>');
+        }
+
+        window.konsole = (container, type, title, value) => {
+            let $terminal = $('#' + container)
+            let $pre = $('<pre></pre>')
+
+            if (type.trim() === 'boolean') {
+            value = value ? 'true' : 'false'
+            }
+
+            $('<code></code>')
+            .attr('data-type', 'title')
+            .text(title)
+            .appendTo($pre)
+
+            $('<code></code>')
+            .attr('data-type', type.trim())
+            .text(type)
+            .appendTo($pre)
+
+
+            $('<code></code>')
+            .attr('data-type', 'value')
+            .text(value)
+            .appendTo($pre)
+
+            $pre.appendTo($terminal)
+        }
+        </script>
+
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 </head>
 <body>
 
-  <div id="page-container" class="_sidebar-o enable-page-overlay side-scroll _page-header-fixed page-header-light main-content-narrow">
+  <div id="page-container" class="sidebar-o enable-page-overlay side-scroll _page-header-fixed page-header-light main-content-narrow">
 
-      
+      <!-- Sidebar -->
+      <!--
+          Sidebar Mini Mode - Display Helper classes
+
+          Adding 'smini-hide' class to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
+          Adding 'smini-show' class to an element will make it visible (opacity: 1) when the sidebar is in mini mode
+              If you would like to disable the transition animation, make sure to also add the 'no-transition' class to your element
+
+          Adding 'smini-hidden' to an element will hide it when the sidebar is in mini mode
+          Adding 'smini-visible' to an element will show it (display: inline-block) only when the sidebar is in mini mode
+          Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
+      -->
+      <nav id="sidebar" aria-label="Main Navigation">
+        <!-- Side Header -->
+        <div class="bg-header-dark">
+            <div class="content-header bg-white-10">
+                <!-- Logo -->
+                <a class="link-fx font-w600 font-size-lg text-white" href="/">
+                    <span class="smini-visible">
+                        <span class="text-white-75">D</span><span class="text-white">x</span>
+                    </span>
+                    <span class="smini-hidden">
+                        <span class="text-white-75">Re</span><span class="text-white">gate</span>
+                    </span>
+                </a>
+                <!-- END Logo -->
+                <!-- Options -->
+                <div>
+                    <!-- END Toggle Sidebar Style -->
+                    <!-- Close Sidebar, Visible only on mobile screens -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <a class="d-lg-none text-white ml-2" data-toggle="layout" data-action="sidebar_close" href="javascript:void(0)">
+                        <i class="fa fa-times-circle"></i>
+                    </a>
+                    <!-- END Close Sidebar -->
+                </div>
+                <!-- END Options -->
+            </div>
+        </div>
+        <!-- END Side Header -->
+        <!-- Side Navigation -->
+        <div class="content-side content-side-full">
+            <ul class="nav-main">
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/text">
+            <i class="nav-main-link-icon si si-pencil"></i>
+            <span class="nav-main-link-name">RegateText</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/file">
+            <i class="nav-main-link-icon si si-book-open"></i>
+            <span class="nav-main-link-name">RegateFile</span>
+        </a>
+    </li>
+</ul>
+        </div>
+        <!-- END Side Navigation -->
+      </nav>
+      <!-- END Sidebar -->
 
       <!-- Header -->
       <header id="page-header">
@@ -37,7 +137,14 @@
           <div class="content-header">
                 <!-- Left Section -->
                 <div>
-                    <b>Regate</b>
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
+                    <button type="button" class="btn btn-dual mr-1" data-toggle="layout" data-action="sidebar_toggle">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+
+                    <b>Regate Components</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -64,97 +171,6 @@
         
         
 
-<!-- Hero -->
-<div class="bg-image bg-gray-dark">
-    <div class="bg-black-25">
-        <div class="content content-full">
-            <div class="py-5 text-center">
-                <img src="/regate/dashmix/regate-256.png" alt="Regate" style="border-radius: 3px;" />
-
-                <h1 class="font-w700 my-2 text-white">Regate</h1>
-                <h2 class="h4 font-w700 text-white-75">
-                    Web components for building form inputs
-                </h2>
-                <a href="/regate/components" class="btn btn-hero-primary">
-                    Browse Components
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END Hero -->
-
-
-
-<div class="container" style="margin-top: 50px;">
-  <div class="row">
-    <div class="col-md text-xs-center">
-      <div class="display-3">
-        <i class="far fa-list-alt fa-fw"></i>
-      </div>
-      <h3 class="display-4">Variety</h3>
-      <div>
-        Regate ships with various components.
-        Just browse the
-        <a href="/regate/components">components</a>
-        and find the component which you need. See examples and implement
-        it inside your own project.
-      </div>
-    </div>
-    <div class="col-md text-xs-center">
-      <div class="display-3">
-        <i class="far fa-user fa-fw"></i>
-      </div>
-      <h3 class="display-4">Friendly</h3>
-      <div>
-        Regate is framekwork friendly. So you can style it easily
-        with UI frameworks like
-        <a href="http://getbootstrap.com/">Bootstrap</a>
-        and also use a state manager like
-        <a href="http://redux.js.org/">Redux</a>.
-      </div>
-    </div>
-    <div class="col-md text-xs-center">
-      <div class="display-3">
-        <i class="far fa-file fa-fw"></i>
-      </div>
-      <h3 class="display-4">Simple</h3>
-      <div>
-        Regate philosophy is simplicity. This is on both
-        developing the core itself, or the usage of library.
-        There is no difficult learning curve to use Regate.
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container" style="margin-top: 50px;">
-  <div class="_row">
-    <div class="_col-xs">
-      <div class="display-3 text-xs-center">Easy to get started</div>
-      
-      <div class="text-xs-center">
-        Starting with Regate is easy and quick. Just install it, and use the
-        <a href="./docs/">components</a>
-        as your need.
-      </div>
-      
-      <div class="text-xs-left" style="margin-top: 15px;">
-        <pre><code>$ npm install regate --save</code></pre>
-        <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
-
-Regate.RegateText.init({
-  id: 'basic-example',
-  name: 'Title',
-})
-</code></pre>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
         
@@ -227,10 +243,6 @@ Regate.RegateText.init({
 
     .permalink-anchor { visibility: hidden; }
     h2:hover .permalink-anchor { visibility: visible; }
-
-    .text-xs-center {
-        text-align: center;
-    }
   </style>
 
   <script>

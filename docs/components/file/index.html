@@ -5,18 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>RegateFile - Regate</title>
 
-    <script src="../../dashmix/js/core/jquery.min.js"></script>
-    <script src="../../dashmix/js/core/bootstrap.bundle.min.js"></script>
-    <script src="../../dashmix/js/core/simplebar.min.js"></script>
-    <script src="../../dashmix/js/core/jquery-scrollLock.min.js"></script>
-    <script src="../../dashmix/js/core/jquery.appear.min.js"></script>
-    <script src="../../dashmix/js/core/js.cookie.min.js"></script>
+    <script src="/regate/dashmix/js/core/jquery.min.js"></script>
+    <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
+    <script src="/regate/dashmix/js/core/simplebar.min.js"></script>
+    <script src="/regate/dashmix/js/core/jquery-scrollLock.min.js"></script>
+    <script src="/regate/dashmix/js/core/jquery.appear.min.js"></script>
+    <script src="/regate/dashmix/js/core/js.cookie.min.js"></script>
 
-    <link rel="stylesheet" id="css-main" href="../../dashmix/css/dashmix.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/regate/dashmix/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/regate/dashmix/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/regate/dashmix/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/regate/dashmix/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/regate/dashmix/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/regate/dashmix/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="/regate/dashmix/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="/regate/dashmix/regate.umd.js"></script>
+
+    <script>
+        window.konsoleClear = container => {
+            let $terminal = $('#' + container)
+            $terminal.html('')
+        }
+
+        window.konsoleGroup = (container, groupName) => {
+            let $terminal = $('#' + container)
+            $terminal.append('<style>#' + container + ':before { content: "OUTPUT ' + groupName + '"; }</style>');
+        }
+
+        window.konsole = (container, type, title, value) => {
+            let $terminal = $('#' + container)
+            let $pre = $('<pre></pre>')
+
+            if (type.trim() === 'boolean') {
+            value = value ? 'true' : 'false'
+            }
+
+            $('<code></code>')
+            .attr('data-type', 'title')
+            .text(title)
+            .appendTo($pre)
+
+            $('<code></code>')
+            .attr('data-type', type.trim())
+            .text(type)
+            .appendTo($pre)
+
+
+            $('<code></code>')
+            .attr('data-type', 'value')
+            .text(value)
+            .appendTo($pre)
+
+            $pre.appendTo($terminal)
+        }
+        </script>
+
+    <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
+    <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 </head>
 <body>
 
-  <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-fixed page-header-dark main-content-narrow">
+  <div id="page-container" class="sidebar-o enable-page-overlay side-scroll _page-header-fixed page-header-light main-content-narrow">
 
       <!-- Sidebar -->
       <!--
@@ -61,19 +113,19 @@
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
             <ul class="nav-main">
-                <li class="nav-main-item">
-                    <a class="nav-main-link" asp-controller="RegateText" asp-action="Index">
-                        <i class="nav-main-link-icon si si-grid"></i>
-                        <span class="nav-main-link-name">RegateText</span>
-                    </a>
-                </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" asp-controller="RegateFile" asp-action="Index">
-                        <i class="nav-main-link-icon si si-grid"></i>
-                        <span class="nav-main-link-name">RegateFile</span>
-                    </a>
-                </li>
-            </ul>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/text">
+            <i class="nav-main-link-icon si si-pencil"></i>
+            <span class="nav-main-link-name">RegateText</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/file">
+            <i class="nav-main-link-icon si si-book-open"></i>
+            <span class="nav-main-link-name">RegateFile</span>
+        </a>
+    </li>
+</ul>
         </div>
         <!-- END Side Navigation -->
       </nav>
@@ -83,7 +135,33 @@
       <header id="page-header">
           <!-- Header Content -->
           <div class="content-header">
-              <b>RegateFile</b>
+                <!-- Left Section -->
+                <div>
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
+                    <button type="button" class="btn btn-dual mr-1" data-toggle="layout" data-action="sidebar_toggle">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+
+                    <b>RegateFile</b>
+                </div>
+                <!-- END Left Section -->
+              
+                <div>
+                    <ul class="nav">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/regate/">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/regate/components">Components</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/regatejs/regate">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
           </div>
           <!-- END Header Content -->
       </header>
@@ -93,152 +171,127 @@
         
         
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-<form method="get">
-  <div class="content">
-      <div class="block block-rounded block-bordered">
-        <div class="block-header block-header-default">
-          <h3 class="block-title" id="basic">Basic <a class="permalink-anchor" href="/components/file/#basic">#</a></h3>
-        </div>
-        <div class="block-content block-content-full">
-          <div>
-            <div id="RegateFile__Avatar__735481491eaf478da4e72947495f99ad">
-              <div data-role='RegateFile'>
-  <div class='input-group'>
-    <div class='input-group-prepend' data-role='uploadContainer'>
-      <button type='button'
-          class='btn btn-secondary'
-          data-role='upload'>
-        <i class='fa fa-search mr-1'></i> CHOOSE
-      </button>
-    </div>
-
-    <input type='text'
-      style='pointer-events: none;'
-      onfocus='this.blur();'
-      data-role='input'
-      class='form-control' />
-
-    <div class='input-group-append' data-role='assetContainer'>
-      <button type='button' class='btn btn-outline-secondary' data-role='remove'>
-        <i class='fa fa-fw fa-times'></i>
-      </button>
-      <a href='#' target='_blank' class='btn btn-outline-secondary' data-role='view'>
-        <i class='fa fa-fw fa-download'></i>
-      </a>
-    </div>
-  </div>
-</div>
-              <script>function initRegateFile({
-  uniqueId,
-  name,
-  value,
-  isRequired,
-  uploaderUrl,
-  repositoryUrl,
-}) {
-  var popup = function (url, title, w, h) {
-    // Fixes dual-screen position             Most browsers    Firefox
-    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
-    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
-
-    var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-    var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
-
-    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
-    var top = ((height / 2) - (h / 2)) + dualScreenTop;
-    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
-
-    // Puts focus on the newWindow
-    if (window.focus) {
-      newWindow.focus();
-    }
-
-    return false;
-  }
-
-  var _container = document.getElementById(uniqueId);
-  var _regate = _container.querySelector('[data-role=RegateFile]');
-  var _input = _container.querySelector('[data-role=input]');
-  var _remove = _container.querySelector('[data-role=remove]');
-  var _view = _container.querySelector('[data-role=view]');
-  var _upload = _container.querySelector('[data-role=upload]');
   
-  _input.name = name;
 
-  if (isRequired === true) {
-    _input.required = true;
-  }
+<div class="content">
+  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
+  <p>
+    This is the most basic usage of <code>RegateFile</code>.
+  </p>
 
-  _remove.onclick = function () {
-    _input.value = '';
-    delete _regate.dataset.hasvalue;
-    return false;
-  };
-
-  window['RegateFile__setterCallback'] = function (fieldName, fileName) {
-    var _container = document.getElementById(fieldName);
-    var _input = _container.querySelector('[data-role=input]');
-    var _regate = _container.querySelector('[data-role=RegateFile]');
-    var _view = _container.querySelector('[data-role=view]');
-
-    _input.value = fileName;
-    _regate.dataset.hasvalue = true;
-    _view.href = repositoryUrl + fileName;
-  };
-
-  _upload.onclick = function () {
-    popup(uploaderUrl + '?field=' + uniqueId, 'RegateFileUploader', 400, 600);
-    return false;
-  };
-
-  if (value !== undefined && value !== '') {
-    _input.value = value;
-    _regate.dataset.hasvalue = true;
-    _view.href = repositoryUrl + value;
-  }
-}
-</script>
-              <style>[data-role='RegateFile'] [data-role='assetContainer'] {
-  display: none;
-}
-
-[data-role='RegateFile'][data-hasvalue] [data-role='assetContainer'] {
-  display: flex;
-}
-
-[data-role='RegateFile'][data-hasvalue] [data-role='uploadContainer'] {
-  display: none;
-}</style>
-              <script>
-                initRegateFile({
-                  uniqueId: 'RegateFile__Avatar__735481491eaf478da4e72947495f99ad',
-                  name: 'Avatar',
-                  isRequired: true,
-                  value: 'salam',
-                  uploaderUrl: '/uploader',
-                  repositoryUrl: '/repository/'
-                })
-              </script>
-
-            </div>
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateFile.markup('basic-example'))</script>
+            <script>
+              Regate.RegateFile.init({
+                id: 'basic-example',
+                name: 'MagazineCover',
+                uploaderUrl: '/uploader/',
+                repositoryUrl: 'https://never.hood/',
+              })
+            </script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
           </div>
         </div>
-        <div class="block-content block-content-full block-content-sm bg-body-light text-right">
-          <button type="submit" class="btn btn-sm btn-success">
-            <i class="fa fa-check"></i>
-            SUBMIT
-          </button>
-        </div>
-      </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+  id: &#39;basic-example&#39;,
+  name: &#39;MagazineCover&#39;,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
-</form>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
+  <p>
+    With <code>value</code> property you can set an initial value for your input.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateFile.markup('value-example'))</script>
+            <script>
+              Regate.RegateFile.init({
+                id: 'value-example',
+                name: 'MagazineCover',
+                value: 'magazine.pdf',
+                uploaderUrl: '/uploader/',
+                repositoryUrl: 'https://never.hood/',
+              })
+            </script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+  id: &#39;value-example&#39;,
+  name: &#39;MagazineCover&#39;,
+  value: &#39;magazine.pdf&#39;,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
+  <p>
+    You can required your field with <code>isRequired</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateFile.markup('required-example'))</script>
+            <script>
+              Regate.RegateFile.init({
+                id: 'required-example',
+                name: 'MagazineCover',
+                isRequired: true,
+                uploaderUrl: '/uploader/',
+                repositoryUrl: 'https://never.hood/',
+              })
+            </script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+  id: &#39;required-example&#39;,
+  name: &#39;MagazineCover&#39;,
+  isRequired: true,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
 
 
         
@@ -261,8 +314,11 @@
   </div>
 
 
-  <script src="../../dashmix/js/dashmix.app.min.js"></script>
+  <script src="/regate/dashmix/js/dashmix.app.min.js"></script>
 
+    <script src="/regate/dashmix/js/plugins/highlightjs/highlight.pack.min.js"></script>
+
+    <script>jQuery(function(){ Dashmix.helpers('highlightjs'); });</script>
 
   <style>
       pre.sample-code {
@@ -286,7 +342,38 @@
       .block-header .permalink-anchor {
           display: none;
       }
+
+      .regate-example-container{margin:25px 0;background:white}
+    .regate-example-container .regate-example{border:0.2rem solid #e6ebf4;padding:20px 20px}
+    .regate-example-container .regate-code{background:#f9fafc}
+    .regate-example-container .regate-code pre{border-top-left-radius:0;border-top-right-radius:0;margin:0}
+    .regate-example-container .regate-code pre code{padding:15px 20px;background:transparent}
+    .regate-example-container .regate-terminal{background:#e3e3ea;border-radius:0;padding:15px 20px}
+    .regate-example-container .regate-terminal pre{margin:0}
+    .regate-example-container .regate-terminal [data-type="string"]{color:maroon}
+    .regate-example-container .regate-terminal [data-type="boolean"]{color:purple}
+    .regate-example-container .regate-terminal [data-type="number"]{color:blue}
+    .regate-example-container .regate-terminal [data-type="title"]{color:gray}
+    .regate-example-container .regate-terminal [data-type="value"]{color:black}
+    .regate-example-container .regate-terminal code{display:inline-block}
+    .regate-example-container .regate-terminal code+code{margin-left:20px}
+    .regate-example-container .regate-terminal:before{opacity:0.3;font-family:monospace}
+    .regate-example-container .regate-terminal:empty:before{content:'OUTPUT'}
+    .regate-example-container .regate-serialize { font-family:monospace; padding: 5px 20px; font-size:87.5%; }
+    .regate-example-container .regate-serialize:empty:before { content: 'SUBMITTED FORM DATA WILL BE SHOWN HERE'; opacity: 0.3;}
+
+    .permalink-anchor { visibility: hidden; }
+    h2:hover .permalink-anchor { visibility: visible; }
   </style>
+
+  <script>
+    $('.regate-example form').on('submit', function (e) {
+        e.preventDefault();
+        var $example = $(this).closest('.regate-example-container');
+        var $serialize = $example.find('.regate-serialize');
+        $serialize.html( $( this ).serialize() );
+    });
+  </script>
 </body>
 </html>
 
