@@ -1,6 +1,6 @@
 {% extends '_layout.nunjucks' %}
 
-{% set title = 'Homepage' %}
+{% set title = 'Regate Components' %}
 
 {% block body %}
 

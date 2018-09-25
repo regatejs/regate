@@ -106,7 +106,7 @@ function writeToPath(targetPath, data) {
 }
 
 var app = (0, _express2.default)();
-var port = 3000;
+var port = 3003;
 var siteUrl = '/';
 var themeUrl = '/';
 
