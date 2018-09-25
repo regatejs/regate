@@ -17,7 +17,7 @@
       <form method="get">
         <div>
           <div class="input-group">
-            <template id="onchange-example"></template>
+            <script>document.write(Regate.RegateText.markup('onchange-example'))</script>
             <div class="input-group-append">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
@@ -28,9 +28,9 @@
               id: 'onchange-example',
               name: 'Title',
               onChange: function ({value, isValid}) {
-                konsoleClear('basic-terminal')
-                konsole('basic-terminal', ' string', '  value', value);
-                konsole('basic-terminal', 'boolean', 'isValid', isValid);
+                konsoleClear('onchange-terminal')
+                konsole('onchange-terminal', ' string', '  value', value);
+                konsole('onchange-terminal', 'boolean', 'isValid', isValid);
               }
             })
           </script>
@@ -40,7 +40,7 @@
     
     <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
 
-    <div class="regate-terminal" id="basic-terminal"></div>
+    <div class="regate-terminal" id="onchange-terminal"></div>
   </div>
 </div>
 

@@ -13,11 +13,10 @@ RegateText.init = function ({
   if (id === undefined)
     throw new Error('id is required')
 
-  var _container = document.getElementById(id)
-  _container.insertAdjacentHTML('afterend', RegateText.markup(id))
-  _container.parentNode.removeChild(_container)
+  const _input = document.getElementById(id + '__input')
 
-  var _input = document.getElementById(id + '__input')
+  if (_input === undefined)
+    throw new Error('id is invalid')
 
   _input.name = name
 

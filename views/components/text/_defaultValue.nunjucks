@@ -17,7 +17,7 @@
       <form method="get">
         <div>
           <div class="input-group">
-            <template id="value-example"></template>
+            <script>document.write(Regate.RegateText.markup('value-example'))</script>
             <div class="input-group-append">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
