@@ -23,7 +23,7 @@
                 id: 'required-example',
                 name: 'MagazineCover',
                 isRequired: true,
-                uploaderUrl: '/uploader/',
+                uploaderUrl: '{{ siteUrl }}uploader',
                 repositoryUrl: 'https://never.hood/',
               })
             </script>

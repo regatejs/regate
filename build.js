@@ -36,6 +36,7 @@ const views = {
 }
 
 for (let view in views) {
+  console.log(`Building: ${view} => ${views[view]}`)
   const output = nunjucks.render(view, { siteUrl, themeUrl })
   writeToPath(views[view], output)
 }

@@ -23,7 +23,7 @@
                 id: 'value-example',
                 name: 'MagazineCover',
                 value: 'magazine.pdf',
-                uploaderUrl: '/uploader/',
+                uploaderUrl: '{{ siteUrl }}uploader',
                 repositoryUrl: 'https://never.hood/',
               })
             </script>
