@@ -1,5 +1,7 @@
 const RegateFile = {}
 
+RegateFile.instances = {}
+
 RegateFile.init = function ({
   id,
   name,
@@ -8,6 +10,16 @@ RegateFile.init = function ({
   uploaderUrl,
   repositoryUrl,
 }) {
+
+  const instance = {
+    id,
+    name,
+    value,
+    isRequired,
+    uploaderUrl,
+    repositoryUrl,
+  }
+  RegateFile.instances[id] = instance
 
   if (id === undefined)
     throw new Error('id is required')
@@ -51,6 +63,10 @@ RegateFile.init = function ({
     popup(uploaderUrl + '?id=' + id, 'RegateFileUploader', 400, 600)
     return false
   }
+
+  _remove.onclick = () => {
+    RegateFile.set(id, '')
+  }
 }
 
 
@@ -90,9 +106,19 @@ RegateFile.set = (id, value) => {
   const _upload = document.getElementById(id + '__upload')
 
   _input.value = value
-  _remove.style.display = 'flex'
-  _view.style.display = 'flex'
-  _upload.style.display = 'none'
+  _view.href = (RegateFile.instances[id].repositoryUrl || '') + value
+
+  if (value !== '') {
+    _remove.style.display = 'flex'
+    _view.style.display = 'flex'
+    _upload.style.display = 'none'
+  }
+  else {
+    _remove.style.display = 'none'
+    _view.style.display = 'none'
+    _upload.style.display = 'flex'
+  }
+  
 }
 
 export default RegateFile

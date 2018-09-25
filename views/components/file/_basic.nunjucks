@@ -3,6 +3,7 @@
   id: 'basic-example',
   name: 'CoverPhoto',
   uploaderUrl: '/uploader/',
+  repositoryUrl: 'https://never.hood/',
 })"
 %}
 
@@ -15,34 +16,14 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="_input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateFile.markup('basic-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            <script>{{ script|safe }}</script>
           </div>
-          
-
-          <div class="input-group">
-                        <div class="input-group-prepend" data-role="uploadContainer">
-                            <button type="button" class="btn btn-secondary" data-role="upload">
-                                <i class="fa fa-search mr-1"></i> انتخاب فایل
-                            </button>
-                        </div>
-
-                        <input type="text" style="pointer-events: none;" onfocus="this.blur();" data-role="input" class="form-control" name="Avatar">
-
-                        <div class="input-group-append" data-role="assetContainer">
-                            <button type="button" class="btn btn-outline-secondary" data-role="remove">
-                                <i class="fa fa-fw fa-times"></i>
-                            </button>
-                            <a href="#" target="_blank" class="btn btn-outline-secondary" data-role="view">
-                                <i class="fa fa-fw fa-download"></i>
-                            </a>
-                        </div>
-                    </div>
-          <script>{{ script|safe }}</script>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>

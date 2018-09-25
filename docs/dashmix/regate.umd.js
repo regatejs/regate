@@ -172,6 +172,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 var RegateFile = {};
 
+RegateFile.instances = {};
+
 RegateFile.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
@@ -180,6 +182,16 @@ RegateFile.init = function (_ref) {
       uploaderUrl = _ref.uploaderUrl,
       repositoryUrl = _ref.repositoryUrl;
 
+
+  var instance = {
+    id: id,
+    name: name,
+    value: value,
+    isRequired: isRequired,
+    uploaderUrl: uploaderUrl,
+    repositoryUrl: repositoryUrl
+  };
+  RegateFile.instances[id] = instance;
 
   if (id === undefined) throw new Error('id is required');
 
@@ -219,6 +231,10 @@ RegateFile.init = function (_ref) {
     popup(uploaderUrl + '?id=' + id, 'RegateFileUploader', 400, 600);
     return false;
   };
+
+  _remove.onclick = function () {
+    RegateFile.set(id, '');
+  };
 };
 
 RegateFile.markup = function (id) {
@@ -232,9 +248,17 @@ RegateFile.set = function (id, value) {
   var _upload = document.getElementById(id + '__upload');
 
   _input.value = value;
-  _remove.style.display = 'flex';
-  _view.style.display = 'flex';
-  _upload.style.display = 'none';
+  _view.href = (RegateFile.instances[id].repositoryUrl || '') + value;
+
+  if (value !== '') {
+    _remove.style.display = 'flex';
+    _view.style.display = 'flex';
+    _upload.style.display = 'none';
+  } else {
+    _remove.style.display = 'none';
+    _view.style.display = 'none';
+    _upload.style.display = 'flex';
+  }
 };
 
 exports.default = RegateFile;
