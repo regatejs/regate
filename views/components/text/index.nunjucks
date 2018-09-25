@@ -5,11 +5,11 @@
 {% block body %}
 
   {% include './_basic.nunjucks' %}
-  {% include './_defaultValue.nunjucks' %}
+  {% include './_value.nunjucks' %}
+  {% include './_required.nunjucks' %}
   {% include './_onChange.nunjucks' %}
   {#
   {% include './_placeholder.nunjucks' %}
-  {% include './_required.nunjucks' %}
   {% include './_onInitialized.nunjucks' %}
   #}
 

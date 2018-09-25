@@ -29,6 +29,7 @@
     </div>
     
     <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
 

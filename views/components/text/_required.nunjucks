@@ -1,31 +1,35 @@
-<form method="get">
-  <div class="content">
-    <div class="block block-rounded block-bordered">
-      <div class="block-header block-header-default">
-        <h3 class="block-title" id="required">
-          Required <a class="permalink-anchor" href="/components/text/#required">#</a>
-        </h3>
-      </div>
-      <div class="block-content block-content-full">
+{% set script = 
+"Regate.RegateText.init({
+  id: 'required-example',
+  name: 'Title',
+  isRequired: true,
+})"
+%}
+
+<div class="content">
+  <h2 id="required">Required <a class="permalink-anchor" href="{{ siteUrl }}components/text/#required">#</a></h2>
+  <p>
+    You can required your field with <code>isRequired</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
         <div>
-          <div id="uniqueId_required">
-            <script>Regate.RegateText.markup(true)</script>
-            <script>
-              Regate.Text.init({
-                uniqueId: 'uniqueId_required',
-                name: 'Title',
-                isRequired: true,
-              })
-            </script>
+          <div class="input-group">
+            <script>document.write(Regate.RegateText.markup('required-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
           </div>
+          
+          <script>{{ script|safe }}</script>
         </div>
-      </div>
-      <div class="block-content block-content-full block-content-sm bg-body-light text-right">
-        <button type="submit" class="btn btn-sm btn-success">
-          <i class="fa fa-check"></i>
-          SUBMIT
-        </button>
-      </div>
+      </form>
     </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
-</form>
+</div>
+
