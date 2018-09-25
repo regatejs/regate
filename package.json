@@ -9,7 +9,7 @@
     "build:commonjs": "babel src --out-dir dist",
     "build:umd": "webpack",
     "docs": "npm run build && node build.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "author": "",
   "license": "MIT",
@@ -30,6 +30,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "jest": "^23.6.0",
     "nodemon": "^1.12.5",
     "webpack": "^3.10.0",
     "webpack-node-externals": "^1.6.0"
