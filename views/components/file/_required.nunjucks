@@ -1,14 +1,15 @@
 {% set script = 
 "Regate.RegateFile.init({
-  id: 'basic-example',
+  id: 'required-example',
   name: 'MagazineCover',
+  isRequired: true,
 })"
 %}
 
 <div class="content">
-  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
+  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
   <p>
-    This is the most basic usage of <code>RegateFile</code>.
+    You can required your field with <code>isRequired</code> property.
   </p>
 
   <div class="regate-example-container">
@@ -16,11 +17,12 @@
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('basic-example'))</script>
+            <script>document.write(Regate.RegateFile.markup('required-example'))</script>
             <script>
               Regate.RegateFile.init({
-                id: 'basic-example',
+                id: 'required-example',
                 name: 'MagazineCover',
+                isRequired: true,
                 uploaderUrl: '/uploader/',
                 repositoryUrl: 'https://never.hood/',
               })

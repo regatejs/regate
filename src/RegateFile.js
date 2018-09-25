@@ -38,7 +38,7 @@ RegateFile.init = function ({
     _input.required = true
 
   if (value !== undefined)
-    _input.value = value
+    RegateFile.set(id, value)
 
     const popup = function (url, title, w, h) {
       const dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left

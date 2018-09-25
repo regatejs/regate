@@ -206,7 +206,7 @@ RegateFile.init = function (_ref) {
 
   if (isRequired === true) _input.required = true;
 
-  if (value !== undefined) _input.value = value;
+  if (value !== undefined) RegateFile.set(id, value);
 
   var popup = function popup(url, title, w, h) {
     var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
