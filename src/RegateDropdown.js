@@ -17,9 +17,6 @@ RegateDropdown.init = function ({
 
   _input.name = name
 
-  if (value !== undefined)
-    _input.value = value
-
   options.forEach(option => {
     const _option = document.createElement('option')
     _option.value = option.key
@@ -28,6 +25,8 @@ RegateDropdown.init = function ({
     _input.appendChild(_option)
   })
   
+  if (value !== undefined)
+    _input.value = value
 }
 
 
