@@ -1,0 +1,38 @@
+{% set script = 
+"Regate.RegateTextarea.init({
+  id: 'placeholder-example',
+  name: 'Title',
+  placeholder: 'Please enter title',
+})"
+%}
+
+<div class="content">
+  <h2 id="placeholder">
+    Placeholder
+    <a class="permalink-anchor" href="#placeholder">#</a>
+  </h2>
+  <p>
+    You can set the placeholder of textbox with <code>placeholder</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('placeholder-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>{{ script|safe }}</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

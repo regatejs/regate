@@ -331,7 +331,7 @@ RegateTextarea.init = function (_ref) {
 };
 
 RegateTextarea.markup = function (id) {
-  return '\n  <input\n    id=\'' + id + '__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
+  return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></textarea>\n';
 };
 
 exports.default = RegateTextarea;

@@ -1,0 +1,35 @@
+{% set script = 
+"Regate.RegateTextarea.init({
+  id: 'value-example',
+  name: 'Title',
+  value: 'Hello World',
+})"
+%}
+
+<div class="content">
+  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
+  <p>
+    With <code>value</code> property you can set an initial value for your textbox.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('value-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>{{ script|safe }}</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

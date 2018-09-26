@@ -1,0 +1,35 @@
+{% set script = 
+"Regate.RegateTextarea.init({
+  id: 'required-example',
+  name: 'Title',
+  isRequired: true,
+})"
+%}
+
+<div class="content">
+  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
+  <p>
+    You can required your field with <code>isRequired</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('required-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>{{ script|safe }}</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

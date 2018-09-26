@@ -1,0 +1,14 @@
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'RegateTextarea' %}
+
+{% block body %}
+
+  {% include './_basic.nunjucks' %}
+  {% include './_value.nunjucks' %}
+  {% include './_required.nunjucks' %}
+  {% include './_placeholder.nunjucks' %}
+  {% include './_onChange.nunjucks' %}
+  {% include './_onInitialized.nunjucks' %}
+
+{% endblock %}

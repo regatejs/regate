@@ -1,0 +1,53 @@
+{% set script = 
+"Regate.RegateTextarea.init({
+  id: 'onchange-example',
+  name: 'Title',
+  onChange: function ({value, isValid}) {
+    console.log(value, isValid)
+  }
+})"
+%}
+
+<div class="content">
+  <h2 id="onchange">
+    onChange
+    <a class="permalink-anchor" href="#onchange">#</a>
+  </h2>
+  <p>
+    With <code>onChange</code> event you can get value of textbox on every user interaction with textbox.
+    Originally, Regate will bind this event to the <code>oninput</code> event of textbox.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('onchange-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>
+            Regate.RegateTextarea.init({
+              id: 'onchange-example',
+              name: 'Title',
+              onChange: function ({value, isValid}) {
+                konsoleClear('onchange-terminal')
+                konsole('onchange-terminal', ' string', '  value', value);
+                konsole('onchange-terminal', 'boolean', 'isValid', isValid);
+              }
+            })
+          </script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+
+    <div class="regate-terminal" id="onchange-terminal"></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
