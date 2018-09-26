@@ -6,6 +6,7 @@ RegateTextarea.init = function ({
   value = '',
   isRequired = false,
   placeholder = '',
+  size = 'medium',
   onInitialized,
   onChange,
 }) {
@@ -48,6 +49,18 @@ RegateTextarea.init = function ({
       onChange({value, isValid})
     }
   }
+
+  /*
+   * size : small, medium, large
+   */
+  const sizePixel =
+    size === 'small'  ? 150 :
+    size === 'medium' ? 200 :
+    size === 'large'  ? 300 : 200
+
+  console.log(sizePixel)
+
+  _input.style.height = sizePixel + 'px'
 }
 
 
@@ -55,6 +68,7 @@ RegateTextarea.markup = (id) => `
   <textarea
     id='${id}__input'
     class='form-control'
+    style='resize: none;'
   ></textarea>
 `
 

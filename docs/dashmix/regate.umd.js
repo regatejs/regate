@@ -295,6 +295,8 @@ RegateTextarea.init = function (_ref) {
       isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
+      _ref$size = _ref.size,
+      size = _ref$size === undefined ? 'medium' : _ref$size,
       onInitialized = _ref.onInitialized,
       onChange = _ref.onChange;
 
@@ -328,10 +330,19 @@ RegateTextarea.init = function (_ref) {
       onChange({ value: value, isValid: isValid });
     };
   }
+
+  /*
+   * size : small, medium, large
+   */
+  var sizePixel = size === 'small' ? 150 : size === 'medium' ? 200 : size === 'large' ? 300 : 200;
+
+  console.log(sizePixel);
+
+  _input.style.height = sizePixel + 'px';
 };
 
 RegateTextarea.markup = function (id) {
-  return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></textarea>\n';
+  return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n    style=\'resize: none;\'\n  ></textarea>\n';
 };
 
 exports.default = RegateTextarea;

@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var RegateText = {};
+var RegateTextarea = {};
 
-RegateText.init = function (_ref) {
+RegateTextarea.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
       _ref$value = _ref.value,
@@ -52,8 +52,8 @@ RegateText.init = function (_ref) {
   }
 };
 
-RegateText.markup = function (id) {
-  return '\n  <input\n    id=\'' + id + '__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
+RegateTextarea.markup = function (id) {
+  return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></textarea>\n';
 };
 
-exports.default = RegateText;
+exports.default = RegateTextarea;

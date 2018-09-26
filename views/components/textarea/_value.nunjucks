@@ -2,7 +2,7 @@
 "Regate.RegateTextarea.init({
   id: 'value-example',
   name: 'Title',
-  value: 'Hello World',
+  value: 'Hello\\nWorld',
 })"
 %}
 
