@@ -368,10 +368,14 @@ RegateImage.instances = {};
 RegateImage.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
-      value = _ref.value,
-      isRequired = _ref.isRequired,
-      uploaderUrl = _ref.uploaderUrl,
-      repositoryUrl = _ref.repositoryUrl;
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? '' : _ref$value,
+      _ref$isRequired = _ref.isRequired,
+      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
+      _ref$uploaderUrl = _ref.uploaderUrl,
+      uploaderUrl = _ref$uploaderUrl === undefined ? '/' : _ref$uploaderUrl,
+      _ref$repositoryUrl = _ref.repositoryUrl,
+      repositoryUrl = _ref$repositoryUrl === undefined ? '/' : _ref$repositoryUrl;
 
 
   var instance = {
@@ -429,7 +433,7 @@ RegateImage.init = function (_ref) {
 };
 
 RegateImage.markup = function (id) {
-  return '\n  <div data-role=\'RegateImage\'>\n      <div class=\'input-group\'>\n          <div class=\'input-group-prepend\'>\n              <button type=\'button\'\n                      class=\'btn btn-secondary\'\n                      id=\'' + id + '__upload\'>\n                  <i class=\'fa fa-search mr-1\'></i> CHOOSE\n              </button>\n          </div>\n\n          <input type=\'text\'\n                  style=\'pointer-events: none;\'\n                  onfocus=\'this.blur();\'\n                  id=\'' + id + '__input\'\n                  class=\'form-control\' />\n\n          <div class=\'input-group-append\'>\n              <button type=\'button\' class=\'btn btn-outline-secondary\' id=\'' + id + '__remove\' style=\'display: none;\'>\n                  <i class=\'fa fa-fw fa-times\'></i>\n              </button>\n              <a href=\'#\' target=\'_blank\' class=\'btn btn-outline-secondary\' id=\'' + id + '__view\' style=\'display: none;\'>\n                  <i class=\'fa fa-fw fa-download\'></i>\n              </a>\n          </div>\n      </div>\n  </div>\n';
+  return '\n  <div data-role=\'RegateImage\'>\n      <div class=\'input-group\'>\n          <div class=\'input-group-prepend\'>\n              <button type=\'button\'\n                      class=\'btn btn-secondary\'\n                      id=\'' + id + '__upload\'>\n                  <i class=\'fa fa-search mr-1\'></i> CHOOSE\n              </button>\n          </div>\n\n          <input type=\'text\'\n                  style=\'pointer-events: none;\'\n                  onfocus=\'this.blur();\'\n                  id=\'' + id + '__input\'\n                  class=\'form-control\' />\n\n          <div class=\'input-group-append\'>\n              <button type=\'button\' class=\'btn btn-outline-secondary\' id=\'' + id + '__remove\' style=\'display: none;\'>\n                  <i class=\'fa fa-fw fa-times\'></i>\n              </button>\n              <a href=\'#\' target=\'_blank\' class=\'btn btn-outline-secondary\' id=\'' + id + '__view\' style=\'display: none;\'>\n                  <i class=\'fa fa-fw fa-download\'></i>\n              </a>\n          </div>\n      </div>\n      \n      <img id=\'' + id + '__image\'\n        style=\'display: none; max-width: 200px; max-height: 150px;\'\n      />\n  </div>\n';
 };
 
 RegateImage.set = function (id, value) {
@@ -437,18 +441,26 @@ RegateImage.set = function (id, value) {
   var _remove = document.getElementById(id + '__remove');
   var _view = document.getElementById(id + '__view');
   var _upload = document.getElementById(id + '__upload');
+  var _image = document.getElementById(id + '__image');
 
   _input.value = value;
-  _view.href = (RegateImage.instances[id].repositoryUrl || '') + value;
 
   if (value !== '') {
     _remove.style.display = 'flex';
     _view.style.display = 'flex';
     _upload.style.display = 'none';
+    _image.style.display = 'block';
+
+    _view.href = (RegateImage.instances[id].repositoryUrl || '') + value;
+    _image.src = (RegateImage.instances[id].repositoryUrl || '') + value;
   } else {
     _remove.style.display = 'none';
     _view.style.display = 'none';
     _upload.style.display = 'flex';
+    _image.style.display = 'none';
+
+    _view.href = '';
+    _image.src = '';
   }
 };
 

@@ -2,7 +2,7 @@
 "Regate.RegateImage.init({
   id: 'value-example',
   name: 'MagazineCover',
-  value: 'magazine.jpg',
+  value: 'sample.png',
 })"
 %}
 
@@ -22,9 +22,9 @@
               Regate.RegateImage.init({
                 id: 'value-example',
                 name: 'MagazineCover',
-                value: 'magazine.pdf',
+                value: 'sample.png',
                 uploaderUrl: '{{ siteUrl }}uploader',
-                repositoryUrl: 'https://never.hood/',
+                repositoryUrl: '{{ themeUrl }}',
               })
             </script>
           </div>

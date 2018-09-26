@@ -5,10 +5,10 @@ RegateImage.instances = {}
 RegateImage.init = function ({
   id,
   name,
-  value,
-  isRequired,
-  uploaderUrl,
-  repositoryUrl,
+  value = '',
+  isRequired = false,
+  uploaderUrl = '/',
+  repositoryUrl = '/',
 }) {
 
   const instance = {
@@ -96,6 +96,10 @@ RegateImage.markup = (id) => `
               </a>
           </div>
       </div>
+      
+      <img id='${id}__image'
+        style='display: none; max-width: 200px; max-height: 150px;'
+      />
   </div>
 `
 
@@ -104,19 +108,27 @@ RegateImage.set = (id, value) => {
   const _remove = document.getElementById(id + '__remove')
   const _view = document.getElementById(id + '__view')
   const _upload = document.getElementById(id + '__upload')
+  const _image = document.getElementById(id + '__image')
 
   _input.value = value
-  _view.href = (RegateImage.instances[id].repositoryUrl || '') + value
 
   if (value !== '') {
     _remove.style.display = 'flex'
     _view.style.display = 'flex'
     _upload.style.display = 'none'
+    _image.style.display = 'block'
+
+    _view.href = (RegateImage.instances[id].repositoryUrl || '') + value
+    _image.src = (RegateImage.instances[id].repositoryUrl || '') + value
   }
   else {
     _remove.style.display = 'none'
     _view.style.display = 'none'
     _upload.style.display = 'flex'
+    _image.style.display = 'none'
+
+    _view.href = ''
+    _image.src = ''
   }
   
 }
