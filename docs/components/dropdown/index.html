@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>RegateFile - Regate</title>
+    <title>RegateDropdown - Regate</title>
 
     <script src="/regate/dashmix/js/core/jquery.min.js"></script>
     <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
@@ -174,7 +174,7 @@
                     </button>
                     <!-- END Toggle Sidebar -->
 
-                    <b>RegateFile</b>
+                    <b>RegateDropdown</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -206,7 +206,7 @@
 <div class="content">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
   <p>
-    This is the most basic usage of <code>RegateFile</code>.
+    This is the most basic usage of <code>RegateDropdown</code>.
   </p>
 
   <div class="regate-example-container">
@@ -214,15 +214,16 @@
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('basic-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'basic-example',
-                name: 'MagazineCover',
-                uploaderUrl: '/regate/uploader',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
+            <script>document.write(Regate.RegateDropdown.markup('basic-example'))</script>
+            <script>Regate.RegateDropdown.init({
+  id: 'basic-example',
+  name: 'Fruit',
+  options: [
+    { key: '1', value: 'Apple' },
+    { key: '2', value: 'Orange' },
+    { key: '3', value: 'Banana' },
+  ]
+})</script>
           </div>
           <div class="col-lg-2 col-md-3">
             <button type="submit" class="btn btn-block btn-primary">Submit</button>
@@ -231,9 +232,14 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateDropdown.init({
   id: &#39;basic-example&#39;,
-  name: &#39;MagazineCover&#39;,
+  name: &#39;Fruit&#39;,
+  options: [
+    { key: &#39;1&#39;, value: &#39;Apple&#39; },
+    { key: &#39;2&#39;, value: &#39;Orange&#39; },
+    { key: &#39;3&#39;, value: &#39;Banana&#39; },
+  ]
 })</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
@@ -244,25 +250,23 @@
 
 <div class="content">
   <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
-  <p>
-    With <code>value</code> property you can set an initial value for your input.
-  </p>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('value-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'value-example',
-                name: 'MagazineCover',
-                value: 'magazine.pdf',
-                uploaderUrl: '/regate/uploader',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
+            <script>document.write(Regate.RegateDropdown.markup('value-example'))</script>
+            <script>Regate.RegateDropdown.init({
+  id: 'value-example',
+  name: 'Fruit',
+  value: '2',
+  options: [
+    { key: '1', value: 'Apple' },
+    { key: '2', value: 'Orange' },
+    { key: '3', value: 'Banana' },
+  ]
+})</script>
           </div>
           <div class="col-lg-2 col-md-3">
             <button type="submit" class="btn btn-block btn-primary">Submit</button>
@@ -271,10 +275,15 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateDropdown.init({
   id: &#39;value-example&#39;,
-  name: &#39;MagazineCover&#39;,
-  value: &#39;magazine.pdf&#39;,
+  name: &#39;Fruit&#39;,
+  value: &#39;2&#39;,
+  options: [
+    { key: &#39;1&#39;, value: &#39;Apple&#39; },
+    { key: &#39;2&#39;, value: &#39;Orange&#39; },
+    { key: &#39;3&#39;, value: &#39;Banana&#39; },
+  ]
 })</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
@@ -285,25 +294,23 @@
 
 <div class="content">
   <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
-  <p>
-    You can required your field with <code>isRequired</code> property.
-  </p>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('required-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'required-example',
-                name: 'MagazineCover',
-                isRequired: true,
-                uploaderUrl: '/regate/uploader',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
+            <script>document.write(Regate.RegateDropdown.markup('required-example'))</script>
+            <script>Regate.RegateDropdown.init({
+  id: 'required-example',
+  name: 'Fruit',
+  isRequired: true,
+  options: [
+    { key: '1', value: 'Apple' },
+    { key: '2', value: 'Orange' },
+    { key: '3', value: 'Banana' },
+  ]
+})</script>
           </div>
           <div class="col-lg-2 col-md-3">
             <button type="submit" class="btn btn-block btn-primary">Submit</button>
@@ -312,10 +319,15 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateDropdown.init({
   id: &#39;required-example&#39;,
-  name: &#39;MagazineCover&#39;,
+  name: &#39;Fruit&#39;,
   isRequired: true,
+  options: [
+    { key: &#39;1&#39;, value: &#39;Apple&#39; },
+    { key: &#39;2&#39;, value: &#39;Orange&#39; },
+    { key: &#39;3&#39;, value: &#39;Banana&#39; },
+  ]
 })</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>

@@ -31,6 +31,9 @@ const views = {
   'components/text/index.nunjucks': './docs/components/text/index.html',
   'components/file/index.nunjucks': './docs/components/file/index.html',
   'components/image/index.nunjucks': './docs/components/image/index.html',
+  'components/contenteditable/index.nunjucks': './docs/components/contenteditable/index.html',
+  'components/ckeditor/index.nunjucks': './docs/components/ckeditor/index.html',
+  'components/dropdown/index.nunjucks': './docs/components/dropdown/index.html',
 
   'uploader.nunjucks': './docs/uploader/index.html',
   'homepage.nunjucks': './docs/index.html',
@@ -38,7 +41,11 @@ const views = {
 }
 
 for (let view in views) {
-  console.log(`Building: ${view} => ${views[view]}`)
+  console.log(`Building`)
+  console.log(`  $ ${view}`)
+  console.log(`  λ ${views[view]}`)
+  console.log('')
+  
   const output = nunjucks.render(view, { siteUrl, themeUrl })
   writeToPath(views[view], output)
 }
