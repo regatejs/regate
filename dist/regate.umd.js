@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -109,6 +109,10 @@ var _RegateCkeditor = __webpack_require__(6);
 
 var _RegateCkeditor2 = _interopRequireDefault(_RegateCkeditor);
 
+var _RegateDropdown = __webpack_require__(7);
+
+var _RegateDropdown2 = _interopRequireDefault(_RegateDropdown);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
@@ -117,6 +121,7 @@ exports.RegateImage = _RegateImage2.default;
 exports.RegateTextarea = _RegateTextarea2.default;
 exports.RegateContentEditable = _RegateContentEditable2.default;
 exports.RegateCkeditor = _RegateCkeditor2.default;
+exports.RegateDropdown = _RegateDropdown2.default;
 
 /***/ }),
 /* 1 */
@@ -566,6 +571,51 @@ RegateCkeditor.markup = function (id) {
   return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></textarea>\n';
 };
 exports.default = RegateCkeditor;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RegateDropdown = {};
+
+RegateDropdown.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? '' : _ref$value,
+      _ref$options = _ref.options,
+      options = _ref$options === undefined ? [] : _ref$options;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _input = document.getElementById(id + '__input');
+
+  if (_input === undefined) throw new Error('id is invalid');
+
+  _input.name = name;
+
+  if (value !== undefined) _input.value = value;
+
+  options.forEach(function (option) {
+    var _option = document.createElement('option');
+    _option.value = option.key;
+    _option.text = option.value;
+
+    _input.appendChild(_option);
+  });
+};
+
+RegateDropdown.markup = function (id) {
+  return '\n  <select\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></select>\n';
+};
+exports.default = RegateDropdown;
 
 /***/ })
 /******/ ]);

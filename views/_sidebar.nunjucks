@@ -35,4 +35,10 @@
             <span class="nav-main-link-name">RegateCkeditor</span>
         </a>
     </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl}}components/dropdown">
+            <i class="nav-main-link-icon si si-layers"></i>
+            <span class="nav-main-link-name">RegateDropdown</span>
+        </a>
+    </li>
 </ul>

@@ -1,0 +1,9 @@
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'RegateDropdown' %}
+
+{% block body %}
+
+  {% include './_basic.nunjucks' %}
+
+{% endblock %}
