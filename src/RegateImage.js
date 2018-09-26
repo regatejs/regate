@@ -113,8 +113,8 @@ RegateImage.set = (id, value) => {
   _input.value = value
 
   if (value !== '') {
-    _remove.style.display = 'flex'
-    _view.style.display = 'flex'
+    _remove.style.display = ''
+    _view.style.display = ''
     _upload.style.display = 'none'
     _image.style.display = 'block'
 
@@ -124,7 +124,7 @@ RegateImage.set = (id, value) => {
   else {
     _remove.style.display = 'none'
     _view.style.display = 'none'
-    _upload.style.display = 'flex'
+    _upload.style.display = ''
     _image.style.display = 'none'
 
     _view.href = ''
