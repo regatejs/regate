@@ -17,6 +17,8 @@ RegateTextarea.init = function (_ref) {
       isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
+      _ref$size = _ref.size,
+      size = _ref$size === undefined ? RegateTextarea.Size.Medium : _ref$size,
       onInitialized = _ref.onInitialized,
       onChange = _ref.onChange;
 
@@ -50,10 +52,18 @@ RegateTextarea.init = function (_ref) {
       onChange({ value: value, isValid: isValid });
     };
   }
+
+  _input.style.height = size + 'px';
 };
 
 RegateTextarea.markup = function (id) {
-  return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></textarea>\n';
+  return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n    style=\'resize: none;\'\n  ></textarea>\n';
+};
+
+RegateTextarea.Size = {
+  'Small': 150,
+  'Medium': 200,
+  'Large': 300
 };
 
 exports.default = RegateTextarea;

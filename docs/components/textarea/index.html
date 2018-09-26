@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Uploader - Regate</title>
+    <title>RegateTextarea - Regate</title>
 
     <script src="/regate/dashmix/js/core/jquery.min.js"></script>
     <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
@@ -156,7 +156,7 @@
                     </button>
                     <!-- END Toggle Sidebar -->
 
-                    <b>Uploader</b>
+                    <b>RegateTextarea</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -183,48 +183,307 @@
         
         
 
-<div>
-    <form enctype='multipart/form-data' method='get' action=''>
+  
 
-        <input type='hidden' name="id" id='id' />
-        <input type='file' name='file' required='required' id='file' />
-        <br />
-        <br />
-        <button type='submit' id='submit' name='submit' value='true' class='btn btn-success'>UPLOAD</button>
+<div class="content">
+  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
+  <p>
+    This is the most basic usage of <code>RegateTextarea</code>.
+  </p>
 
-    </form>
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('basic-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>Regate.RegateTextarea.init({
+  id: 'basic-example',
+  name: 'Title',
+})</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateTextarea.init({
+  id: &#39;basic-example&#39;,
+  name: &#39;Title&#39;,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
 </div>
 
-<style>
-#page-header, #page-footer {
-    display: none;
-}
-</style>
 
-<script>
-    var qs = (function(a) {
-        if (a == "") return {};
-        var b = {};
-        for (var i = 0; i < a.length; ++i)
-        {
-            var p=a[i].split('=', 2);
-            if (p.length == 1)
-                b[p[0]] = "";
-            else
-                b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
-        }
-        return b;
-    })(window.location.search.substr(1).split('&'));
+  
 
-    document.getElementById('id').value = qs.id;
+<div class="content">
+  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
+  <p>
+    With <code>value</code> property you can set an initial value for your textbox.
+  </p>
 
-    if (qs.submit) {
-        try { window.opener.Regate.RegateFile.set(qs.id, qs.file); } catch (ex) {}
-        try { window.opener.Regate.RegateImage.set(qs.id, 'sample.png'); } catch (ex) {}
-        window.close();
-    }
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('value-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>Regate.RegateTextarea.init({
+  id: 'value-example',
+  name: 'Title',
+  value: 'Hello\nWorld',
+})</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateTextarea.init({
+  id: &#39;value-example&#39;,
+  name: &#39;Title&#39;,
+  value: &#39;Hello\nWorld&#39;,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
 
-</script>
+
+  
+
+<div class="content">
+  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
+  <p>
+    You can required your field with <code>isRequired</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('required-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>Regate.RegateTextarea.init({
+  id: 'required-example',
+  name: 'Title',
+  isRequired: true,
+})</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateTextarea.init({
+  id: &#39;required-example&#39;,
+  name: &#39;Title&#39;,
+  isRequired: true,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="placeholder">
+    Placeholder
+    <a class="permalink-anchor" href="#placeholder">#</a>
+  </h2>
+  <p>
+    You can set the placeholder of textbox with <code>placeholder</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('placeholder-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>Regate.RegateTextarea.init({
+  id: 'placeholder-example',
+  name: 'Title',
+  placeholder: 'Please enter title',
+})</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateTextarea.init({
+  id: &#39;placeholder-example&#39;,
+  name: &#39;Title&#39;,
+  placeholder: &#39;Please enter title&#39;,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="size">Size <a class="permalink-anchor" href="#size">#</a></h2>
+  <p>
+    With the <code>size</code> property you can define the height of textarea.
+    Accepted values are available in 
+    <code>RegateTextarea.Size</code> object.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('size-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>Regate.RegateTextarea.init({
+  id: 'size-example',
+  name: 'Title',
+  size: Regate.RegateTextarea.Size.Small,
+})</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateTextarea.init({
+  id: &#39;size-example&#39;,
+  name: &#39;Title&#39;,
+  size: Regate.RegateTextarea.Size.Small,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="onchange">
+    onChange
+    <a class="permalink-anchor" href="#onchange">#</a>
+  </h2>
+  <p>
+    With <code>onChange</code> event you can get value of textbox on every user interaction with textbox.
+    Originally, Regate will bind this event to the <code>oninput</code> event of textbox.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('onchange-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>
+            Regate.RegateTextarea.init({
+              id: 'onchange-example',
+              name: 'Title',
+              onChange: function ({value, isValid}) {
+                konsoleClear('onchange-terminal')
+                konsole('onchange-terminal', ' string', '  value', value);
+                konsole('onchange-terminal', 'boolean', 'isValid', isValid);
+              }
+            })
+          </script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateTextarea.init({
+  id: &#39;onchange-example&#39;,
+  name: &#39;Title&#39;,
+  onChange: function ({value, isValid}) {
+    console.log(value, isValid)
+  }
+})</code></pre></div>
+
+    <div class="regate-terminal" id="onchange-terminal"></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="oninitialized">
+    onInitialized
+    <a class="permalink-anchor" href="#oninitialized">#</a>
+  </h2>
+  <p>
+    The <code>onInitialized</code> event is called once when the RegateTextarea is initialized successfully.
+    You have access to the <code>value</code> of textbox.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('oninitialized-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateTextarea.init({
+  id: &#39;oninitialized-example&#39;,
+  name: &#39;Title&#39;,
+  value: &#39;Hello World&#39;,
+  onInitialized: function ({value, isValid}) {
+    console.log(value, isValid)
+  }
+})</code></pre></div>
+
+    <div class="regate-terminal" id="oninitialized-terminal"></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+
+  <script>
+    Regate.RegateTextarea.init({
+      id: 'oninitialized-example',
+      name: 'Title',
+      value: 'Hello World',
+      onInitialized: function ({value, isValid}) {
+        window.onload = function () {
+          konsoleClear('oninitialized-terminal');
+          konsole('oninitialized-terminal', ' string', '  value', value);
+          konsole('oninitialized-terminal', 'boolean', 'isValid', isValid);
+        };
+      }
+    })
+  </script>
+</div>
+
+
 
 
         

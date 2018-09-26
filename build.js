@@ -27,8 +27,10 @@ function writeToPath(targetPath, data) {
 
 
 const views = {
+  'components/textarea/index.nunjucks': './docs/components/textarea/index.html',
   'components/text/index.nunjucks': './docs/components/text/index.html',
   'components/file/index.nunjucks': './docs/components/file/index.html',
+  'components/image/index.nunjucks': './docs/components/image/index.html',
 
   'uploader.nunjucks': './docs/uploader/index.html',
   'homepage.nunjucks': './docs/index.html',
