@@ -1,0 +1,37 @@
+{% set scriptSizeSmall = 
+"Regate.RegateTextarea.init({
+  id: 'size-example',
+  name: 'Title',
+  size: Regate.RegateTextarea.Size.Small,
+})"
+%}
+
+<div class="content">
+  <h2 id="size">Size <a class="permalink-anchor" href="#size">#</a></h2>
+  <p>
+    With the <code>size</code> property you can define the height of textarea.
+    Accepted values are available in 
+    <code>RegateTextarea.Size</code> object.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div>
+          <div class="input-group">
+            <script>document.write(Regate.RegateTextarea.markup('size-example'))</script>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          
+          <script>{{ scriptSizeSmall|safe }}</script>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- scriptSizeSmall -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

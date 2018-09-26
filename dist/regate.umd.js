@@ -296,7 +296,7 @@ RegateTextarea.init = function (_ref) {
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
       _ref$size = _ref.size,
-      size = _ref$size === undefined ? 'medium' : _ref$size,
+      size = _ref$size === undefined ? RegateTextarea.Size.Medium : _ref$size,
       onInitialized = _ref.onInitialized,
       onChange = _ref.onChange;
 
@@ -334,7 +334,7 @@ RegateTextarea.init = function (_ref) {
   /*
    * size : small, medium, large
    */
-  var sizePixel = size === 'small' ? 150 : size === 'medium' ? 200 : size === 'large' ? 300 : 200;
+  var sizePixel = size === RegateTextarea.Size.Small ? 150 : size === RegateTextarea.Size.Medium ? 200 : size === RegateTextarea.Size.Large ? 300 : 200;
 
   console.log(sizePixel);
 
@@ -343,6 +343,12 @@ RegateTextarea.init = function (_ref) {
 
 RegateTextarea.markup = function (id) {
   return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n    style=\'resize: none;\'\n  ></textarea>\n';
+};
+
+RegateTextarea.Size = {
+  'Small': 'small',
+  'Medium': 'medium',
+  'Large': 'large'
 };
 
 exports.default = RegateTextarea;

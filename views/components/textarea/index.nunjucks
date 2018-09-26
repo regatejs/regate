@@ -8,6 +8,7 @@
   {% include './_value.nunjucks' %}
   {% include './_required.nunjucks' %}
   {% include './_placeholder.nunjucks' %}
+  {% include './_size.nunjucks' %}
   {% include './_onChange.nunjucks' %}
   {% include './_onInitialized.nunjucks' %}
 
