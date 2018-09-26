@@ -224,7 +224,7 @@
     .regate-example-container .regate-terminal code+code{margin-left:20px}
     .regate-example-container .regate-terminal:before{opacity:0.3;font-family:monospace}
     .regate-example-container .regate-terminal:empty:before{content:'OUTPUT'}
-    .regate-example-container .regate-serialize { font-family:monospace; padding: 5px 20px; font-size:87.5%; }
+    .regate-example-container .regate-serialize { font-family:monospace; padding: 5px 20px; font-size:87.5%; text-overflow: ellipsis; overflow: hidden; }
     .regate-example-container .regate-serialize:empty:before { content: 'SUBMITTED FORM DATA WILL BE SHOWN HERE'; opacity: 0.3;}
 
     .permalink-anchor { visibility: hidden; }

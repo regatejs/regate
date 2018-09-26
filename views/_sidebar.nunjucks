@@ -23,4 +23,10 @@
             <span class="nav-main-link-name">RegateImage</span>
         </a>
     </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl}}components/contenteditable">
+            <i class="nav-main-link-icon si si-book-open"></i>
+            <span class="nav-main-link-name">RegateContentEditable</span>
+        </a>
+    </li>
 </ul>

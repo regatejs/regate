@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RegateTextarea = exports.RegateContentEditable = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -101,11 +101,16 @@ var _RegateTextarea = __webpack_require__(4);
 
 var _RegateTextarea2 = _interopRequireDefault(_RegateTextarea);
 
+var _RegateContentEditable = __webpack_require__(5);
+
+var _RegateContentEditable2 = _interopRequireDefault(_RegateContentEditable);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
 exports.RegateFile = _RegateFile2.default;
 exports.RegateImage = _RegateImage2.default;
+exports.RegateContentEditable = _RegateContentEditable2.default;
 exports.RegateTextarea = _RegateTextarea2.default;
 
 /***/ }),
@@ -465,6 +470,55 @@ RegateTextarea.Size = {
 };
 
 exports.default = RegateTextarea;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RegateContentEditable = {};
+
+RegateContentEditable.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? '' : _ref$value,
+      _ref$isRequired = _ref.isRequired,
+      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _input = document.getElementById(id + '__input');
+  var _div = document.getElementById(id + '__div');
+
+  if (_input === undefined) throw new Error('id is invalid');
+
+  _input.name = name;
+
+  if (isRequired === true) _input.required = true;
+
+  if (value !== undefined) {
+    console.log(value);
+    _input.value = value;
+    _div.innerHTML = value;
+  }
+
+  _div.oninput = function () {
+    var html = _div.innerHTML;
+    _input.value = html;
+  };
+};
+
+RegateContentEditable.markup = function (id) {
+  return '\n  <div>\n    <textarea\n      id=\'' + id + '__input\'\n      class=\'form-control\'\n      style=\'display: none;\'\n    ></textarea>\n    <div\n      class=\'form-control\'\n      style=\'height: auto !important\'\n      id=\'' + id + '__div\'\n      contenteditable=\'true\'\n    ></div>\n  </div>\n';
+};
+exports.default = RegateContentEditable;
 
 /***/ })
 /******/ ]);

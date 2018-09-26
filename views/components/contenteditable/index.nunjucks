@@ -1,0 +1,9 @@
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'RegateContentEditable' %}
+
+{% block body %}
+
+  {% include './_basic.nunjucks' %}
+
+{% endblock %}
