@@ -22,7 +22,7 @@
                 id: 'basic-example',
                 name: 'MagazineCover',
                 uploaderUrl: '{{ siteUrl }}uploader',
-                repositoryUrl: 'https://never.hood/',
+                repositoryUrl: '{{ themeUrl }}',
               })
             </script>
           </div>

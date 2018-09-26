@@ -24,7 +24,7 @@
                 name: 'MagazineCover',
                 isRequired: true,
                 uploaderUrl: '{{ siteUrl }}uploader',
-                repositoryUrl: 'https://never.hood/',
+                repositoryUrl: '{{ themeUrl }}',
               })
             </script>
           </div>

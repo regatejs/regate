@@ -41,7 +41,7 @@
 
     if (qs.submit) {
         try { window.opener.Regate.RegateFile.set(qs.id, qs.file); } catch (ex) {}
-        try { window.opener.Regate.RegateImage.set(qs.id, qs.file); } catch (ex) {}
+        try { window.opener.Regate.RegateImage.set(qs.id, 'sample.png'); } catch (ex) {}
         window.close();
     }
 
