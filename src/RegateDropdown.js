@@ -4,6 +4,7 @@ RegateDropdown.init = function ({
   id,
   name,
   value = '',
+  isRequired = false,
   options = [],
 }) {
 
@@ -25,8 +26,10 @@ RegateDropdown.init = function ({
     _input.appendChild(_option)
   })
   
-  if (value !== undefined)
-    _input.value = value
+  _input.value = value
+
+  if (isRequired === true)
+    _input.required = true
 }
 
 

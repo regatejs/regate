@@ -1,7 +1,8 @@
 {% set script = 
 "Regate.RegateDropdown.init({
-  id: 'basic-example',
+  id: 'required-example',
   name: 'Fruit',
+  isRequired: true,
   options: [
     { key: '1', value: 'Apple' },
     { key: '2', value: 'Orange' },
@@ -11,17 +12,14 @@
 %}
 
 <div class="content">
-  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
-  <p>
-    This is the most basic usage of <code>RegateDropdown</code>.
-  </p>
+  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateDropdown.markup('basic-example'))</script>
+            <script>document.write(Regate.RegateDropdown.markup('required-example'))</script>
             <script>{{ script|safe }}</script>
           </div>
           <div class="col-lg-2 col-md-3">

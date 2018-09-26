@@ -589,6 +589,8 @@ RegateDropdown.init = function (_ref) {
       name = _ref.name,
       _ref$value = _ref.value,
       value = _ref$value === undefined ? '' : _ref$value,
+      _ref$isRequired = _ref.isRequired,
+      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
       _ref$options = _ref.options,
       options = _ref$options === undefined ? [] : _ref$options;
 
@@ -609,7 +611,9 @@ RegateDropdown.init = function (_ref) {
     _input.appendChild(_option);
   });
 
-  if (value !== undefined) _input.value = value;
+  _input.value = value;
+
+  if (isRequired === true) _input.required = true;
 };
 
 RegateDropdown.markup = function (id) {

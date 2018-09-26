@@ -1,7 +1,7 @@
 {% set script = 
 "Regate.RegateDropdown.init({
   id: 'value-example',
-  name: 'Biography',
+  name: 'Fruit',
   value: '2',
   options: [
     { key: '1', value: 'Apple' },
