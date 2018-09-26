@@ -50,17 +50,7 @@ RegateTextarea.init = function ({
     }
   }
 
-  /*
-   * size : small, medium, large
-   */
-  const sizePixel =
-    size === RegateTextarea.Size.Small  ? 150 :
-    size === RegateTextarea.Size.Medium ? 200 :
-    size === RegateTextarea.Size.Large  ? 300 : 200
-
-  console.log(sizePixel)
-
-  _input.style.height = sizePixel + 'px'
+  _input.style.height = size + 'px'
 }
 
 
@@ -73,9 +63,9 @@ RegateTextarea.markup = (id) => `
 `
 
 RegateTextarea.Size = {
-  'Small': 'small',
-  'Medium': 'medium',
-  'Large': 'large',
+  'Small': 150,
+  'Medium': 200,
+  'Large': 300,
 }
 
 export default RegateTextarea

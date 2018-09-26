@@ -331,14 +331,7 @@ RegateTextarea.init = function (_ref) {
     };
   }
 
-  /*
-   * size : small, medium, large
-   */
-  var sizePixel = size === RegateTextarea.Size.Small ? 150 : size === RegateTextarea.Size.Medium ? 200 : size === RegateTextarea.Size.Large ? 300 : 200;
-
-  console.log(sizePixel);
-
-  _input.style.height = sizePixel + 'px';
+  _input.style.height = size + 'px';
 };
 
 RegateTextarea.markup = function (id) {
@@ -346,9 +339,9 @@ RegateTextarea.markup = function (id) {
 };
 
 RegateTextarea.Size = {
-  'Small': 'small',
-  'Medium': 'medium',
-  'Large': 'large'
+  'Small': 150,
+  'Medium': 200,
+  'Large': 300
 };
 
 exports.default = RegateTextarea;
