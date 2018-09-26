@@ -4,7 +4,6 @@ RegateContentEditable.init = function ({
   id,
   name,
   value = '',
-  isRequired = false,
 }) {
 
   if (id === undefined)
@@ -17,9 +16,6 @@ RegateContentEditable.init = function ({
     throw new Error('id is invalid')
 
   _input.name = name
-
-  if (isRequired === true)
-    _input.required = true
 
   if (value !== undefined) {
     console.log(value)

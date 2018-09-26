@@ -487,9 +487,7 @@ RegateContentEditable.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
       _ref$value = _ref.value,
-      value = _ref$value === undefined ? '' : _ref$value,
-      _ref$isRequired = _ref.isRequired,
-      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired;
+      value = _ref$value === undefined ? '' : _ref$value;
 
 
   if (id === undefined) throw new Error('id is required');
@@ -500,8 +498,6 @@ RegateContentEditable.init = function (_ref) {
   if (_input === undefined) throw new Error('id is invalid');
 
   _input.name = name;
-
-  if (isRequired === true) _input.required = true;
 
   if (value !== undefined) {
     console.log(value);
