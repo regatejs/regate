@@ -40,7 +40,8 @@
     document.getElementById('id').value = qs.id;
 
     if (qs.submit) {
-        window.opener.Regate.RegateFile.set(qs.id, qs.file);
+        try { window.opener.Regate.RegateFile.set(qs.id, qs.file); } catch (ex) {}
+        try { window.opener.Regate.RegateImage.set(qs.id, qs.file); } catch (ex) {}
         window.close();
     }
 

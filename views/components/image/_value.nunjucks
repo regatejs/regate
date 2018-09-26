@@ -2,7 +2,7 @@
 "Regate.RegateImage.init({
   id: 'value-example',
   name: 'MagazineCover',
-  value: 'magazine.pdf',
+  value: 'magazine.jpg',
 })"
 %}
 
