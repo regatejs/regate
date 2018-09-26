@@ -603,6 +603,12 @@ RegateDropdown.init = function (_ref) {
 
   _input.name = name;
 
+  var _option = document.createElement('option');
+  _option.value = '';
+  _option.text = '';
+  _option.hidden = true;
+  _input.appendChild(_option);
+
   options.forEach(function (option) {
     var _option = document.createElement('option');
     _option.value = option.key;
