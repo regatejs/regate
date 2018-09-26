@@ -1,0 +1,20 @@
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'RegateCkeditor' %}
+
+{% block body %}
+
+  <div class="alert alert-warning">
+    This component depends on <b>Ckeditor 5</b>. Be sure to include the latest version on your page.
+    <br />
+    <code>&lt;script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js">&lt;/script></code>
+  </div>
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+
+  {% include './_basic.nunjucks' %}
+  {% include './_value.nunjucks' %}
+
+</script>
+
+{% endblock %}

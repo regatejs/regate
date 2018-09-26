@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegateTextarea = exports.RegateContentEditable = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -105,13 +105,18 @@ var _RegateContentEditable = __webpack_require__(5);
 
 var _RegateContentEditable2 = _interopRequireDefault(_RegateContentEditable);
 
+var _RegateCkeditor = __webpack_require__(6);
+
+var _RegateCkeditor2 = _interopRequireDefault(_RegateCkeditor);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
 exports.RegateFile = _RegateFile2.default;
 exports.RegateImage = _RegateImage2.default;
-exports.RegateContentEditable = _RegateContentEditable2.default;
 exports.RegateTextarea = _RegateTextarea2.default;
+exports.RegateContentEditable = _RegateContentEditable2.default;
+exports.RegateCkeditor = _RegateCkeditor2.default;
 
 /***/ }),
 /* 1 */
@@ -515,6 +520,52 @@ RegateContentEditable.markup = function (id) {
   return '\n  <div>\n    <textarea\n      id=\'' + id + '__input\'\n      class=\'form-control\'\n      style=\'display: none;\'\n    ></textarea>\n    <div\n      class=\'form-control\'\n      style=\'height: auto !important\'\n      id=\'' + id + '__div\'\n      contenteditable=\'true\'\n    ></div>\n  </div>\n';
 };
 exports.default = RegateContentEditable;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var RegateCkeditor = {};
+
+RegateCkeditor.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? '' : _ref$value;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _input = document.getElementById(id + '__input');
+
+  if (_input === undefined) throw new Error('id is invalid');
+
+  _input.name = name;
+
+  // this component depends on Ckeditor 5
+  if ((typeof ClassicEditor === 'undefined' ? 'undefined' : _typeof(ClassicEditor)) === ( true ? 'undefined' : _typeof(undefined))) {
+    console.log('please include Ckeditor 5 before using RegateCkeditor');
+    return false;
+  }
+
+  if (value !== undefined) _input.value = value;
+
+  ClassicEditor.create(_input);
+};
+
+RegateCkeditor.markup = function (id) {
+  return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></textarea>\n';
+};
+exports.default = RegateCkeditor;
 
 /***/ })
 /******/ ]);
