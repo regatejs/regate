@@ -668,11 +668,11 @@ RegateNumber.init = function (_ref) {
 
   if (value !== undefined) _input.value = value;
 
-  if (min === undefined) _input.min = min;
+  if (min !== undefined) _input.min = min;
 
-  if (max === undefined) _input.max = max;
+  if (max !== undefined) _input.max = max;
 
-  if (step === undefined) _input.step = step;
+  if (step !== undefined) _input.step = step;
 };
 
 RegateNumber.markup = function (id) {

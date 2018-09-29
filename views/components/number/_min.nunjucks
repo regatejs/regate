@@ -1,0 +1,31 @@
+{% set script = 
+"Regate.RegateNumber.init({
+  id: 'min-example',
+  name: 'Total',
+  min: 10,
+})"
+%}
+
+<div class="content">
+  <h2 id="min">Min <a class="permalink-anchor" href="#min">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateNumber.markup('min-example'))</script>
+            <script>{{ script|safe }}</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

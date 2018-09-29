@@ -26,13 +26,13 @@ RegateNumber.init = function ({
   if (value !== undefined)
     _input.value = value
 
-  if (min === undefined)
+  if (min !== undefined)
     _input.min = min
 
-  if (max === undefined)
+  if (max !== undefined)
     _input.max = max
 
-  if (step === undefined)
+  if (step !== undefined)
     _input.step = step
 }
 
