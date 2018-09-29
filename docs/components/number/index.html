@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Uploader - Regate</title>
+    <title>RegateNumber - Regate</title>
 
     <script src="/regate/dashmix/js/core/jquery.min.js"></script>
     <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
@@ -180,7 +180,7 @@
                     </button>
                     <!-- END Toggle Sidebar -->
 
-                    <b>Uploader</b>
+                    <b>RegateNumber</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -207,48 +207,211 @@
         
         
 
-<div>
-    <form enctype='multipart/form-data' method='get' action=''>
+  
 
-        <input type='hidden' name="id" id='id' />
-        <input type='file' name='file' required='required' id='file' />
-        <br />
-        <br />
-        <button type='submit' id='submit' name='submit' value='true' class='btn btn-success'>UPLOAD</button>
+<div class="content">
+  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
+  <p>
+    This is the most basic usage of <code>RegateNumber</code>.
+  </p>
 
-    </form>
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateNumber.markup('basic-example'))</script>
+            <script>Regate.RegateNumber.init({
+  id: 'basic-example',
+  name: 'Total',
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateNumber.init({
+  id: &#39;basic-example&#39;,
+  name: &#39;Total&#39;,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
 </div>
 
-<style>
-#page-header, #page-footer {
-    display: none;
-}
-</style>
 
-<script>
-    var qs = (function(a) {
-        if (a == "") return {};
-        var b = {};
-        for (var i = 0; i < a.length; ++i)
-        {
-            var p=a[i].split('=', 2);
-            if (p.length == 1)
-                b[p[0]] = "";
-            else
-                b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
-        }
-        return b;
-    })(window.location.search.substr(1).split('&'));
+  
 
-    document.getElementById('id').value = qs.id;
+<div class="content">
+  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
 
-    if (qs.submit) {
-        try { window.opener.Regate.RegateFile.set(qs.id, qs.file); } catch (ex) {}
-        try { window.opener.Regate.RegateImage.set(qs.id, 'sample.png'); } catch (ex) {}
-        window.close();
-    }
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateNumber.markup('value-example'))</script>
+            <script>Regate.RegateNumber.init({
+  id: 'value-example',
+  name: 'Total',
+  value: 5,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateNumber.init({
+  id: &#39;value-example&#39;,
+  name: &#39;Total&#39;,
+  value: 5,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
 
-</script>
+
+  
+
+<div class="content">
+  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateNumber.markup('required-example'))</script>
+            <script>Regate.RegateNumber.init({
+  id: 'required-example',
+  name: 'Total',
+  required: true,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateNumber.init({
+  id: &#39;required-example&#39;,
+  name: &#39;Total&#39;,
+  required: true,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="min">Min <a class="permalink-anchor" href="#min">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateNumber.markup('min-example'))</script>
+            <script>Regate.RegateNumber.init({
+  id: 'min-example',
+  name: 'Total',
+  min: 10,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateNumber.init({
+  id: &#39;min-example&#39;,
+  name: &#39;Total&#39;,
+  min: 10,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="max">Max <a class="permalink-anchor" href="#max">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateNumber.markup('max-example'))</script>
+            <script>Regate.RegateNumber.init({
+  id: 'max-example',
+  name: 'Total',
+  max: 10,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateNumber.init({
+  id: &#39;max-example&#39;,
+  name: &#39;Total&#39;,
+  max: 10,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="step">Step <a class="permalink-anchor" href="#step">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateNumber.markup('step-example'))</script>
+            <script>Regate.RegateNumber.init({
+  id: 'step-example',
+  name: 'Total',
+  step: 0.5,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateNumber.init({
+  id: &#39;step-example&#39;,
+  name: &#39;Total&#39;,
+  step: 0.5,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
 
 
         
