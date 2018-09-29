@@ -8,5 +8,7 @@
   {% include './_value.nunjucks' %}
   {% include './_required.nunjucks' %}
   {% include './_min.nunjucks' %}
+  {% include './_max.nunjucks' %}
+  {% include './_step.nunjucks' %}
 
 {% endblock %}
