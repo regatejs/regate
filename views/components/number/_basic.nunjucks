@@ -1,0 +1,33 @@
+{% set script = 
+"Regate.RegateNumber.init({
+  id: 'basic-example',
+  name: 'Total',
+})"
+%}
+
+<div class="content">
+  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
+  <p>
+    This is the most basic usage of <code>RegateNumber</code>.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateNumber.markup('basic-example'))</script>
+            <script>{{ script|safe }}</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

@@ -5,6 +5,7 @@ import RegateTextarea from './RegateTextarea'
 import RegateContentEditable from './RegateContentEditable'
 import RegateCkeditor from './RegateCkeditor'
 import RegateDropdown from './RegateDropdown'
+import RegateNumber from './RegateNumber'
 
 export {
   RegateText,
@@ -14,4 +15,5 @@ export {
   RegateContentEditable,
   RegateCkeditor,
   RegateDropdown,
+  RegateNumber,
 }

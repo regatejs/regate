@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -113,6 +113,10 @@ var _RegateDropdown = __webpack_require__(7);
 
 var _RegateDropdown2 = _interopRequireDefault(_RegateDropdown);
 
+var _RegateNumber = __webpack_require__(8);
+
+var _RegateNumber2 = _interopRequireDefault(_RegateNumber);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
@@ -122,6 +126,7 @@ exports.RegateTextarea = _RegateTextarea2.default;
 exports.RegateContentEditable = _RegateContentEditable2.default;
 exports.RegateCkeditor = _RegateCkeditor2.default;
 exports.RegateDropdown = _RegateDropdown2.default;
+exports.RegateNumber = _RegateNumber2.default;
 
 /***/ }),
 /* 1 */
@@ -626,6 +631,55 @@ RegateDropdown.markup = function (id) {
   return '\n  <select\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></select>\n';
 };
 exports.default = RegateDropdown;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RegateNumber = {};
+
+RegateNumber.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? '' : _ref$value,
+      min = _ref.min,
+      max = _ref.max,
+      step = _ref.step,
+      _ref$isRequired = _ref.isRequired,
+      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _input = document.getElementById(id + '__input');
+
+  if (_input === undefined) throw new Error('id is invalid');
+
+  _input.name = name;
+
+  if (isRequired === true) _input.required = true;
+
+  if (value !== undefined) _input.value = value;
+
+  if (min === undefined) _input.min = min;
+
+  if (max === undefined) _input.max = max;
+
+  if (step === undefined) _input.step = step;
+};
+
+RegateNumber.markup = function (id) {
+  return '\n  <input\n    id=\'' + id + '__input\'\n    type=\'number\'\n    class=\'form-control\'\n  />\n';
+};
+
+exports.default = RegateNumber;
 
 /***/ })
 /******/ ]);
