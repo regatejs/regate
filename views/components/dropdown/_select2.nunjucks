@@ -1,0 +1,55 @@
+{% set script = 
+"Regate.RegateDropdown.init({
+  id: 'select2-example',
+  name: 'Fruit',
+  isSelect2: true,
+  options: [
+    { key: '1', value: 'Apple' },
+    { key: '2', value: 'Orange' },
+    { key: '3', value: 'Banana' },
+  ]
+})"
+%}
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<div class="content">
+  <h2 id="select2">Select2 <a class="permalink-anchor" href="#select2">#</a></h2>
+
+  <div class="alert alert-warning">
+    This feature depends on <b>jQuery</b> and <b>select2</b>. Be sure to include them.
+    <br />
+    <code>{{ '<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>' }}</code>
+    <br />
+    <code>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /></code>
+    <br />
+    <code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js">&lt;/script></code>
+  
+  </div>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateDropdown.markup('select2-example'))</script>
+            <script>{{ script|safe }}</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
