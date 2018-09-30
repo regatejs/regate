@@ -18,7 +18,6 @@ RegateContentEditable.init = function ({
   _input.name = name
 
   if (value !== undefined) {
-    console.log(value)
     _input.value = value
     _div.innerHTML = value
   }
