@@ -15,5 +15,6 @@
   </div>
 
   {% include './_basic.nunjucks' %}
+  {% include './_value.nunjucks' %}
 
 {% endblock %}
