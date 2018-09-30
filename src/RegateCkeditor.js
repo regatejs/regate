@@ -23,7 +23,7 @@ RegateCkeditor.init = function ({
   }
 
   if (value !== undefined)
-    _input.value = value
+    _input.value = RegateCkeditor.DecodeEntities(value)
 
   ClassicEditor.create(_input)
 }
@@ -35,4 +35,11 @@ RegateCkeditor.markup = (id) => `
     class='form-control'
   ></textarea>
 `
+
+RegateCkeditor.DecodeEntities = encodedString => {
+  var textArea = document.createElement('textarea')
+  textArea.innerHTML = encodedString
+  return textArea.value
+}
+
 export default RegateCkeditor
