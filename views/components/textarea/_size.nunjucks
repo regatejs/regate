@@ -17,15 +17,14 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateTextarea.markup('size-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            <script>{{ scriptSizeSmall|safe }}</script>
           </div>
-          
-          <script>{{ scriptSizeSmall|safe }}</script>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>
