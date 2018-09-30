@@ -68,6 +68,7 @@ RegateKeyword.markup = (id) => `
     <textarea
       id='${id}__input'
       class='form-control'
+      style='display: none'
     >{{filterData()}}</textarea>
 
     <div>
@@ -75,7 +76,10 @@ RegateKeyword.markup = (id) => `
             <div v-for="(item, index) in items" style='margin: 2px 0;'>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <i class="fas fa-bars"></i>
+                        <span class="input-group-text">
+                            <i class="fa fa-bars" style='opacity: 0.3;'></i>
+                        </span>
+                        
                     </div>
                     
                     <input class="form-control" type="text" v-model="items[index]" />
