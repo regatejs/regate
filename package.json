@@ -9,6 +9,7 @@
     "build:commonjs": "babel src --out-dir dist",
     "build:umd": "webpack",
     "docs": "npm run build && node build.js",
+    "algolia": "nodemon algolia.js --watch",
     "test": "jest --watch"
   },
   "author": "",
@@ -36,6 +37,7 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "algoliasearch": "^3.30.0",
     "cors": "^2.8.4",
     "ejs": "^2.6.1",
     "express": "^4.16.2",
