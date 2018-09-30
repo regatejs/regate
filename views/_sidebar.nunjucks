@@ -54,4 +54,10 @@
             <span class="nav-main-link-name">RegateNumber</span>
         </a>
     </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl}}components/keyword">
+            <img src="{{ themeUrl }}icons/keyword.svg" class="regate-icon regate-icon-keyword" />
+            <span class="nav-main-link-name">RegateKeyword</span>
+        </a>
+    </li>
 </ul>

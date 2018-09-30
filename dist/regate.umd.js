@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -117,6 +117,10 @@ var _RegateNumber = __webpack_require__(8);
 
 var _RegateNumber2 = _interopRequireDefault(_RegateNumber);
 
+var _RegateKeyword = __webpack_require__(9);
+
+var _RegateKeyword2 = _interopRequireDefault(_RegateKeyword);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
@@ -127,6 +131,7 @@ exports.RegateContentEditable = _RegateContentEditable2.default;
 exports.RegateCkeditor = _RegateCkeditor2.default;
 exports.RegateDropdown = _RegateDropdown2.default;
 exports.RegateNumber = _RegateNumber2.default;
+exports.RegateKeyword = _RegateKeyword2.default;
 
 /***/ }),
 /* 1 */
@@ -706,6 +711,90 @@ RegateNumber.markup = function (id) {
 };
 
 exports.default = RegateNumber;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var RegateKeyword = {};
+
+RegateKeyword.init = function (_ref) {
+    var id = _ref.id,
+        name = _ref.name,
+        _ref$keywords = _ref.keywords,
+        keywords = _ref$keywords === undefined ? [] : _ref$keywords;
+
+
+    if (id === undefined) throw new Error('id is required');
+
+    var _input = document.getElementById(id + '__input');
+
+    if (_input === undefined) throw new Error('id is invalid');
+
+    _input.name = name;
+
+    // this component depends on Vue
+    if ((typeof Vue === 'undefined' ? 'undefined' : _typeof(Vue)) === ( true ? 'undefined' : _typeof(undefined))) {
+        console.log('please include Vuejs before using RegateKeyword');
+        return false;
+    }
+
+    keywords = RegateKeyword.NormalizeKeywords(keywords);
+
+    new Vue({
+        el: '#' + id + '__app',
+        data: {
+            newTodoText: null,
+            items: keywords
+        },
+        methods: {
+            addNewTodo: function addNewTodo() {
+
+                this.items.push(this.newTodoText);
+                this.newTodoText = '';
+            },
+            deleteItem: function deleteItem(index) {
+                this.items.splice(index, 1);
+            },
+            filterData: function filterData() {
+                var filterItems = [];
+                var lmn = 0;
+                for (var i = 0; i < this.items.length; i++) {
+                    if (this.items[i] !== "") {
+                        filterItems[lmn] = this.items[i];
+                        lmn++;
+                    }
+                }
+                return filterItems;
+            },
+            checkForm: function checkForm() {
+                if (this.newTodoText) {
+                    this.addNewTodo();
+                    return true;
+                }
+            }
+        }
+    });
+};
+
+RegateKeyword.NormalizeKeywords = function (keywords) {
+    return keywords ? Array.isArray(keywords) ? keywords : [keywords] : [];
+};
+
+RegateKeyword.markup = function (id) {
+    return '\n  <div id=\'' + id + '__app\'>\n    <textarea\n      id=\'' + id + '__input\'\n      class=\'form-control\'\n    >{{filterData()}}</textarea>\n\n    <ul class="list-entered p-0">\n        <draggable :list="items" v-model="items">\n            <li v-for="(item, index) in items" class="list-item">\n                <a class="list-item--move ml-2"><i class="fas fa-bars"></i></a>\n                <input class="form-control list-item--input" type="text" dir="rtl" v-model="items[index]" />\n                <a class="list-item--action red mr-2" v-on:click="deleteItem(index)"><i class="fas fa-times-circle"></i></a>\n            </li>\n        </draggable>\n    </ul>\n\n    <div class="input-add">\n        <input class="form-control" type="text" dir="rtl" v-model="newTodoText" v-on:keyup.enter="checkForm" placeholder="\u0645\u062D\u062A\u0648\u0627 \u0631\u0627 \u0648\u0627\u0631\u062F \u0646\u0645\u0627\u06CC\u06CC\u062F" />\n        <a class="list-item--action green mr-2" v-on:click="checkForm"><i class="fas fa-plus-circle"></i></a>\n    </div>\n  </div>\n';
+};
+
+exports.default = RegateKeyword;
 
 /***/ })
 /******/ ]);
