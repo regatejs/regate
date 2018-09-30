@@ -73,7 +73,7 @@ RegateKeyword.markup = (id) => `
 
     <div>
         <draggable :list="items" v-model="items">
-            <div v-for="(item, index) in items" style='margin: 2px 0;'>
+            <div v-for="(item, index) in items" style='margin-bottom: 2px;'>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">
