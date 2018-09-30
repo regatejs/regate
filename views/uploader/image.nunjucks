@@ -1,0 +1,55 @@
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'Image Uploader' %}
+
+{% block body %}
+
+<div>
+    <h1>Image Uploader</h1>
+    <form enctype='multipart/form-data' method='get' action=''>
+
+        <input type='hidden' name="id" id='id' />
+        <input type='file' name='file' required='required' id='file' />
+        <br />
+        <br />
+        <button type='submit' id='submit' name='submit' value='true' class='btn btn-success'>UPLOAD</button>
+
+    </form>
+</div>
+
+<style>
+#page-header, #page-footer {
+    display: none;
+}
+</style>
+
+<script>
+    var qs = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=', 2);
+            if (p.length == 1)
+                b[p[0]] = "";
+            else
+                b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'));
+
+    document.getElementById('id').value = qs.id;
+
+    if (qs.submit) {
+        try {
+          window.opener.Regate.RegateImage.set(qs.id, 'sample.png');
+        } catch (ex) {
+          
+        }
+        window.close();
+    }
+
+</script>
+
+{% endblock %}
+

@@ -1,10 +1,11 @@
 {% extends '_layout.nunjucks' %}
 
-{% set title = 'Uploader' %}
+{% set title = 'File Uploader' %}
 
 {% block body %}
 
 <div>
+    <h1>File Uploader</h1>
     <form enctype='multipart/form-data' method='get' action=''>
 
         <input type='hidden' name="id" id='id' />
@@ -40,8 +41,11 @@
     document.getElementById('id').value = qs.id;
 
     if (qs.submit) {
-        try { window.opener.Regate.RegateFile.set(qs.id, qs.file); } catch (ex) {}
-        try { window.opener.Regate.RegateImage.set(qs.id, 'sample.png'); } catch (ex) {}
+        try {
+            window.opener.Regate.RegateFile.set(qs.id, qs.file);
+        } catch (ex) {
+            
+        }
         window.close();
     }
 

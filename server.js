@@ -127,8 +127,12 @@ app.get('/components', function (req, res) {
   res.render('components/index', { siteUrl: siteUrl, themeUrl: themeUrl });
 });
 
-app.get('/uploader', function (req, res) {
-  res.render('uploader', { siteUrl: siteUrl, themeUrl: themeUrl });
+app.get('/uploader/file', function (req, res) {
+  res.render('uploader/file', { siteUrl: siteUrl, themeUrl: themeUrl });
+});
+
+app.get('/uploader/image', function (req, res) {
+  res.render('uploader/image', { siteUrl: siteUrl, themeUrl: themeUrl });
 });
 
 app.get('/components/:component', function (req, res) {

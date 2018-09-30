@@ -21,7 +21,7 @@
               Regate.RegateFile.init({
                 id: 'basic-example',
                 name: 'MagazineCover',
-                uploaderUrl: '{{ siteUrl }}uploader',
+                uploaderUrl: '{{ siteUrl }}uploader/file',
                 repositoryUrl: 'https://never.hood/',
               })
             </script>

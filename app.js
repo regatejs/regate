@@ -44,8 +44,12 @@ app.get('/components', (req, res) => {
   res.render('components/index', { siteUrl, themeUrl })
 })
 
-app.get('/uploader', (req, res) => {
-  res.render('uploader', { siteUrl, themeUrl })
+app.get('/uploader/file', (req, res) => {
+  res.render('uploader/file', { siteUrl, themeUrl })
+})
+
+app.get('/uploader/image', (req, res) => {
+  res.render('uploader/image', { siteUrl, themeUrl })
 })
 
 app.get('/components/:component', (req, res) => {
