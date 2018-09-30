@@ -32,7 +32,7 @@
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/contenteditable">
-            <img src="{{ themeUrl }}icons/contentEditable.svg" class="regate-icon regate-icon-contentEditable" />
+            <img src="{{ themeUrl }}icons/contenteditable.svg" class="regate-icon regate-icon-contenteditable" />
             <span class="nav-main-link-name">RegateContentEditable</span>
         </a>
     </li>

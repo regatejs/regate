@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack -w",
+    "webpack": "webpack",
     "start": "nodemon server.js -e js,css,html,nunjucks --watch views --watch server.js",
     "build": "npm run build:commonjs && npm run build:umd",
     "build:commonjs": "babel src --out-dir dist",
