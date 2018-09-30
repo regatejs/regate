@@ -32,7 +32,6 @@ RegateKeyword.init = function ({
       },
       methods: {
           addNewTodo: function () {
-
               this.items.push(this.newTodoText);
               this.newTodoText = '';
           },
@@ -71,18 +70,28 @@ RegateKeyword.markup = (id) => `
       class='form-control'
     >{{filterData()}}</textarea>
 
-    <ul class="list-entered p-0">
+    <div>
         <draggable :list="items" v-model="items">
-            <li v-for="(item, index) in items" class="list-item">
-                <a class="list-item--move ml-2"><i class="fas fa-bars"></i></a>
-                <input class="form-control list-item--input" type="text" dir="rtl" v-model="items[index]" />
-                <a class="list-item--action red mr-2" v-on:click="deleteItem(index)"><i class="fas fa-times-circle"></i></a>
-            </li>
+            <div v-for="(item, index) in items" style='margin: 2px 0;'>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    
+                    <input class="form-control" type="text" v-model="items[index]" />
+
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-danger" v-on:click="deleteItem(index)">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </draggable>
-    </ul>
+    </div>
 
     <div class="input-add">
-        <input class="form-control" type="text" dir="rtl" v-model="newTodoText" v-on:keyup.enter="checkForm" placeholder="محتوا را وارد نمایید" />
+        <input class="form-control" type="text" v-model="newTodoText" v-on:keyup.enter="checkForm" />
         <a class="list-item--action green mr-2" v-on:click="checkForm"><i class="fas fa-plus-circle"></i></a>
     </div>
   </div>

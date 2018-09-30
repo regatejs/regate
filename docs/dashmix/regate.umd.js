@@ -758,7 +758,6 @@ RegateKeyword.init = function (_ref) {
         },
         methods: {
             addNewTodo: function addNewTodo() {
-
                 this.items.push(this.newTodoText);
                 this.newTodoText = '';
             },
@@ -791,7 +790,7 @@ RegateKeyword.NormalizeKeywords = function (keywords) {
 };
 
 RegateKeyword.markup = function (id) {
-    return '\n  <div id=\'' + id + '__app\'>\n    <textarea\n      id=\'' + id + '__input\'\n      class=\'form-control\'\n    >{{filterData()}}</textarea>\n\n    <ul class="list-entered p-0">\n        <draggable :list="items" v-model="items">\n            <li v-for="(item, index) in items" class="list-item">\n                <a class="list-item--move ml-2"><i class="fas fa-bars"></i></a>\n                <input class="form-control list-item--input" type="text" dir="rtl" v-model="items[index]" />\n                <a class="list-item--action red mr-2" v-on:click="deleteItem(index)"><i class="fas fa-times-circle"></i></a>\n            </li>\n        </draggable>\n    </ul>\n\n    <div class="input-add">\n        <input class="form-control" type="text" dir="rtl" v-model="newTodoText" v-on:keyup.enter="checkForm" placeholder="\u0645\u062D\u062A\u0648\u0627 \u0631\u0627 \u0648\u0627\u0631\u062F \u0646\u0645\u0627\u06CC\u06CC\u062F" />\n        <a class="list-item--action green mr-2" v-on:click="checkForm"><i class="fas fa-plus-circle"></i></a>\n    </div>\n  </div>\n';
+    return '\n  <div id=\'' + id + '__app\'>\n    <textarea\n      id=\'' + id + '__input\'\n      class=\'form-control\'\n    >{{filterData()}}</textarea>\n\n    <div>\n        <draggable :list="items" v-model="items">\n            <div v-for="(item, index) in items" style=\'margin: 2px 0;\'>\n                <div class="input-group">\n                    <div class="input-group-prepend">\n                        <i class="fas fa-bars"></i>\n                    </div>\n                    \n                    <input class="form-control" type="text" v-model="items[index]" />\n\n                    <div class="input-group-append">\n                        <button type="button" class="btn btn-danger" v-on:click="deleteItem(index)">\n                            <i class="fa fa-times"></i>\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </draggable>\n    </div>\n\n    <div class="input-add">\n        <input class="form-control" type="text" v-model="newTodoText" v-on:keyup.enter="checkForm" />\n        <a class="list-item--action green mr-2" v-on:click="checkForm"><i class="fas fa-plus-circle"></i></a>\n    </div>\n  </div>\n';
 };
 
 exports.default = RegateKeyword;

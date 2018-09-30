@@ -8,6 +8,12 @@
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.7.0/Sortable.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/15.0.0/vuedraggable.js"></script>
 
+  <div class="alert alert-warning">
+    This component depends on <b>Vue</b>, <b>Sortable</b> and <b>Vue-Draggable</b> plugins.
+    <br />
+    Be sure to include the latest version of them on your page. 
+  </div>
+
   {% include './_basic.nunjucks' %}
 
 {% endblock %}
