@@ -36,7 +36,8 @@ const views = {
   'components/dropdown/index.nunjucks': './docs/components/dropdown/index.html',
   'components/number/index.nunjucks': './docs/components/number/index.html',
 
-  'uploader.nunjucks': './docs/uploader/index.html',
+  'uploader/file.nunjucks': './docs/uploader/file/index.html',
+  'uploader/image.nunjucks': './docs/uploader/image/index.html',
   'homepage.nunjucks': './docs/index.html',
   'components/index.nunjucks': './docs/components/index.html',
 }

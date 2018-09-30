@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>RegateFile - Regate</title>
+    <title>File Uploader - Regate</title>
 
     <script src="/regate/dashmix/js/core/jquery.min.js"></script>
     <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
@@ -180,7 +180,7 @@
                     </button>
                     <!-- END Toggle Sidebar -->
 
-                    <b>RegateFile</b>
+                    <b>File Uploader</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -207,127 +207,52 @@
         
         
 
-  
+<div>
+    <h1>File Uploader</h1>
+    <form enctype='multipart/form-data' method='get' action=''>
 
-<div class="content">
-  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
-  <p>
-    This is the most basic usage of <code>RegateFile</code>.
-  </p>
+        <input type='hidden' name="id" id='id' />
+        <input type='file' name='file' required='required' id='file' />
+        <br />
+        <br />
+        <button type='submit' id='submit' name='submit' value='true' class='btn btn-success'>UPLOAD</button>
 
-  <div class="regate-example-container">
-    <div class="regate-example">
-      <form method="get">
-        <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('basic-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'basic-example',
-                name: 'MagazineCover',
-                uploaderUrl: '/regate/uploader/file',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
-  id: &#39;basic-example&#39;,
-  name: &#39;MagazineCover&#39;,
-})</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
-  </div>
+    </form>
 </div>
 
+<style>
+#page-header, #page-footer {
+    display: none;
+}
+</style>
 
-  
+<script>
+    var qs = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=', 2);
+            if (p.length == 1)
+                b[p[0]] = "";
+            else
+                b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'));
 
-<div class="content">
-  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
-  <p>
-    With <code>value</code> property you can set an initial value for your input.
-  </p>
+    document.getElementById('id').value = qs.id;
 
-  <div class="regate-example-container">
-    <div class="regate-example">
-      <form method="get">
-        <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('value-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'value-example',
-                name: 'MagazineCover',
-                value: 'magazine.pdf',
-                uploaderUrl: '/regate/uploader/file',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
-  id: &#39;value-example&#39;,
-  name: &#39;MagazineCover&#39;,
-  value: &#39;magazine.pdf&#39;,
-})</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
-  </div>
-</div>
+    if (qs.submit) {
+        try {
+            window.opener.Regate.RegateFile.set(qs.id, qs.file);
+        } catch (ex) {
+            
+        }
+        window.close();
+    }
 
-
-  
-
-<div class="content">
-  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
-  <p>
-    You can required your field with <code>isRequired</code> property.
-  </p>
-
-  <div class="regate-example-container">
-    <div class="regate-example">
-      <form method="get">
-        <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('required-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'required-example',
-                name: 'MagazineCover',
-                isRequired: true,
-                uploaderUrl: '/regate/uploader/file',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
-  id: &#39;required-example&#39;,
-  name: &#39;MagazineCover&#39;,
-  isRequired: true,
-})</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
-  </div>
-</div>
-
-
+</script>
 
 
         
