@@ -9,7 +9,7 @@
     <form enctype='multipart/form-data' method='get' action=''>
 
         <input type='hidden' name="id" id='id' />
-        <input type='file' name='file' required='required' id='file' />
+        <input type='file' name='file' required='required' id='file' accept="image/*" />
         <br />
         <br />
         <button type='submit' id='submit' name='submit' value='true' class='btn btn-success'>UPLOAD</button>

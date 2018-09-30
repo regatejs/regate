@@ -21,7 +21,7 @@
               Regate.RegateImage.init({
                 id: 'basic-example',
                 name: 'MagazineCover',
-                uploaderUrl: '{{ siteUrl }}uploader',
+                uploaderUrl: '{{ siteUrl }}uploader/image',
                 repositoryUrl: '{{ themeUrl }}',
               })
             </script>

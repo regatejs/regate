@@ -23,7 +23,7 @@
                 id: 'required-example',
                 name: 'MagazineCover',
                 isRequired: true,
-                uploaderUrl: '{{ siteUrl }}uploader',
+                uploaderUrl: '{{ siteUrl }}uploader/image',
                 repositoryUrl: '{{ themeUrl }}',
               })
             </script>

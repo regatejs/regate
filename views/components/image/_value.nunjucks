@@ -23,7 +23,7 @@
                 id: 'value-example',
                 name: 'MagazineCover',
                 value: 'sample.png',
-                uploaderUrl: '{{ siteUrl }}uploader',
+                uploaderUrl: '{{ siteUrl }}uploader/image',
                 repositoryUrl: '{{ themeUrl }}',
               })
             </script>
