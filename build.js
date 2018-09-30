@@ -35,6 +35,7 @@ const views = {
   'components/ckeditor/index.nunjucks': './docs/components/ckeditor/index.html',
   'components/dropdown/index.nunjucks': './docs/components/dropdown/index.html',
   'components/number/index.nunjucks': './docs/components/number/index.html',
+  'components/keyword/index.nunjucks': './docs/components/keyword/index.html',
 
   'uploader/file.nunjucks': './docs/uploader/file/index.html',
   'uploader/image.nunjucks': './docs/uploader/image/index.html',

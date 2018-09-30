@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>RegateKeyword - Regate</title>
+
+    <script src="/regate/dashmix/js/core/jquery.min.js"></script>
+    <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
+    <script src="/regate/dashmix/js/core/simplebar.min.js"></script>
+    <script src="/regate/dashmix/js/core/jquery-scrollLock.min.js"></script>
+    <script src="/regate/dashmix/js/core/jquery.appear.min.js"></script>
+    <script src="/regate/dashmix/js/core/js.cookie.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/regate/dashmix/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/regate/dashmix/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/regate/dashmix/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/regate/dashmix/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/regate/dashmix/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/regate/dashmix/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="/regate/dashmix/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="/regate/dashmix/regate.umd.js"></script>
+
+    <script>
+        window.konsoleClear = container => {
+            let $terminal = $('#' + container)
+            $terminal.html('')
+        }
+
+        window.konsoleGroup = (container, groupName) => {
+            let $terminal = $('#' + container)
+            $terminal.append('<style>#' + container + ':before { content: "OUTPUT ' + groupName + '"; }</style>');
+        }
+
+        window.konsole = (container, type, title, value) => {
+            let $terminal = $('#' + container)
+            let $pre = $('<pre></pre>')
+
+            if (type.trim() === 'boolean') {
+            value = value ? 'true' : 'false'
+            }
+
+            $('<code></code>')
+            .attr('data-type', 'title')
+            .text(title)
+            .appendTo($pre)
+
+            $('<code></code>')
+            .attr('data-type', type.trim())
+            .text(type)
+            .appendTo($pre)
+
+
+            $('<code></code>')
+            .attr('data-type', 'value')
+            .text(value)
+            .appendTo($pre)
+
+            $pre.appendTo($terminal)
+        }
+        </script>
+
+    <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
+    <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
+</head>
+<body>
+
+  <div id="page-container" class="sidebar-o enable-page-overlay side-scroll _page-header-fixed page-header-light main-content-narrow">
+
+      <!-- Sidebar -->
+      <!--
+          Sidebar Mini Mode - Display Helper classes
+
+          Adding 'smini-hide' class to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
+          Adding 'smini-show' class to an element will make it visible (opacity: 1) when the sidebar is in mini mode
+              If you would like to disable the transition animation, make sure to also add the 'no-transition' class to your element
+
+          Adding 'smini-hidden' to an element will hide it when the sidebar is in mini mode
+          Adding 'smini-visible' to an element will show it (display: inline-block) only when the sidebar is in mini mode
+          Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
+      -->
+      <nav id="sidebar" aria-label="Main Navigation">
+        <!-- Side Header -->
+        <div class="bg-header-dark">
+            <div class="content-header bg-white-10">
+                <!-- Logo -->
+                <a class="link-fx font-w600 font-size-lg text-white" href="/">
+                    <span class="smini-visible">
+                        <span class="text-white-75">D</span><span class="text-white">x</span>
+                    </span>
+                    <span class="smini-hidden">
+                        <span class="text-white-75">Re</span><span class="text-white">gate</span>
+                    </span>
+                </a>
+                <!-- END Logo -->
+                <!-- Options -->
+                <div>
+                    <!-- END Toggle Sidebar Style -->
+                    <!-- Close Sidebar, Visible only on mobile screens -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <a class="d-lg-none text-white ml-2" data-toggle="layout" data-action="sidebar_close" href="javascript:void(0)">
+                        <i class="fa fa-times-circle"></i>
+                    </a>
+                    <!-- END Close Sidebar -->
+                </div>
+                <!-- END Options -->
+            </div>
+        </div>
+        <!-- END Side Header -->
+        <!-- Side Navigation -->
+        <div class="content-side content-side-full">
+            <style>
+    .regate-icon {
+        width: 16px;
+        height: auto;
+        margin-right: 9px;
+    }
+</style>
+<ul class="nav-main">
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/text">
+            <img src="/regate/dashmix/icons/text.svg" class="regate-icon regate-icon-text" />
+            <span class="nav-main-link-name">RegateText</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/file">
+            <img src="/regate/dashmix/icons/file.svg" class="regate-icon regate-icon-file" />
+            <span class="nav-main-link-name">RegateFile</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/textarea">
+            <img src="/regate/dashmix/icons/textarea.svg" class="regate-icon regate-icon-textarea" />
+            <span class="nav-main-link-name">RegateTextarea</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/image">
+            <img src="/regate/dashmix/icons/image.svg" class="regate-icon regate-icon-image" />
+            <span class="nav-main-link-name">RegateImage</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/contenteditable">
+            <img src="/regate/dashmix/icons/contenteditable.svg" class="regate-icon regate-icon-contenteditable" />
+            <span class="nav-main-link-name">RegateContentEditable</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/ckeditor">
+            <img src="/regate/dashmix/icons/ckeditor.svg" class="regate-icon regate-icon-ckeditor" />
+            <span class="nav-main-link-name">RegateCkeditor</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/dropdown">
+            <img src="/regate/dashmix/icons/dropdown.svg" class="regate-icon regate-icon-dropdown" />
+            <span class="nav-main-link-name">RegateDropdown</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/number">
+            <img src="/regate/dashmix/icons/number.svg" class="regate-icon regate-icon-number" />
+            <span class="nav-main-link-name">RegateNumber</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/keyword">
+            <img src="/regate/dashmix/icons/keyword.svg" class="regate-icon regate-icon-keyword" />
+            <span class="nav-main-link-name">RegateKeyword</span>
+        </a>
+    </li>
+</ul>
+        </div>
+        <!-- END Side Navigation -->
+      </nav>
+      <!-- END Sidebar -->
+
+      <!-- Header -->
+      <header id="page-header">
+          <!-- Header Content -->
+          <div class="content-header">
+                <!-- Left Section -->
+                <div>
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
+                    <button type="button" class="btn btn-dual mr-1" data-toggle="layout" data-action="sidebar_toggle">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+
+                    <b>RegateKeyword</b>
+                </div>
+                <!-- END Left Section -->
+              
+                <div>
+                    <ul class="nav">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/regate/">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/regate/components">Components</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/regatejs/regate">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+          </div>
+          <!-- END Header Content -->
+      </header>
+      <!-- END Header -->
+      <!-- Main Container -->
+      <main id="main-container">
+        
+        
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.7.0/Sortable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/15.0.0/vuedraggable.js"></script>
+
+  <div class="alert alert-warning">
+    This component depends on <b>Vue</b>, <b>Sortable</b> and <b>Vue-Draggable</b> plugins.
+    <br />
+    Be sure to include the latest version of them on your page. 
+  </div>
+
+  
+
+<div class="content">
+  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
+  <p>
+    This is the most basic usage of <code>RegateKeyword</code>.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateKeyword.markup('basic-example'))</script>
+            <script>Regate.RegateKeyword.init({
+  id: 'basic-example',
+  name: 'Total',
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateKeyword.init({
+  id: &#39;basic-example&#39;,
+  name: &#39;Total&#39;,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateKeyword.markup('value-example'))</script>
+            <script>Regate.RegateKeyword.init({
+  id: 'value-example',
+  name: 'Keywords',
+  keywords: ['apple', 'banana', 'orange'],
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegateKeyword.init({
+  id: &#39;value-example&#39;,
+  name: &#39;Keywords&#39;,
+  keywords: [&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;],
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+
+
+        
+      </main>
+      <!-- END Main Container -->
+      <!-- Footer -->
+      <footer id="page-footer" class="bg-body-light">
+          <div class="content py-0">
+              <div class="row font-size-sm">
+                  <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-right">
+                      Created with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://github.com/dashtinejad" target="_blank">dashtinejad</a>
+                  </div>
+                  <div class="col-sm-6 order-sm-1 text-center text-sm-left">
+                      <a class="font-w600" href="https://github.com/regatejs" target="_blank">Regate</a> &copy; <span data-toggle="year-copy">2018</span>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <!-- END Footer -->
+  </div>
+
+
+  <script src="/regate/dashmix/js/dashmix.app.min.js"></script>
+
+    <script src="/regate/dashmix/js/plugins/highlightjs/highlight.pack.min.js"></script>
+
+    <script>jQuery(function(){ Dashmix.helpers('highlightjs'); });</script>
+
+  <style>
+      pre.sample-code {
+          direction: ltr;
+          text-align: left;
+          color: white;
+          background: #6c757d !important;
+          padding: 20px;
+          margin-top: -20px;
+          margin-left: -20px;
+          margin-right: -20px;
+      }
+
+      pre.sample-code-regate {
+      }
+
+      .block-header:hover .permalink-anchor {
+          display: inline;
+      }
+
+      .block-header .permalink-anchor {
+          display: none;
+      }
+
+      .regate-example-container{margin:25px 0;background:white}
+    .regate-example-container .regate-example{border:0.2rem solid #e6ebf4;padding:20px 20px}
+    .regate-example-container .regate-code{background:#f9fafc}
+    .regate-example-container .regate-code pre{border-top-left-radius:0;border-top-right-radius:0;margin:0}
+    .regate-example-container .regate-code pre code{padding:15px 20px;background:transparent}
+    .regate-example-container .regate-terminal{background:#e3e3ea;border-radius:0;padding:15px 20px}
+    .regate-example-container .regate-terminal pre{margin:0}
+    .regate-example-container .regate-terminal [data-type="string"]{color:maroon}
+    .regate-example-container .regate-terminal [data-type="boolean"]{color:purple}
+    .regate-example-container .regate-terminal [data-type="number"]{color:blue}
+    .regate-example-container .regate-terminal [data-type="title"]{color:gray}
+    .regate-example-container .regate-terminal [data-type="value"]{color:black}
+    .regate-example-container .regate-terminal code{display:inline-block}
+    .regate-example-container .regate-terminal code+code{margin-left:20px}
+    .regate-example-container .regate-terminal:before{opacity:0.3;font-family:monospace}
+    .regate-example-container .regate-terminal:empty:before{content:'OUTPUT'}
+    .regate-example-container .regate-serialize { font-family:monospace; padding: 5px 20px; font-size:87.5%; text-overflow: ellipsis; overflow: hidden; }
+    .regate-example-container .regate-serialize:empty:before { content: 'SUBMITTED FORM DATA WILL BE SHOWN HERE'; opacity: 0.3;}
+
+    .permalink-anchor { visibility: hidden; }
+    h2:hover .permalink-anchor { visibility: visible; }
+
+    .select2-container .select2-selection--single { height: 38px; }
+    .select2-container .select2-selection--single .select2-selection__rendered { padding-left: 15px; }
+    .select2-container--default .select2-selection--single .select2-selection__rendered { line-height: 34px; }
+    .select2-container--default .select2-selection--single .select2-selection__arrow { height: 36px; } 
+    .select2-results__option { padding: 1px 15px 3px; }
+    .select2-results__option:empty { display: none; }
+    .select2-container { width: 100% !important; }
+  </style>
+
+  <script>
+    $('.regate-example form').on('submit', function (e) {
+        e.preventDefault();
+        var $example = $(this).closest('.regate-example-container');
+        var $serialize = $example.find('.regate-serialize');
+        $serialize.html( $( this ).serialize() );
+    });
+  </script>
+</body>
+</html>
+
