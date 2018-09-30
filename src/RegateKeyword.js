@@ -49,7 +49,7 @@ RegateKeyword.init = function ({
               }
               return filterItems;
           },
-          checkForm: function () {
+          addItem: function () {
               if (this.newTodoText) {
                   this.addNewTodo();
                   return true;
@@ -82,7 +82,11 @@ RegateKeyword.markup = (id) => `
                         
                     </div>
                     
-                    <input class="form-control" type="text" v-model="items[index]" />
+                    <input class="form-control"
+                        type="text"
+                        v-model="items[index]"
+                        v-on:keydown.enter.prevent
+                    />
 
                     <div class="input-group-append">
                         <button type="button" class="btn btn-danger" v-on:click="deleteItem(index)">
@@ -101,10 +105,15 @@ RegateKeyword.markup = (id) => `
                 
             </div>
             
-            <input class="form-control" type="text" v-model="newTodoText" v-on:keyup.enter="checkForm" />
+            <input class="form-control"
+                type="text"
+                v-model="newTodoText"
+                v-on:keyup.enter="addItem"
+                v-on:keydown.enter.prevent
+            />
 
             <div class="input-group-append">
-                <button type="button" class="btn btn-success" v-on:click="checkForm">
+                <button type="button" class="btn btn-success" v-on:click="addItem">
                     <i class="fa fa-fw fa-plus"></i>
                 </button>
             </div>
