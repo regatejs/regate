@@ -231,18 +231,17 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateTextarea.markup('basic-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </div>
-          
-          <script>Regate.RegateTextarea.init({
+            <script>Regate.RegateTextarea.init({
   id: 'basic-example',
   name: 'Title',
 })</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>
@@ -267,19 +266,18 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateTextarea.markup('value-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </div>
-          
-          <script>Regate.RegateTextarea.init({
+            <script>Regate.RegateTextarea.init({
   id: 'value-example',
   name: 'Title',
-  value: 'Hello\nWorld',
+  value: 'Hello World',
 })</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>
@@ -287,7 +285,7 @@
     <div class="regate-code"><pre><code class="javascript">Regate.RegateTextarea.init({
   id: &#39;value-example&#39;,
   name: &#39;Title&#39;,
-  value: &#39;Hello\nWorld&#39;,
+  value: &#39;Hello World&#39;,
 })</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
@@ -305,19 +303,18 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateTextarea.markup('required-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </div>
-          
-          <script>Regate.RegateTextarea.init({
+            <script>Regate.RegateTextarea.init({
   id: 'required-example',
   name: 'Title',
   isRequired: true,
 })</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>
@@ -346,19 +343,18 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateTextarea.markup('placeholder-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </div>
-          
-          <script>Regate.RegateTextarea.init({
+            <script>Regate.RegateTextarea.init({
   id: 'placeholder-example',
   name: 'Title',
   placeholder: 'Please enter title',
 })</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>
@@ -386,19 +382,18 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateTextarea.markup('size-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </div>
-          
-          <script>Regate.RegateTextarea.init({
+            <script>Regate.RegateTextarea.init({
   id: 'size-example',
   name: 'Title',
   size: Regate.RegateTextarea.Size.Small,
 })</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>
@@ -428,25 +423,24 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateTextarea.markup('onchange-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            <script>
+              Regate.RegateTextarea.init({
+                id: 'onchange-example',
+                name: 'Title',
+                onChange: function ({value, isValid}) {
+                  konsoleClear('onchange-terminal')
+                  konsole('onchange-terminal', ' string', '  value', value);
+                  konsole('onchange-terminal', 'boolean', 'isValid', isValid);
+                }
+              })
+            </script>
           </div>
-          
-          <script>
-            Regate.RegateTextarea.init({
-              id: 'onchange-example',
-              name: 'Title',
-              onChange: function ({value, isValid}) {
-                konsoleClear('onchange-terminal')
-                konsole('onchange-terminal', ' string', '  value', value);
-                konsole('onchange-terminal', 'boolean', 'isValid', isValid);
-              }
-            })
-          </script>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
         </div>
       </form>
     </div>
@@ -480,12 +474,12 @@
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
-        <div>
-          <div class="input-group">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
             <script>document.write(Regate.RegateTextarea.markup('oninitialized-example'))</script>
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
           </div>
         </div>
       </form>
