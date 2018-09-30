@@ -22,8 +22,8 @@ RegateContentEditable.init = function (_ref) {
   _input.name = name;
 
   if (value !== undefined) {
-    _input.value = value;
-    _div.innerHTML = value;
+    _input.value = RegateContentEditable.DecodeEntities(value);
+    _div.innerHTML = RegateContentEditable.DecodeEntities(value);
   }
 
   _div.oninput = function () {
@@ -35,4 +35,11 @@ RegateContentEditable.init = function (_ref) {
 RegateContentEditable.markup = function (id) {
   return '\n  <div>\n    <textarea\n      id=\'' + id + '__input\'\n      class=\'form-control\'\n      style=\'display: none;\'\n    ></textarea>\n    <div\n      class=\'form-control\'\n      style=\'height: auto !important\'\n      id=\'' + id + '__div\'\n      contenteditable=\'true\'\n    ></div>\n  </div>\n';
 };
+
+RegateContentEditable.DecodeEntities = function (encodedString) {
+  var textArea = document.createElement('textarea');
+  textArea.innerHTML = encodedString;
+  return textArea.value;
+};
+
 exports.default = RegateContentEditable;

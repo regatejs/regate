@@ -18,8 +18,8 @@ RegateContentEditable.init = function ({
   _input.name = name
 
   if (value !== undefined) {
-    _input.value = value
-    _div.innerHTML = value
+    _input.value = RegateContentEditable.DecodeEntities(value)
+    _div.innerHTML = RegateContentEditable.DecodeEntities(value)
   }
 
   _div.oninput = () => {
@@ -27,7 +27,6 @@ RegateContentEditable.init = function ({
     _input.value = html
   }
 }
-
 
 RegateContentEditable.markup = (id) => `
   <div>
@@ -44,4 +43,11 @@ RegateContentEditable.markup = (id) => `
     ></div>
   </div>
 `
+
+RegateContentEditable.DecodeEntities = encodedString => {
+  var textArea = document.createElement('textarea')
+  textArea.innerHTML = encodedString
+  return textArea.value
+}
+
 export default RegateContentEditable
