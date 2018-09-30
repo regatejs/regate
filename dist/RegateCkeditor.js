@@ -29,7 +29,7 @@ RegateCkeditor.init = function (_ref) {
     return false;
   }
 
-  if (value !== undefined) _input.value = value;
+  if (value !== undefined) _input.value = RegateCkeditor.DecodeEntities(value);
 
   ClassicEditor.create(_input);
 };
@@ -37,4 +37,11 @@ RegateCkeditor.init = function (_ref) {
 RegateCkeditor.markup = function (id) {
   return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></textarea>\n';
 };
+
+RegateCkeditor.DecodeEntities = function (encodedString) {
+  var textArea = document.createElement('textarea');
+  textArea.innerHTML = encodedString;
+  return textArea.value;
+};
+
 exports.default = RegateCkeditor;
