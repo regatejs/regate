@@ -43,7 +43,12 @@ const views = {
 }
 
 for (let view in views) {
-  console.log(`Building`)
+  const viewName = view
+    .replace('components/', '')
+    .replace('/index', '')
+    .replace('.nunjucks', '')
+
+  console.log(`Building: ${viewName}`)
   console.log(`  $ ${view}`)
   console.log(`  λ ${views[view]}`)
   console.log('')
