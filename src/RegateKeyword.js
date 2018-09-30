@@ -77,7 +77,7 @@ RegateKeyword.markup = (id) => `
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">
-                            <i class="fa fa-bars" style='opacity: 0.3;'></i>
+                            <i class="fa fa-fw fa-bars" style='opacity: 0.3;'></i>
                         </span>
                         
                     </div>
@@ -86,17 +86,29 @@ RegateKeyword.markup = (id) => `
 
                     <div class="input-group-append">
                         <button type="button" class="btn btn-danger" v-on:click="deleteItem(index)">
-                            <i class="fa fa-times"></i>
+                            <i class="fa fa-fw fa-times"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </draggable>
-    </div>
 
-    <div class="input-add">
-        <input class="form-control" type="text" v-model="newTodoText" v-on:keyup.enter="checkForm" />
-        <a class="list-item--action green mr-2" v-on:click="checkForm"><i class="fas fa-plus-circle"></i></a>
+        <div class="input-group">
+            <div class="input-group-prepend" style='opacity: 0.5;'>
+                <span class="input-group-text">
+                    <i class="fa fa-fw fa-bars" style='opacity: 0.3;'></i>
+                </span>
+                
+            </div>
+            
+            <input class="form-control" type="text" v-model="newTodoText" v-on:keyup.enter="checkForm" />
+
+            <div class="input-group-append">
+                <button type="button" class="btn btn-success" v-on:click="checkForm">
+                    <i class="fa fa-fw fa-plus"></i>
+                </button>
+            </div>
+        </div>
     </div>
   </div>
 `
