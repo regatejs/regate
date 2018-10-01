@@ -34,7 +34,7 @@ RegateKeyword.init = function (_ref) {
     new Vue({
         el: '#' + id + '__app',
         data: {
-            newTodoText: null,
+            newTodoText: '',
             items: keywords
         },
         methods: {
@@ -46,20 +46,13 @@ RegateKeyword.init = function (_ref) {
                 this.items.splice(index, 1);
             },
             filterData: function filterData() {
-                var filterItems = [];
-                var lmn = 0;
-                for (var i = 0; i < this.items.length; i++) {
-                    if (this.items[i] !== "") {
-                        filterItems[lmn] = this.items[i];
-                        lmn++;
-                    }
-                }
-                return filterItems;
+                return this.items.filter(function (item) {
+                    return item.length > 0;
+                });
             },
             addItem: function addItem() {
                 if (this.newTodoText) {
                     this.addNewTodo();
-                    return true;
                 }
             }
         }
@@ -71,7 +64,7 @@ RegateKeyword.NormalizeKeywords = function (keywords) {
 };
 
 RegateKeyword.markup = function (id) {
-    return '\n  <div id=\'' + id + '__app\'>\n    <textarea\n      id=\'' + id + '__input\'\n      class=\'form-control\'\n      style=\'display: none\'\n    >{{filterData()}}</textarea>\n\n    <div>\n        <draggable :list="items" v-model="items">\n            <div v-for="(item, index) in items" style=\'margin-bottom: 2px;\'>\n                <div class="input-group">\n                    <div class="input-group-prepend">\n                        <span class="input-group-text">\n                            <i class="fa fa-fw fa-bars" style=\'opacity: 0.3;\'></i>\n                        </span>\n                        \n                    </div>\n                    \n                    <input class="form-control"\n                        type="text"\n                        v-model="items[index]"\n                        v-on:keydown.enter.prevent\n                    />\n\n                    <div class="input-group-append">\n                        <button type="button" class="btn btn-danger" v-on:click="deleteItem(index)">\n                            <i class="fa fa-fw fa-times"></i>\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </draggable>\n\n        <div class="input-group">\n            <div class="input-group-prepend" style=\'opacity: 0.5;\'>\n                <span class="input-group-text">\n                    <i class="fa fa-fw fa-bars" style=\'opacity: 0.3;\'></i>\n                </span>\n                \n            </div>\n            \n            <input class="form-control"\n                type="text"\n                v-model="newTodoText"\n                v-on:keyup.enter="addItem"\n                v-on:keydown.enter.prevent\n            />\n\n            <div class="input-group-append">\n                <button type="button" class="btn btn-success" v-on:click="addItem">\n                    <i class="fa fa-fw fa-plus"></i>\n                </button>\n            </div>\n        </div>\n    </div>\n  </div>\n';
+    return '\n  <div id=\'' + id + '__app\'>\n    <textarea\n      id=\'' + id + '__input\'\n      class=\'form-control\'\n      style=\'display: none\'\n    >{{filterData()}}</textarea>\n\n    <div>\n        <draggable :list="items" v-model="items" :options="{handle:\'.handle\'}">\n            <div v-for="(item, index) in items" style=\'margin-bottom: 2px;\'>\n                <div class="input-group">\n                    <div class="input-group-prepend handle">\n                        <span class="input-group-text">\n                            <i class="fa fa-fw fa-bars" style=\'opacity: 0.3;\'></i>\n                        </span>\n                    </div>\n                    \n                    <input class="form-control"\n                        type="text"\n                        v-model="items[index]"\n                        v-on:keydown.enter.prevent\n                    />\n\n                    <div class="input-group-append">\n                        <button type="button" class="btn btn-danger" v-on:click="deleteItem(index)">\n                            <i class="fa fa-fw fa-times"></i>\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </draggable>\n\n        <div class="input-group">\n            <div class="input-group-prepend" style=\'opacity: 0.5;\'>\n                <span class="input-group-text">\n                    <i class="fa fa-fw fa-bars" style=\'opacity: 0.3;\'></i>\n                </span>\n                \n            </div>\n            \n            <input class="form-control"\n                type="text"\n                v-model="newTodoText"\n                v-on:keyup.enter="addItem"\n                v-on:keydown.enter.prevent\n            />\n\n            <div class="input-group-append">\n                <button type="button" class="btn btn-success" v-on:click="addItem">\n                    <i class="fa fa-fw fa-plus"></i>\n                </button>\n            </div>\n        </div>\n    </div>\n  </div>\n';
 };
 
 exports.default = RegateKeyword;

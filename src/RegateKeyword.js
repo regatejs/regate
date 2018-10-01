@@ -27,32 +27,23 @@ RegateKeyword.init = function ({
   new Vue({
       el: `#${id}__app`,
       data: {
-          newTodoText: null,
+          newTodoText: '',
           items: keywords
       },
       methods: {
           addNewTodo: function () {
-              this.items.push(this.newTodoText);
-              this.newTodoText = '';
+              this.items.push(this.newTodoText)
+              this.newTodoText = ''
           },
           deleteItem: function (index) {
-              this.items.splice(index, 1);
+              this.items.splice(index, 1)
           },
           filterData: function () {
-              var filterItems = [];
-              var lmn = 0;
-              for (var i = 0; i < this.items.length; i++) {
-                  if (this.items[i] !== "") {
-                      filterItems[lmn] = this.items[i];
-                      lmn++;
-                  }
-              }
-              return filterItems;
+            return this.items.filter(item =>item.length > 0)
           },
           addItem: function () {
               if (this.newTodoText) {
-                  this.addNewTodo();
-                  return true;
+                  this.addNewTodo()
               }
           }
       }
@@ -72,14 +63,13 @@ RegateKeyword.markup = (id) => `
     >{{filterData()}}</textarea>
 
     <div>
-        <draggable :list="items" v-model="items">
+        <draggable :list="items" v-model="items" :options="{handle:'.handle'}">
             <div v-for="(item, index) in items" style='margin-bottom: 2px;'>
                 <div class="input-group">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend handle">
                         <span class="input-group-text">
                             <i class="fa fa-fw fa-bars" style='opacity: 0.3;'></i>
                         </span>
-                        
                     </div>
                     
                     <input class="form-control"
