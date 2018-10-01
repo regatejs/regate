@@ -1,7 +1,7 @@
 # Developing
 ```
 yarn
-yarn webpack
+yarn webpack -w
 yarn start
 ```
 
