@@ -817,7 +817,9 @@ RegatePersianDateTimePicker.init = function (_ref) {
       _ref$isTimeFrom = _ref.isTimeFrom,
       isTimeFrom = _ref$isTimeFrom === undefined ? false : _ref$isTimeFrom,
       _ref$isTimeTill = _ref.isTimeTill,
-      isTimeTill = _ref$isTimeTill === undefined ? false : _ref$isTimeTill;
+      isTimeTill = _ref$isTimeTill === undefined ? false : _ref$isTimeTill,
+      _ref$isNow = _ref.isNow,
+      isNow = _ref$isNow === undefined ? false : _ref$isNow;
 
 
   if (id === undefined) throw new Error('id is required');
@@ -853,9 +855,9 @@ RegatePersianDateTimePicker.init = function (_ref) {
 
   $('#' + id).MdPersianDateTimePicker(options);
 
-  if (value) {
-    $('#' + id).MdPersianDateTimePicker('setDate', new Date(value));
-  }
+  if (value) $('#' + id).MdPersianDateTimePicker('setDate', new Date(value));
+
+  if (isNow) $('#' + id).MdPersianDateTimePicker('setDate', new Date());
 };
 
 RegatePersianDateTimePicker.markup = function (id) {

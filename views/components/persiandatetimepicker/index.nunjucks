@@ -13,5 +13,6 @@
   {% include './_timepicker.nunjucks' %}
   {% include './_istimefrom.nunjucks' %}
   {% include './_istimetill.nunjucks' %}
+  {% include './_isnow.nunjucks' %}
 
 {% endblock %}

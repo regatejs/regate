@@ -8,6 +8,7 @@ RegatePersianDateTimePicker.init = function ({
   hasTimepicker = false,
   isTimeFrom = false,
   isTimeTill = false,
+  isNow = false,
 }) {
 
   if (id === undefined)
@@ -48,9 +49,11 @@ RegatePersianDateTimePicker.init = function ({
 
   $('#' + id).MdPersianDateTimePicker(options)
 
-  if (value) {
+  if (value)
     $('#' + id).MdPersianDateTimePicker('setDate', new Date(value))
-  }
+
+  if (isNow)
+    $('#' + id).MdPersianDateTimePicker('setDate', new Date())
 }
 
 RegatePersianDateTimePicker.markup = (id) => `
