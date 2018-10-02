@@ -36,6 +36,7 @@ const views = {
   'components/dropdown/index.nunjucks': './docs/components/dropdown/index.html',
   'components/number/index.nunjucks': './docs/components/number/index.html',
   'components/keyword/index.nunjucks': './docs/components/keyword/index.html',
+  'components/persiandatetimepicker/index.nunjucks': './docs/components/persiandatetimepicker/index.html',
 
   'uploader/file.nunjucks': './docs/uploader/file/index.html',
   'uploader/image.nunjucks': './docs/uploader/image/index.html',

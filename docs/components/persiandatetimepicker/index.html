@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>RegateFile - Regate</title>
+    <title>RegateText - Regate</title>
 
     <script src="/regate/dashmix/js/core/jquery.min.js"></script>
     <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
@@ -199,7 +199,7 @@
                     </button>
                     <!-- END Toggle Sidebar -->
 
-                    <b>RegateFile</b>
+                    <b>RegateText</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -226,28 +226,24 @@
         
         
 
+  <script src="/regate/dashmix/js/plugins/MD.BootstrapPersianDateTimePicker/dist/jquery.md.bootstrap.datetimepicker.js"></script>
+  <link rel="stylesheet" href="/regate/dashmix/js/plugins/MD.BootstrapPersianDateTimePicker/dist/jquery.md.bootstrap.datetimepicker.style.css" />
+
   
 
 <div class="content">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
-  <p>
-    This is the most basic usage of <code>RegateFile</code>.
-  </p>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('basic-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'basic-example',
-                name: 'MagazineCover',
-                uploaderUrl: '/regate/uploader/file',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
+            <script>document.write(Regate.RegatePersianDateTimePicker.markup('basic-example'))</script>
+            <script>Regate.RegatePersianDateTimePicker.init({
+  id: 'basic-example',
+  name: 'Birthday',
+})</script>
           </div>
           <div class="col-lg-2 col-md-3">
             <button type="submit" class="btn btn-block btn-primary">Submit</button>
@@ -256,38 +252,29 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+    <div class="regate-code"><pre><code class="javascript">Regate.RegatePersianDateTimePicker.init({
   id: &#39;basic-example&#39;,
-  name: &#39;MagazineCover&#39;,
+  name: &#39;Birthday&#39;,
 })</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
-
-
   
 
 <div class="content">
   <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
-  <p>
-    With <code>value</code> property you can set an initial value for your input.
-  </p>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('value-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'value-example',
-                name: 'MagazineCover',
-                value: 'magazine.pdf',
-                uploaderUrl: '/regate/uploader/file',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
+            <script>document.write(Regate.RegatePersianDateTimePicker.markup('value-example'))</script>
+            <script>Regate.RegatePersianDateTimePicker.init({
+  id: 'value-example',
+  name: 'Birthday',
+  value: '1986/08/19',
+})</script>
           </div>
           <div class="col-lg-2 col-md-3">
             <button type="submit" class="btn btn-block btn-primary">Submit</button>
@@ -296,39 +283,30 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+    <div class="regate-code"><pre><code class="javascript">Regate.RegatePersianDateTimePicker.init({
   id: &#39;value-example&#39;,
-  name: &#39;MagazineCover&#39;,
-  value: &#39;magazine.pdf&#39;,
+  name: &#39;Birthday&#39;,
+  value: &#39;1986/08/19&#39;,
 })</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
-
-
   
 
 <div class="content">
   <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
-  <p>
-    You can required your field with <code>isRequired</code> property.
-  </p>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateFile.markup('required-example'))</script>
-            <script>
-              Regate.RegateFile.init({
-                id: 'required-example',
-                name: 'MagazineCover',
-                isRequired: true,
-                uploaderUrl: '/regate/uploader/file',
-                repositoryUrl: 'https://never.hood/',
-              })
-            </script>
+            <script>document.write(Regate.RegatePersianDateTimePicker.markup('required-example'))</script>
+            <script>Regate.RegatePersianDateTimePicker.init({
+  id: 'required-example',
+  name: 'Birthday',
+  isRequired: true,
+})</script>
           </div>
           <div class="col-lg-2 col-md-3">
             <button type="submit" class="btn btn-block btn-primary">Submit</button>
@@ -337,16 +315,142 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateFile.init({
+    <div class="regate-code"><pre><code class="javascript">Regate.RegatePersianDateTimePicker.init({
   id: &#39;required-example&#39;,
-  name: &#39;MagazineCover&#39;,
+  name: &#39;Birthday&#39;,
   isRequired: true,
 })</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
+  
 
+<div class="content">
+  <h2 id="timepicker">TimePicker <a class="permalink-anchor" href="#timepicker">#</a></h2>
 
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegatePersianDateTimePicker.markup('timepicker-example'))</script>
+            <script>Regate.RegatePersianDateTimePicker.init({
+  id: 'timepicker-example',
+  name: 'Birthday',
+  hasTimePicker: true,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegatePersianDateTimePicker.init({
+  id: &#39;timepicker-example&#39;,
+  name: &#39;Birthday&#39;,
+  hasTimePicker: true,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+  
+
+<div class="content">
+  <h2 id="istimefrom">IsTimeFrom <a class="permalink-anchor" href="#istimefrom">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegatePersianDateTimePicker.markup('istimefrom-example'))</script>
+            <script>Regate.RegatePersianDateTimePicker.init({
+  id: 'istimefrom-example',
+  name: 'Birthday',
+  isTimeFrom: true,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegatePersianDateTimePicker.init({
+  id: &#39;istimefrom-example&#39;,
+  name: &#39;Birthday&#39;,
+  isTimeFrom: true,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+  
+
+<div class="content">
+  <h2 id="istimetill">IsTimeTill <a class="permalink-anchor" href="#istimetill">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegatePersianDateTimePicker.markup('istimetill-example'))</script>
+            <script>Regate.RegatePersianDateTimePicker.init({
+  id: 'istimetill-example',
+  name: 'Birthday',
+  isTimeTill: true,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegatePersianDateTimePicker.init({
+  id: &#39;istimetill-example&#39;,
+  name: &#39;Birthday&#39;,
+  isTimeTill: true,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+  
+
+<div class="content">
+  <h2 id="isnow">IsNow <a class="permalink-anchor" href="#isnow">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegatePersianDateTimePicker.markup('isnow-example'))</script>
+            <script>Regate.RegatePersianDateTimePicker.init({
+  id: 'isnow-example',
+  name: 'Birthday',
+  isNow: true,
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code"><pre><code class="javascript">Regate.RegatePersianDateTimePicker.init({
+  id: &#39;isnow-example&#39;,
+  name: &#39;Birthday&#39;,
+  isNow: true,
+})</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
 
 
         

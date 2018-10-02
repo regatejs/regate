@@ -9,55 +9,61 @@
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl }}components/text">
             <img src="{{ themeUrl }}icons/text.svg" class="regate-icon regate-icon-text" />
-            <span class="nav-main-link-name">RegateText</span>
+            <span class="nav-main-link-name">Text</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/file">
             <img src="{{ themeUrl }}icons/file.svg" class="regate-icon regate-icon-file" />
-            <span class="nav-main-link-name">RegateFile</span>
+            <span class="nav-main-link-name">File</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/textarea">
             <img src="{{ themeUrl }}icons/textarea.svg" class="regate-icon regate-icon-textarea" />
-            <span class="nav-main-link-name">RegateTextarea</span>
+            <span class="nav-main-link-name">Textarea</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/image">
             <img src="{{ themeUrl }}icons/image.svg" class="regate-icon regate-icon-image" />
-            <span class="nav-main-link-name">RegateImage</span>
+            <span class="nav-main-link-name">Image</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/contenteditable">
             <img src="{{ themeUrl }}icons/contenteditable.svg" class="regate-icon regate-icon-contenteditable" />
-            <span class="nav-main-link-name">RegateContentEditable</span>
+            <span class="nav-main-link-name">ContentEditable</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/ckeditor">
             <img src="{{ themeUrl }}icons/ckeditor.svg" class="regate-icon regate-icon-ckeditor" />
-            <span class="nav-main-link-name">RegateCkeditor</span>
+            <span class="nav-main-link-name">Ckeditor</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/dropdown">
             <img src="{{ themeUrl }}icons/dropdown.svg" class="regate-icon regate-icon-dropdown" />
-            <span class="nav-main-link-name">RegateDropdown</span>
+            <span class="nav-main-link-name">Dropdown</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/number">
             <img src="{{ themeUrl }}icons/number.svg" class="regate-icon regate-icon-number" />
-            <span class="nav-main-link-name">RegateNumber</span>
+            <span class="nav-main-link-name">Number</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl}}components/keyword">
             <img src="{{ themeUrl }}icons/keyword.svg" class="regate-icon regate-icon-keyword" />
-            <span class="nav-main-link-name">RegateKeyword</span>
+            <span class="nav-main-link-name">Keyword</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl}}components/persiandatetimepicker">
+            <img src="{{ themeUrl }}icons/persiandatetimepicker.svg" class="regate-icon regate-icon-keyword" />
+            <span class="nav-main-link-name">PersianDateTimePicker</span>
         </a>
     </li>
 </ul>

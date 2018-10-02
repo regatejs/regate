@@ -2,7 +2,7 @@
 "Regate.RegatePersianDateTimePicker.init({
   id: 'timepicker-example',
   name: 'Birthday',
-  hasTimepicker: true,
+  hasTimePicker: true,
 })"
 %}
 

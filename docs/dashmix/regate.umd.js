@@ -812,8 +812,8 @@ RegatePersianDateTimePicker.init = function (_ref) {
       value = _ref$value === undefined ? '' : _ref$value,
       _ref$isRequired = _ref.isRequired,
       isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
-      _ref$hasTimepicker = _ref.hasTimepicker,
-      hasTimepicker = _ref$hasTimepicker === undefined ? false : _ref$hasTimepicker,
+      _ref$hasTimePicker = _ref.hasTimePicker,
+      hasTimePicker = _ref$hasTimePicker === undefined ? false : _ref$hasTimePicker,
       _ref$isTimeFrom = _ref.isTimeFrom,
       isTimeFrom = _ref$isTimeFrom === undefined ? false : _ref$isTimeFrom,
       _ref$isTimeTill = _ref.isTimeTill,
@@ -843,7 +843,7 @@ RegatePersianDateTimePicker.init = function (_ref) {
     textFormat: 'yyyy/MM/dd'
   };
 
-  if (hasTimepicker) {
+  if (hasTimePicker) {
     options.enableTimePicker = true;
     options.dateFormat = 'yyyy/MM/dd HH:mm:ss';
     options.textFormat = 'yyyy/MM/dd HH:mm:ss';
@@ -861,7 +861,7 @@ RegatePersianDateTimePicker.init = function (_ref) {
 };
 
 RegatePersianDateTimePicker.markup = function (id) {
-  return '\n<div class="input-group">\n  <div class="input-group-prepend">\n      <span class="input-group-text cursor-pointer" id="' + id + '" style=\'cursor: pointer;\'>\n        <i class="fa fa-calendar"></i>\n      </span>\n  </div>\n  <input\n    type="text"\n    style=\'pointer-events: none;\'\n    onfocus=\'this.blur();\'\n    id="' + id + '__shamsi"\n    class="form-control"\n  />\n  <input type="hidden" id="' + id + '__miladi" class="form-control" />\n</div>\n';
+  return '\n<div class="input-group">\n  <div class="input-group-prepend">\n      <span class="input-group-text cursor-pointer" id="' + id + '" style=\'cursor: pointer;\'>\n        <i class="fa fa-calendar-alt"></i>\n      </span>\n  </div>\n  <input\n    type="text"\n    style=\'pointer-events: none;\'\n    onfocus=\'this.blur();\'\n    id="' + id + '__shamsi"\n    class="form-control"\n  />\n  <input type="hidden" id="' + id + '__miladi" class="form-control" />\n</div>\n';
 };
 
 exports.default = RegatePersianDateTimePicker;

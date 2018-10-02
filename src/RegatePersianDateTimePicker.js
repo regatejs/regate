@@ -5,7 +5,7 @@ RegatePersianDateTimePicker.init = function ({
   name,
   value = '',
   isRequired = false,
-  hasTimepicker = false,
+  hasTimePicker = false,
   isTimeFrom = false,
   isTimeTill = false,
   isNow = false,
@@ -35,7 +35,7 @@ RegatePersianDateTimePicker.init = function ({
     textFormat: 'yyyy/MM/dd',
   }
 
-  if (hasTimepicker) {
+  if (hasTimePicker) {
     options.enableTimePicker = true
     options.dateFormat = 'yyyy/MM/dd HH:mm:ss'
     options.textFormat = 'yyyy/MM/dd HH:mm:ss'
@@ -60,7 +60,7 @@ RegatePersianDateTimePicker.markup = (id) => `
 <div class="input-group">
   <div class="input-group-prepend">
       <span class="input-group-text cursor-pointer" id="${id}" style='cursor: pointer;'>
-        <i class="fa fa-calendar"></i>
+        <i class="fa fa-calendar-alt"></i>
       </span>
   </div>
   <input
