@@ -1,0 +1,13 @@
+{% extends '_layout.nunjucks' %}
+
+{% set title = 'RegateText' %}
+
+{% block body %}
+
+  <script src="{{ themeUrl }}js/plugins/MD.BootstrapPersianDateTimePicker/dist/jquery.md.bootstrap.datetimepicker.js"></script>
+  <script src="https://unpkg.com/popper.js@1.14.4/dist/umd/popper.js"></script>
+  <link rel="stylesheet" href="{{ themeUrl }}js/plugins/MD.BootstrapPersianDateTimePicker/dist/jquery.md.bootstrap.datetimepicker.style.css" />
+
+  {% include './_basic.nunjucks' %}
+
+{% endblock %}
