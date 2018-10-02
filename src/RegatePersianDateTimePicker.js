@@ -45,7 +45,6 @@ RegatePersianDateTimePicker.init = function ({
   }
 }
 
-
 RegatePersianDateTimePicker.markup = (id) => `
 <div class="input-group">
   <div class="input-group-prepend">
