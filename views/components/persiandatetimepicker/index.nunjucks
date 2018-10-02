@@ -1,6 +1,6 @@
 {% extends '_layout.nunjucks' %}
 
-{% set title = 'RegateText' %}
+{% set title = 'RegatePersianDateTimePicker' %}
 
 {% block body %}
 

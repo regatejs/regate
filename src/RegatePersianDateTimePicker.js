@@ -16,6 +16,7 @@ RegatePersianDateTimePicker.init = function ({
 
   const _inputShamsi = document.getElementById(id + '__shamsi')
   const _inputMiladi = document.getElementById(id + '__miladi')
+  const _clear = document.getElementById(id + '__clear')
 
   if (_inputShamsi === undefined)
     throw new Error('id is invalid')
@@ -54,6 +55,10 @@ RegatePersianDateTimePicker.init = function ({
 
   if (isNow)
     $('#' + id).MdPersianDateTimePicker('setDate', new Date())
+
+  _clear.onclick = () => {
+    $('#' + id).MdPersianDateTimePicker('clearDate')
+  }
 }
 
 RegatePersianDateTimePicker.markup = (id) => `
@@ -70,6 +75,11 @@ RegatePersianDateTimePicker.markup = (id) => `
     id="${id}__shamsi"
     class="form-control"
   />
+  <div class="input-group-append">
+      <span class="input-group-text cursor-pointer" id="${id}__clear" style='cursor: pointer;'>
+        <i class="fa fa-times"></i>
+      </span>
+  </div>
   <input type="hidden" id="${id}__miladi" class="form-control" />
 </div>
 `
