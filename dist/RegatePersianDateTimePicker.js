@@ -26,6 +26,7 @@ RegatePersianDateTimePicker.init = function (_ref) {
 
   var _inputShamsi = document.getElementById(id + '__shamsi');
   var _inputMiladi = document.getElementById(id + '__miladi');
+  var _clear = document.getElementById(id + '__clear');
 
   if (_inputShamsi === undefined) throw new Error('id is invalid');
 
@@ -58,10 +59,14 @@ RegatePersianDateTimePicker.init = function (_ref) {
   if (value) $('#' + id).MdPersianDateTimePicker('setDate', new Date(value));
 
   if (isNow) $('#' + id).MdPersianDateTimePicker('setDate', new Date());
+
+  _clear.onclick = function () {
+    $('#' + id).MdPersianDateTimePicker('clearDate');
+  };
 };
 
 RegatePersianDateTimePicker.markup = function (id) {
-  return '\n<div class="input-group">\n  <div class="input-group-prepend">\n      <span class="input-group-text cursor-pointer" id="' + id + '" style=\'cursor: pointer;\'>\n        <i class="fa fa-calendar-alt"></i>\n      </span>\n  </div>\n  <input\n    type="text"\n    style=\'pointer-events: none;\'\n    onfocus=\'this.blur();\'\n    id="' + id + '__shamsi"\n    class="form-control"\n  />\n  <input type="hidden" id="' + id + '__miladi" class="form-control" />\n</div>\n';
+  return '\n<div class="input-group">\n  <div class="input-group-prepend">\n      <span class="input-group-text cursor-pointer" id="' + id + '" style=\'cursor: pointer;\'>\n        <i class="fa fa-calendar-alt"></i>\n      </span>\n  </div>\n  <input\n    type="text"\n    style=\'pointer-events: none;\'\n    onfocus=\'this.blur();\'\n    id="' + id + '__shamsi"\n    class="form-control"\n  />\n  <div class="input-group-append">\n      <span class="input-group-text cursor-pointer" id="' + id + '__clear" style=\'cursor: pointer;\'>\n        <i class="fa fa-times"></i>\n      </span>\n  </div>\n  <input type="hidden" id="' + id + '__miladi" class="form-control" />\n</div>\n';
 };
 
 exports.default = RegatePersianDateTimePicker;
