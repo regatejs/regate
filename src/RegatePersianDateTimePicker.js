@@ -5,7 +5,7 @@ RegatePersianDateTimePicker.init = function ({
   name,
   value = '',
   isRequired = false,
-  enableTimePicker = false,
+  hasTimepicker = false,
 }) {
 
   if (id === undefined)
@@ -32,7 +32,7 @@ RegatePersianDateTimePicker.init = function ({
     textFormat: 'yyyy/MM/dd',
   }
 
-  if (enableTimePicker) {
+  if (hasTimepicker) {
     options.enableTimePicker = true
     options.dateFormat = 'yyyy/MM/dd HH:mm:ss'
     options.textFormat = 'yyyy/MM/dd HH:mm:ss'

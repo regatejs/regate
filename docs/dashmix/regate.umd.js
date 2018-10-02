@@ -812,8 +812,8 @@ RegatePersianDateTimePicker.init = function (_ref) {
       value = _ref$value === undefined ? '' : _ref$value,
       _ref$isRequired = _ref.isRequired,
       isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
-      _ref$enableTimePicker = _ref.enableTimePicker,
-      enableTimePicker = _ref$enableTimePicker === undefined ? false : _ref$enableTimePicker;
+      _ref$hasTimepicker = _ref.hasTimepicker,
+      hasTimepicker = _ref$hasTimepicker === undefined ? false : _ref$hasTimepicker;
 
 
   if (id === undefined) throw new Error('id is required');
@@ -837,7 +837,7 @@ RegatePersianDateTimePicker.init = function (_ref) {
     textFormat: 'yyyy/MM/dd'
   };
 
-  if (enableTimePicker) {
+  if (hasTimepicker) {
     options.enableTimePicker = true;
     options.dateFormat = 'yyyy/MM/dd HH:mm:ss';
     options.textFormat = 'yyyy/MM/dd HH:mm:ss';
