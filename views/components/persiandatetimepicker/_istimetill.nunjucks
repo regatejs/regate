@@ -1,20 +1,20 @@
 {% set script = 
 "Regate.RegatePersianDateTimePicker.init({
-  id: 'value-example',
+  id: 'istimetill-example',
   name: 'Birthday',
-  value: '1986/08/19',
+  isTimeTill: true,
 })"
 %}
 
 <div class="content">
-  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
+  <h2 id="istimetill">IsTimeTill <a class="permalink-anchor" href="#istimetill">#</a></h2>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegatePersianDateTimePicker.markup('value-example'))</script>
+            <script>document.write(Regate.RegatePersianDateTimePicker.markup('istimetill-example'))</script>
             <script>{{ script|safe }}</script>
           </div>
           <div class="col-lg-2 col-md-3">

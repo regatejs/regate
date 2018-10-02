@@ -28,7 +28,3 @@
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
-
-<script>
-  $('[data-toggle="popover"]').popover()
-</script>

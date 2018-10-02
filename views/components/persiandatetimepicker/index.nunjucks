@@ -11,5 +11,7 @@
   {% include './_value.nunjucks' %}
   {% include './_required.nunjucks' %}
   {% include './_timepicker.nunjucks' %}
+  {% include './_istimefrom.nunjucks' %}
+  {% include './_istimetill.nunjucks' %}
 
 {% endblock %}

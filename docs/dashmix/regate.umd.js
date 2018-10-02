@@ -813,7 +813,11 @@ RegatePersianDateTimePicker.init = function (_ref) {
       _ref$isRequired = _ref.isRequired,
       isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
       _ref$hasTimepicker = _ref.hasTimepicker,
-      hasTimepicker = _ref$hasTimepicker === undefined ? false : _ref$hasTimepicker;
+      hasTimepicker = _ref$hasTimepicker === undefined ? false : _ref$hasTimepicker,
+      _ref$isTimeFrom = _ref.isTimeFrom,
+      isTimeFrom = _ref$isTimeFrom === undefined ? false : _ref$isTimeFrom,
+      _ref$isTimeTill = _ref.isTimeTill,
+      isTimeTill = _ref$isTimeTill === undefined ? false : _ref$isTimeTill;
 
 
   if (id === undefined) throw new Error('id is required');
@@ -842,6 +846,10 @@ RegatePersianDateTimePicker.init = function (_ref) {
     options.dateFormat = 'yyyy/MM/dd HH:mm:ss';
     options.textFormat = 'yyyy/MM/dd HH:mm:ss';
   }
+
+  if (isTimeFrom) options.dateFormat = 'yyyy/MM/dd 00:00:00';
+
+  if (isTimeTill) options.dateFormat = 'yyyy/MM/dd 23:59:59';
 
   $('#' + id).MdPersianDateTimePicker(options);
 

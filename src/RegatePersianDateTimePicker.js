@@ -6,6 +6,8 @@ RegatePersianDateTimePicker.init = function ({
   value = '',
   isRequired = false,
   hasTimepicker = false,
+  isTimeFrom = false,
+  isTimeTill = false,
 }) {
 
   if (id === undefined)
@@ -37,6 +39,12 @@ RegatePersianDateTimePicker.init = function ({
     options.dateFormat = 'yyyy/MM/dd HH:mm:ss'
     options.textFormat = 'yyyy/MM/dd HH:mm:ss'
   }
+
+  if (isTimeFrom)
+    options.dateFormat = 'yyyy/MM/dd 00:00:00'
+
+  if (isTimeTill)
+    options.dateFormat = 'yyyy/MM/dd 23:59:59'
 
   $('#' + id).MdPersianDateTimePicker(options)
 
