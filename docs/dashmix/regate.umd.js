@@ -811,7 +811,9 @@ RegatePersianDateTimePicker.init = function (_ref) {
       _ref$value = _ref.value,
       value = _ref$value === undefined ? '' : _ref$value,
       _ref$isRequired = _ref.isRequired,
-      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired;
+      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
+      _ref$enableTimePicker = _ref.enableTimePicker,
+      enableTimePicker = _ref$enableTimePicker === undefined ? false : _ref$enableTimePicker;
 
 
   if (id === undefined) throw new Error('id is required');
@@ -825,15 +827,23 @@ RegatePersianDateTimePicker.init = function (_ref) {
 
   if (isRequired === true) _inputShamsi.required = true;
 
-  $('#' + id).MdPersianDateTimePicker({
+  var options = {
     targetTextSelector: '#' + id + '__shamsi',
     targetDateSelector: '#' + id + '__miladi',
     isGregorian: false,
-    enableTimePicker: true,
+    enableTimePicker: false,
     yearOffset: 100,
-    dateFormat: 'yyyy/MM/dd HH:mm:ss',
-    textFormat: 'yyyy/MM/dd HH:mm:ss'
-  });
+    dateFormat: 'yyyy/MM/dd',
+    textFormat: 'yyyy/MM/dd'
+  };
+
+  if (enableTimePicker) {
+    options.enableTimePicker = true;
+    options.dateFormat = 'yyyy/MM/dd HH:mm:ss';
+    options.textFormat = 'yyyy/MM/dd HH:mm:ss';
+  }
+
+  $('#' + id).MdPersianDateTimePicker(options);
 
   if (value) {
     $('#' + id).MdPersianDateTimePicker('setDate', new Date(value));
@@ -841,7 +851,7 @@ RegatePersianDateTimePicker.init = function (_ref) {
 };
 
 RegatePersianDateTimePicker.markup = function (id) {
-  return '\n<div class="input-group">\n  <div class="input-group-prepend">\n      <span class="input-group-text cursor-pointer" id="' + id + '">\n        <i class="fa fa-calendar"></i>\n      </span>\n  </div>\n  <input\n    type="text"\n    style=\'pointer-events: none;\'\n    onfocus=\'this.blur();\'\n    id="' + id + '__shamsi"\n    class="form-control"\n  />\n  <input type="hidden" id="' + id + '__miladi" class="form-control" />\n</div>\n';
+  return '\n<div class="input-group">\n  <div class="input-group-prepend">\n      <span class="input-group-text cursor-pointer" id="' + id + '" style=\'cursor: pointer;\'>\n        <i class="fa fa-calendar"></i>\n      </span>\n  </div>\n  <input\n    type="text"\n    style=\'pointer-events: none;\'\n    onfocus=\'this.blur();\'\n    id="' + id + '__shamsi"\n    class="form-control"\n  />\n  <input type="hidden" id="' + id + '__miladi" class="form-control" />\n</div>\n';
 };
 
 exports.default = RegatePersianDateTimePicker;

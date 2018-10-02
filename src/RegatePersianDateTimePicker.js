@@ -5,6 +5,7 @@ RegatePersianDateTimePicker.init = function ({
   name,
   value = '',
   isRequired = false,
+  enableTimePicker = false,
 }) {
 
   if (id === undefined)
@@ -21,18 +22,26 @@ RegatePersianDateTimePicker.init = function ({
   if (isRequired === true)
     _inputShamsi.required = true
 
-  $('#' + id).MdPersianDateTimePicker({
+  const options = {
     targetTextSelector: '#' + id + '__shamsi',
     targetDateSelector: '#' + id + '__miladi',
     isGregorian: false,
-    enableTimePicker: true,
+    enableTimePicker: false,
     yearOffset: 100,
-    dateFormat:'yyyy/MM/dd HH:mm:ss',
-    textFormat:'yyyy/MM/dd HH:mm:ss',
-  })
+    dateFormat: 'yyyy/MM/dd',
+    textFormat: 'yyyy/MM/dd',
+  }
+
+  if (enableTimePicker) {
+    options.enableTimePicker = true
+    options.dateFormat = 'yyyy/MM/dd HH:mm:ss'
+    options.textFormat = 'yyyy/MM/dd HH:mm:ss'
+  }
+
+  $('#' + id).MdPersianDateTimePicker(options)
 
   if (value) {
-    $('#' + id).MdPersianDateTimePicker('setDate', new Date(value)); 
+    $('#' + id).MdPersianDateTimePicker('setDate', new Date(value))
   }
 }
 
@@ -40,7 +49,7 @@ RegatePersianDateTimePicker.init = function ({
 RegatePersianDateTimePicker.markup = (id) => `
 <div class="input-group">
   <div class="input-group-prepend">
-      <span class="input-group-text cursor-pointer" id="${id}">
+      <span class="input-group-text cursor-pointer" id="${id}" style='cursor: pointer;'>
         <i class="fa fa-calendar"></i>
       </span>
   </div>
