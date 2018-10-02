@@ -830,9 +830,14 @@ RegatePersianDateTimePicker.init = function (_ref) {
     targetDateSelector: '#' + id + '__miladi',
     isGregorian: false,
     enableTimePicker: true,
+    yearOffset: 100,
     dateFormat: 'yyyy/MM/dd HH:mm:ss',
     textFormat: 'yyyy/MM/dd HH:mm:ss'
   });
+
+  if (value) {
+    $('#' + id).MdPersianDateTimePicker('setDate', new Date(value));
+  }
 };
 
 RegatePersianDateTimePicker.markup = function (id) {
