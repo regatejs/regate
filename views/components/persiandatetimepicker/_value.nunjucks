@@ -2,7 +2,7 @@
 "Regate.RegatePersianDateTimePicker.init({
   id: 'value-example',
   name: 'Birthday',
-  value: '1986/08/19',
+  value: '1986/11/19',
 })"
 %}
 
