@@ -4,13 +4,15 @@
 
 {% block body %}
 
-<script>Regate.RegateText.setMarkup(`
+<script>
+Regate.RegateText.setMarkup(`
   <input
     id='{id}__input'
     type='text'
     aclass='form-control'
   />
-`)</script>
+`)
+</script>
 
   {% include './_basic.nunjucks' %}
   {% include './_value.nunjucks' %}

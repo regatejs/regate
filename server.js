@@ -127,6 +127,10 @@ app.get('/components', function (req, res) {
   res.render('components/index', { siteUrl: siteUrl, themeUrl: themeUrl });
 });
 
+app.get('/documentation', function (req, res) {
+  res.render('documentation/index', { siteUrl: siteUrl, themeUrl: themeUrl });
+});
+
 app.get('/uploader/file', function (req, res) {
   res.render('uploader/file', { siteUrl: siteUrl, themeUrl: themeUrl });
 });

@@ -1,0 +1,8 @@
+<ul class="nav-main">
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl }}start">
+            <i class="nav-main-link-icon si si-chemistry"></i>
+            <span class="nav-main-link-name">Getting Started</span>
+        </a>
+    </li>
+</ul>

@@ -112,7 +112,7 @@
         <!-- END Side Header -->
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
-            {% include '_sidebar.nunjucks' %}
+            {% include '_sidebar-documentation.nunjucks' %}
         </div>
         <!-- END Side Navigation -->
       </nav>
