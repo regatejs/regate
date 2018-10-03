@@ -9,8 +9,6 @@ pre.sample-code {
   margin-right: -20px;
 }
 
-pre.sample-code-regate {
-}
 
 .block-header:hover .permalink-anchor {
   display: inline;
@@ -48,4 +46,10 @@ h2:hover .permalink-anchor { visibility: visible; }
 
 .nav-main-item.active a {
   background: #e1effe;
+}
+
+.regate-icon {
+  width: 16px;
+  height: auto;
+  margin-right: 9px;
 }

@@ -9,9 +9,9 @@
     <div class="block-content block-content-full">
       <h1>Getting Started</h1>
       
-      <div class="text-xs-center">
+      <div>
         Starting with Regate is easy and quick. Just install it, and use the
-        <a href="{{ siteUrl }}components/text">components</a>
+        <a href="{{ siteUrl }}components/text/">components</a>
         as your need.
       </div>
       
