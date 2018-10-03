@@ -28,18 +28,28 @@ RegateCkeditor.init = function ({
   ClassicEditor.create(_input)
 }
 
-
-RegateCkeditor.markup = (id) => `
-  <textarea
-    id='${id}__input'
-    class='form-control'
-  ></textarea>
-`
-
 RegateCkeditor.DecodeEntities = encodedString => {
   var textArea = document.createElement('textarea')
   textArea.innerHTML = encodedString
   return textArea.value
 }
+
+RegateCkeditor._markup = `
+  <textarea
+    id='{id}__input'
+    class='form-control'
+  ></textarea>
+`
+
+RegateCkeditor.markup = id => {
+  return RegateCkeditor.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegateCkeditor.setMarkup = markup =>
+  RegateCkeditor._markup = markup
+
+RegateCkeditor.getMarkup = () =>
+  RegateCkeditor._markup
 
 export default RegateCkeditor
