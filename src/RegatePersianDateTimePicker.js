@@ -61,10 +61,10 @@ RegatePersianDateTimePicker.init = function ({
   }
 }
 
-RegatePersianDateTimePicker.markup = (id) => `
+RegatePersianDateTimePicker._markup = `
 <div class="input-group">
   <div class="input-group-prepend">
-      <span class="input-group-text cursor-pointer" id="${id}" style='cursor: pointer;'>
+      <span class="input-group-text cursor-pointer" id="{id}" style='cursor: pointer;'>
         <i class="fa fa-calendar-alt"></i>
       </span>
   </div>
@@ -72,16 +72,27 @@ RegatePersianDateTimePicker.markup = (id) => `
     type="text"
     style='pointer-events: none;'
     onfocus='this.blur();'
-    id="${id}__shamsi"
+    id="{id}__shamsi"
     class="form-control"
   />
   <div class="input-group-append">
-      <span class="input-group-text cursor-pointer" id="${id}__clear" style='cursor: pointer;'>
+      <span class="input-group-text cursor-pointer" id="{id}__clear" style='cursor: pointer;'>
         <i class="fa fa-times"></i>
       </span>
   </div>
-  <input type="hidden" id="${id}__miladi" class="form-control" />
+  <input type="hidden" id="{id}__miladi" class="form-control" />
 </div>
 `
+
+RegatePersianDateTimePicker.markup = id => {
+  return RegatePersianDateTimePicker.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegatePersianDateTimePicker.setMarkup = markup =>
+  RegatePersianDateTimePicker._markup = markup
+
+RegatePersianDateTimePicker.getMarkup = () =>
+  RegatePersianDateTimePicker._markup
 
 export default RegatePersianDateTimePicker
