@@ -54,10 +54,10 @@ RegateKeyword.NormalizeKeywords = keywords => {
   return keywords ? (Array.isArray(keywords) ? keywords : [keywords]) : []
 }
 
-RegateKeyword.markup = (id) => `
-  <div id='${id}__app'>
+RegateKeyword._markup = `
+  <div id='{id}__app'>
     <textarea
-      id='${id}__input'
+      id='{id}__input'
       class='form-control'
       style='display: none'
     >{{filterData()}}</textarea>
@@ -111,5 +111,16 @@ RegateKeyword.markup = (id) => `
     </div>
   </div>
 `
+
+RegateKeyword.markup = id => {
+  return RegateKeyword.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegateKeyword.setMarkup = markup =>
+  RegateKeyword._markup = markup
+
+RegateKeyword.getMarkup = () =>
+  RegateKeyword._markup
 
 export default RegateKeyword
