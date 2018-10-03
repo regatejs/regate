@@ -69,40 +69,6 @@ RegateImage.init = function ({
   }
 }
 
-
-RegateImage.markup = (id) => `
-  <div data-role='RegateImage'>
-      <div class='input-group'>
-          <div class='input-group-prepend'>
-              <button type='button'
-                      class='btn btn-secondary'
-                      id='${id}__upload'>
-                  <i class='fa fa-search mr-1'></i> CHOOSE
-              </button>
-          </div>
-
-          <input type='text'
-                  style='pointer-events: none;'
-                  onfocus='this.blur();'
-                  id='${id}__input'
-                  class='form-control' />
-
-          <div class='input-group-append'>
-              <button type='button' class='btn btn-outline-secondary' id='${id}__remove' style='display: none;'>
-                  <i class='fa fa-fw fa-times'></i>
-              </button>
-              <a href='#' target='_blank' class='btn btn-outline-secondary' id='${id}__view' style='display: none;'>
-                  <i class='fa fa-fw fa-download'></i>
-              </a>
-          </div>
-      </div>
-      
-      <img id='${id}__image'
-        style='display: none; max-width: 200px; max-height: 150px;'
-      />
-  </div>
-`
-
 RegateImage.set = (id, value) => {
   const _input = document.getElementById(id + '__input')
   const _remove = document.getElementById(id + '__remove')
@@ -130,7 +96,50 @@ RegateImage.set = (id, value) => {
     _view.href = ''
     _image.src = ''
   }
-  
 }
+
+RegateImage._markup = `
+  <div>
+      <div class='input-group'>
+          <div class='input-group-prepend'>
+              <button type='button'
+                      class='btn btn-secondary'
+                      id='{id}__upload'>
+                  <i class='fa fa-search mr-1'></i> CHOOSE
+              </button>
+          </div>
+
+          <input type='text'
+                  style='pointer-events: none;'
+                  onfocus='this.blur();'
+                  id='{id}__input'
+                  class='form-control' />
+
+          <div class='input-group-append'>
+              <button type='button' class='btn btn-outline-secondary' id='{id}__remove' style='display: none;'>
+                  <i class='fa fa-fw fa-times'></i>
+              </button>
+              <a href='#' target='_blank' class='btn btn-outline-secondary' id='{id}__view' style='display: none;'>
+                  <i class='fa fa-fw fa-download'></i>
+              </a>
+          </div>
+      </div>
+      
+      <img id='{id}__image'
+        style='display: none; max-width: 200px; max-height: 150px;'
+      />
+  </div>
+`
+
+RegateImage.markup = id => {
+  return RegateImage.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegateImage.setMarkup = markup =>
+  RegateImage._markup = markup
+
+RegateImage.getMarkup = () =>
+  RegateImage._markup
 
 export default RegateImage
