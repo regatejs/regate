@@ -40,14 +40,6 @@ app.get('/', (req, res) => {
   res.render('homepage', { siteUrl, themeUrl })
 })
 
-app.get('/components', (req, res) => {
-  res.render('components/index', { siteUrl, themeUrl })
-})
-
-app.get('/documentation', (req, res) => {
-  res.render('documentation/index', { siteUrl, themeUrl })
-})
-
 app.get('/documentation/:doc', (req, res) => {
   const { doc } = req.params
   res.render(`documentation/${doc}/index`, { siteUrl, themeUrl })

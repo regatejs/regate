@@ -123,14 +123,6 @@ app.get('/', function (req, res) {
   res.render('homepage', { siteUrl: siteUrl, themeUrl: themeUrl });
 });
 
-app.get('/components', function (req, res) {
-  res.render('components/index', { siteUrl: siteUrl, themeUrl: themeUrl });
-});
-
-app.get('/documentation', function (req, res) {
-  res.render('documentation/index', { siteUrl: siteUrl, themeUrl: themeUrl });
-});
-
 app.get('/documentation/:doc', function (req, res) {
   var doc = req.params.doc;
 

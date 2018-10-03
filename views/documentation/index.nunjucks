@@ -1,9 +1,0 @@
-{% extends '_layout-documentation.nunjucks' %}
-
-{% set title = 'Regate Documentation' %}
-
-{% block body %}
-
-
-
-{% endblock %}
