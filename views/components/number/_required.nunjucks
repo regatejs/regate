@@ -2,7 +2,7 @@
 "Regate.RegateNumber.init({
   id: 'required-example',
   name: 'Total',
-  required: true,
+  isRequired: true,
 })"
 %}
 
