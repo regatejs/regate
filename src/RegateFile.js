@@ -69,36 +69,6 @@ RegateFile.init = function ({
   }
 }
 
-
-RegateFile.markup = (id) => `
-  <div data-role='RegateFile'>
-      <div class='input-group'>
-          <div class='input-group-prepend'>
-              <button type='button'
-                      class='btn btn-secondary'
-                      id='${id}__upload'>
-                  <i class='fa fa-search mr-1'></i> CHOOSE
-              </button>
-          </div>
-
-          <input type='text'
-                  style='pointer-events: none;'
-                  onfocus='this.blur();'
-                  id='${id}__input'
-                  class='form-control' />
-
-          <div class='input-group-append'>
-              <button type='button' class='btn btn-outline-secondary' id='${id}__remove' style='display: none;'>
-                  <i class='fa fa-fw fa-times'></i>
-              </button>
-              <a href='#' target='_blank' class='btn btn-outline-secondary' id='${id}__view' style='display: none;'>
-                  <i class='fa fa-fw fa-download'></i>
-              </a>
-          </div>
-      </div>
-  </div>
-`
-
 RegateFile.set = (id, value) => {
   const _input = document.getElementById(id + '__input')
   const _remove = document.getElementById(id + '__remove')
@@ -118,7 +88,44 @@ RegateFile.set = (id, value) => {
     _view.style.display = 'none'
     _upload.style.display = ''
   }
-  
 }
+
+RegateFile._markup = `
+  <div class='input-group'>
+      <div class='input-group-prepend'>
+          <button type='button'
+                  class='btn btn-secondary'
+                  id='{id}__upload'>
+              <i class='fa fa-search mr-1'></i> CHOOSE
+          </button>
+      </div>
+
+      <input type='text'
+              style='pointer-events: none;'
+              onfocus='this.blur();'
+              id='{id}__input'
+              class='form-control' />
+
+      <div class='input-group-append'>
+          <button type='button' class='btn btn-outline-secondary' id='{id}__remove' style='display: none;'>
+              <i class='fa fa-fw fa-times'></i>
+          </button>
+          <a href='#' target='_blank' class='btn btn-outline-secondary' id='{id}__view' style='display: none;'>
+              <i class='fa fa-fw fa-download'></i>
+          </a>
+      </div>
+  </div>
+`
+
+RegateFile.markup = id => {
+  return RegateFile.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegateFile.setMarkup = markup =>
+  RegateFile._markup = markup
+
+RegateFile.getMarkup = () =>
+  RegateFile._markup
 
 export default RegateFile
