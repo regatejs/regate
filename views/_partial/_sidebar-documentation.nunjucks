@@ -12,3 +12,12 @@
         </a>
     </li>
 </ul>
+
+<script>
+    (function () {
+        var component = window.location.href.split('/').pop()
+        $('.nav-main-link[href$="/' + component + '"]')
+            .closest('.nav-main-item')
+            .addClass('active')
+    }())
+</script>
