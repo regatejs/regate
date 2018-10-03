@@ -35,3 +35,11 @@ window.konsole = (container, type, title, value) => {
   $pre.appendTo($terminal)
 }
 
+$(function () {
+  $('.regate-example form').on('submit', function (e) {
+    e.preventDefault();
+    var $example = $(this).closest('.regate-example-container');
+    var $serialize = $example.find('.regate-serialize');
+    $serialize.html( $( this ).serialize() );
+  });
+});
