@@ -5,66 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>RegateNumber · Regate</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/regate/dashmix/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/regate/dashmix/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/regate/dashmix/favicon/favicon-16x16.png">
+<link rel="manifest" href="/regate/dashmix/favicon/site.webmanifest">
+<link rel="mask-icon" href="/regate/dashmix/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/regate/dashmix/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/regate/dashmix/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
     <script src="/regate/dashmix/js/core/jquery.min.js"></script>
     <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
     <script src="/regate/dashmix/js/core/simplebar.min.js"></script>
     <script src="/regate/dashmix/js/core/jquery-scrollLock.min.js"></script>
     <script src="/regate/dashmix/js/core/jquery.appear.min.js"></script>
     <script src="/regate/dashmix/js/core/js.cookie.min.js"></script>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/regate/dashmix/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/regate/dashmix/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/regate/dashmix/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/regate/dashmix/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/regate/dashmix/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/regate/dashmix/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="msapplication-config" content="/regate/dashmix/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-
-    <script src="/regate/dashmix/regate.umd.js"></script>
-
-    <script>
-        window.konsoleClear = container => {
-            let $terminal = $('#' + container)
-            $terminal.html('')
-        }
-
-        window.konsoleGroup = (container, groupName) => {
-            let $terminal = $('#' + container)
-            $terminal.append('<style>#' + container + ':before { content: "OUTPUT ' + groupName + '"; }</style>');
-        }
-
-        window.konsole = (container, type, title, value) => {
-            let $terminal = $('#' + container)
-            let $pre = $('<pre></pre>')
-
-            if (type.trim() === 'boolean') {
-            value = value ? 'true' : 'false'
-            }
-
-            $('<code></code>')
-            .attr('data-type', 'title')
-            .text(title)
-            .appendTo($pre)
-
-            $('<code></code>')
-            .attr('data-type', type.trim())
-            .text(type)
-            .appendTo($pre)
-
-
-            $('<code></code>')
-            .attr('data-type', 'value')
-            .text(value)
-            .appendTo($pre)
-
-            $pre.appendTo($terminal)
-        }
-        </script>
-
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
+
+    <script src="/regate/dashmix/regate.umd.js?timestamp=1538563277"></script>
+    <script src="/regate/dashmix/script.js?timestamp=1538563277"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1538563277">
 </head>
 <body>
 
@@ -181,6 +143,15 @@
         </a>
     </li>
 </ul>
+
+<script>
+    (function () {
+        var component = window.location.href.split('/').pop()
+        $('.nav-main-link[href$="/' + component + '"]')
+            .closest('.nav-main-item')
+            .addClass('active')
+    }())
+</script>
         </div>
         <!-- END Side Navigation -->
       </nav>
@@ -455,75 +426,10 @@
       <!-- END Footer -->
   </div>
 
-
-  <script src="/regate/dashmix/js/dashmix.app.min.js"></script>
-
+    <script src="/regate/dashmix/js/dashmix.app.min.js"></script>
     <script src="/regate/dashmix/js/plugins/highlightjs/highlight.pack.min.js"></script>
-
     <script>jQuery(function(){ Dashmix.helpers('highlightjs'); });</script>
 
-  <style>
-      pre.sample-code {
-          direction: ltr;
-          text-align: left;
-          color: white;
-          background: #6c757d !important;
-          padding: 20px;
-          margin-top: -20px;
-          margin-left: -20px;
-          margin-right: -20px;
-      }
-
-      pre.sample-code-regate {
-      }
-
-      .block-header:hover .permalink-anchor {
-          display: inline;
-      }
-
-      .block-header .permalink-anchor {
-          display: none;
-      }
-
-      .regate-example-container{margin:25px 0;background:white}
-    .regate-example-container .regate-example{border:0.2rem solid #e6ebf4;padding:20px 20px}
-    .regate-example-container .regate-code{background:#f9fafc}
-    .regate-example-container .regate-code pre{border-top-left-radius:0;border-top-right-radius:0;margin:0}
-    .regate-example-container .regate-code pre code{padding:15px 20px;background:transparent}
-    .regate-example-container .regate-terminal{background:#e3e3ea;border-radius:0;padding:15px 20px}
-    .regate-example-container .regate-terminal pre{margin:0}
-    .regate-example-container .regate-terminal [data-type="string"]{color:maroon}
-    .regate-example-container .regate-terminal [data-type="boolean"]{color:purple}
-    .regate-example-container .regate-terminal [data-type="number"]{color:blue}
-    .regate-example-container .regate-terminal [data-type="title"]{color:gray}
-    .regate-example-container .regate-terminal [data-type="value"]{color:black}
-    .regate-example-container .regate-terminal code{display:inline-block}
-    .regate-example-container .regate-terminal code+code{margin-left:20px}
-    .regate-example-container .regate-terminal:before{opacity:0.3;font-family:monospace}
-    .regate-example-container .regate-terminal:empty:before{content:'OUTPUT'}
-    .regate-example-container .regate-serialize { font-family:monospace; padding: 5px 20px; font-size:87.5%; text-overflow: ellipsis; overflow: hidden; }
-    .regate-example-container .regate-serialize:empty:before { content: 'SUBMITTED FORM DATA WILL BE SHOWN HERE'; opacity: 0.3;}
-
-    .permalink-anchor { visibility: hidden; }
-    h2:hover .permalink-anchor { visibility: visible; }
-
-    .select2-container .select2-selection--single { height: 38px; }
-    .select2-container .select2-selection--single .select2-selection__rendered { padding-left: 15px; }
-    .select2-container--default .select2-selection--single .select2-selection__rendered { line-height: 34px; }
-    .select2-container--default .select2-selection--single .select2-selection__arrow { height: 36px; } 
-    .select2-results__option { padding: 1px 15px 3px; }
-    .select2-results__option:empty { display: none; }
-    .select2-container { width: 100% !important; }
-  </style>
-
-  <script>
-    $('.regate-example form').on('submit', function (e) {
-        e.preventDefault();
-        var $example = $(this).closest('.regate-example-container');
-        var $serialize = $example.find('.regate-serialize');
-        $serialize.html( $( this ).serialize() );
-    });
-  </script>
 </body>
 </html>
 
