@@ -25,6 +25,7 @@ const app = express()
 const port = 3003
 const siteUrl = '/'
 const themeUrl = '/'
+const timestamp = Math.floor(Date.now() / 1000)
 
 nunjucks.configure('views', {
   autoescape: true,
@@ -37,25 +38,25 @@ app.use(siteUrl, express.static('docs/dashmix'))
 app.set('view engine', 'nunjucks')
 
 app.get('/', (req, res) => {
-  res.render('homepage', { siteUrl, themeUrl })
+  res.render('homepage', { siteUrl, themeUrl, timestamp })
 })
 
 app.get('/documentation/:doc', (req, res) => {
   const { doc } = req.params
-  res.render(`documentation/${doc}/index`, { siteUrl, themeUrl })
+  res.render(`documentation/${doc}/index`, { siteUrl, themeUrl, timestamp })
 })
 
 app.get('/uploader/file', (req, res) => {
-  res.render('uploader/file', { siteUrl, themeUrl })
+  res.render('uploader/file', { siteUrl, themeUrl, timestamp })
 })
 
 app.get('/uploader/image', (req, res) => {
-  res.render('uploader/image', { siteUrl, themeUrl })
+  res.render('uploader/image', { siteUrl, themeUrl, timestamp })
 })
 
 app.get('/components/:component', (req, res) => {
   const { component } = req.params
-  res.render(`components/${component}/index`, { siteUrl, themeUrl })
+  res.render(`components/${component}/index`, { siteUrl, themeUrl, timestamp })
 })
 
 

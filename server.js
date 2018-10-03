@@ -109,6 +109,7 @@ var app = (0, _express2.default)();
 var port = 3003;
 var siteUrl = '/';
 var themeUrl = '/';
+var timestamp = Math.floor(Date.now() / 1000);
 
 _nunjucks2.default.configure('views', {
   autoescape: true,
@@ -120,27 +121,27 @@ app.use(siteUrl, _express2.default.static('docs/dashmix'));
 app.set('view engine', 'nunjucks');
 
 app.get('/', function (req, res) {
-  res.render('homepage', { siteUrl: siteUrl, themeUrl: themeUrl });
+  res.render('homepage', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
 });
 
 app.get('/documentation/:doc', function (req, res) {
   var doc = req.params.doc;
 
-  res.render('documentation/' + doc + '/index', { siteUrl: siteUrl, themeUrl: themeUrl });
+  res.render('documentation/' + doc + '/index', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
 });
 
 app.get('/uploader/file', function (req, res) {
-  res.render('uploader/file', { siteUrl: siteUrl, themeUrl: themeUrl });
+  res.render('uploader/file', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
 });
 
 app.get('/uploader/image', function (req, res) {
-  res.render('uploader/image', { siteUrl: siteUrl, themeUrl: themeUrl });
+  res.render('uploader/image', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
 });
 
 app.get('/components/:component', function (req, res) {
   var component = req.params.component;
 
-  res.render('components/' + component + '/index', { siteUrl: siteUrl, themeUrl: themeUrl });
+  res.render('components/' + component + '/index', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
 });
 
 app.listen(port, function () {

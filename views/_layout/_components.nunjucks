@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>{{ title }} · Regate</title>
 
+    {% include '../_partial/_favicon.nunjucks' %}
+
     <script src="{{ themeUrl }}js/core/jquery.min.js"></script>
     <script src="{{ themeUrl }}js/core/bootstrap.bundle.min.js"></script>
     <script src="{{ themeUrl }}js/core/simplebar.min.js"></script>
     <script src="{{ themeUrl }}js/core/jquery-scrollLock.min.js"></script>
     <script src="{{ themeUrl }}js/core/jquery.appear.min.js"></script>
     <script src="{{ themeUrl }}js/core/js.cookie.min.js"></script>
-
-    {% include '../_partial/_favicon.nunjucks' %}
-
-    <script src="{{ themeUrl }}regate.umd.js"></script>
-
-    <script src="{{ themeUrl }}script.js"></script>
-    <link rel="stylesheet" href="{{ themeUrl }}style.css">
-
     <link rel="stylesheet" id="css-main" href="{{ themeUrl }}css/dashmix.min.css">
     <link rel="stylesheet" href="{{ themeUrl }}js/plugins/highlightjs/styles/atom-one-light.css">
+
+    <script src="{{ themeUrl }}regate.umd.js?timestamp={{ timestamp }}"></script>
+    <script src="{{ themeUrl }}script.js?timestamp={{ timestamp }}"></script>
+    <link rel="stylesheet" href="{{ themeUrl }}style.css?timestamp={{ timestamp }}">
 </head>
 <body>
 

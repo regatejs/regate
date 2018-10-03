@@ -4,6 +4,7 @@ const path = require('path')
 
 const siteUrl = '/regate/'
 const themeUrl = '/regate/dashmix/'
+const timestamp = Math.floor(Date.now() / 1000)
 
 console.log('Building GitHub pages')
 
@@ -57,6 +58,6 @@ for (let view in views) {
   console.log(`  λ ${views[view]}`)
   console.log('')
   
-  const output = nunjucks.render(view, { siteUrl, themeUrl })
+  const output = nunjucks.render(view, { siteUrl, themeUrl, timestamp })
   writeToPath(views[view], output)
 }
