@@ -28,26 +28,36 @@ RegateContentEditable.init = function ({
   }
 }
 
-RegateContentEditable.markup = (id) => `
-  <div>
-    <textarea
-      id='${id}__input'
-      class='form-control'
-      style='display: none;'
-    ></textarea>
-    <div
-      class='form-control'
-      style='height: auto !important'
-      id='${id}__div'
-      contenteditable='true'
-    ></div>
-  </div>
-`
-
 RegateContentEditable.DecodeEntities = encodedString => {
   var textArea = document.createElement('textarea')
   textArea.innerHTML = encodedString
   return textArea.value
 }
+
+RegateContentEditable._markup = `
+  <div>
+    <textarea
+      id='{id}__input'
+      style='display: none;'
+    ></textarea>
+    <div
+      class='form-control'
+      style='height: auto !important'
+      id='{id}__div'
+      contenteditable='true'
+    ></div>
+  </div>
+`
+
+RegateContentEditable.markup = id => {
+  return RegateContentEditable.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegateContentEditable.setMarkup = markup =>
+  RegateContentEditable._markup = markup
+
+RegateContentEditable.getMarkup = () =>
+  RegateContentEditable._markup
 
 export default RegateContentEditable
