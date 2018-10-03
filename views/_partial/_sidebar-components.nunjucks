@@ -6,7 +6,7 @@
     }
 </style>
 <ul class="nav-main">
-    <li class="nav-main-item">
+    <li class="nav-main-item open active">
         <a class="nav-main-link" href="{{ siteUrl }}components/text">
             <img src="{{ themeUrl }}icons/text.svg" class="regate-icon regate-icon-text" />
             <span class="nav-main-link-name">Text</span>

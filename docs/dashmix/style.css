@@ -45,3 +45,7 @@ h2:hover .permalink-anchor { visibility: visible; }
 .text-xs-center {
   text-align: center;
 }
+
+.nav-main-item.active a {
+  background: #e1effe;
+}
