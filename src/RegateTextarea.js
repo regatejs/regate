@@ -53,19 +53,29 @@ RegateTextarea.init = function ({
   _input.style.height = size + 'px'
 }
 
-
-RegateTextarea.markup = (id) => `
-  <textarea
-    id='${id}__input'
-    class='form-control'
-    style='resize: none;'
-  ></textarea>
-`
-
 RegateTextarea.Size = {
   'Small': 150,
   'Medium': 200,
   'Large': 300,
 }
+
+RegateTextarea._markup = `
+  <textarea
+    id='{id}__input'
+    class='form-control'
+    style='resize: none;'
+  ></textarea>
+`
+
+RegateTextarea.markup = id => {
+  return RegateTextarea.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegateTextarea.setMarkup = markup =>
+  RegateTextarea._markup = markup
+
+RegateTextarea.getMarkup = () =>
+  RegateTextarea._markup
 
 export default RegateTextarea
