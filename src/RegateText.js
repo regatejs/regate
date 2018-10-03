@@ -51,12 +51,21 @@ RegateText.init = function ({
 }
 
 
-RegateText.markup = (id) => `
+
+RegateText._markup = `
   <input
-    id='${id}__input'
+    id='{id}__input'
     type='text'
     class='form-control'
   />
 `
+
+RegateText.markup = id => {
+  return RegateText._markup
+    .replace(/{id}/g, id)
+}
+
+RegateText.setMarkup = markup =>
+  RegateText._markup = markup
 
 export default RegateText
