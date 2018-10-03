@@ -40,6 +40,7 @@ const views = {
   'components/persiandatetimepicker/index.nunjucks': './docs/components/persiandatetimepicker/index.html',
 
   'documentation/start/index.nunjucks': './docs/documentation/start/index.html',
+  'documentation/download/index.nunjucks': './docs/documentation/download/index.html',
   'documentation/styling/index.nunjucks': './docs/documentation/styling/index.html',
 
   'uploader/file.nunjucks': './docs/uploader/file/index.html',

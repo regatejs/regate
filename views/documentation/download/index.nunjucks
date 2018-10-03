@@ -1,0 +1,16 @@
+{% extends '_layout/_documentation.nunjucks' %}
+
+{% set title = 'Download' %}
+
+{% block body %}
+
+<div class="content">
+  <div class="block block-rounded block-bordered">
+    <div class="block-content block-content-full">
+      <h1>Download</h1>
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -24,8 +24,8 @@
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="/regate/dashmix/script.js?timestamp=1538564272"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1538564272">
+    <script src="/regate/dashmix/script.js?timestamp=1538568800"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1538568800">
 </head>
 <body>
 
@@ -75,15 +75,21 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
     <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/documentation/start">
+        <a class="nav-main-link" href="/regate/documentation/start/">
             <i class="nav-main-link-icon si si-chemistry"></i>
             <span class="nav-main-link-name">Getting Started</span>
         </a>
     </li>
     <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/documentation/styling">
+        <a class="nav-main-link" href="/regate/documentation/styling/">
             <i class="nav-main-link-icon si si-puzzle"></i>
             <span class="nav-main-link-name">Styling</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/documentation/download/">
+            <i class="nav-main-link-icon si si-energy"></i>
+            <span class="nav-main-link-name">Download</span>
         </a>
     </li>
 </ul>
@@ -123,18 +129,23 @@
               
                 <div>
                     <ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link" href="/regate/">Start</a>
+    <li class="nav-item" id="navigation-regate-icon">
+        <a href="/regate/">
+            <img src="/regate/dashmix/regate-24.png" width="24" height="24"
+            style="margin-left: 10px; position: relative; top: 7px;" />
+        </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/regate/documentation/start/">Documentation</a>
-    </li>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/regate/components/text/">Components</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="https://github.com/regatejs/regate/">GitHub</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn btn-outline-secondary" href="/regate/documentation/download/">v0.9.0</a>
     </li>
 </ul>
                 </div>
@@ -152,14 +163,13 @@
     <div class="block-content block-content-full">
       <h1>Getting Started</h1>
       
-      <div class="text-xs-center">
+      <div>
         Starting with Regate is easy and quick. Just install it, and use the
-        <a href="/regate/components/text">components</a>
+        <a href="/regate/components/text/" class="link">components</a>
         as your need.
       </div>
       
       <div class="text-xs-left" style="margin-top: 15px;">
-        <pre><code>$ npm install regate --save</code></pre>
         <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
 
 Regate.RegateText.init({

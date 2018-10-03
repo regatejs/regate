@@ -11,12 +11,11 @@
       
       <div>
         Starting with Regate is easy and quick. Just install it, and use the
-        <a href="{{ siteUrl }}components/text/">components</a>
+        <a href="{{ siteUrl }}components/text/" class="link">components</a>
         as your need.
       </div>
       
       <div class="text-xs-left" style="margin-top: 15px;">
-        <pre><code>$ npm install regate --save</code></pre>
         <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
 
 Regate.RegateText.init({

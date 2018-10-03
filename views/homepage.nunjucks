@@ -4,6 +4,10 @@
 
 {% block body %}
 
+<style>
+  #navigation-regate-icon { display: none; }
+</style>
+
 <!-- Hero -->
 <div class="bg-image bg-gray-dark">
     <div class="bg-black-25">
@@ -41,7 +45,7 @@
       <div>
         Regate ships with various components.
         Just browse the
-        <a href="{{ siteUrl }}components/text/">components</a>
+        <a href="{{ siteUrl }}components/text/" class="link">components</a>
         and find the component which you need. See examples and implement
         it inside your own project.
       </div>
@@ -54,9 +58,11 @@
       <div>
         Regate is framekwork friendly. So you can style it easily
         with UI frameworks like
-        <a href="http://getbootstrap.com/">Bootstrap</a>
-        and also use a state manager like
-        <a href="http://redux.js.org/">Redux</a>.
+        <span style="display: inline-block;">
+          <a href="https://getbootstrap.com/" class="link">Bootstrap</a>
+          or
+          <a href="https://foundation.zurb.com/" class="link">Foundation</a>.
+        </span>
       </div>
     </div>
     <div class="col-md text-xs-center">
@@ -82,12 +88,11 @@
       
       <div class="text-xs-center">
         Starting with Regate is easy and quick. Just install it, and use the
-        <a href="{{ siteUrl }}components/text/">components</a>
+        <a class="link" href="{{ siteUrl }}components/text/">components</a>
         as your need.
       </div>
       
       <div class="text-xs-left" style="margin-top: 15px;">
-        <pre><code>$ npm install regate --save</code></pre>
         <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
 
 Regate.RegateText.init({

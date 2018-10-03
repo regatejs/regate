@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Styling · Regate</title>
+    <title>Download · Regate</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/regate/dashmix/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/regate/dashmix/favicon/favicon-32x32.png">
@@ -123,7 +123,7 @@
                     </button>
                     <!-- END Toggle Sidebar -->
 
-                    <b>Styling</b>
+                    <b>Download</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -161,82 +161,8 @@
 <div class="content">
   <div class="block block-rounded block-bordered">
     <div class="block-content block-content-full">
-      <h1>Styling</h1>
-
-      <p>
-        By default, Regate components' default markup are compatible with Bootstrap framework.
-        Anyway it doesn't mean you should use bootstrap. You can use any frameworks out there,
-        or your custome one.
-      </p>
-
-
-      <h2>Introduction</h2>
-      <p>
-        Consider <code>RegateText</code> component for example. When you build the markup,
-        it will generate a HTML code for you.
-      </p>
-
-      <pre><code class="javascript">Regate.RegateText.markup('sample')</code></pre>
-      <pre><code class="html">&lt;input
-  id='salam__input'
-  type='text'
-  class='form-control'
-/></code></pre>
-
-      <h2>Getting Markup</h2>
-      <p>
-        You can change this default markup for each component individually.
-        First of all, you need the current <b>raw</b> markup. Call the following method to get it:
-      </p>
-
-      <pre><code class="javascript">Regate.RegateText.getMarkup()</code></pre>
-
-      <p>The output will be:</p>
-
-      <pre><code class="html">&lt;input
-  id='{id}__input'
-  type='text'
-  class='form-control'
-/></code></pre>
-
-      <p>
-        The <code>{id}</code> will be replaced by the user specified id when using the
-        <code>Regate.RegateText.init</code> method.
-      </p>
-
-      <h2>Setting Markup</h2>
-      <p>
-        You can use the <code>setMarkup</code> method to change the markup.
-      </p>
-
-      <pre><code class="javascript">Regate.RegateText.setMarkup(`
-  &lt;input
-    id='{id}__input'
-    type='text'
-  />
-`)</code></pre>
-
-      <p>
-        In this case, when you are using the component, it will use your desired markup, not the default one.
-        So the following code:
-      </p>
-
-      <pre><code class="javascript">Regate.RegateText.markup('sample')</code></pre>
-
-      <p>Will generate the following output:</p>
-
-      <pre><code class="html">&lt;input
-  id='{id}__input'
-  type='text'
-/></code></pre>
-
-      <div class="alert alert-warning">
-        Do not change the main structure of component's markup.
-        For example do not change the <code>input</code> to <code>div</code>.
-        Just change the order of elements, for more complex components like <code>RegateKeyword</code>
-        which have more than one element in their markup
-        and change the classes for styling.
-      </div>
+      <h1>Download</h1>
+      
     </div>
   </div>
 </div>

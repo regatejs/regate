@@ -53,3 +53,19 @@ h2:hover .permalink-anchor { visibility: visible; }
   height: auto;
   margin-right: 9px;
 }
+
+a.link {
+  background: rgba(187,239,253,0.3);
+  background: rgba(225, 239, 254, 0.64);
+  color: #1a1a1a;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgb(6, 101, 208, 0.3);
+  display: inline-block;
+  padding: 0 5px 0;
+}
+
+a.link:hover {
+  background: rgba(225, 239, 254);
+  border-bottom-color: #0665d0;
+  border-bottom-color: rgb(6, 101, 208, 0.7);
+}

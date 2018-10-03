@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Regate · Regate</title>
+    <title>Regate · Web components for building form inputs</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/regate/dashmix/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/regate/dashmix/favicon/favicon-32x32.png">
@@ -24,8 +24,8 @@
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="/regate/dashmix/script.js?timestamp=1538564272"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1538564272">
+    <script src="/regate/dashmix/script.js?timestamp=1538568800"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1538568800">
 </head>
 <body>
 
@@ -45,18 +45,23 @@
               
                 <div>
                     <ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link" href="/regate/">Start</a>
+    <li class="nav-item" id="navigation-regate-icon">
+        <a href="/regate/">
+            <img src="/regate/dashmix/regate-24.png" width="24" height="24"
+            style="margin-left: 10px; position: relative; top: 7px;" />
+        </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/regate/documentation/start/">Documentation</a>
-    </li>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/regate/components/text/">Components</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="https://github.com/regatejs/regate/">GitHub</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn btn-outline-secondary" href="/regate/documentation/download/">v0.9.0</a>
     </li>
 </ul>
                 </div>
@@ -68,6 +73,10 @@
       <main id="main-container">
         
         
+
+<style>
+  #navigation-regate-icon { display: none; }
+</style>
 
 <!-- Hero -->
 <div class="bg-image bg-gray-dark">
@@ -106,7 +115,7 @@
       <div>
         Regate ships with various components.
         Just browse the
-        <a href="/regate/components/text/">components</a>
+        <a href="/regate/components/text/" class="link">components</a>
         and find the component which you need. See examples and implement
         it inside your own project.
       </div>
@@ -119,9 +128,11 @@
       <div>
         Regate is framekwork friendly. So you can style it easily
         with UI frameworks like
-        <a href="http://getbootstrap.com/">Bootstrap</a>
-        and also use a state manager like
-        <a href="http://redux.js.org/">Redux</a>.
+        <span style="display: inline-block;">
+          <a href="https://getbootstrap.com/" class="link">Bootstrap</a>
+          or
+          <a href="https://foundation.zurb.com/" class="link">Foundation</a>.
+        </span>
       </div>
     </div>
     <div class="col-md text-xs-center">
@@ -147,12 +158,11 @@
       
       <div class="text-xs-center">
         Starting with Regate is easy and quick. Just install it, and use the
-        <a href="/regate/components/text/">components</a>
+        <a class="link" href="/regate/components/text/">components</a>
         as your need.
       </div>
       
       <div class="text-xs-left" style="margin-top: 15px;">
-        <pre><code>$ npm install regate --save</code></pre>
         <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
 
 Regate.RegateText.init({
