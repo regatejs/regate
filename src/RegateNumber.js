@@ -37,12 +37,23 @@ RegateNumber.init = function ({
 }
 
 
-RegateNumber.markup = (id) => `
+RegateNumber._markup = `
   <input
-    id='${id}__input'
+    id='{id}__input'
     type='number'
     class='form-control'
   />
 `
+
+RegateNumber.markup = id => {
+  return RegateNumber.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegateNumber.setMarkup = markup =>
+  RegateNumber._markup = markup
+
+RegateNumber.getMarkup = () =>
+  RegateNumber._markup
 
 export default RegateNumber
