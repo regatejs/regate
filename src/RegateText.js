@@ -61,11 +61,14 @@ RegateText._markup = `
 `
 
 RegateText.markup = id => {
-  return RegateText._markup
+  return RegateText.getMarkup()
     .replace(/{id}/g, id)
 }
 
 RegateText.setMarkup = markup =>
   RegateText._markup = markup
+
+RegateText.getMarkup = () =>
+  RegateText._markup
 
 export default RegateText

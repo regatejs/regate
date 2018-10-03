@@ -200,11 +200,15 @@ RegateText.init = function (_ref) {
 RegateText._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
 
 RegateText.markup = function (id) {
-  return RegateText._markup.replace(/{id}/g, id);
+  return RegateText.getMarkup().replace(/{id}/g, id);
 };
 
 RegateText.setMarkup = function (markup) {
   return RegateText._markup = markup;
+};
+
+RegateText.getMarkup = function () {
+  return RegateText._markup;
 };
 
 exports.default = RegateText;
