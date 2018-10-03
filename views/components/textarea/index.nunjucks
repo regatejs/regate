@@ -1,4 +1,4 @@
-{% extends '_layout.nunjucks' %}
+{% extends '_layout/_components.nunjucks' %}
 
 {% set title = 'RegateTextarea' %}
 

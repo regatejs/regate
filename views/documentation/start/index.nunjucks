@@ -1,4 +1,4 @@
-{% extends '_layout-documentation.nunjucks' %}
+{% extends '_layout/_documentation.nunjucks' %}
 
 {% set title = 'Getting Started' %}
 

@@ -73,7 +73,7 @@
         <!-- END Side Header -->
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
-            {% include '_sidebar-documentation.nunjucks' %}
+            {% include '../_partial/_sidebar-documentation.nunjucks' %}
         </div>
         <!-- END Side Navigation -->
       </nav>
@@ -97,7 +97,7 @@
                 <!-- END Left Section -->
               
                 <div>
-                    {% include '_navigation.nunjucks' %}
+                    {% include '../_partial/_navigation.nunjucks' %}
                 </div>
           </div>
           <!-- END Header Content -->

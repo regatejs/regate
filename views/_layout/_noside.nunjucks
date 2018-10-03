@@ -22,64 +22,14 @@
     <meta name="msapplication-config" content="{{ themeUrl }}favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <script src="{{ themeUrl }}regate.umd.js"></script>
-
-    <script src="{{ themeUrl }}script.js"></script>
-
     <link rel="stylesheet" id="css-main" href="{{ themeUrl }}css/dashmix.min.css">
     <link rel="stylesheet" href="{{ themeUrl }}js/plugins/highlightjs/styles/atom-one-light.css">
 </head>
 <body>
 
-  <div id="page-container" class="sidebar-o enable-page-overlay side-scroll _page-header-fixed page-header-light main-content-narrow">
+  <div id="page-container" class="_sidebar-o enable-page-overlay side-scroll _page-header-fixed page-header-light main-content-narrow">
 
-      <!-- Sidebar -->
-      <!--
-          Sidebar Mini Mode - Display Helper classes
-
-          Adding 'smini-hide' class to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
-          Adding 'smini-show' class to an element will make it visible (opacity: 1) when the sidebar is in mini mode
-              If you would like to disable the transition animation, make sure to also add the 'no-transition' class to your element
-
-          Adding 'smini-hidden' to an element will hide it when the sidebar is in mini mode
-          Adding 'smini-visible' to an element will show it (display: inline-block) only when the sidebar is in mini mode
-          Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
-      -->
-      <nav id="sidebar" aria-label="Main Navigation">
-        <!-- Side Header -->
-        <div class="bg-header-dark">
-            <div class="content-header bg-white-10">
-                <!-- Logo -->
-                <a class="link-fx font-w600 font-size-lg text-white" href="/">
-                    <span class="smini-visible">
-                        <span class="text-white-75">D</span><span class="text-white">x</span>
-                    </span>
-                    <span class="smini-hidden">
-                        <span class="text-white-75">Re</span><span class="text-white">gate</span>
-                    </span>
-                </a>
-                <!-- END Logo -->
-                <!-- Options -->
-                <div>
-                    <!-- END Toggle Sidebar Style -->
-                    <!-- Close Sidebar, Visible only on mobile screens -->
-                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                    <a class="d-lg-none text-white ml-2" data-toggle="layout" data-action="sidebar_close" href="javascript:void(0)">
-                        <i class="fa fa-times-circle"></i>
-                    </a>
-                    <!-- END Close Sidebar -->
-                </div>
-                <!-- END Options -->
-            </div>
-        </div>
-        <!-- END Side Header -->
-        <!-- Side Navigation -->
-        <div class="content-side content-side-full">
-            {% include '_sidebar.nunjucks' %}
-        </div>
-        <!-- END Side Navigation -->
-      </nav>
-      <!-- END Sidebar -->
+      
 
       <!-- Header -->
       <header id="page-header">
@@ -87,19 +37,12 @@
           <div class="content-header">
                 <!-- Left Section -->
                 <div>
-                    <!-- Toggle Sidebar -->
-                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                    <button type="button" class="btn btn-dual mr-1" data-toggle="layout" data-action="sidebar_toggle">
-                        <i class="fa fa-fw fa-bars"></i>
-                    </button>
-                    <!-- END Toggle Sidebar -->
-
                     <b>{{ title }}</b>
                 </div>
                 <!-- END Left Section -->
               
                 <div>
-                    {% include '_navigation.nunjucks' %}
+                    {% include '../_partial/_navigation.nunjucks' %}
                 </div>
           </div>
           <!-- END Header Content -->
@@ -174,19 +117,15 @@
     .regate-example-container .regate-terminal code+code{margin-left:20px}
     .regate-example-container .regate-terminal:before{opacity:0.3;font-family:monospace}
     .regate-example-container .regate-terminal:empty:before{content:'OUTPUT'}
-    .regate-example-container .regate-serialize { font-family:monospace; padding: 5px 20px; font-size:87.5%; text-overflow: ellipsis; overflow: hidden; }
+    .regate-example-container .regate-serialize { font-family:monospace; padding: 5px 20px; font-size:87.5%; }
     .regate-example-container .regate-serialize:empty:before { content: 'SUBMITTED FORM DATA WILL BE SHOWN HERE'; opacity: 0.3;}
 
     .permalink-anchor { visibility: hidden; }
     h2:hover .permalink-anchor { visibility: visible; }
 
-    .select2-container .select2-selection--single { height: 38px; }
-    .select2-container .select2-selection--single .select2-selection__rendered { padding-left: 15px; }
-    .select2-container--default .select2-selection--single .select2-selection__rendered { line-height: 34px; }
-    .select2-container--default .select2-selection--single .select2-selection__arrow { height: 36px; } 
-    .select2-results__option { padding: 1px 15px 3px; }
-    .select2-results__option:empty { display: none; }
-    .select2-container { width: 100% !important; }
+    .text-xs-center {
+        text-align: center;
+    }
   </style>
 
   <script>
