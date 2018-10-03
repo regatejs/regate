@@ -56,7 +56,18 @@ RegateDropdown.init = function (_ref) {
   }
 };
 
+RegateDropdown._markup = '\n  <select\n    id=\'{id}__input\'\n    class=\'form-control\'\n  ></select>\n';
+
 RegateDropdown.markup = function (id) {
-  return '\n  <select\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></select>\n';
+  return RegateDropdown.getMarkup().replace(/{id}/g, id);
 };
+
+RegateDropdown.setMarkup = function (markup) {
+  return RegateDropdown._markup = markup;
+};
+
+RegateDropdown.getMarkup = function () {
+  return RegateDropdown._markup;
+};
+
 exports.default = RegateDropdown;

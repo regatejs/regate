@@ -36,8 +36,18 @@ RegateNumber.init = function (_ref) {
   if (step !== undefined) _input.step = step;
 };
 
+RegateNumber._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'number\'\n    class=\'form-control\'\n  />\n';
+
 RegateNumber.markup = function (id) {
-  return '\n  <input\n    id=\'' + id + '__input\'\n    type=\'number\'\n    class=\'form-control\'\n  />\n';
+  return RegateNumber.getMarkup().replace(/{id}/g, id);
+};
+
+RegateNumber.setMarkup = function (markup) {
+  return RegateNumber._markup = markup;
+};
+
+RegateNumber.getMarkup = function () {
+  return RegateNumber._markup;
 };
 
 exports.default = RegateNumber;

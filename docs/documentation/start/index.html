@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>RegateImage · Regate</title>
+    <title>Getting Started · Regate</title>
 
     <script src="/regate/dashmix/js/core/jquery.min.js"></script>
     <script src="/regate/dashmix/js/core/bootstrap.bundle.min.js"></script>
@@ -112,72 +112,17 @@
         <!-- END Side Header -->
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
-            <style>
-    .regate-icon {
-        width: 16px;
-        height: auto;
-        margin-right: 9px;
-    }
-</style>
-<ul class="nav-main">
+            <ul class="nav-main">
     <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/text">
-            <img src="/regate/dashmix/icons/text.svg" class="regate-icon regate-icon-text" />
-            <span class="nav-main-link-name">Text</span>
+        <a class="nav-main-link" href="/regate/documentation/start">
+            <i class="nav-main-link-icon si si-chemistry"></i>
+            <span class="nav-main-link-name">Getting Started</span>
         </a>
     </li>
     <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/file">
-            <img src="/regate/dashmix/icons/file.svg" class="regate-icon regate-icon-file" />
-            <span class="nav-main-link-name">File</span>
-        </a>
-    </li>
-    <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/textarea">
-            <img src="/regate/dashmix/icons/textarea.svg" class="regate-icon regate-icon-textarea" />
-            <span class="nav-main-link-name">Textarea</span>
-        </a>
-    </li>
-    <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/image">
-            <img src="/regate/dashmix/icons/image.svg" class="regate-icon regate-icon-image" />
-            <span class="nav-main-link-name">Image</span>
-        </a>
-    </li>
-    <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/contenteditable">
-            <img src="/regate/dashmix/icons/contenteditable.svg" class="regate-icon regate-icon-contenteditable" />
-            <span class="nav-main-link-name">ContentEditable</span>
-        </a>
-    </li>
-    <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/ckeditor">
-            <img src="/regate/dashmix/icons/ckeditor.svg" class="regate-icon regate-icon-ckeditor" />
-            <span class="nav-main-link-name">Ckeditor</span>
-        </a>
-    </li>
-    <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/dropdown">
-            <img src="/regate/dashmix/icons/dropdown.svg" class="regate-icon regate-icon-dropdown" />
-            <span class="nav-main-link-name">Dropdown</span>
-        </a>
-    </li>
-    <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/number">
-            <img src="/regate/dashmix/icons/number.svg" class="regate-icon regate-icon-number" />
-            <span class="nav-main-link-name">Number</span>
-        </a>
-    </li>
-    <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/keyword">
-            <img src="/regate/dashmix/icons/keyword.svg" class="regate-icon regate-icon-keyword" />
-            <span class="nav-main-link-name">Keyword</span>
-        </a>
-    </li>
-    <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/components/persiandatetimepicker">
-            <img src="/regate/dashmix/icons/persiandatetimepicker.svg" class="regate-icon regate-icon-keyword" />
-            <span class="nav-main-link-name">PersianDateTimePicker</span>
+        <a class="nav-main-link" href="/regate/documentation/styling">
+            <i class="nav-main-link-icon si si-puzzle"></i>
+            <span class="nav-main-link-name">Styling</span>
         </a>
     </li>
 </ul>
@@ -199,7 +144,7 @@
                     </button>
                     <!-- END Toggle Sidebar -->
 
-                    <b>RegateImage</b>
+                    <b>Getting Started</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -229,127 +174,30 @@
         
         
 
-  
-
 <div class="content">
-  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
-  <p>
-    This is the most basic usage of <code>RegateImage</code>.
-  </p>
+  <div class="block block-rounded block-bordered">
+    <div class="block-content block-content-full">
+      <h1>Getting Started</h1>
+      
+      <div class="text-xs-center">
+        Starting with Regate is easy and quick. Just install it, and use the
+        <a href="/regate/components/text">components</a>
+        as your need.
+      </div>
+      
+      <div class="text-xs-left" style="margin-top: 15px;">
+        <pre><code>$ npm install regate --save</code></pre>
+        <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
 
-  <div class="regate-example-container">
-    <div class="regate-example">
-      <form method="get">
-        <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateImage.markup('basic-example'))</script>
-            <script>
-              Regate.RegateImage.init({
-                id: 'basic-example',
-                name: 'MagazineCover',
-                uploaderUrl: '/regate/uploader/image',
-                repositoryUrl: '/regate/dashmix/',
-              })
-            </script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
-          </div>
-        </div>
-      </form>
+Regate.RegateText.init({
+  id: 'basic-example',
+  name: 'Title',
+})
+</code></pre>
+      </div>
     </div>
-    
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateImage.init({
-  id: &#39;basic-example&#39;,
-  name: &#39;MagazineCover&#39;,
-})</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
-
-
-  
-
-<div class="content">
-  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
-  <p>
-    With <code>value</code> property you can set an initial value for your input.
-  </p>
-
-  <div class="regate-example-container">
-    <div class="regate-example">
-      <form method="get">
-        <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateImage.markup('value-example'))</script>
-            <script>
-              Regate.RegateImage.init({
-                id: 'value-example',
-                name: 'MagazineCover',
-                value: 'sample.png',
-                uploaderUrl: '/regate/uploader/image',
-                repositoryUrl: '/regate/dashmix/',
-              })
-            </script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateImage.init({
-  id: &#39;value-example&#39;,
-  name: &#39;MagazineCover&#39;,
-  value: &#39;sample.png&#39;,
-})</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
-  </div>
-</div>
-
-
-  
-
-<div class="content">
-  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
-  <p>
-    You can required your field with <code>isRequired</code> property.
-  </p>
-
-  <div class="regate-example-container">
-    <div class="regate-example">
-      <form method="get">
-        <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateImage.markup('required-example'))</script>
-            <script>
-              Regate.RegateImage.init({
-                id: 'required-example',
-                name: 'MagazineCover',
-                isRequired: true,
-                uploaderUrl: '/regate/uploader/image',
-                repositoryUrl: '/regate/dashmix/',
-              })
-            </script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateImage.init({
-  id: &#39;required-example&#39;,
-  name: &#39;MagazineCover&#39;,
-  isRequired: true,
-})</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
-  </div>
-</div>
-
-
 
 
         

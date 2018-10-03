@@ -70,10 +70,6 @@ RegateFile.init = function (_ref) {
   };
 };
 
-RegateFile.markup = function (id) {
-  return '\n  <div data-role=\'RegateFile\'>\n      <div class=\'input-group\'>\n          <div class=\'input-group-prepend\'>\n              <button type=\'button\'\n                      class=\'btn btn-secondary\'\n                      id=\'' + id + '__upload\'>\n                  <i class=\'fa fa-search mr-1\'></i> CHOOSE\n              </button>\n          </div>\n\n          <input type=\'text\'\n                  style=\'pointer-events: none;\'\n                  onfocus=\'this.blur();\'\n                  id=\'' + id + '__input\'\n                  class=\'form-control\' />\n\n          <div class=\'input-group-append\'>\n              <button type=\'button\' class=\'btn btn-outline-secondary\' id=\'' + id + '__remove\' style=\'display: none;\'>\n                  <i class=\'fa fa-fw fa-times\'></i>\n              </button>\n              <a href=\'#\' target=\'_blank\' class=\'btn btn-outline-secondary\' id=\'' + id + '__view\' style=\'display: none;\'>\n                  <i class=\'fa fa-fw fa-download\'></i>\n              </a>\n          </div>\n      </div>\n  </div>\n';
-};
-
 RegateFile.set = function (id, value) {
   var _input = document.getElementById(id + '__input');
   var _remove = document.getElementById(id + '__remove');
@@ -92,6 +88,20 @@ RegateFile.set = function (id, value) {
     _view.style.display = 'none';
     _upload.style.display = '';
   }
+};
+
+RegateFile._markup = '\n  <div class=\'input-group\'>\n      <div class=\'input-group-prepend\'>\n          <button type=\'button\'\n                  class=\'btn btn-secondary\'\n                  id=\'{id}__upload\'>\n              <i class=\'fa fa-search mr-1\'></i> CHOOSE\n          </button>\n      </div>\n\n      <input type=\'text\'\n              style=\'pointer-events: none;\'\n              onfocus=\'this.blur();\'\n              id=\'{id}__input\'\n              class=\'form-control\' />\n\n      <div class=\'input-group-append\'>\n          <button type=\'button\' class=\'btn btn-outline-secondary\' id=\'{id}__remove\' style=\'display: none;\'>\n              <i class=\'fa fa-fw fa-times\'></i>\n          </button>\n          <a href=\'#\' target=\'_blank\' class=\'btn btn-outline-secondary\' id=\'{id}__view\' style=\'display: none;\'>\n              <i class=\'fa fa-fw fa-download\'></i>\n          </a>\n      </div>\n  </div>\n';
+
+RegateFile.markup = function (id) {
+  return RegateFile.getMarkup().replace(/{id}/g, id);
+};
+
+RegateFile.setMarkup = function (markup) {
+  return RegateFile._markup = markup;
+};
+
+RegateFile.getMarkup = function () {
+  return RegateFile._markup;
 };
 
 exports.default = RegateFile;

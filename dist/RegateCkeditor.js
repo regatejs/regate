@@ -34,14 +34,24 @@ RegateCkeditor.init = function (_ref) {
   ClassicEditor.create(_input);
 };
 
-RegateCkeditor.markup = function (id) {
-  return '\n  <textarea\n    id=\'' + id + '__input\'\n    class=\'form-control\'\n  ></textarea>\n';
-};
-
 RegateCkeditor.DecodeEntities = function (encodedString) {
   var textArea = document.createElement('textarea');
   textArea.innerHTML = encodedString;
   return textArea.value;
+};
+
+RegateCkeditor._markup = '\n  <textarea\n    id=\'{id}__input\'\n    class=\'form-control\'\n  ></textarea>\n';
+
+RegateCkeditor.markup = function (id) {
+  return RegateCkeditor.getMarkup().replace(/{id}/g, id);
+};
+
+RegateCkeditor.setMarkup = function (markup) {
+  return RegateCkeditor._markup = markup;
+};
+
+RegateCkeditor.getMarkup = function () {
+  return RegateCkeditor._markup;
 };
 
 exports.default = RegateCkeditor;
