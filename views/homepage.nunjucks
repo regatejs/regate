@@ -15,7 +15,11 @@
                 <h2 class="h4 font-w700 text-white-75">
                     Web components for building form inputs
                 </h2>
-                <a href="{{ siteUrl }}components" class="btn btn-hero-primary">
+                <a href="{{ siteUrl }}documentation/start" class="btn btn-hero-primary">
+                    <i class="fa fa-fw fa-book-open mr-1"></i>
+                    Read Documentation
+                </a>
+                <a href="{{ siteUrl }}components/text" class="btn btn-hero-primary">
                     <i class="fa fa-fw fa-rocket mr-1"></i>
                     Browse Components
                 </a>
