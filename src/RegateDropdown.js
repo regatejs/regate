@@ -49,11 +49,22 @@ RegateDropdown.init = function ({
   }
 }
 
-
-RegateDropdown.markup = (id) => `
+RegateDropdown._markup = `
   <select
-    id='${id}__input'
+    id='{id}__input'
     class='form-control'
   ></select>
 `
+
+RegateDropdown.markup = id => {
+  return RegateDropdown.getMarkup()
+    .replace(/{id}/g, id)
+}
+
+RegateDropdown.setMarkup = markup =>
+  RegateDropdown._markup = markup
+
+RegateDropdown.getMarkup = () =>
+  RegateDropdown._markup
+
 export default RegateDropdown
