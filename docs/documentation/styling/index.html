@@ -24,8 +24,8 @@
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="/regate/dashmix/script.js?timestamp=1538563277"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1538563277">
+    <script src="/regate/dashmix/script.js?timestamp=1538564272"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1538564272">
 </head>
 <body>
 
@@ -90,8 +90,11 @@
 
 <script>
     (function () {
-        var component = window.location.href.split('/').pop()
+        var urlArr = window.location.href.split('/')
+        var component = urlArr.pop() || urlArr.pop()
+
         $('.nav-main-link[href$="/' + component + '"]')
+            .add('.nav-main-link[href$="/' + component + '/"]')
             .closest('.nav-main-item')
             .addClass('active')
     }())
@@ -124,14 +127,14 @@
         <a class="nav-link" href="/regate/">Start</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/regate/documentation/start">Documentation</a>
+        <a class="nav-link" href="/regate/documentation/start/">Documentation</a>
     </li>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/regate/components/text">Components</a>
+        <a class="nav-link" href="/regate/components/text/">Components</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="https://github.com/regatejs/regate">GitHub</a>
+        <a class="nav-link" href="https://github.com/regatejs/regate/">GitHub</a>
     </li>
 </ul>
                 </div>

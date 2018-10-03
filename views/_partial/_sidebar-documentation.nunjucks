@@ -15,8 +15,11 @@
 
 <script>
     (function () {
-        var component = window.location.href.split('/').pop()
+        var urlArr = window.location.href.split('/')
+        var component = urlArr.pop() || urlArr.pop()
+
         $('.nav-main-link[href$="/' + component + '"]')
+            .add('.nav-main-link[href$="/' + component + '/"]')
             .closest('.nav-main-item')
             .addClass('active')
     }())
