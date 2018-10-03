@@ -41,7 +41,7 @@
       <div>
         Regate ships with various components.
         Just browse the
-        <a href="{{ siteUrl }}components">components</a>
+        <a href="{{ siteUrl }}components/text">components</a>
         and find the component which you need. See examples and implement
         it inside your own project.
       </div>
@@ -82,7 +82,7 @@
       
       <div class="text-xs-center">
         Starting with Regate is easy and quick. Just install it, and use the
-        <a href="{{ siteUrl }}components">components</a>
+        <a href="{{ siteUrl }}components/text">components</a>
         as your need.
       </div>
       
