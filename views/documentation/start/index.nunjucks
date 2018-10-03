@@ -1,9 +1,9 @@
 {% extends '_layout-documentation.nunjucks' %}
 
-{% set title = 'Regate Documentation' %}
+{% set title = 'Getting Started' %}
 
 {% block body %}
 
-
+<h1>Getting Started</h1>
 
 {% endblock %}

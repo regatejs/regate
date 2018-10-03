@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>{{ title }} - Regate</title>
+    <title>{{ title }} · Regate</title>
 
     <script src="{{ themeUrl }}js/core/jquery.min.js"></script>
     <script src="{{ themeUrl }}js/core/bootstrap.bundle.min.js"></script>
@@ -136,24 +136,7 @@
                 <!-- END Left Section -->
               
                 <div>
-                    <ul class="nav">
-                        {# <li class="nav-item">
-                            <a class="nav-link active" href="/">Home</a>
-                        </li> #}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ siteUrl }}">Start</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ siteUrl }}documentation">Documentation</a>
-                        </li>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ siteUrl }}components">Components</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/regatejs/regate">GitHub</a>
-                        </li>
-                    </ul>
+                    {% include '_navigation.nunjucks' %}
                 </div>
           </div>
           <!-- END Header Content -->

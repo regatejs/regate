@@ -1,0 +1,15 @@
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" href="{{ siteUrl }}">Start</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ siteUrl }}documentation/start">Documentation</a>
+    </li>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ siteUrl }}components/text">Components</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/regatejs/regate">GitHub</a>
+    </li>
+</ul>

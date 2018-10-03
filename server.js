@@ -131,6 +131,12 @@ app.get('/documentation', function (req, res) {
   res.render('documentation/index', { siteUrl: siteUrl, themeUrl: themeUrl });
 });
 
+app.get('/documentation/:doc', function (req, res) {
+  var doc = req.params.doc;
+
+  res.render('documentation/' + doc + '/index', { siteUrl: siteUrl, themeUrl: themeUrl });
+});
+
 app.get('/uploader/file', function (req, res) {
   res.render('uploader/file', { siteUrl: siteUrl, themeUrl: themeUrl });
 });

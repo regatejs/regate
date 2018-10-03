@@ -48,6 +48,11 @@ app.get('/documentation', (req, res) => {
   res.render('documentation/index', { siteUrl, themeUrl })
 })
 
+app.get('/documentation/:doc', (req, res) => {
+  const { doc } = req.params
+  res.render(`documentation/${doc}/index`, { siteUrl, themeUrl })
+})
+
 app.get('/uploader/file', (req, res) => {
   res.render('uploader/file', { siteUrl, themeUrl })
 })
