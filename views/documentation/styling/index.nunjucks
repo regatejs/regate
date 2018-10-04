@@ -72,7 +72,7 @@
       <p>Will generate the following output:</p>
 
       <pre><code class="html">&lt;input
-  id='{id}__input'
+  id='sample__input'
   type='text'
 /></code></pre>
 
