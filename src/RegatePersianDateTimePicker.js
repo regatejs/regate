@@ -62,25 +62,25 @@ RegatePersianDateTimePicker.init = function ({
 }
 
 RegatePersianDateTimePicker._markup = `
-<div class="input-group">
-  <div class="input-group-prepend">
-      <span class="input-group-text cursor-pointer" id="{id}" style='cursor: pointer;'>
-        <i class="fa fa-calendar-alt"></i>
+<div class='input-group'>
+  <div class='input-group-prepend'>
+      <span class='input-group-text cursor-pointer' id='{id}' style='cursor: pointer;'>
+        <i class='fa fa-calendar-alt'></i>
       </span>
   </div>
   <input
-    type="text"
+    type='text'
     style='pointer-events: none;'
     onfocus='this.blur();'
-    id="{id}__shamsi"
-    class="form-control"
+    id='{id}__shamsi'
+    class='form-control'
   />
-  <div class="input-group-append">
-      <span class="input-group-text cursor-pointer" id="{id}__clear" style='cursor: pointer;'>
-        <i class="fa fa-times"></i>
+  <div class='input-group-append'>
+      <span class='input-group-text cursor-pointer' id='{id}__clear' style='cursor: pointer;'>
+        <i class='fa fa-times'></i>
       </span>
   </div>
-  <input type="hidden" id="{id}__miladi" class="form-control" />
+  <input type='hidden' id='{id}__miladi' class='form-control' />
 </div>
 `
 

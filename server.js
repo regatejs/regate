@@ -145,7 +145,7 @@ app.get('/components/:component', function (req, res) {
 });
 
 app.listen(port, function () {
-  return console.log('Example app listening on port ' + port + '!');
+  return console.log('Regate app listening on http://localhost:' + port + '/');
 });
 
 /***/ }),

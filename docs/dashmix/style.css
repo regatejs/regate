@@ -69,3 +69,7 @@ a.link:hover {
   border-bottom-color: #0665d0;
   border-bottom-color: rgb(6, 101, 208, 0.7);
 }
+
+.ck-editor__editable {
+  min-height: 300px;
+}
