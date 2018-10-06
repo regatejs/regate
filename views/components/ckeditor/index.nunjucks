@@ -4,13 +4,16 @@
 
 {% block body %}
 
+
+
   <div class="alert alert-warning">
-    This component depends on <b>Ckeditor 5</b>. Be sure to include the latest version on your page.
-    <br />
-    <code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+    This component has dependency. Read the below section for more information.
   </div>
 
+
   <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+
+  {% include './_help.nunjucks' %}
 
   {% include './_basic.nunjucks' %}
   {% include './_value.nunjucks' %}
