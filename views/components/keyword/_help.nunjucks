@@ -1,0 +1,20 @@
+<div class="content">
+  <div class="block block-rounded block-bordered">
+    <div class="block-content block-content-full">
+      <h3>Dependency</h3>
+      
+      <p>
+        This component depends on 
+        <b><a href="https://vuejs.org/" class="external">Vue</a></b>,
+        <b><a href="https://github.com/RubaXa/Sortable" class="external">Sortable</a></b>
+        and
+        <b><a href="https://github.com/SortableJS/Vue.Draggable" class="external">Vue-Draggable</a></b>.
+        Be sure to include them on your page.</p>
+
+      <pre><code class="html">&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+&lt;script src="https://cdn.jsdelivr.net/npm/sortablejs@1.7.0/Sortable.min.js"></script>
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/15.0.0/vuedraggable.js"></script></code></pre>
+
+    </div>
+  </div>
+</div>

@@ -5,7 +5,7 @@
       
       <p>
         This component depends on <b><a href="https://ckeditor.com/ckeditor-5/" class="external">Ckeditor 5</a></b>.
-        Be sure to include the latest version on your page.</p>
+        Be sure to include it on your page.</p>
 
       <pre><code class="html">&lt;script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script></code></pre>
 
