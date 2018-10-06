@@ -1,4 +1,4 @@
-{% extends '_layout.nunjucks' %}
+{% extends '_layout/_noside.nunjucks' %}
 
 {% set title = 'Image Uploader' %}
 

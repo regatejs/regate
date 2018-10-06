@@ -8,7 +8,7 @@
     "build": "npm run build:commonjs && npm run build:umd",
     "build:commonjs": "babel src --out-dir dist",
     "build:umd": "webpack",
-    "docs": "npm run build && node build.js",
+    "docs": "node build.js",
     "algolia": "nodemon algolia.js --watch",
     "test": "jest --watch"
   },
