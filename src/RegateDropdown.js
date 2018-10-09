@@ -22,7 +22,7 @@ RegateDropdown.init = function ({
   const _option = document.createElement('option')
   _option.value = ''
   _option.text = ''
-  _option.hidden = true
+  // _option.hidden = true
   _input.appendChild(_option)
 
   options.forEach(option => {
