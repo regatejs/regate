@@ -670,9 +670,6 @@ exports.default = RegateCkeditor;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var RegateDropdown = {};
 
 RegateDropdown.init = function (_ref) {
@@ -682,8 +679,6 @@ RegateDropdown.init = function (_ref) {
       value = _ref$value === undefined ? '' : _ref$value,
       _ref$isRequired = _ref.isRequired,
       isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
-      _ref$isSelect = _ref.isSelect2,
-      isSelect2 = _ref$isSelect === undefined ? false : _ref$isSelect,
       _ref$options = _ref.options,
       options = _ref$options === undefined ? [] : _ref$options;
 
@@ -714,13 +709,15 @@ RegateDropdown.init = function (_ref) {
 
   if (isRequired === true) _input.required = true;
 
+  /*
   if (isSelect2 === true) {
-    if ((typeof jQuery === 'undefined' ? 'undefined' : _typeof(jQuery)) === ( true ? 'undefined' : _typeof(undefined))) throw new Error('select2 need jQuery');
-
-    if (_typeof(jQuery.fn.select2) === ( true ? 'undefined' : _typeof(undefined))) throw new Error('select2 is not loaded in the page');
-
-    $(_input).select2();
+    if (typeof jQuery === typeof undefined)
+      throw new Error('select2 need jQuery')
+      if (typeof jQuery.fn.select2 === typeof undefined)
+      throw new Error('select2 is not loaded in the page')
+      $(_input).select2()
   }
+  */
 };
 
 RegateDropdown._markup = '\n  <select\n    id=\'{id}__input\'\n    class=\'form-control\'\n  ></select>\n';

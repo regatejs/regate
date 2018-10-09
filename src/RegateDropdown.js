@@ -5,7 +5,7 @@ RegateDropdown.init = function ({
   name,
   value = '',
   isRequired = false,
-  isSelect2 = false,
+  // isSelect2 = false,
   options = [],
 }) {
 
@@ -38,6 +38,7 @@ RegateDropdown.init = function ({
   if (isRequired === true)
     _input.required = true
 
+  /*
   if (isSelect2 === true) {
     if (typeof jQuery === typeof undefined)
       throw new Error('select2 need jQuery')
@@ -47,6 +48,7 @@ RegateDropdown.init = function ({
 
     $(_input).select2()
   }
+  */
 }
 
 RegateDropdown._markup = `
