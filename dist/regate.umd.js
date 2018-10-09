@@ -677,6 +677,8 @@ RegateDropdown.init = function (_ref) {
       name = _ref.name,
       _ref$value = _ref.value,
       value = _ref$value === undefined ? '' : _ref$value,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
       _ref$isRequired = _ref.isRequired,
       isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
       _ref$options = _ref.options,
@@ -693,8 +695,10 @@ RegateDropdown.init = function (_ref) {
 
   var _option = document.createElement('option');
   _option.value = '';
-  _option.text = '';
-  // _option.hidden = true
+  _option.text = placeholder;
+
+  if (isRequired) _option.hidden = true;
+
   _input.appendChild(_option);
 
   options.forEach(function (option) {

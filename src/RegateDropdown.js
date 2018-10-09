@@ -4,6 +4,7 @@ RegateDropdown.init = function ({
   id,
   name,
   value = '',
+  placeholder = '',
   isRequired = false,
   // isSelect2 = false,
   options = [],
@@ -21,8 +22,11 @@ RegateDropdown.init = function ({
 
   const _option = document.createElement('option')
   _option.value = ''
-  _option.text = ''
-  // _option.hidden = true
+  _option.text = placeholder
+
+  if (isRequired)
+    _option.hidden = true
+
   _input.appendChild(_option)
 
   options.forEach(option => {
