@@ -16,6 +16,8 @@
     <link rel="stylesheet" id="css-main" href="{{ themeUrl }}css/dashmix.min.css">
     <link rel="stylesheet" href="{{ themeUrl }}js/plugins/highlightjs/styles/atom-one-light.css">
 
+    <script src="{{ themeUrl }}regate.umd.js"></script>
+
     <script src="{{ themeUrl }}script.js?timestamp={{ timestamp }}"></script>
     <link rel="stylesheet" href="{{ themeUrl }}style.css?timestamp={{ timestamp }}">
 </head>
@@ -65,7 +67,7 @@
         <!-- END Side Header -->
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
-            {% include '../_partial/_sidebar-documentation.nunjucks' %}
+            {% include '../_partial/_sidebar.nunjucks' %}
         </div>
         <!-- END Side Navigation -->
       </nav>
@@ -83,7 +85,10 @@
                         <i class="fa fa-fw fa-bars"></i>
                     </button>
                     <!-- END Toggle Sidebar -->
-
+                    <a href="{{ siteUrl }}">
+                        <img src="{{ themeUrl }}regate-24.png" width="24" height="24"
+                        style="margin-right: 10px; position: relative; top: 0px;" />
+                    </a>
                     <b>{{ title }}</b>
                 </div>
                 <!-- END Left Section -->

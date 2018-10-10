@@ -1,4 +1,4 @@
-{% extends '_layout/_components.nunjucks' %}
+{% extends '_layout/_sidebar.nunjucks' %}
 
 {% set title = 'RegateContentEditable' %}
 

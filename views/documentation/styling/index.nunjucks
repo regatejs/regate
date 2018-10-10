@@ -1,4 +1,4 @@
-{% extends '_layout/_documentation.nunjucks' %}
+{% extends '_layout/_sidebar.nunjucks' %}
 
 {% set title = 'Styling' %}
 

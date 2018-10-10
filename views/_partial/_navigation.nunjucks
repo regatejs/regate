@@ -1,5 +1,5 @@
 <ul class="nav">
-    <li class="nav-item" id="navigation-regate-icon">
+    {# <li class="nav-item" id="navigation-regate-icon">
         <a href="{{ siteUrl }}">
             <img src="{{ themeUrl }}regate-24.png" width="24" height="24"
             style="margin-left: 10px; position: relative; top: 7px;" />
@@ -13,7 +13,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="https://github.com/regatejs/regate/">GitHub</a>
-    </li>
+    </li> #}
     <li class="nav-item">
         <a class="nav-link btn btn-outline-secondary" href="{{ siteUrl }}documentation/download/">v0.9.0</a>
     </li>
