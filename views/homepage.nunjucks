@@ -6,6 +6,12 @@
 
 <style>
   #navigation-regate-icon { display: none; }
+  @media all and (max-width: 600px) {
+   .btn-hero-primary {
+     width: 100%;
+     margin-bottom: 3px;
+   }
+  }
 </style>
 
 <!-- Hero -->
