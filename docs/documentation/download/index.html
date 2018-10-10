@@ -24,8 +24,10 @@
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="/regate/dashmix/script.js?timestamp=1539150199"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1539150199">
+    <script src="/regate/dashmix/regate.umd.js"></script>
+
+    <script src="/regate/dashmix/script.js?timestamp=1539157659"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1539157659">
 </head>
 <body>
 
@@ -73,7 +75,8 @@
         <!-- END Side Header -->
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
-            <ul class="nav-main">
+            <ul class="nav-main" style="margin: 0;">
+    <li class="nav-main-heading" style="padding-top: 0;">Documentation</li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="/regate/documentation/start/">
             <i class="nav-main-link-icon si si-chemistry"></i>
@@ -90,6 +93,76 @@
         <a class="nav-main-link" href="/regate/documentation/download/">
             <i class="nav-main-link-icon si si-energy"></i>
             <span class="nav-main-link-name">Download</span>
+        </a>
+    </li>
+</ul>
+
+<ul class="nav-main" style="margin: 0;">
+    <li class="nav-main-heading">Components</li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/text/">
+            <img src="/regate/dashmix/icons/text.svg" class="regate-icon regate-icon-text" />
+            <span class="nav-main-link-name">Text</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/file/">
+            <img src="/regate/dashmix/icons/file.svg" class="regate-icon regate-icon-file" />
+            <span class="nav-main-link-name">File</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/textarea/">
+            <img src="/regate/dashmix/icons/textarea.svg" class="regate-icon regate-icon-textarea" />
+            <span class="nav-main-link-name">Textarea</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/image/">
+            <img src="/regate/dashmix/icons/image.svg" class="regate-icon regate-icon-image" />
+            <span class="nav-main-link-name">Image</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/contenteditable/">
+            <img src="/regate/dashmix/icons/contenteditable.svg" class="regate-icon regate-icon-contenteditable" />
+            <span class="nav-main-link-name">ContentEditable</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/ckeditor/">
+            <img src="/regate/dashmix/icons/ckeditor.svg" class="regate-icon regate-icon-ckeditor" />
+            <span class="nav-main-link-name">Ckeditor</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/dropdown/">
+            <img src="/regate/dashmix/icons/dropdown.svg" class="regate-icon regate-icon-dropdown" />
+            <span class="nav-main-link-name">Dropdown</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/number/">
+            <img src="/regate/dashmix/icons/number.svg" class="regate-icon regate-icon-number" />
+            <span class="nav-main-link-name">Number</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/keyword/">
+            <img src="/regate/dashmix/icons/keyword.svg" class="regate-icon regate-icon-keyword" />
+            <span class="nav-main-link-name">Keyword</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/persiandatetimepicker/">
+            <img src="/regate/dashmix/icons/persiandatetimepicker.svg" class="regate-icon regate-icon-keyword" />
+            <span class="nav-main-link-name">PersianDateTimePicker</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/components/switch/">
+            <img src="/regate/dashmix/icons/switch.svg" class="regate-icon regate-icon-keyword" />
+            <span class="nav-main-link-name">Switch</span>
         </a>
     </li>
 </ul>
@@ -122,28 +195,17 @@
                         <i class="fa fa-fw fa-bars"></i>
                     </button>
                     <!-- END Toggle Sidebar -->
-
+                    <a href="/regate/">
+                        <img src="/regate/dashmix/regate-24.png" width="24" height="24"
+                        style="margin-right: 10px; position: relative; top: 0px;" />
+                    </a>
                     <b>Download</b>
                 </div>
                 <!-- END Left Section -->
               
                 <div>
                     <ul class="nav">
-    <li class="nav-item" id="navigation-regate-icon">
-        <a href="/regate/">
-            <img src="/regate/dashmix/regate-24.png" width="24" height="24"
-            style="margin-left: 10px; position: relative; top: 7px;" />
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/regate/documentation/start/">Documentation</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/regate/components/text/">Components</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="https://github.com/regatejs/regate/">GitHub</a>
-    </li>
+    
     <li class="nav-item">
         <a class="nav-link btn btn-outline-secondary" href="/regate/documentation/download/">v0.9.0</a>
     </li>
