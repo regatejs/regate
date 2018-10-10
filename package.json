@@ -38,9 +38,11 @@
   },
   "dependencies": {
     "algoliasearch": "^3.30.0",
+    "classlist": "^2.0.0",
     "cors": "^2.8.4",
     "ejs": "^2.6.1",
     "express": "^4.16.2",
+    "fastclick": "^1.0.6",
     "isomorphic-fetch": "^2.2.1",
     "markdown-it": "^8.4.2",
     "nunjucks": "^3.1.3",
