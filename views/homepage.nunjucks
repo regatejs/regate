@@ -6,7 +6,7 @@
 
 <style>
   #navigation-regate-icon { display: none; }
-  @media all and (max-width: 600px) {
+  @media all and (max-width: 575px) {
    .btn-hero-primary {
      width: 100%;
      margin-bottom: 3px;
@@ -23,7 +23,9 @@
 
                 <h1 class="font-w700 my-2 text-white">Regate</h1>
                 <h2 class="h4 font-w700 text-white-75">
-                    Web components for building form inputs
+                    Web components for
+                    <br class="d-block d-sm-none" />
+                    building form inputs
                 </h2>
                 <a href="{{ siteUrl }}documentation/start/" class="btn btn-hero-primary">
                     <i class="fa fa-fw fa-book-open mr-1"></i>
