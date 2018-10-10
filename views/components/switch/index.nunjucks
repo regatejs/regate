@@ -8,5 +8,6 @@
   <link rel="stylesheet" href="{{ themeUrl }}js/plugins/switch/switch.css">
 
   {% include './_basic.nunjucks' %}
+  {% include './_checked.nunjucks' %}
 
 {% endblock %}
