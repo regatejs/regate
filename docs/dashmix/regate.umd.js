@@ -988,6 +988,9 @@ exports.default = RegatePersianDateTimePicker;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var RegateSwitch = {};
 
 RegateSwitch.init = function (_ref) {
@@ -1006,6 +1009,8 @@ RegateSwitch.init = function (_ref) {
   if (_input === undefined) throw new Error('id is invalid');
 
   _input.name = name;
+
+  if ((typeof Switch === 'undefined' ? 'undefined' : _typeof(Switch)) === ( true ? 'undefined' : _typeof(undefined))) throw new Error('Switch plugin does not loaded in the page');
 
   new Switch(_input, {
     size: size,

@@ -17,6 +17,9 @@ RegateSwitch.init = function ({
 
   _input.name = name
 
+  if (typeof Switch === typeof undefined)
+    throw new Error('Switch plugin does not loaded in the page')
+
   new Switch(_input, {
     size: size,
     checked: isChecked
