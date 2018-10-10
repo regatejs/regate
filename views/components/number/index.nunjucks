@@ -1,6 +1,6 @@
 {% extends '_layout/_sidebar.nunjucks' %}
 
-{% set title = 'RegateNumber' %}
+{% set title = 'Number' %}
 
 {% block body %}
 

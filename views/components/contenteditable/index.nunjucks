@@ -1,6 +1,6 @@
 {% extends '_layout/_sidebar.nunjucks' %}
 
-{% set title = 'RegateContentEditable' %}
+{% set title = 'ContentEditable' %}
 
 {% block body %}
 

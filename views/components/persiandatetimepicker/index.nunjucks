@@ -1,6 +1,6 @@
 {% extends '_layout/_sidebar.nunjucks' %}
 
-{% set title = 'RegatePersianDateTimePicker' %}
+{% set title = 'PersianDateTimePicker' %}
 
 {% block body %}
 
