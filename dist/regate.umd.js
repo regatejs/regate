@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -125,6 +125,10 @@ var _RegatePersianDateTimePicker = __webpack_require__(10);
 
 var _RegatePersianDateTimePicker2 = _interopRequireDefault(_RegatePersianDateTimePicker);
 
+var _RegateSwitch = __webpack_require__(11);
+
+var _RegateSwitch2 = _interopRequireDefault(_RegateSwitch);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
@@ -137,6 +141,7 @@ exports.RegateDropdown = _RegateDropdown2.default;
 exports.RegateNumber = _RegateNumber2.default;
 exports.RegateKeyword = _RegateKeyword2.default;
 exports.RegatePersianDateTimePicker = _RegatePersianDateTimePicker2.default;
+exports.RegateSwitch = _RegateSwitch2.default;
 
 /***/ }),
 /* 1 */
@@ -972,6 +977,55 @@ RegatePersianDateTimePicker.getMarkup = function () {
 };
 
 exports.default = RegatePersianDateTimePicker;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RegateSwitch = {};
+
+RegateSwitch.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$isChecked = _ref.isChecked,
+      isChecked = _ref$isChecked === undefined ? false : _ref$isChecked;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _input = document.getElementById(id + '__input');
+
+  if (_input === undefined) throw new Error('id is invalid');
+
+  _input.name = name;
+
+  new Switch(_input, {
+    size: 'large',
+    checked: isChecked
+  });
+};
+
+RegateSwitch._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'checkbox\'\n    value=\'true\'\n  />\n';
+
+RegateSwitch.markup = function (id) {
+  return RegateSwitch.getMarkup().replace(/{id}/g, id);
+};
+
+RegateSwitch.setMarkup = function (markup) {
+  return RegateSwitch._markup = markup;
+};
+
+RegateSwitch.getMarkup = function () {
+  return RegateSwitch._markup;
+};
+
+exports.default = RegateSwitch;
 
 /***/ })
 /******/ ]);

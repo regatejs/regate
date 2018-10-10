@@ -8,6 +8,7 @@ import RegateDropdown from './RegateDropdown'
 import RegateNumber from './RegateNumber'
 import RegateKeyword from './RegateKeyword'
 import RegatePersianDateTimePicker from './RegatePersianDateTimePicker'
+import RegateSwitch from './RegateSwitch'
 
 export {
   RegateText,
@@ -20,4 +21,5 @@ export {
   RegateNumber,
   RegateKeyword,
   RegatePersianDateTimePicker,
+  RegateSwitch,
 }

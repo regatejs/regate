@@ -59,6 +59,12 @@
             <span class="nav-main-link-name">PersianDateTimePicker</span>
         </a>
     </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl }}components/switch/">
+            <img src="{{ themeUrl }}icons/switch.svg" class="regate-icon regate-icon-keyword" />
+            <span class="nav-main-link-name">Switch</span>
+        </a>
+    </li>
 </ul>
 
 <script>
