@@ -4,6 +4,7 @@ RegateSwitch.init = function ({
   id,
   name,
   isChecked = false,
+  size = RegateSwitch.Size.Medium,
 }) {
 
   if (id === undefined)
@@ -17,12 +18,16 @@ RegateSwitch.init = function ({
   _input.name = name
 
   new Switch(_input, {
-    size: 'large',
+    size: size,
     checked: isChecked
   })
 }
 
-
+RegateSwitch.Size = {
+  'Small': 'small',
+  'Medium': 'default',
+  'Large': 'large',
+}
 
 RegateSwitch._markup = `
   <input

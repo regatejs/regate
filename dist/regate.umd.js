@@ -994,7 +994,9 @@ RegateSwitch.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
       _ref$isChecked = _ref.isChecked,
-      isChecked = _ref$isChecked === undefined ? false : _ref$isChecked;
+      isChecked = _ref$isChecked === undefined ? false : _ref$isChecked,
+      _ref$size = _ref.size,
+      size = _ref$size === undefined ? RegateSwitch.Size.Medium : _ref$size;
 
 
   if (id === undefined) throw new Error('id is required');
@@ -1006,9 +1008,15 @@ RegateSwitch.init = function (_ref) {
   _input.name = name;
 
   new Switch(_input, {
-    size: 'large',
+    size: size,
     checked: isChecked
   });
+};
+
+RegateSwitch.Size = {
+  'Small': 'small',
+  'Medium': 'default',
+  'Large': 'large'
 };
 
 RegateSwitch._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'checkbox\'\n    value=\'true\'\n  />\n';
