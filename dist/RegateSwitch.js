@@ -8,8 +8,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var RegateSwitch = {};
 
-var Switch = require('./_switch.js').default;
-
 RegateSwitch.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,

@@ -70,12 +70,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86,47 +85,47 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
-var _RegateText = __webpack_require__(2);
+var _RegateText = __webpack_require__(1);
 
 var _RegateText2 = _interopRequireDefault(_RegateText);
 
-var _RegateFile = __webpack_require__(3);
+var _RegateFile = __webpack_require__(2);
 
 var _RegateFile2 = _interopRequireDefault(_RegateFile);
 
-var _RegateImage = __webpack_require__(4);
+var _RegateImage = __webpack_require__(3);
 
 var _RegateImage2 = _interopRequireDefault(_RegateImage);
 
-var _RegateTextarea = __webpack_require__(5);
+var _RegateTextarea = __webpack_require__(4);
 
 var _RegateTextarea2 = _interopRequireDefault(_RegateTextarea);
 
-var _RegateContentEditable = __webpack_require__(6);
+var _RegateContentEditable = __webpack_require__(5);
 
 var _RegateContentEditable2 = _interopRequireDefault(_RegateContentEditable);
 
-var _RegateCkeditor = __webpack_require__(7);
+var _RegateCkeditor = __webpack_require__(6);
 
 var _RegateCkeditor2 = _interopRequireDefault(_RegateCkeditor);
 
-var _RegateDropdown = __webpack_require__(8);
+var _RegateDropdown = __webpack_require__(7);
 
 var _RegateDropdown2 = _interopRequireDefault(_RegateDropdown);
 
-var _RegateNumber = __webpack_require__(9);
+var _RegateNumber = __webpack_require__(8);
 
 var _RegateNumber2 = _interopRequireDefault(_RegateNumber);
 
-var _RegateKeyword = __webpack_require__(10);
+var _RegateKeyword = __webpack_require__(9);
 
 var _RegateKeyword2 = _interopRequireDefault(_RegateKeyword);
 
-var _RegatePersianDateTimePicker = __webpack_require__(11);
+var _RegatePersianDateTimePicker = __webpack_require__(10);
 
 var _RegatePersianDateTimePicker2 = _interopRequireDefault(_RegatePersianDateTimePicker);
 
-var _RegateSwitch = __webpack_require__(12);
+var _RegateSwitch = __webpack_require__(11);
 
 var _RegateSwitch2 = _interopRequireDefault(_RegateSwitch);
 
@@ -145,7 +144,7 @@ exports.RegatePersianDateTimePicker = _RegatePersianDateTimePicker2.default;
 exports.RegateSwitch = _RegateSwitch2.default;
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -220,7 +219,7 @@ RegateText.getMarkup = function () {
 exports.default = RegateText;
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -333,7 +332,7 @@ RegateFile.getMarkup = function () {
 exports.default = RegateFile;
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -458,7 +457,7 @@ RegateImage.getMarkup = function () {
 exports.default = RegateImage;
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,7 +542,7 @@ RegateTextarea.getMarkup = function () {
 exports.default = RegateTextarea;
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -604,7 +603,7 @@ RegateContentEditable.getMarkup = function () {
 exports.default = RegateContentEditable;
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -667,7 +666,7 @@ RegateCkeditor.getMarkup = function () {
 exports.default = RegateCkeditor;
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -747,7 +746,7 @@ RegateDropdown.getMarkup = function () {
 exports.default = RegateDropdown;
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -806,7 +805,7 @@ RegateNumber.getMarkup = function () {
 exports.default = RegateNumber;
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -892,7 +891,7 @@ RegateKeyword.getMarkup = function () {
 exports.default = RegateKeyword;
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -980,7 +979,7 @@ RegatePersianDateTimePicker.getMarkup = function () {
 exports.default = RegatePersianDateTimePicker;
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
