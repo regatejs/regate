@@ -5,7 +5,7 @@
 })"
 %}
 
-<div class="content" data-content-type="JavaScript">
+<div class="content" data-content-type="JavaScript .NET">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
   <p>
     This is the most basic usage of <code>RegateText</code>.
@@ -32,4 +32,3 @@
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
-

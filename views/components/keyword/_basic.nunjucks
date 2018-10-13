@@ -5,7 +5,7 @@
 })"
 %}
 
-<div class="content" data-content-type="JavaScript">
+<div class="content">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
   <p>
     This is the most basic usage of <code>RegateKeyword</code>.

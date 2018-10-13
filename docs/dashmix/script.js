@@ -57,6 +57,11 @@ function setSyntaxType(syntaxType) {
     .removeClass('active')
     .filter('[data-role="' + syntaxType + '"]')
       .addClass('active');
+
+  $('[data-content-type]')
+    .hide()
+    .filter('[data-content-type~="' + syntaxType + '"]')
+      .show();
 }
 
 $(function () {
