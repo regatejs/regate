@@ -26,8 +26,8 @@
 
     <script src="/regate/dashmix/regate.umd.js"></script>
 
-    <script src="/regate/dashmix/script.js?timestamp=1539157659"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1539157659">
+    <script src="/regate/dashmix/script.js?timestamp=1539432989"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1539432989">
 </head>
 <body>
 
@@ -222,7 +222,7 @@
 
   
 
-<div class="content">
+<div class="content" data-content-type="JavaScript .NET">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
   <p>
     This is the most basic usage of <code>RegateText</code>.
@@ -246,18 +246,18 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateText.init({
   id: &#39;basic-example&#39;,
   name: &#39;Title&#39;,
 })</code></pre></div>
+    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegateText.Build("Title"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
-
-
   
 
-<div class="content">
+<div class="content" data-content-type="JavaScript .NET">
   <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
   <p>
     With <code>value</code> property you can set an initial value for your textbox.
@@ -282,11 +282,13 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateText.init({
   id: &#39;value-example&#39;,
   name: &#39;Title&#39;,
   value: &#39;Hello World&#39;,
 })</code></pre></div>
+    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegateText.Build("Title", "Hello World"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
@@ -294,7 +296,7 @@
 
   
 
-<div class="content">
+<div class="content" data-content-type="JavaScript .NET">
   <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
   <p>
     You can required your field with <code>isRequired</code> property.
@@ -319,11 +321,12 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateText.init({
   id: &#39;required-example&#39;,
   name: &#39;Title&#39;,
   isRequired: true,
 })</code></pre></div>
+    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegateText.Build("Title", isRequired: true))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
@@ -359,7 +362,7 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateText.init({
   id: &#39;placeholder-example&#39;,
   name: &#39;Title&#39;,
   placeholder: &#39;Please enter title&#39;,
@@ -406,7 +409,7 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateText.init({
   id: &#39;onchange-example&#39;,
   name: &#39;Title&#39;,
   onChange: function ({value, isValid}) {
@@ -446,7 +449,7 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">Regate.RegateText.init({
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateText.init({
   id: &#39;oninitialized-example&#39;,
   name: &#39;Title&#39;,
   value: &#39;Hello World&#39;,
