@@ -86,3 +86,8 @@ a.external {
     margin-top: 3px;
   }
 }
+
+
+.regate-code-changer .nav-link {
+  cursor: pointer;
+}

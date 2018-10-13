@@ -26,8 +26,18 @@
       </form>
     </div>
     
-    <div class="regate-code" data-role="js"><pre><code class="javascript">{{- script -}}</code></pre></div>
-    <div class="regate-code" data-role="dotnet"><pre><code class="cshtml-razor">@Html.Raw(RegateText.Build("Title"))</code></pre></div>
+    <div class="regate-code-changer">
+      <ul class="nav nav-tabs nav-tabs-alt">
+          <li class="nav-item">
+              <span class="nav-link" data-role="JavaScript">JavaScript</span>
+          </li>
+          <li class="nav-item">
+              <span class="nav-link" data-role=".NET">.NET</span>
+          </li>
+      </ul>
+    </div>
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegateText.Build("Title"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>

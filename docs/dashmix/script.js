@@ -46,7 +46,7 @@ $(function () {
 
 
 $(function () {
-  var syntaxType = 'dotnet';
+  var syntaxType = '.NET';
 
   $codeBlocks = $('.regate-code');
   $codeBlocks.hide();
