@@ -6,7 +6,7 @@
 })"
 %}
 
-<div class="content">
+<div class="content" data-content-type="JavaScript">
   <h2 id="isnow">IsNow <a class="permalink-anchor" href="#isnow">#</a></h2>
 
   <div class="regate-example-container">

@@ -6,7 +6,7 @@
 })"
 %}
 
-<div class="content">
+<div class="content" data-content-type="JavaScript">
   <h2 id="ischecked">Checked <a class="permalink-anchor" href="#ischecked">#</a></h2>
 
   <div class="regate-example-container">

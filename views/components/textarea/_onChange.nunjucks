@@ -8,7 +8,7 @@
 })"
 %}
 
-<div class="content">
+<div class="content" data-content-type="JavaScript">
   <h2 id="onchange">
     onChange
     <a class="permalink-anchor" href="#onchange">#</a>

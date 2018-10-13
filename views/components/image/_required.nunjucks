@@ -6,7 +6,7 @@
 })"
 %}
 
-<div class="content">
+<div class="content" data-content-type="JavaScript">
   <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
   <p>
     You can required your field with <code>isRequired</code> property.

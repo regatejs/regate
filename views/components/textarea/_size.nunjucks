@@ -6,7 +6,7 @@
 })"
 %}
 
-<div class="content">
+<div class="content" data-content-type="JavaScript">
   <h2 id="size">Size <a class="permalink-anchor" href="#size">#</a></h2>
   <p>
     With the <code>size</code> property you can define the height of textarea.

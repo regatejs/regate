@@ -9,7 +9,7 @@
 })"
 %}
 
-<div class="content">
+<div class="content" data-content-type="JavaScript">
   <h2 id="oninitialized">
     onInitialized
     <a class="permalink-anchor" href="#oninitialized">#</a>

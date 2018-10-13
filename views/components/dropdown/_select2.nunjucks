@@ -16,7 +16,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
-<div class="content">
+<div class="content" data-content-type="JavaScript">
   <h2 id="select2">Select2 <a class="permalink-anchor" href="#select2">#</a></h2>
 
   <div class="alert alert-warning">
