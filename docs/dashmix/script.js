@@ -91,6 +91,10 @@ $(function () {
   $('.regate-code-changer .nav-link').on('click', function (e) {
     var syntaxType = $(this).attr('data-role');
     setSyntaxType(syntaxType);
+
+    if (typeof localStorage !== typeof undefined) {
+      localStorage.setItem('syntax', syntaxType);
+    }
   });
 });
 
