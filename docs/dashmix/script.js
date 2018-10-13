@@ -45,13 +45,27 @@ $(function () {
 });
 
 
-$(function () {
-  var syntaxType = '.NET';
-
+function setSyntaxType(syntaxType) {
   $codeBlocks = $('.regate-code');
   $codeBlocks.hide();
 
   $codeBlocks
     .filter('[data-role="' + syntaxType + '"]')
     .show();
+
+  $('.regate-code-changer .nav-link')
+    .removeClass('active')
+    .filter('[data-role="' + syntaxType + '"]')
+      .addClass('active');
+}
+
+$(function () {
+  setSyntaxType('JavaScript');
+});
+
+$(function () {
+  $('.regate-code-changer .nav-link').on('click', function (e) {
+    var syntaxType = $(this).attr('data-role');
+    setSyntaxType(syntaxType);
+  });
 });
