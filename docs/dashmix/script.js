@@ -60,7 +60,31 @@ function setSyntaxType(syntaxType) {
 }
 
 $(function () {
-  setSyntaxType('JavaScript');
+  $('.regate-example-container').each(function () {
+    var $example = $(this);
+    var $codeChanger = $('<div></div')
+      .addClass('regate-code-changer')
+
+    var $ul = $('<ul></ul>')
+      .addClass('nav nav-tabs nav-tabs-alt')
+
+    var $syntaxRoles = $example.find('.regate-code')
+    $syntaxRoles.each(function () {
+      var $syntaxRole = $(this);
+      var syntaxType = $syntaxRole.attr('data-role');
+      var $li = $('<li></li>').addClass('nav-item');
+      var $text = $('<span></span>')
+        .addClass('nav-link')
+        .attr('data-role', syntaxType)
+        .text(syntaxType)
+        .appendTo($li);
+
+      $li.appendTo($ul);
+    });
+
+    $ul.appendTo($codeChanger)
+    $codeChanger.insertBefore($syntaxRoles.get(0))
+  });
 });
 
 $(function () {
@@ -68,4 +92,8 @@ $(function () {
     var syntaxType = $(this).attr('data-role');
     setSyntaxType(syntaxType);
   });
+});
+
+$(function () {
+  setSyntaxType('JavaScript');
 });
