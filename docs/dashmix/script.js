@@ -76,9 +76,9 @@ $(function () {
       var $text = $('<span></span>')
         .addClass('nav-link')
         .attr('data-role', syntaxType)
-        .text(syntaxType)
-        .appendTo($li);
+        .text(syntaxType);
 
+      $text.appendTo($li);
       $li.appendTo($ul);
     });
 
@@ -94,6 +94,14 @@ $(function () {
   });
 });
 
+function setDefaultSyntax() {
+  if (typeof localStorage === typeof undefined)
+    setSyntaxType('JavaScript')
+
+  var syntax = localStorage.getItem('syntax') || 'JavaScript'
+  setSyntaxType(syntax)
+}
+
 $(function () {
-  setSyntaxType('JavaScript');
+  setDefaultSyntax();
 });
