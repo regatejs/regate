@@ -92,6 +92,6 @@ a.external {
   cursor: pointer;
 }
 
-.regate-code {
+[data-content-type] .regate-code {
   display: none;
 }

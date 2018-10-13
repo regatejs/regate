@@ -46,14 +46,14 @@ $(function () {
 
 
 function setSyntaxType(syntaxType) {
-  $codeBlocks = $('.regate-code');
+  $codeBlocks = $('[data-content-type] .regate-code');
   $codeBlocks.hide();
 
   $codeBlocks
     .filter('[data-role="' + syntaxType + '"]')
     .show();
 
-  $('.regate-code-changer .nav-link')
+  $('[data-content-type] .regate-code-changer .nav-link')
     .removeClass('active')
     .filter('[data-role="' + syntaxType + '"]')
       .addClass('active');
@@ -64,8 +64,16 @@ function setSyntaxType(syntaxType) {
       .show();
 }
 
+function setDefaultSyntax() {
+  if (typeof localStorage === typeof undefined)
+    setSyntaxType('JavaScript')
+
+  var syntax = localStorage.getItem('syntax') || 'JavaScript'
+  setSyntaxType(syntax)
+}
+
 $(function () {
-  $('.regate-example-container').each(function () {
+  $('[data-content-type] .regate-example-container').each(function () {
     var $example = $(this);
     var $codeChanger = $('<div></div')
       .addClass('regate-code-changer')
@@ -93,7 +101,7 @@ $(function () {
 });
 
 $(function () {
-  $('.regate-code-changer .nav-link').on('click', function (e) {
+  $('[data-content-type] .regate-code-changer .nav-link').on('click', function (e) {
     var syntaxType = $(this).attr('data-role');
     setSyntaxType(syntaxType);
 
@@ -103,13 +111,7 @@ $(function () {
   });
 });
 
-function setDefaultSyntax() {
-  if (typeof localStorage === typeof undefined)
-    setSyntaxType('JavaScript')
 
-  var syntax = localStorage.getItem('syntax') || 'JavaScript'
-  setSyntaxType(syntax)
-}
 
 $(function () {
   setDefaultSyntax();
