@@ -43,3 +43,15 @@ $(function () {
     $serialize.html( $( this ).serialize() );
   });
 });
+
+
+$(function () {
+  var syntaxType = 'dotnet';
+
+  $codeBlocks = $('.regate-code');
+  $codeBlocks.hide();
+
+  $codeBlocks
+    .filter('[data-role="' + syntaxType + '"]')
+    .show();
+});

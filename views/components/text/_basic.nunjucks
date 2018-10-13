@@ -26,7 +26,8 @@
       </form>
     </div>
     
-    <div class="regate-code"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-code" data-role="js"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-code" data-role="dotnet"><pre><code class="cshtml-razor">@Html.Raw(RegateText.Build("Title"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
