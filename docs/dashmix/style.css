@@ -91,3 +91,7 @@ a.external {
 .regate-code-changer .nav-link {
   cursor: pointer;
 }
+
+.regate-code {
+  display: none;
+}
