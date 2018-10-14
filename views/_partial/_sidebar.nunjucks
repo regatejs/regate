@@ -78,14 +78,20 @@
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl }}components/persiandatetimepicker/">
-            <img src="{{ themeUrl }}icons/persiandatetimepicker.svg" class="regate-icon regate-icon-keyword" />
+            <img src="{{ themeUrl }}icons/persiandatetimepicker.svg" class="regate-icon regate-icon-persiandatetimepicker" />
             <span class="nav-main-link-name">PersianDateTimePicker</span>
         </a>
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl }}components/switch/">
-            <img src="{{ themeUrl }}icons/switch.svg" class="regate-icon regate-icon-keyword" />
+            <img src="{{ themeUrl }}icons/switch.svg" class="regate-icon regate-icon-switch" />
             <span class="nav-main-link-name">Switch</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl }}components/foreignkey/">
+            <img src="{{ themeUrl }}icons/dropdown.svg" class="regate-icon regate-icon-foreignkey" />
+            <span class="nav-main-link-name">ForeignKey</span>
         </a>
     </li>
 </ul>

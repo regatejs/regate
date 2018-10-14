@@ -1,0 +1,9 @@
+{% extends '_layout/_sidebar.nunjucks' %}
+
+{% set title = 'ForeignKey' %}
+
+{% block body %}
+
+  {% include './_basic.nunjucks' %}
+
+{% endblock %}

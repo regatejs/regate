@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -129,6 +129,10 @@ var _RegateSwitch = __webpack_require__(11);
 
 var _RegateSwitch2 = _interopRequireDefault(_RegateSwitch);
 
+var _RegateForeignKey = __webpack_require__(12);
+
+var _RegateForeignKey2 = _interopRequireDefault(_RegateForeignKey);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
@@ -142,6 +146,7 @@ exports.RegateNumber = _RegateNumber2.default;
 exports.RegateKeyword = _RegateKeyword2.default;
 exports.RegatePersianDateTimePicker = _RegatePersianDateTimePicker2.default;
 exports.RegateSwitch = _RegateSwitch2.default;
+exports.RegateForeignKey = _RegateForeignKey2.default;
 
 /***/ }),
 /* 1 */
@@ -1039,6 +1044,70 @@ RegateSwitch.getMarkup = function () {
 };
 
 exports.default = RegateSwitch;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RegateForeignKey = {};
+
+RegateForeignKey.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
+      _ref$isRequired = _ref.isRequired,
+      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _input = document.getElementById(id + '__input');
+
+  if (_input === undefined) throw new Error('id is invalid');
+
+  _input.name = name;
+
+  var _option = document.createElement('option');
+  _option.value = '';
+  _option.text = placeholder;
+
+  if (isRequired) _option.hidden = true;
+
+  _input.appendChild(_option);
+
+  function callback(options) {
+    options.forEach(function (option) {
+      var _option = document.createElement('option');
+      _option.value = option.key;
+      _option.text = option.value;
+
+      _input.appendChild(_option);
+    });
+  }
+};
+
+RegateForeignKey._markup = '\n  <select\n    id=\'{id}__input\'\n    class=\'form-control\'\n  ></select>\n';
+
+RegateForeignKey.markup = function (id) {
+  return RegateForeignKey.getMarkup().replace(/{id}/g, id);
+};
+
+RegateForeignKey.setMarkup = function (markup) {
+  return RegateForeignKey._markup = markup;
+};
+
+RegateForeignKey.getMarkup = function () {
+  return RegateForeignKey._markup;
+};
+
+exports.default = RegateForeignKey;
 
 /***/ })
 /******/ ]);
