@@ -39,6 +39,7 @@ const views = {
   'components/keyword/index.nunjucks': './docs/components/keyword/index.html',
   'components/persiandatetimepicker/index.nunjucks': './docs/components/persiandatetimepicker/index.html',
   'components/switch/index.nunjucks': './docs/components/switch/index.html',
+  'components/foreignkey/index.nunjucks': './docs/components/foreignkey/index.html',
 
   'documentation/start/index.nunjucks': './docs/documentation/start/index.html',
   'documentation/download/index.nunjucks': './docs/documentation/download/index.html',
