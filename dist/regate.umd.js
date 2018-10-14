@@ -1096,6 +1096,8 @@ RegateForeignKey.init = function (_ref) {
     _input.value = value;
   }
 
+  if (isRequired === true) _input.required = true;
+
   function makeResponseStandard(response) {
     var newResponseList = [];
     response.forEach(function (row) {

@@ -41,6 +41,9 @@ RegateForeignKey.init = function ({
     _input.value = value
   }
 
+  if (isRequired === true)
+    _input.required = true
+
   function makeResponseStandard(response) {
     let newResponseList = []
     response.forEach(row => {
