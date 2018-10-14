@@ -16,7 +16,7 @@ RegateForeignKey.init = function ({
   if (_input === undefined)
     throw new Error('id is invalid')
 
-  if (_apiUrl === undefined)
+  if (apiUrl === undefined)
   throw new Error('apiUrl is required')
 
   _input.name = name
@@ -30,8 +30,45 @@ RegateForeignKey.init = function ({
 
   _input.appendChild(_option)
 
+  function makeResponseStandard(response) {
+    let newResponseList = []
+    response.forEach(row => {
+      let newResponseObject = {}
+      newResponseObject.Id = row.Id || row.id || row.ID
+      newResponseObject.Title = row.Title || row.title || row.TITLE
+
+      newResponseList.push(newResponseObject)
+    })
+
+    return newResponseList
+  }
+
+  function sendRequest() {
+    var request = new XMLHttpRequest();
+    request.open('GET', apiUrl, true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        // Success!
+        var response = JSON.parse(request.responseText);
+        response = makeResponseStandard(response)
+        callback(response)
+      } else {
+        // We reached our target server, but it returned an error
+      }
+    };
+
+    request.onerror = function() {
+      // There was a connection error of some sort
+    };
+
+    request.send();
+  }
 
   function callback(options) {
+    console.log(options);
+    return;
+
     options.forEach(option => {
       const _option = document.createElement('option')
       _option.value = option.key
@@ -40,6 +77,8 @@ RegateForeignKey.init = function ({
       _input.appendChild(_option)
     })
   }
+
+  sendRequest()
 }
 
 RegateForeignKey._markup = `

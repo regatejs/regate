@@ -2,6 +2,7 @@
 "Regate.RegateForeignKey.init({
   id: 'basic-example',
   name: 'CategoryId',
+  apiUrl: 'https://jsonplaceholder.typicode.com/albums',
 })"
 %}
 
