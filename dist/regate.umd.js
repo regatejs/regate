@@ -1060,6 +1060,7 @@ var RegateForeignKey = {};
 RegateForeignKey.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
+      apiUrl = _ref.apiUrl,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
       _ref$isRequired = _ref.isRequired,
@@ -1071,6 +1072,8 @@ RegateForeignKey.init = function (_ref) {
   var _input = document.getElementById(id + '__input');
 
   if (_input === undefined) throw new Error('id is invalid');
+
+  if (_apiUrl === undefined) throw new Error('apiUrl is required');
 
   _input.name = name;
 

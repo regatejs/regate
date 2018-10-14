@@ -3,6 +3,7 @@ const RegateForeignKey = {}
 RegateForeignKey.init = function ({
   id,
   name,
+  apiUrl,
   placeholder = '',
   isRequired = false,
 }) {
@@ -14,6 +15,9 @@ RegateForeignKey.init = function ({
 
   if (_input === undefined)
     throw new Error('id is invalid')
+
+  if (_apiUrl === undefined)
+  throw new Error('apiUrl is required')
 
   _input.name = name
 
