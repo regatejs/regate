@@ -66,9 +66,6 @@ RegateForeignKey.init = function ({
   }
 
   function callback(options) {
-    console.log(options);
-    return;
-
     options.forEach(option => {
       const _option = document.createElement('option')
       _option.value = option.key
