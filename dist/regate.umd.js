@@ -1060,6 +1060,7 @@ var RegateForeignKey = {};
 RegateForeignKey.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
+      value = _ref.value,
       apiUrl = _ref.apiUrl,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
@@ -1084,6 +1085,16 @@ RegateForeignKey.init = function (_ref) {
   if (isRequired) _option.hidden = true;
 
   _input.appendChild(_option);
+
+  if (value) {
+    var _option2 = document.createElement('option');
+    _option2.id = id + '__hidden_value_input';
+    _option2.value = value;
+    _option2.hidden = true;
+    _input.appendChild(_option2);
+
+    _input.value = value;
+  }
 
   function makeResponseStandard(response) {
     var newResponseList = [];
@@ -1128,6 +1139,11 @@ RegateForeignKey.init = function (_ref) {
 
       _input.appendChild(_option);
     });
+
+    var _hiddenValueInput = document.getElementById(id + '__hidden_value_input');
+    _hiddenValueInput.value = '';
+
+    _input.value = value;
   }
 
   sendRequest();

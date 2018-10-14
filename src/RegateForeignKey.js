@@ -3,6 +3,7 @@ const RegateForeignKey = {}
 RegateForeignKey.init = function ({
   id,
   name,
+  value,
   apiUrl,
   placeholder = '',
   isRequired = false,
@@ -29,6 +30,16 @@ RegateForeignKey.init = function ({
     _option.hidden = true
 
   _input.appendChild(_option)
+
+  if (value) {
+    const _option = document.createElement('option')
+    _option.id = id + '__hidden_value_input'
+    _option.value = value
+    _option.hidden = true
+    _input.appendChild(_option)
+
+    _input.value = value
+  }
 
   function makeResponseStandard(response) {
     let newResponseList = []
@@ -73,6 +84,11 @@ RegateForeignKey.init = function ({
       
       _input.appendChild(_option)
     })
+
+    const _hiddenValueInput = document.getElementById(id + '__hidden_value_input')
+    _hiddenValueInput.value = ''
+
+    _input.value = value
   }
 
   sendRequest()
