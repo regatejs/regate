@@ -1143,7 +1143,7 @@ RegateForeignKey.init = function (_ref) {
     });
 
     var _hiddenValueInput = document.getElementById(id + '__hidden_value_input');
-    _hiddenValueInput.value = '';
+    if (_hiddenValueInput) _hiddenValueInput.value = '';
 
     _input.value = value;
   }
