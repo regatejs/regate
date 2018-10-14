@@ -34,8 +34,8 @@ RegateForeignKey.init = function ({
     let newResponseList = []
     response.forEach(row => {
       let newResponseObject = {}
-      newResponseObject.Id = row.Id || row.id || row.ID
-      newResponseObject.Title = row.Title || row.title || row.TITLE
+      newResponseObject.key = (row.Key || row.key || row.KEY || row.Id || row.id || row.ID).toString()
+      newResponseObject.value = (row.Value || row.value || row.VALUE || row.Title || row.title || row.TITLE).toString()
 
       newResponseList.push(newResponseObject)
     })
