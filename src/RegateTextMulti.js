@@ -6,25 +6,38 @@ RegateTextMulti.init = function ({
   value = '',
   isRequired = false,
 }) {
-
-  // create function, it expects 2 values.
-  function insertAfter(newElement,targetElement) {
-    // target is what you want it to go after. Look for this elements parent.
-    var parent = targetElement.parentNode;
-
-    // if the parents lastchild is the targetElement...
-    if (parent.lastChild == targetElement) {
-        // add the newElement after the target element.
-        parent.appendChild(newElement);
-    } else {
-        // else the target has siblings, insert the new element between the target and it's next sibling.
-        parent.insertBefore(newElement, targetElement.nextSibling);
-    }
-  }
-
   function insertBefore(newNode, referenceNode) {
     referenceNode.parentNode
       .insertBefore(newNode, referenceNode)
+  }
+
+  function removeOldOnes() {
+    const list = document.querySelectorAll(`[data-group-id='${id}']`)
+
+    for (let i = list.length - 1; 0 <= i; i--) {
+      if (list[i] && list[i].parentElement) {
+        list[i].parentElement.removeChild(list[i])
+      }
+    }
+  }
+
+  function getLines() {
+    return _input.value.split('\n')
+      .map(line => line.trim())
+      .filter(line => line.length > 0)
+  }
+
+  function createNewOnes(lines) {
+    for (let j = 0; j < lines.length; j++) {
+      const input = document.createElement('input')
+
+      input.setAttribute('type', 'text')
+      input.setAttribute('value', lines[j])
+      input.setAttribute('name', name)
+      input.setAttribute('data-group-id', id)
+
+      insertBefore(input, _input)
+    }
   }
 
   if (id === undefined)
@@ -41,25 +54,10 @@ RegateTextMulti.init = function ({
   _input.style.height = 200 + 'px'
 
   _input.oninput = e => {
-    const lines = _input.value.split('\n')
-      .map(line => line.trim())
-      .filter(line => line.length > 0)
+    removeOldOnes()
 
-    const list = document.querySelectorAll(`[data-group-id='${id}']`)
-    for (var i = list.length - 1; 0 <= i; i--) {
-      if (list[i] && list[i].parentElement) {
-        list[i].parentElement.removeChild(list[i])
-      }
-    }
-
-    for (var j = 0; j < lines.length; j++) {
-      const input = document.createElement('input')
-      input.setAttribute('type', 'text')
-      input.setAttribute('value', lines[j])
-      input.setAttribute('name', name)
-      input.setAttribute('data-group-id', id)
-      insertBefore(input, _input)
-    }
+    const lines = getLines()
+    createNewOnes(lines)
   }
 }
 
