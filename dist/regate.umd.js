@@ -1218,7 +1218,7 @@ RegateTextMulti.init = function (_ref) {
     for (var j = 0; j < lines.length; j++) {
       var input = document.createElement('input');
 
-      input.setAttribute('type', 'text');
+      input.setAttribute('type', 'hidden');
       input.setAttribute('value', lines[j]);
       input.setAttribute('name', name);
       input.setAttribute('data-group-id', id);
@@ -1246,9 +1246,7 @@ RegateTextMulti.init = function (_ref) {
     createNewOnes(lines);
   }
 
-  _input.oninput = function (e) {
-    return handleInput;
-  };
+  _input.oninput = handleInput;
 
   handleInput();
 };
