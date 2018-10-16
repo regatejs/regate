@@ -1182,9 +1182,6 @@ exports.default = RegateForeignKey;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var RegateTextMulti = {};
 
 RegateTextMulti.init = function (_ref) {
@@ -1202,37 +1199,19 @@ RegateTextMulti.init = function (_ref) {
 
   if (_input === undefined) throw new Error('id is invalid');
 
-  _input.name = name;
-
   if (isRequired === true) _input.required = true;
 
-  if (value !== undefined) _input.value = value;
+  _input.style.height = 200 + 'px';
 
-  if (placeholder !== undefined) _input.placeholder = placeholder;
+  _input.oninput = function (e) {
+    var lines = _input.value.split('\n').map(function (line) {
+      return line.trim();
+    }).filter(function (line) {
+      return line.length > 0;
+    });
 
-  if ((typeof onInitialized === 'undefined' ? 'undefined' : _typeof(onInitialized)) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
-    var isValid = isRequired ? value.length > 0 : true;
-
-    onInitialized({ value: value, isValid: isValid });
-  }
-
-  if ((typeof onChange === 'undefined' ? 'undefined' : _typeof(onChange)) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
-    _input.oninput = function () {
-      var value = _input.value;
-
-      var isValid = isRequired ? value.length > 0 : true;
-
-      onChange({ value: value, isValid: isValid });
-    };
-  }
-
-  _input.style.height = size + 'px';
-};
-
-RegateTextMulti.Size = {
-  'Small': 150,
-  'Medium': 200,
-  'Large': 300
+    console.log(lines);
+  };
 };
 
 RegateTextMulti._markup = '\n  <textarea\n    id=\'{id}__input\'\n    class=\'form-control\'\n    style=\'resize: none;\'\n  ></textarea>\n';
