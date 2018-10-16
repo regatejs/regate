@@ -10,6 +10,7 @@ import RegateKeyword from './RegateKeyword'
 import RegatePersianDateTimePicker from './RegatePersianDateTimePicker'
 import RegateSwitch from './RegateSwitch'
 import RegateForeignKey from './RegateForeignKey'
+import RegateTextMulti from './RegateTextMulti'
 
 export {
   RegateText,
@@ -24,4 +25,5 @@ export {
   RegatePersianDateTimePicker,
   RegateSwitch,
   RegateForeignKey,
+  RegateTextMulti,
 }

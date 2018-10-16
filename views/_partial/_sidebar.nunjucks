@@ -94,6 +94,12 @@
             <span class="nav-main-link-name">ForeignKey</span>
         </a>
     </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl }}components/textmulti/">
+            <img src="{{ themeUrl }}icons/text.svg" class="regate-icon regate-icon-textmulti" />
+            <span class="nav-main-link-name">TextMulti</span>
+        </a>
+    </li>
 </ul>
 
 <script>

@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -133,6 +133,10 @@ var _RegateForeignKey = __webpack_require__(12);
 
 var _RegateForeignKey2 = _interopRequireDefault(_RegateForeignKey);
 
+var _RegateTextMulti = __webpack_require__(13);
+
+var _RegateTextMulti2 = _interopRequireDefault(_RegateTextMulti);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
@@ -147,6 +151,7 @@ exports.RegateKeyword = _RegateKeyword2.default;
 exports.RegatePersianDateTimePicker = _RegatePersianDateTimePicker2.default;
 exports.RegateSwitch = _RegateSwitch2.default;
 exports.RegateForeignKey = _RegateForeignKey2.default;
+exports.RegateTextMulti = _RegateTextMulti2.default;
 
 /***/ }),
 /* 1 */
@@ -1166,6 +1171,85 @@ RegateForeignKey.getMarkup = function () {
 };
 
 exports.default = RegateForeignKey;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var RegateTextMulti = {};
+
+RegateTextMulti.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? '' : _ref$value,
+      _ref$isRequired = _ref.isRequired,
+      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _input = document.getElementById(id + '__input');
+
+  if (_input === undefined) throw new Error('id is invalid');
+
+  _input.name = name;
+
+  if (isRequired === true) _input.required = true;
+
+  if (value !== undefined) _input.value = value;
+
+  if (placeholder !== undefined) _input.placeholder = placeholder;
+
+  if ((typeof onInitialized === 'undefined' ? 'undefined' : _typeof(onInitialized)) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
+    var isValid = isRequired ? value.length > 0 : true;
+
+    onInitialized({ value: value, isValid: isValid });
+  }
+
+  if ((typeof onChange === 'undefined' ? 'undefined' : _typeof(onChange)) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
+    _input.oninput = function () {
+      var value = _input.value;
+
+      var isValid = isRequired ? value.length > 0 : true;
+
+      onChange({ value: value, isValid: isValid });
+    };
+  }
+
+  _input.style.height = size + 'px';
+};
+
+RegateTextMulti.Size = {
+  'Small': 150,
+  'Medium': 200,
+  'Large': 300
+};
+
+RegateTextMulti._markup = '\n  <textarea\n    id=\'{id}__input\'\n    class=\'form-control\'\n    style=\'resize: none;\'\n  ></textarea>\n';
+
+RegateTextMulti.markup = function (id) {
+  return RegateTextMulti.getMarkup().replace(/{id}/g, id);
+};
+
+RegateTextMulti.setMarkup = function (markup) {
+  return RegateTextMulti._markup = markup;
+};
+
+RegateTextMulti.getMarkup = function () {
+  return RegateTextMulti._markup;
+};
+
+exports.default = RegateTextMulti;
 
 /***/ })
 /******/ ]);
