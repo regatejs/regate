@@ -1,7 +1,7 @@
 {% set script = 
-"Regate.RegateTextarea.init({
+"Regate.RegateTextMulti.init({
   id: 'required-example',
-  name: 'Title',
+  name: 'Names',
   isRequired: true,
 })"
 %}
@@ -17,7 +17,7 @@
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateTextarea.markup('required-example'))</script>
+            <script>document.write(Regate.RegateTextMulti.markup('required-example'))</script>
             <script>{{ script|safe }}</script>
           </div>
           <div class="col-lg-2 col-md-3">
