@@ -40,7 +40,10 @@ $(function () {
     e.preventDefault();
     var $example = $(this).closest('.regate-example-container');
     var $serialize = $example.find('.regate-serialize');
-    $serialize.html( $( this ).serialize() );
+    
+    var text = $(this).serialize();
+    text = text.replace(/&/g, '<br />')
+    $serialize.html( text );
   });
 });
 
