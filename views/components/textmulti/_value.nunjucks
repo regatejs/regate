@@ -1,8 +1,8 @@
 {% set script = 
-"Regate.RegateTextarea.init({
+"Regate.RegateTextMulti.init({
   id: 'value-example',
-  name: 'Title',
-  value: 'Hello World',
+  name: 'Names',
+  value: 'Amazon\\nMicrosoft\\nGoogle\\nGitHub',
 })"
 %}
 
@@ -17,7 +17,7 @@
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateTextarea.markup('value-example'))</script>
+            <script>document.write(Regate.RegateTextMulti.markup('value-example'))</script>
             <script>{{ script|safe }}</script>
           </div>
           <div class="col-lg-2 col-md-3">

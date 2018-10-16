@@ -51,14 +51,20 @@ RegateTextMulti.init = function ({
   if (isRequired === true)
     _input.required = true
 
+  _input.value = value
+
   _input.style.height = 200 + 'px'
 
-  _input.oninput = e => {
+  function handleInput() {
     removeOldOnes()
 
     const lines = getLines()
     createNewOnes(lines)
   }
+
+  _input.oninput = e => handleInput
+
+  handleInput()
 }
 
 RegateTextMulti._markup = `

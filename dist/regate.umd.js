@@ -1235,14 +1235,22 @@ RegateTextMulti.init = function (_ref) {
 
   if (isRequired === true) _input.required = true;
 
+  _input.value = value;
+
   _input.style.height = 200 + 'px';
 
-  _input.oninput = function (e) {
+  function handleInput() {
     removeOldOnes();
 
     var lines = getLines();
     createNewOnes(lines);
+  }
+
+  _input.oninput = function (e) {
+    return handleInput;
   };
+
+  handleInput();
 };
 
 RegateTextMulti._markup = '\n  <textarea\n    id=\'{id}__input\'\n    class=\'form-control\'\n    style=\'resize: none;\'\n  ></textarea>\n';
