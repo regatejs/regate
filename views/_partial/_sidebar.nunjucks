@@ -96,7 +96,7 @@
     </li>
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl }}components/textmulti/">
-            <img src="{{ themeUrl }}icons/text.svg" class="regate-icon regate-icon-textmulti" />
+            <img src="{{ themeUrl }}icons/textmulti.svg" class="regate-icon regate-icon-textmulti" />
             <span class="nav-main-link-name">TextMulti</span>
         </a>
     </li>
