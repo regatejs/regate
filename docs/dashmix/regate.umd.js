@@ -1345,14 +1345,14 @@ RemarkInteractiveBoolean.init = function (_ref) {
     sendAjaxRequest(newStatus);
   }
 
+  _null.onclick = function (e) {
+    return handle(true);
+  };
   _true.onclick = function (e) {
     return handle(false);
   };
   _false.onclick = function (e) {
-    return handle(true);
-  };
-  _null.onclick = function (e) {
-    return handle(true);
+    return handle(isNullable ? null : true);
   };
 };
 

@@ -68,9 +68,9 @@ RemarkInteractiveBoolean.init = function ({
     sendAjaxRequest(newStatus)
   }
 
-  _true.onclick = e => handle(false)
-  _false.onclick = e => handle(true)
   _null.onclick = e => handle(true)
+  _true.onclick = e => handle(false)
+  _false.onclick = e => handle(isNullable ? null : true)
 }
 
 RemarkInteractiveBoolean._markup = `
