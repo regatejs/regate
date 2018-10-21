@@ -5,20 +5,23 @@ RemarkInteractiveBoolean.init = function ({
   name,
   apiUrl = '',
   value = null,
+  isNullable = false,
 }) {
 
   if (id === undefined)
     throw new Error('id is required')
 
-  var _true = document.getElementById(`${id}__true`)
-  var _false = document.getElementById(`${id}__false`)
-  var _loading = document.getElementById(`${id}__loading`)
+  const _null = document.getElementById(`${id}__null`)
+  const _true = document.getElementById(`${id}__true`)
+  const _false = document.getElementById(`${id}__false`)
+  const _loading = document.getElementById(`${id}__loading`)
 
   showStatusIndicator(value)
 
   function showLoading() {
     _true.style.display = 'none'
     _false.style.display = 'none'
+    _null.style.display = 'none'
     _loading.style.display = ''
   }
 
@@ -26,12 +29,20 @@ RemarkInteractiveBoolean.init = function ({
     _loading.style.display = 'none'
     _true.style.display = 'none'
     _false.style.display = 'none'
+    _null.style.display = 'none'
 
-    if (status)
+    if (status === true)
       _true.style.display = ''
     
-    else
+    else if (status === false)
       _false.style.display = ''
+
+    else {
+      if (isNullable)
+        _null.style.display = ''
+      else
+        _false.style.display = ''
+    }
   }
 
   function sendAjaxRequest(status) {
@@ -59,6 +70,7 @@ RemarkInteractiveBoolean.init = function ({
 
   _true.onclick = e => handle(false)
   _false.onclick = e => handle(true)
+  _null.onclick = e => handle(true)
 }
 
 RemarkInteractiveBoolean._markup = `
@@ -68,6 +80,10 @@ RemarkInteractiveBoolean._markup = `
 
   <i id='{id}__false'
      class='fa fa-circle text-danger'
+     style='display: none; cursor: pointer;'></i>
+
+  <i id='{id}__null'
+     class='fa fa-circle text-warning'
      style='display: none; cursor: pointer;'></i>
 
   <i id='{id}__loading'
