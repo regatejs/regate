@@ -144,6 +144,12 @@ app.get('/components/:component', function (req, res) {
   res.render('components/' + component + '/index', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
 });
 
+app.get('/remark/:component', function (req, res) {
+  var component = req.params.component;
+
+  res.render('remark/' + component + '/index', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
+});
+
 app.listen(port, function () {
   return console.log('Regate app listening on http://localhost:' + port + '/');
 });

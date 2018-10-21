@@ -59,6 +59,11 @@ app.get('/components/:component', (req, res) => {
   res.render(`components/${component}/index`, { siteUrl, themeUrl, timestamp })
 })
 
+app.get('/remark/:component', (req, res) => {
+  const { component } = req.params
+  res.render(`remark/${component}/index`, { siteUrl, themeUrl, timestamp })
+})
+
 
 app.listen(port, () =>
   console.log(`Regate app listening on http://localhost:${port}/`))

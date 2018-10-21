@@ -1,0 +1,9 @@
+{% extends '_layout/_sidebar.nunjucks' %}
+
+{% set title = 'InteractiveBoolean' %}
+
+{% block body %}
+
+  {% include './_basic.nunjucks' %}
+
+{% endblock %}

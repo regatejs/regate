@@ -102,6 +102,16 @@
     </li>
 </ul>
 
+<ul class="nav-main" style="margin: 0;">
+    <li class="nav-main-heading">Remark</li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl }}remark/interactiveboolean/">
+            <img src="{{ themeUrl }}icons/remarkinteractiveboolean.svg" class="regate-icon regate-icon-text" />
+            <span class="nav-main-link-name">InteractiveBoolean</span>
+        </a>
+    </li>
+</ul>
+
 <script>
     (function () {
         var urlArr = window.location.href.split('/')
