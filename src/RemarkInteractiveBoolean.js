@@ -38,18 +38,19 @@ RemarkInteractiveBoolean.init = function ({
   }
 
   function sendAjaxRequest(status) {
-    const data = { status }
+    const data = JSON.stringify({ status })
     const request = new XMLHttpRequest()
     request.open('POST', apiUrl, true)
-    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
     request.send(data)
 
     request.onload = () => {
       if (request.status >= 200 && request.status < 400) {
-        // var resp = request.responseText;
-        showStatusIndicator(status)
+        const response = JSON.parse(request.response)
+        showStatusIndicator(response.status)
       } else {
         // We reached our target server, but it returned an error
+        showStatusIndicator(! status)
       }
     }
   }
@@ -64,9 +65,17 @@ RemarkInteractiveBoolean.init = function ({
 }
 
 RemarkInteractiveBoolean._markup = `
-  <i class='fa fa-circle text-success' id='{id}__true' style='display: none;'></i>
-  <i class='fa fa-circle text-danger' id='{id}__false' style='display: none;'></i>
-  <i class='fa fa-spin fa-spinner text-mute' id='{id}__loading' style='display: none;'></i>
+  <i class='fa fa-circle text-success'
+     id='{id}__true'
+     style='display: none; cursor: pointer;'></i>
+
+  <i class='fa fa-circle text-danger'
+     id='{id}__false'
+     style='display: none; cursor: pointer;'></i>
+
+  <i class='fa fa-spin fa-spinner text-mute'
+     id='{id}__loading'
+     style='display: none; cursor: pointer;'></i>
 `
 
 RemarkInteractiveBoolean.markup = id => {

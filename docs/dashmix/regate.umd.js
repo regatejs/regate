@@ -1316,18 +1316,19 @@ RemarkInteractiveBoolean.init = function (_ref) {
   }
 
   function sendAjaxRequest(status) {
-    var data = { status: status };
+    var data = JSON.stringify({ status: status });
     var request = new XMLHttpRequest();
     request.open('POST', apiUrl, true);
-    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     request.send(data);
 
     request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
-        // var resp = request.responseText;
-        showStatusIndicator(status);
+        var response = JSON.parse(request.response);
+        showStatusIndicator(response.status);
       } else {
         // We reached our target server, but it returned an error
+        showStatusIndicator(!status);
       }
     };
   }
@@ -1345,7 +1346,7 @@ RemarkInteractiveBoolean.init = function (_ref) {
   };
 };
 
-RemarkInteractiveBoolean._markup = '\n  <i class=\'fa fa-circle text-success\' id=\'{id}__true\' style=\'display: none;\'></i>\n  <i class=\'fa fa-circle text-danger\' id=\'{id}__false\' style=\'display: none;\'></i>\n  <i class=\'fa fa-spin fa-spinner text-mute\' id=\'{id}__loading\' style=\'display: none;\'></i>\n';
+RemarkInteractiveBoolean._markup = '\n  <i class=\'fa fa-circle text-success\'\n     id=\'{id}__true\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i class=\'fa fa-circle text-danger\'\n     id=\'{id}__false\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i class=\'fa fa-spin fa-spinner text-mute\'\n     id=\'{id}__loading\'\n     style=\'display: none; cursor: pointer;\'></i>\n';
 
 RemarkInteractiveBoolean.markup = function (id) {
   return RemarkInteractiveBoolean.getMarkup().replace(/{id}/g, id);

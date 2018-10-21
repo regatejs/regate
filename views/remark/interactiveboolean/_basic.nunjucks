@@ -1,7 +1,6 @@
 {% set script = 
 "Regate.RemarkInteractiveBoolean.init({
   id: 'basic-example',
-  name: 'Agree',
   apiUrl: 'https://jsonplaceholder.typicode.com/posts',
 })"
 %}
