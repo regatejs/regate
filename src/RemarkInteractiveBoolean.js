@@ -16,9 +16,51 @@ RemarkInteractiveBoolean.init = function ({
 
   if (value)
     _true.style.display = ''
-
-  if (! value)
+  else
     _false.style.display = ''
+
+  function showLoading() {
+    _true.style.display = 'none'
+    _false.style.display = 'none'
+    _loading.style.display = ''
+  }
+
+  function showStatusIndicator(status) {
+    _loading.style.display = 'none'
+    _true.style.display = 'none'
+    _false.style.display = 'none'
+
+    if (status)
+      _true.style.display = ''
+    
+    else
+      _false.style.display = ''
+  }
+
+  function sendAjaxRequest(status) {
+    const data = { status }
+    const request = new XMLHttpRequest()
+    request.open('POST', apiUrl, true)
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+    request.send(data)
+
+    request.onload = () => {
+      if (request.status >= 200 && request.status < 400) {
+        // var resp = request.responseText;
+        showStatusIndicator(status)
+      } else {
+        // We reached our target server, but it returned an error
+      }
+    }
+  }
+
+  function handle(newStatus) {
+    showLoading()
+    sendAjaxRequest(newStatus)
+  }
+
+  _true.onclick = e => handle(false)
+  _false.onclick = e => handle(true)
 }
 
 RemarkInteractiveBoolean._markup = `
