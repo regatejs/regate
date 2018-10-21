@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>ForeignKey · Regate</title>
+    <title>InteractiveBoolean · Regate</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/regate/dashmix/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/regate/dashmix/favicon/favicon-32x32.png">
@@ -221,7 +221,7 @@
                         <img src="/regate/dashmix/regate-24.png" width="24" height="24"
                         style="margin-right: 10px; position: relative; top: 0px;" />
                     </a>
-                    <b>ForeignKey</b>
+                    <b>InteractiveBoolean</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -251,27 +251,21 @@
     <div class="regate-example">
       <form method="get">
         <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateForeignKey.markup('basic-example'))</script>
-            <script>Regate.RegateForeignKey.init({
+          <div class="col">
+            <script>document.write(Regate.RemarkInteractiveBoolean.markup('basic-example'))</script>
+            <script>Regate.RemarkInteractiveBoolean.init({
   id: 'basic-example',
-  name: 'CategoryId',
-  apiUrl: 'https://jsonplaceholder.typicode.com/albums',
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts',
 })</script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
           </div>
         </div>
       </form>
     </div>
     
-    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateForeignKey.init({
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RemarkInteractiveBoolean.init({
   id: &#39;basic-example&#39;,
-  name: &#39;CategoryId&#39;,
-  apiUrl: &#39;https://jsonplaceholder.typicode.com/albums&#39;,
+  apiUrl: &#39;https://jsonplaceholder.typicode.com/posts&#39;,
 })</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
 
@@ -279,35 +273,29 @@
   
 
 <div class="content">
-  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
+  <h2 id="value">Value: true <a class="permalink-anchor" href="#value-true">#</a></h2>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateForeignKey.markup('value-example'))</script>
-            <script>Regate.RegateForeignKey.init({
-  id: 'value-example',
-  name: 'CategoryId',
-  value: 10,
-  apiUrl: 'https://jsonplaceholder.typicode.com/albums',
+          <div class="col">
+            <script>document.write(Regate.RemarkInteractiveBoolean.markup('value-true-example'))</script>
+            <script>Regate.RemarkInteractiveBoolean.init({
+  id: 'value-true-example',
+  value: true,
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts',
 })</script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
           </div>
         </div>
       </form>
     </div>
     
-    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateForeignKey.init({
-  id: &#39;value-example&#39;,
-  name: &#39;CategoryId&#39;,
-  value: 10,
-  apiUrl: &#39;https://jsonplaceholder.typicode.com/albums&#39;,
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RemarkInteractiveBoolean.init({
+  id: &#39;value-true-example&#39;,
+  value: true,
+  apiUrl: &#39;https://jsonplaceholder.typicode.com/posts&#39;,
 })</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
 
@@ -315,35 +303,59 @@
   
 
 <div class="content">
-  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
+  <h2 id="value">Value: false <a class="permalink-anchor" href="#value-false">#</a></h2>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateForeignKey.markup('required-example'))</script>
-            <script>Regate.RegateForeignKey.init({
-  id: 'required-example',
-  name: 'CategoryId',
-  isRequired: true,
-  apiUrl: 'https://jsonplaceholder.typicode.com/albums',
+          <div class="col">
+            <script>document.write(Regate.RemarkInteractiveBoolean.markup('value-false-example'))</script>
+            <script>Regate.RemarkInteractiveBoolean.init({
+  id: 'value-false-example',
+  value: false,
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts',
 })</script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
           </div>
         </div>
       </form>
     </div>
     
-    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateForeignKey.init({
-  id: &#39;required-example&#39;,
-  name: &#39;CategoryId&#39;,
-  isRequired: true,
-  apiUrl: &#39;https://jsonplaceholder.typicode.com/albums&#39;,
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RemarkInteractiveBoolean.init({
+  id: &#39;value-false-example&#39;,
+  value: false,
+  apiUrl: &#39;https://jsonplaceholder.typicode.com/posts&#39;,
 })</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="isnullable">Nullable <a class="permalink-anchor" href="#isnullable">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col">
+            <script>document.write(Regate.RemarkInteractiveBoolean.markup('isnullable-example'))</script>
+            <script>Regate.RemarkInteractiveBoolean.init({
+  id: 'isnullable-example',
+  isNullable: true,
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts',
+})</script>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RemarkInteractiveBoolean.init({
+  id: &#39;isnullable-example&#39;,
+  isNullable: true,
+  apiUrl: &#39;https://jsonplaceholder.typicode.com/posts&#39;,
+})</code></pre></div>
   </div>
 </div>
 
