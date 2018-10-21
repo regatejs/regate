@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.RemarkInteractiveBoolean = exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -137,6 +137,10 @@ var _RegateTextMulti = __webpack_require__(13);
 
 var _RegateTextMulti2 = _interopRequireDefault(_RegateTextMulti);
 
+var _RemarkInteractiveBoolean = __webpack_require__(14);
+
+var _RemarkInteractiveBoolean2 = _interopRequireDefault(_RemarkInteractiveBoolean);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.RegateText = _RegateText2.default;
@@ -152,6 +156,7 @@ exports.RegatePersianDateTimePicker = _RegatePersianDateTimePicker2.default;
 exports.RegateSwitch = _RegateSwitch2.default;
 exports.RegateForeignKey = _RegateForeignKey2.default;
 exports.RegateTextMulti = _RegateTextMulti2.default;
+exports.RemarkInteractiveBoolean = _RemarkInteractiveBoolean2.default;
 
 /***/ }),
 /* 1 */
@@ -1266,6 +1271,54 @@ RegateTextMulti.getMarkup = function () {
 };
 
 exports.default = RegateTextMulti;
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RemarkInteractiveBoolean = {};
+
+RemarkInteractiveBoolean.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$apiUrl = _ref.apiUrl,
+      apiUrl = _ref$apiUrl === undefined ? '' : _ref$apiUrl,
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? false : _ref$value;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _true = document.getElementById(id + '__true');
+  var _false = document.getElementById(id + '__false');
+  var _loading = document.getElementById(id + '__loading');
+
+  if (value) _true.style.display = '';
+
+  if (!value) _false.style.display = '';
+};
+
+RemarkInteractiveBoolean._markup = '\n  <i class=\'fa fa-circle text-success\' id=\'{id}__true\' style=\'display: none;\'></i>\n  <i class=\'fa fa-circle text-danger\' id=\'{id}__false\' style=\'display: none;\'></i>\n  <i class=\'fa fa-spin fa-spinner text-mute\' id=\'{id}__loading\' style=\'display: none;\'></i>\n';
+
+RemarkInteractiveBoolean.markup = function (id) {
+  return RemarkInteractiveBoolean.getMarkup().replace(/{id}/g, id);
+};
+
+RemarkInteractiveBoolean.setMarkup = function (markup) {
+  return RemarkInteractiveBoolean._markup = markup;
+};
+
+RemarkInteractiveBoolean.getMarkup = function () {
+  return RemarkInteractiveBoolean._markup;
+};
+
+exports.default = RemarkInteractiveBoolean;
 
 /***/ })
 /******/ ]);

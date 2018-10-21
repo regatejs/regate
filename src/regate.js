@@ -11,6 +11,7 @@ import RegatePersianDateTimePicker from './RegatePersianDateTimePicker'
 import RegateSwitch from './RegateSwitch'
 import RegateForeignKey from './RegateForeignKey'
 import RegateTextMulti from './RegateTextMulti'
+import RemarkInteractiveBoolean from './RemarkInteractiveBoolean'
 
 export {
   RegateText,
@@ -26,4 +27,6 @@ export {
   RegateSwitch,
   RegateForeignKey,
   RegateTextMulti,
+  
+  RemarkInteractiveBoolean,
 }
