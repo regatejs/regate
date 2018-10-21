@@ -1290,7 +1290,7 @@ RemarkInteractiveBoolean.init = function (_ref) {
       _ref$apiUrl = _ref.apiUrl,
       apiUrl = _ref$apiUrl === undefined ? '' : _ref$apiUrl,
       _ref$value = _ref.value,
-      value = _ref$value === undefined ? false : _ref$value;
+      value = _ref$value === undefined ? null : _ref$value;
 
 
   if (id === undefined) throw new Error('id is required');

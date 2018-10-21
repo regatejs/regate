@@ -5,6 +5,7 @@
 {% block body %}
 
   {% include './_basic.nunjucks' %}
-  {% include './_value.nunjucks' %}
+  {% include './_valuetrue.nunjucks' %}
+  {% include './_valuefalse.nunjucks' %}
 
 {% endblock %}

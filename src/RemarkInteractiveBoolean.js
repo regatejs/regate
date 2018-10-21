@@ -4,7 +4,7 @@ RemarkInteractiveBoolean.init = function ({
   id,
   name,
   apiUrl = '',
-  value = false,
+  value = null,
 }) {
 
   if (id === undefined)
