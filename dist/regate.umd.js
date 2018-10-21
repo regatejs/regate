@@ -1299,7 +1299,7 @@ RemarkInteractiveBoolean.init = function (_ref) {
   var _false = document.getElementById(id + '__false');
   var _loading = document.getElementById(id + '__loading');
 
-  if (value) _true.style.display = '';else _false.style.display = '';
+  showStatusIndicator(value);
 
   function showLoading() {
     _true.style.display = 'none';
@@ -1346,7 +1346,7 @@ RemarkInteractiveBoolean.init = function (_ref) {
   };
 };
 
-RemarkInteractiveBoolean._markup = '\n  <i id=\'{id}__true\'\n     class=\'fa fa-circle text-success\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__false\'\n     class=\'fa fa-circle text-danger\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__loading\'\n     class=\'fa fa-spin fa-spinner text-mute\'\n     style=\'display: none; cursor: pointer;\'></i>\n';
+RemarkInteractiveBoolean._markup = '\n  <i id=\'{id}__true\'\n     class=\'fa fa-circle text-success\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__false\'\n     class=\'fa fa-circle text-danger\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__loading\'\n     class=\'fa fa-spin fa-spinner text-mute\'\n     style=\'display: none;\'></i>\n';
 
 RemarkInteractiveBoolean.markup = function (id) {
   return RemarkInteractiveBoolean.getMarkup().replace(/{id}/g, id);

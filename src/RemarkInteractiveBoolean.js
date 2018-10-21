@@ -14,10 +14,7 @@ RemarkInteractiveBoolean.init = function ({
   var _false = document.getElementById(`${id}__false`)
   var _loading = document.getElementById(`${id}__loading`)
 
-  if (value)
-    _true.style.display = ''
-  else
-    _false.style.display = ''
+  showStatusIndicator(value)
 
   function showLoading() {
     _true.style.display = 'none'
@@ -75,7 +72,7 @@ RemarkInteractiveBoolean._markup = `
 
   <i id='{id}__loading'
      class='fa fa-spin fa-spinner text-mute'
-     style='display: none; cursor: pointer;'></i>
+     style='display: none;'></i>
 `
 
 RemarkInteractiveBoolean.markup = id => {
