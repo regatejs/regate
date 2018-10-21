@@ -1328,7 +1328,7 @@ RemarkInteractiveBoolean.init = function (_ref) {
         showStatusIndicator(response.status);
       } else {
         // We reached our target server, but it returned an error
-        showStatusIndicator(!status);
+        alert('something went wrong');
       }
     };
   }
@@ -1346,7 +1346,7 @@ RemarkInteractiveBoolean.init = function (_ref) {
   };
 };
 
-RemarkInteractiveBoolean._markup = '\n  <i class=\'fa fa-circle text-success\'\n     id=\'{id}__true\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i class=\'fa fa-circle text-danger\'\n     id=\'{id}__false\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i class=\'fa fa-spin fa-spinner text-mute\'\n     id=\'{id}__loading\'\n     style=\'display: none; cursor: pointer;\'></i>\n';
+RemarkInteractiveBoolean._markup = '\n  <i id=\'{id}__true\'\n     class=\'fa fa-circle text-success\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__false\'\n     class=\'fa fa-circle text-danger\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__loading\'\n     class=\'fa fa-spin fa-spinner text-mute\'\n     style=\'display: none; cursor: pointer;\'></i>\n';
 
 RemarkInteractiveBoolean.markup = function (id) {
   return RemarkInteractiveBoolean.getMarkup().replace(/{id}/g, id);

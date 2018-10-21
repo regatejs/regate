@@ -50,7 +50,7 @@ RemarkInteractiveBoolean.init = function ({
         showStatusIndicator(response.status)
       } else {
         // We reached our target server, but it returned an error
-        showStatusIndicator(! status)
+        alert('something went wrong')
       }
     }
   }
@@ -65,16 +65,16 @@ RemarkInteractiveBoolean.init = function ({
 }
 
 RemarkInteractiveBoolean._markup = `
-  <i class='fa fa-circle text-success'
-     id='{id}__true'
+  <i id='{id}__true'
+     class='fa fa-circle text-success'
      style='display: none; cursor: pointer;'></i>
 
-  <i class='fa fa-circle text-danger'
-     id='{id}__false'
+  <i id='{id}__false'
+     class='fa fa-circle text-danger'
      style='display: none; cursor: pointer;'></i>
 
-  <i class='fa fa-spin fa-spinner text-mute'
-     id='{id}__loading'
+  <i id='{id}__loading'
+     class='fa fa-spin fa-spinner text-mute'
      style='display: none; cursor: pointer;'></i>
 `
 
