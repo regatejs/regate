@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Switch · Regate</title>
+    <title>InteractiveBoolean · Regate</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/regate/dashmix/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/regate/dashmix/favicon/favicon-32x32.png">
@@ -221,7 +221,7 @@
                         <img src="/regate/dashmix/regate-24.png" width="24" height="24"
                         style="margin-right: 10px; position: relative; top: 0px;" />
                     </a>
-                    <b>Switch</b>
+                    <b>InteractiveBoolean</b>
                 </div>
                 <!-- END Left Section -->
               
@@ -242,40 +242,30 @@
         
         
 
-  <script src="/regate/dashmix/js/plugins/switch/switch.js"></script>
-  <link rel="stylesheet" href="/regate/dashmix/js/plugins/switch/switch.css">
-
   
 
 <div class="content">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
-  <p>
-    This is the most basic usage of <code>RegateSwitch</code>.
-  </p>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateSwitch.markup('basic-example'))</script>
-            <script>Regate.RegateSwitch.init({
+          <div class="col">
+            <script>document.write(Regate.InteractiveBoolean.markup('basic-example'))</script>
+            <script>Regate.InteractiveBoolean.init({
   id: 'basic-example',
-  name: 'Agree',
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts',
 })</script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
           </div>
         </div>
       </form>
     </div>
     
-    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateSwitch.init({
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.InteractiveBoolean.init({
   id: &#39;basic-example&#39;,
-  name: &#39;Agree&#39;,
+  apiUrl: &#39;https://jsonplaceholder.typicode.com/posts&#39;,
 })</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
 
@@ -283,33 +273,89 @@
   
 
 <div class="content">
-  <h2 id="ischecked">Checked <a class="permalink-anchor" href="#ischecked">#</a></h2>
+  <h2 id="value">Value: true <a class="permalink-anchor" href="#value-true">#</a></h2>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
-          <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegateSwitch.markup('ischecked-example'))</script>
-            <script>Regate.RegateSwitch.init({
-  id: 'ischecked-example',
-  name: 'Agree',
-  isChecked: true,
+          <div class="col">
+            <script>document.write(Regate.InteractiveBoolean.markup('value-true-example'))</script>
+            <script>Regate.InteractiveBoolean.init({
+  id: 'value-true-example',
+  value: true,
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts',
 })</script>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <button type="submit" class="btn btn-block btn-primary">Submit</button>
           </div>
         </div>
       </form>
     </div>
     
-    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateSwitch.init({
-  id: &#39;ischecked-example&#39;,
-  name: &#39;Agree&#39;,
-  isChecked: true,
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.InteractiveBoolean.init({
+  id: &#39;value-true-example&#39;,
+  value: true,
+  apiUrl: &#39;https://jsonplaceholder.typicode.com/posts&#39;,
 })</code></pre></div>
-    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="value">Value: false <a class="permalink-anchor" href="#value-false">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col">
+            <script>document.write(Regate.InteractiveBoolean.markup('value-false-example'))</script>
+            <script>Regate.InteractiveBoolean.init({
+  id: 'value-false-example',
+  value: false,
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts',
+})</script>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.InteractiveBoolean.init({
+  id: &#39;value-false-example&#39;,
+  value: false,
+  apiUrl: &#39;https://jsonplaceholder.typicode.com/posts&#39;,
+})</code></pre></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content">
+  <h2 id="isnullable">Nullable <a class="permalink-anchor" href="#isnullable">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col">
+            <script>document.write(Regate.InteractiveBoolean.markup('isnullable-example'))</script>
+            <script>Regate.InteractiveBoolean.init({
+  id: 'isnullable-example',
+  isNullable: true,
+  apiUrl: 'https://jsonplaceholder.typicode.com/posts',
+})</script>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.InteractiveBoolean.init({
+  id: &#39;isnullable-example&#39;,
+  isNullable: true,
+  apiUrl: &#39;https://jsonplaceholder.typicode.com/posts&#39;,
+})</code></pre></div>
   </div>
 </div>
 
