@@ -42,7 +42,7 @@ const views = {
   'components/foreignkey/index.nunjucks': './docs/components/foreignkey/index.html',
   'components/textmulti/index.nunjucks': './docs/components/textmulti/index.html',
 
-  'remark/interactiveboolean/index.nunjucks': './docs/remark/interactiveboolean/index.html',
+  'interactive/boolean/index.nunjucks': './docs/interactive/boolean/index.html',
 
   'documentation/start/index.nunjucks': './docs/documentation/start/index.html',
   'documentation/download/index.nunjucks': './docs/documentation/download/index.html',
