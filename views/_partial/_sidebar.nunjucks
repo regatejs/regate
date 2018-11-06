@@ -107,7 +107,7 @@
     <li class="nav-main-item">
         <a class="nav-main-link" href="{{ siteUrl }}interactive/boolean/">
             <img src="{{ themeUrl }}icons/remarkinteractiveboolean.svg" class="regate-icon regate-icon-text" />
-            <span class="nav-main-link-name">InteractiveBoolean</span>
+            <span class="nav-main-link-name">Boolean</span>
         </a>
     </li>
 </ul>
