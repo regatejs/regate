@@ -6,7 +6,7 @@
 })"
 %}
 
-<div class="content">
+<div class="content" data-content-type="JavaScript .NET">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
 
   <div class="regate-example-container">
@@ -22,6 +22,7 @@
     </div>
     
     <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(InteractiveBoolean.Build("https://jsonplaceholder.typicode.com/posts", "Status"))</code></pre></div>
   </div>
 </div>
 

@@ -26,16 +26,32 @@ InteractiveBoolean.init = function ({
     _loading.style.display = ''
   }
 
+  function normalizeStatus(status) {
+    if (status === true)
+      return true
+
+    if (status === 'true')
+      return true
+
+    if (status === false)
+      return false
+
+    if (status === 'false')
+      return false
+    
+    return status
+  }
+
   function showStatusIndicator(status) {
     _loading.style.display = 'none'
     _true.style.display = 'none'
     _false.style.display = 'none'
     _null.style.display = 'none'
 
-    if (status === true)
+    if (normalizeStatus(status) === true)
       _true.style.display = ''
     
-    else if (status === false)
+    else if (normalizeStatus(status) === false)
       _false.style.display = ''
 
     else {
