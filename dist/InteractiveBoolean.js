@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var InteractiveBoolean = {};
@@ -16,7 +18,9 @@ InteractiveBoolean.init = function (_ref) {
       _ref$value = _ref.value,
       value = _ref$value === undefined ? null : _ref$value,
       _ref$isNullable = _ref.isNullable,
-      isNullable = _ref$isNullable === undefined ? false : _ref$isNullable;
+      isNullable = _ref$isNullable === undefined ? false : _ref$isNullable,
+      _ref$isRequestHeaderJ = _ref.isRequestHeaderJson,
+      isRequestHeaderJson = _ref$isRequestHeaderJ === undefined ? false : _ref$isRequestHeaderJ;
 
 
   if (id === undefined) throw new Error('id is required');
@@ -47,10 +51,22 @@ InteractiveBoolean.init = function (_ref) {
   }
 
   function sendAjaxRequest(status) {
-    var data = JSON.stringify(_defineProperty({}, name, status));
+    function JSON_to_URLEncoded(element, key, list) {
+      var list = list || [];
+      if ((typeof element === 'undefined' ? 'undefined' : _typeof(element)) == 'object') {
+        for (var idx in element) {
+          JSON_to_URLEncoded(element[idx], key ? key + '[' + idx + ']' : idx, list);
+        }
+      } else {
+        list.push(key + '=' + encodeURIComponent(element));
+      }
+      return list.join('&');
+    }
+
+    var data = JSON_to_URLEncoded(_defineProperty({}, name, status));
     var request = new XMLHttpRequest();
     request.open('POST', apiUrl, true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.send(data);
 
     request.onload = function () {
@@ -59,7 +75,8 @@ InteractiveBoolean.init = function (_ref) {
         showStatusIndicator(response.status);
       } else {
         // We reached our target server, but it returned an error
-        alert('something went wrong');
+        console.log('something went wrong');
+        console.log(request);
       }
     };
   }

@@ -6,6 +6,7 @@ InteractiveBoolean.init = function ({
   apiUrl = '',
   value = null,
   isNullable = false,
+  isRequestHeaderJson = false,
 }) {
 
   if (id === undefined)
@@ -46,10 +47,21 @@ InteractiveBoolean.init = function ({
   }
 
   function sendAjaxRequest(status) {
-    const data = JSON.stringify({ [name]: status })
+    function JSON_to_URLEncoded(element,key,list){
+      var list = list || [];
+      if(typeof(element)=='object'){
+        for (var idx in element)
+          JSON_to_URLEncoded(element[idx],key?key+'['+idx+']':idx,list);
+      } else {
+        list.push(key+'='+encodeURIComponent(element));
+      }
+      return list.join('&');
+    }
+
+    const data = JSON_to_URLEncoded({ [name]: status })
     const request = new XMLHttpRequest()
     request.open('POST', apiUrl, true)
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     request.send(data)
 
     request.onload = () => {
@@ -58,7 +70,8 @@ InteractiveBoolean.init = function ({
         showStatusIndicator(response.status)
       } else {
         // We reached our target server, but it returned an error
-        alert('something went wrong')
+        console.log('something went wrong')
+        console.log(request)
       }
     }
   }
