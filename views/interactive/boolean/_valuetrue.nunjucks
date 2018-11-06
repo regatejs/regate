@@ -1,6 +1,7 @@
 {% set script = 
 "Regate.InteractiveBoolean.init({
   id: 'value-true-example',
+  name: 'status',
   value: true,
   apiUrl: 'https://jsonplaceholder.typicode.com/posts',
 })"

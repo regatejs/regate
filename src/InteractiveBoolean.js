@@ -46,7 +46,7 @@ InteractiveBoolean.init = function ({
   }
 
   function sendAjaxRequest(status) {
-    const data = JSON.stringify({ status })
+    const data = JSON.stringify({ [name]: status })
     const request = new XMLHttpRequest()
     request.open('POST', apiUrl, true)
     request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
