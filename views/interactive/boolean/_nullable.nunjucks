@@ -1,20 +1,20 @@
 {% set script = 
-"Regate.RemarkInteractiveBoolean.init({
-  id: 'value-false-example',
-  value: false,
+"Regate.InteractiveBoolean.init({
+  id: 'isnullable-example',
+  isNullable: true,
   apiUrl: 'https://jsonplaceholder.typicode.com/posts',
 })"
 %}
 
 <div class="content">
-  <h2 id="value">Value: false <a class="permalink-anchor" href="#value-false">#</a></h2>
+  <h2 id="isnullable">Nullable <a class="permalink-anchor" href="#isnullable">#</a></h2>
 
   <div class="regate-example-container">
     <div class="regate-example">
       <form method="get">
         <div class="row">
           <div class="col">
-            <script>document.write(Regate.RemarkInteractiveBoolean.markup('value-false-example'))</script>
+            <script>document.write(Regate.InteractiveBoolean.markup('isnullable-example'))</script>
             <script>{{ script|safe }}</script>
           </div>
         </div>

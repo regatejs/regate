@@ -1,5 +1,5 @@
 {% set script = 
-"Regate.RemarkInteractiveBoolean.init({
+"Regate.InteractiveBoolean.init({
   id: 'value-true-example',
   value: true,
   apiUrl: 'https://jsonplaceholder.typicode.com/posts',
@@ -14,7 +14,7 @@
       <form method="get">
         <div class="row">
           <div class="col">
-            <script>document.write(Regate.RemarkInteractiveBoolean.markup('value-true-example'))</script>
+            <script>document.write(Regate.InteractiveBoolean.markup('value-true-example'))</script>
             <script>{{ script|safe }}</script>
           </div>
         </div>

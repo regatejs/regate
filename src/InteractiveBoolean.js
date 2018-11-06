@@ -1,6 +1,6 @@
-const RemarkInteractiveBoolean = {}
+const InteractiveBoolean = {}
 
-RemarkInteractiveBoolean.init = function ({
+InteractiveBoolean.init = function ({
   id,
   name,
   apiUrl = '',
@@ -73,7 +73,7 @@ RemarkInteractiveBoolean.init = function ({
   _false.onclick = e => handle(isNullable ? null : true)
 }
 
-RemarkInteractiveBoolean._markup = `
+InteractiveBoolean._markup = `
   <i id='{id}__true'
      class='fa fa-circle text-success'
      style='display: none; cursor: pointer;'></i>
@@ -91,15 +91,15 @@ RemarkInteractiveBoolean._markup = `
      style='display: none;'></i>
 `
 
-RemarkInteractiveBoolean.markup = id => {
-  return RemarkInteractiveBoolean.getMarkup()
+InteractiveBoolean.markup = id => {
+  return InteractiveBoolean.getMarkup()
     .replace(/{id}/g, id)
 }
 
-RemarkInteractiveBoolean.setMarkup = markup =>
-  RemarkInteractiveBoolean._markup = markup
+InteractiveBoolean.setMarkup = markup =>
+  InteractiveBoolean._markup = markup
 
-RemarkInteractiveBoolean.getMarkup = () =>
-  RemarkInteractiveBoolean._markup
+InteractiveBoolean.getMarkup = () =>
+  InteractiveBoolean._markup
 
-export default RemarkInteractiveBoolean
+export default InteractiveBoolean

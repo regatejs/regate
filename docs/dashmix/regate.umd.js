@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RemarkInteractiveBoolean = exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.InteractiveBoolean = exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -137,9 +137,9 @@ var _RegateTextMulti = __webpack_require__(13);
 
 var _RegateTextMulti2 = _interopRequireDefault(_RegateTextMulti);
 
-var _RemarkInteractiveBoolean = __webpack_require__(14);
+var _InteractiveBoolean = __webpack_require__(14);
 
-var _RemarkInteractiveBoolean2 = _interopRequireDefault(_RemarkInteractiveBoolean);
+var _InteractiveBoolean2 = _interopRequireDefault(_InteractiveBoolean);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -156,7 +156,7 @@ exports.RegatePersianDateTimePicker = _RegatePersianDateTimePicker2.default;
 exports.RegateSwitch = _RegateSwitch2.default;
 exports.RegateForeignKey = _RegateForeignKey2.default;
 exports.RegateTextMulti = _RegateTextMulti2.default;
-exports.RemarkInteractiveBoolean = _RemarkInteractiveBoolean2.default;
+exports.InteractiveBoolean = _InteractiveBoolean2.default;
 
 /***/ }),
 /* 1 */
@@ -1282,9 +1282,9 @@ exports.default = RegateTextMulti;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var RemarkInteractiveBoolean = {};
+var InteractiveBoolean = {};
 
-RemarkInteractiveBoolean.init = function (_ref) {
+InteractiveBoolean.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
       _ref$apiUrl = _ref.apiUrl,
@@ -1356,21 +1356,21 @@ RemarkInteractiveBoolean.init = function (_ref) {
   };
 };
 
-RemarkInteractiveBoolean._markup = '\n  <i id=\'{id}__true\'\n     class=\'fa fa-circle text-success\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__false\'\n     class=\'fa fa-circle text-danger\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__null\'\n     class=\'fa fa-circle text-warning\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__loading\'\n     class=\'fa fa-spin fa-spinner text-mute\'\n     style=\'display: none;\'></i>\n';
+InteractiveBoolean._markup = '\n  <i id=\'{id}__true\'\n     class=\'fa fa-circle text-success\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__false\'\n     class=\'fa fa-circle text-danger\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__null\'\n     class=\'fa fa-circle text-warning\'\n     style=\'display: none; cursor: pointer;\'></i>\n\n  <i id=\'{id}__loading\'\n     class=\'fa fa-spin fa-spinner text-mute\'\n     style=\'display: none;\'></i>\n';
 
-RemarkInteractiveBoolean.markup = function (id) {
-  return RemarkInteractiveBoolean.getMarkup().replace(/{id}/g, id);
+InteractiveBoolean.markup = function (id) {
+  return InteractiveBoolean.getMarkup().replace(/{id}/g, id);
 };
 
-RemarkInteractiveBoolean.setMarkup = function (markup) {
-  return RemarkInteractiveBoolean._markup = markup;
+InteractiveBoolean.setMarkup = function (markup) {
+  return InteractiveBoolean._markup = markup;
 };
 
-RemarkInteractiveBoolean.getMarkup = function () {
-  return RemarkInteractiveBoolean._markup;
+InteractiveBoolean.getMarkup = function () {
+  return InteractiveBoolean._markup;
 };
 
-exports.default = RemarkInteractiveBoolean;
+exports.default = InteractiveBoolean;
 
 /***/ })
 /******/ ]);
