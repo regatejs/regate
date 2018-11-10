@@ -50,7 +50,10 @@ RegateText.init = function ({
   }
 }
 
-
+RegateText.update = (id, value) => {
+  const _input = document.getElementById(id + '__input')
+  _input.value = value
+}
 
 RegateText._markup = `
   <input
