@@ -31,6 +31,10 @@ export default class RegateTextClass {
       .replace(/{id}/g, this.id)
   }
 
+  getValue() {
+    return this.value
+  }
+
   init() {
     const _input = this.getInput()
 
@@ -66,7 +70,7 @@ export default class RegateTextClass {
     }
   }
 
-  update(value) {
+  setValue(value) {
     const _input = this.getInput()
     this.value = value
     _input.value = value

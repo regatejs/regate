@@ -23,5 +23,19 @@ test('value', () => {
 
   document.body.innerHTML = field.getMarkup()
 
-  expect(field.getValue).toBe(value)
+  expect(field.getValue()).toBe(value)
+})
+
+test('set value', () => {
+  const id = 'HELLO'
+
+  const field = new RegateTextClass({
+    id,
+  })
+
+  document.body.innerHTML = field.getMarkup()
+
+  const newValue = 'WORLD'
+  field.setValue(newValue)
+  expect(field.getValue()).toBe(newValue)
 })
