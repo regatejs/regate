@@ -10,15 +10,16 @@ test('invalid id', () => {
   }
 })
 
-console.log(RegateTextClass)
-
 test('invalid id', () => {
   const id = 'HELLO'
   const field = new RegateTextClass({
     id,
   })
 
+  document.body.innerHTML = field.getMarkup()
+
   console.log(field.getMarkup())
+  console.log(field.getInput())
 
   expect(field.id).toBe(id)
 })
