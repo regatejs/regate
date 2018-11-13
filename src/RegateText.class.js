@@ -40,28 +40,28 @@ export default class RegateTextClass {
 
     _input.name = name
 
-    if (isRequired === true)
+    if (this.isRequired === true)
       _input.required = true
 
-    if (value !== undefined)
+    if (this.value !== undefined)
       _input.value = value
 
-    if (placeholder !== undefined)
+    if (this.placeholder !== undefined)
       _input.placeholder = placeholder
 
-    if (typeof onInitialized === typeof Function) {
-      const isValid = isRequired
-        ? value.length > 0
+    if (typeof this.onInitialized === typeof Function) {
+      const isValid = this.isRequired
+        ? this.value.length > 0
         : true
 
-      onInitialized({ value, isValid })
+      onInitialized({ value: this.value, isValid })
     }
 
     if (typeof onChange === typeof Function) {
       _input.oninput = () => {
         const value = _input.value
 
-        const isValid = isRequired
+        const isValid = this.isRequired
           ? value.length > 0
           : true
 
@@ -85,6 +85,8 @@ RegateTextClass._markup = `
   />
 `
 
-RegateTextClass.getMarkup = () => {
-  return RegateTextClass._markup
-}
+RegateTextClass.getMarkup = () =>
+  RegateTextClass._markup
+
+RegateTextClass.setMarkup = markup => 
+  RegateTextClass._markup = markup

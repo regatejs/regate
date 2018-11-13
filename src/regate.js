@@ -1,4 +1,5 @@
 import RegateText from './RegateText'
+import RegateTextClass from './RegateText.class'
 import RegateFile from './RegateFile'
 import RegateImage from './RegateImage'
 import RegateTextarea from './RegateTextarea'
@@ -15,6 +16,7 @@ import InteractiveBoolean from './InteractiveBoolean'
 
 export {
   RegateText,
+  RegateTextClass,
   RegateFile,
   RegateImage,
   RegateTextarea,
