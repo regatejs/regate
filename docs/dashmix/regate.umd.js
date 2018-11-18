@@ -89,59 +89,59 @@ var _RegateText = __webpack_require__(1);
 
 var _RegateText2 = _interopRequireDefault(_RegateText);
 
-var _RegateText3 = __webpack_require__(15);
+var _RegateText3 = __webpack_require__(2);
 
 var _RegateText4 = _interopRequireDefault(_RegateText3);
 
-var _RegateFile = __webpack_require__(2);
+var _RegateFile = __webpack_require__(3);
 
 var _RegateFile2 = _interopRequireDefault(_RegateFile);
 
-var _RegateImage = __webpack_require__(3);
+var _RegateImage = __webpack_require__(4);
 
 var _RegateImage2 = _interopRequireDefault(_RegateImage);
 
-var _RegateTextarea = __webpack_require__(4);
+var _RegateTextarea = __webpack_require__(5);
 
 var _RegateTextarea2 = _interopRequireDefault(_RegateTextarea);
 
-var _RegateContentEditable = __webpack_require__(5);
+var _RegateContentEditable = __webpack_require__(6);
 
 var _RegateContentEditable2 = _interopRequireDefault(_RegateContentEditable);
 
-var _RegateCkeditor = __webpack_require__(6);
+var _RegateCkeditor = __webpack_require__(7);
 
 var _RegateCkeditor2 = _interopRequireDefault(_RegateCkeditor);
 
-var _RegateDropdown = __webpack_require__(7);
+var _RegateDropdown = __webpack_require__(8);
 
 var _RegateDropdown2 = _interopRequireDefault(_RegateDropdown);
 
-var _RegateNumber = __webpack_require__(8);
+var _RegateNumber = __webpack_require__(9);
 
 var _RegateNumber2 = _interopRequireDefault(_RegateNumber);
 
-var _RegateKeyword = __webpack_require__(9);
+var _RegateKeyword = __webpack_require__(10);
 
 var _RegateKeyword2 = _interopRequireDefault(_RegateKeyword);
 
-var _RegatePersianDateTimePicker = __webpack_require__(10);
+var _RegatePersianDateTimePicker = __webpack_require__(11);
 
 var _RegatePersianDateTimePicker2 = _interopRequireDefault(_RegatePersianDateTimePicker);
 
-var _RegateSwitch = __webpack_require__(11);
+var _RegateSwitch = __webpack_require__(12);
 
 var _RegateSwitch2 = _interopRequireDefault(_RegateSwitch);
 
-var _RegateForeignKey = __webpack_require__(12);
+var _RegateForeignKey = __webpack_require__(13);
 
 var _RegateForeignKey2 = _interopRequireDefault(_RegateForeignKey);
 
-var _RegateTextMulti = __webpack_require__(13);
+var _RegateTextMulti = __webpack_require__(14);
 
 var _RegateTextMulti2 = _interopRequireDefault(_RegateTextMulti);
 
-var _InteractiveBoolean = __webpack_require__(14);
+var _InteractiveBoolean = __webpack_require__(15);
 
 var _InteractiveBoolean2 = _interopRequireDefault(_InteractiveBoolean);
 
@@ -245,6 +245,121 @@ exports.default = RegateText;
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var RegateTextClass = function () {
+  function RegateTextClass(_ref) {
+    var id = _ref.id,
+        name = _ref.name,
+        _ref$value = _ref.value,
+        value = _ref$value === undefined ? '' : _ref$value,
+        _ref$isRequired = _ref.isRequired,
+        isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
+        _ref$placeholder = _ref.placeholder,
+        placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
+        onInitialized = _ref.onInitialized,
+        onChange = _ref.onChange;
+
+    _classCallCheck(this, RegateTextClass);
+
+    this.id = id;
+    this.name = name;
+    this.value = value;
+    this.isRequired = isRequired;
+    this.placeholder = placeholder;
+    this.onInitialized = onInitialized;
+    this.onChange = onChange;
+  }
+
+  _createClass(RegateTextClass, [{
+    key: 'getInput',
+    value: function getInput() {
+      if (this._input !== undefined) return this._input;
+
+      this._input = document.getElementById(this.id + '__input');
+      return this._input;
+    }
+  }, {
+    key: 'getMarkup',
+    value: function getMarkup() {
+      return RegateTextClass.getMarkup().replace(/{id}/g, this.id);
+    }
+  }, {
+    key: 'getValue',
+    value: function getValue() {
+      return this.value;
+    }
+  }, {
+    key: 'init',
+    value: function init() {
+      var _this = this;
+
+      var _input = this.getInput();
+
+      _input.name = name;
+
+      if (this.isRequired === true) _input.required = true;
+
+      if (this.value !== undefined) _input.value = value;
+
+      if (this.placeholder !== undefined) _input.placeholder = placeholder;
+
+      if (_typeof(this.onInitialized) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
+        var isValid = this.isRequired ? this.value.length > 0 : true;
+
+        onInitialized({ value: this.value, isValid: isValid });
+      }
+
+      if ((typeof onChange === 'undefined' ? 'undefined' : _typeof(onChange)) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
+        _input.oninput = function () {
+          var value = _input.value;
+
+          var isValid = _this.isRequired ? value.length > 0 : true;
+
+          onChange({ value: value, isValid: isValid });
+        };
+      }
+    }
+  }, {
+    key: 'setValue',
+    value: function setValue(value) {
+      var _input = this.getInput();
+      this.value = value;
+      _input.value = value;
+    }
+  }]);
+
+  return RegateTextClass;
+}();
+
+exports.default = RegateTextClass;
+
+
+RegateTextClass._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
+
+RegateTextClass.getMarkup = function () {
+  return RegateTextClass._markup;
+};
+
+RegateTextClass.setMarkup = function (markup) {
+  return RegateTextClass._markup = markup;
+};
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -357,7 +472,7 @@ RegateFile.getMarkup = function () {
 exports.default = RegateFile;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -482,7 +597,7 @@ RegateImage.getMarkup = function () {
 exports.default = RegateImage;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -567,7 +682,7 @@ RegateTextarea.getMarkup = function () {
 exports.default = RegateTextarea;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -628,7 +743,7 @@ RegateContentEditable.getMarkup = function () {
 exports.default = RegateContentEditable;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -691,7 +806,7 @@ RegateCkeditor.getMarkup = function () {
 exports.default = RegateCkeditor;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -771,7 +886,7 @@ RegateDropdown.getMarkup = function () {
 exports.default = RegateDropdown;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -830,7 +945,7 @@ RegateNumber.getMarkup = function () {
 exports.default = RegateNumber;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -916,7 +1031,7 @@ RegateKeyword.getMarkup = function () {
 exports.default = RegateKeyword;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1004,7 +1119,7 @@ RegatePersianDateTimePicker.getMarkup = function () {
 exports.default = RegatePersianDateTimePicker;
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1066,7 +1181,7 @@ RegateSwitch.getMarkup = function () {
 exports.default = RegateSwitch;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1188,7 +1303,7 @@ RegateForeignKey.getMarkup = function () {
 exports.default = RegateForeignKey;
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1283,7 +1398,7 @@ RegateTextMulti.getMarkup = function () {
 exports.default = RegateTextMulti;
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1413,121 +1528,6 @@ InteractiveBoolean.getMarkup = function () {
 };
 
 exports.default = InteractiveBoolean;
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var RegateTextClass = function () {
-  function RegateTextClass(_ref) {
-    var id = _ref.id,
-        name = _ref.name,
-        _ref$value = _ref.value,
-        value = _ref$value === undefined ? '' : _ref$value,
-        _ref$isRequired = _ref.isRequired,
-        isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
-        _ref$placeholder = _ref.placeholder,
-        placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
-        onInitialized = _ref.onInitialized,
-        onChange = _ref.onChange;
-
-    _classCallCheck(this, RegateTextClass);
-
-    this.id = id;
-    this.name = name;
-    this.value = value;
-    this.isRequired = isRequired;
-    this.placeholder = placeholder;
-    this.onInitialized = onInitialized;
-    this.onChange = onChange;
-  }
-
-  _createClass(RegateTextClass, [{
-    key: 'getInput',
-    value: function getInput() {
-      if (this._input !== undefined) return this._input;
-
-      this._input = document.getElementById(this.id + '__input');
-      return this._input;
-    }
-  }, {
-    key: 'getMarkup',
-    value: function getMarkup() {
-      return RegateTextClass.getMarkup().replace(/{id}/g, this.id);
-    }
-  }, {
-    key: 'getValue',
-    value: function getValue() {
-      return this.value;
-    }
-  }, {
-    key: 'init',
-    value: function init() {
-      var _this = this;
-
-      var _input = this.getInput();
-
-      _input.name = name;
-
-      if (this.isRequired === true) _input.required = true;
-
-      if (this.value !== undefined) _input.value = value;
-
-      if (this.placeholder !== undefined) _input.placeholder = placeholder;
-
-      if (_typeof(this.onInitialized) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
-        var isValid = this.isRequired ? this.value.length > 0 : true;
-
-        onInitialized({ value: this.value, isValid: isValid });
-      }
-
-      if ((typeof onChange === 'undefined' ? 'undefined' : _typeof(onChange)) === (typeof Function === 'undefined' ? 'undefined' : _typeof(Function))) {
-        _input.oninput = function () {
-          var value = _input.value;
-
-          var isValid = _this.isRequired ? value.length > 0 : true;
-
-          onChange({ value: value, isValid: isValid });
-        };
-      }
-    }
-  }, {
-    key: 'setValue',
-    value: function setValue(value) {
-      var _input = this.getInput();
-      this.value = value;
-      _input.value = value;
-    }
-  }]);
-
-  return RegateTextClass;
-}();
-
-exports.default = RegateTextClass;
-
-
-RegateTextClass._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
-
-RegateTextClass.getMarkup = function () {
-  return RegateTextClass._markup;
-};
-
-RegateTextClass.setMarkup = function (markup) {
-  return RegateTextClass._markup = markup;
-};
 
 /***/ })
 /******/ ]);
