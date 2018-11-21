@@ -1,5 +1,4 @@
 import RegateText from './RegateText'
-import RegateTextClass from './RegateText.class'
 import RegateFile from './RegateFile'
 import RegateImage from './RegateImage'
 import RegateTextarea from './RegateTextarea'
@@ -12,11 +11,12 @@ import RegatePersianDateTimePicker from './RegatePersianDateTimePicker'
 import RegateSwitch from './RegateSwitch'
 import RegateForeignKey from './RegateForeignKey'
 import RegateTextMulti from './RegateTextMulti'
+import RegateTimePicker from './RegateTimePicker'
+
 import InteractiveBoolean from './InteractiveBoolean'
 
 export {
   RegateText,
-  RegateTextClass,
   RegateFile,
   RegateImage,
   RegateTextarea,
@@ -29,6 +29,7 @@ export {
   RegateSwitch,
   RegateForeignKey,
   RegateTextMulti,
+  RegateTimePicker,
   
   InteractiveBoolean,
 }
