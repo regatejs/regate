@@ -100,6 +100,13 @@
             <span class="nav-main-link-name">TextMulti</span>
         </a>
     </li>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl }}components/timepicker/">
+            <img src="{{ themeUrl }}icons/timepicker.svg" class="regate-icon regate-icon-timepicker" />
+            <span class="nav-main-link-name">TimePicker</span>
+        </a>
+    </li>
 </ul>
 
 <ul class="nav-main" style="margin: 0;">

@@ -1,0 +1,19 @@
+{% extends '_layout/_sidebar.nunjucks' %}
+
+{% set title = 'TimePicker' %}
+
+{% block body %}
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.5.2/dist/flatpickr.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.5.2/dist/flatpickr.min.css" />
+
+  <div class="alert alert-warning">
+    This component has dependencies. Read the below section for more information.
+  </div>
+
+  {% include './_help.nunjucks' %}
+
+  {% include './_basic.nunjucks' %}
+  {% include './_value.nunjucks' %}
+
+{% endblock %}
