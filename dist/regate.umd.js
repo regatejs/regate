@@ -1447,6 +1447,15 @@ RegateTimePicker.init = function (_ref) {
   if (isRequired === true) _input.required = true;
 
   if (value !== undefined) _input.value = value;
+
+  flatpickr(_input, {
+    dateFormat: 'H:i:S',
+    enableSeconds: true,
+    enableTime: true,
+    allowInput: true,
+    noCalendar: true,
+    time_24hr: true
+  });
 };
 
 RegateTimePicker.update = function (id, value) {

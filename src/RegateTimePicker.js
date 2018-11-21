@@ -22,6 +22,15 @@ RegateTimePicker.init = function ({
 
   if (value !== undefined)
     _input.value = value
+
+  flatpickr(_input, {
+    dateFormat: 'H:i:S',
+    enableSeconds: true,
+    enableTime: true,
+    allowInput: true,
+    noCalendar: true,
+    time_24hr: true,
+  })
 }
 
 RegateTimePicker.update = (id, value) => {
