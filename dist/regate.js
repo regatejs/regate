@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.InteractiveBoolean = exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.InteractiveBoolean = exports.RegateTimePicker = exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = require('./RegateText');
 
@@ -57,6 +57,10 @@ var _RegateTextMulti = require('./RegateTextMulti');
 
 var _RegateTextMulti2 = _interopRequireDefault(_RegateTextMulti);
 
+var _RegateTimePicker = require('./RegateTimePicker');
+
+var _RegateTimePicker2 = _interopRequireDefault(_RegateTimePicker);
+
 var _InteractiveBoolean = require('./InteractiveBoolean');
 
 var _InteractiveBoolean2 = _interopRequireDefault(_InteractiveBoolean);
@@ -76,4 +80,5 @@ exports.RegatePersianDateTimePicker = _RegatePersianDateTimePicker2.default;
 exports.RegateSwitch = _RegateSwitch2.default;
 exports.RegateForeignKey = _RegateForeignKey2.default;
 exports.RegateTextMulti = _RegateTextMulti2.default;
+exports.RegateTimePicker = _RegateTimePicker2.default;
 exports.InteractiveBoolean = _InteractiveBoolean2.default;

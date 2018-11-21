@@ -52,6 +52,11 @@ RegateText.init = function (_ref) {
   }
 };
 
+RegateText.update = function (id, value) {
+  var _input = document.getElementById(id + '__input');
+  _input.value = value;
+};
+
 RegateText._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
 
 RegateText.markup = function (id) {
