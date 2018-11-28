@@ -24,7 +24,7 @@
 
       <pre><code class="javascript">Regate.RegateText.markup('sample')</code></pre>
       <pre><code class="html">&lt;input
-  id='salam__input'
+  id='sample__input'
   type='text'
   class='form-control'
 /></code></pre>
