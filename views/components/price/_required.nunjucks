@@ -1,0 +1,35 @@
+{% set script = 
+"Regate.RegatePrice.init({
+  id: 'required-example',
+  name: 'Price',
+  isRequired: true,
+})"
+%}
+
+<div class="content" data-content-type="JavaScript .NET">
+  <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
+  <p>
+    You can required your field with <code>isRequired</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegatePrice.markup('required-example'))</script>
+            <script>{{ script|safe }}</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegatePrice.Build("Price", isRequired: true))</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
