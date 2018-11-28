@@ -73,6 +73,7 @@ RegatePrice.init = function (_ref) {
         if (isPersian) {
           _input.value = toPersianDigit(_input.value);
         }
+        price = '';
       }
     }
   };
