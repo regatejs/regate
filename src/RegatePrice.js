@@ -9,7 +9,7 @@ RegatePrice.init = function ({
   isRequired = false,
 
   isTargetRial = false,
-  isPersian = true,
+  isPersian = false,
 }) {
 
   if (id === undefined)
@@ -21,7 +21,7 @@ RegatePrice.init = function ({
   if (_input === undefined)
     throw new Error('id is invalid')
 
-  _input.name = name
+  _hidden.name = name
 
   if (isRequired === true)
     _input.required = true

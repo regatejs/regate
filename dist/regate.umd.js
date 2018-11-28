@@ -1505,7 +1505,7 @@ RegatePrice.init = function (_ref) {
       _ref$isTargetRial = _ref.isTargetRial,
       isTargetRial = _ref$isTargetRial === undefined ? false : _ref$isTargetRial,
       _ref$isPersian = _ref.isPersian,
-      isPersian = _ref$isPersian === undefined ? true : _ref$isPersian;
+      isPersian = _ref$isPersian === undefined ? false : _ref$isPersian;
 
 
   if (id === undefined) throw new Error('id is required');
@@ -1515,7 +1515,7 @@ RegatePrice.init = function (_ref) {
 
   if (_input === undefined) throw new Error('id is invalid');
 
-  _input.name = name;
+  _hidden.name = name;
 
   if (isRequired === true) _input.required = true;
 
