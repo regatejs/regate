@@ -1623,7 +1623,7 @@ RegatePrice.update = function (id, value) {
   var _hidden = document.getElementById(id + '__hidden');
 };
 
-RegatePrice._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n  <input\n    id=\'{id}__hidden\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
+RegatePrice._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n  <input\n    id=\'{id}__hidden\'\n    type=\'hidden\'\n    class=\'form-control\'\n  />\n';
 
 RegatePrice.markup = function (id) {
   return RegatePrice.getMarkup().replace(/{id}/g, id);

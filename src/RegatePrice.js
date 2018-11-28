@@ -143,7 +143,7 @@ RegatePrice._markup = `
   />
   <input
     id='{id}__hidden'
-    type='text'
+    type='hidden'
     class='form-control'
   />
 `
