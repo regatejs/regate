@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>{{ title }} · Web components for building form inputs</title>
+    <title>{{ title }} · Components for building form inputs</title>
 
     {% include '../_partial/_favicon.nunjucks' %}
 
