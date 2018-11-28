@@ -40,7 +40,7 @@ RegatePrice.init = function ({
   }
 
   /* utility functions */
-  const price = value
+  let price = value
 
   const sync = () => {
     if (_input.value) {
@@ -72,6 +72,7 @@ RegatePrice.init = function ({
         if (isPersian) {
           _input.value = toPersianDigit(_input.value);
         }
+        price = '';
       }
     }
   }
