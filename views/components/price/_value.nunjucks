@@ -1,14 +1,15 @@
 {% set script = 
 "Regate.RegatePrice.init({
-  id: 'basic-example',
+  id: 'value-example',
   name: 'Price',
+  value: 1234567890,
 })"
 %}
 
 <div class="content" data-content-type="JavaScript .NET">
-  <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
+  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
   <p>
-    This is the most basic usage of <code>RegatePrice</code>.
+    With <code>value</code> property you can set an initial value for your textbox.
   </p>
 
   <div class="regate-example-container">
@@ -16,7 +17,7 @@
       <form method="get">
         <div class="row">
           <div class="col-lg-10 col-md-9">
-            <script>document.write(Regate.RegatePrice.markup('basic-example'))</script>
+            <script>document.write(Regate.RegatePrice.markup('value-example'))</script>
             <script>{{ script|safe }}</script>
           </div>
           <div class="col-lg-2 col-md-3">
@@ -26,8 +27,9 @@
       </form>
     </div>
     
+    
     <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">{{- script -}}</code></pre></div>
-    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegatePrice.Build("Price"))</code></pre></div>
+    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegatePrice.Build("Price", 1234567890))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
