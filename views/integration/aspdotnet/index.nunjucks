@@ -12,7 +12,28 @@
   <div class="block block-rounded block-bordered">
     <div class="block-content block-content-full">
       
-      
+      <ol>
+        <li>
+          Install Regate via
+          <a href="https://www.nuget.org/packages/Regate/" class="link">nuget</a>:
+
+          <pre><code>Install-Package Regate</code></pre>
+        </li>
+
+        <li>
+          Initialize your component just once:
+
+          <pre><code>@Html.Raw(RegateText.Init())</code></pre>
+        </li>
+
+        <li>
+          Use your component:
+
+          <pre><code>@Html.Raw(RegateText.Build("Title"))</code></pre>
+        </li>
+      </ol>
+
+
 
     </div>
   </div>
