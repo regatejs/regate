@@ -24,8 +24,8 @@
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="/regate/dashmix/script.js?timestamp=1543921988"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1543921988">
+    <script src="/regate/dashmix/script.js?timestamp=1543926831"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1543926831">
 </head>
 <body>
 
@@ -82,17 +82,28 @@
         </a>
     </li>
     <li class="nav-main-item">
+        <a class="nav-main-link" href="/regate/documentation/integration/">
+            <i class="nav-main-link-icon si si-energy"></i>
+            <span class="nav-main-link-name">Integration</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
         <a class="nav-main-link" href="/regate/documentation/styling/">
             <i class="nav-main-link-icon si si-puzzle"></i>
             <span class="nav-main-link-name">Styling</span>
         </a>
     </li>
+</ul>
+
+<ul class="nav-main" style="margin: 0;">
+    <li class="nav-main-heading">Integration</li>
     <li class="nav-main-item">
-        <a class="nav-main-link" href="/regate/documentation/download/">
-            <i class="nav-main-link-icon si si-energy"></i>
-            <span class="nav-main-link-name">Download</span>
+        <a class="nav-main-link" href="/regate/integration/aspdotnet/">
+            <i class="nav-main-link-icon si si-chemistry"></i>
+            <span class="nav-main-link-name">ASP.NET</span>
         </a>
     </li>
+    
 </ul>
 
 <ul class="nav-main" style="margin: 0;">
@@ -254,28 +265,54 @@
         
         
 
+<script src="/regate/dashmix/regate-dist/RegateText.js"></script>
+
 <div class="content">
+  
+  <h1>Getting Started</h1>
   <div class="block block-rounded block-bordered">
     <div class="block-content block-content-full">
-      <h1>Getting Started</h1>
       
-      <div>
-        Starting with Regate is easy and quick. Just install it, and use the
-        <a href="/regate/components/text/" class="link">components</a>
-        as your need.
-      </div>
       
-      <div class="text-xs-left" style="margin-top: 15px;">
-        <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
 
-Regate.RegateText.init({
+      <ol>
+        <li>
+          Download the 
+          <a class="link" href="https://github.com/regatejs/regate/releases/latest">latest release</a>
+          and include it on your page:
+
+          <pre><code class="html">&lt;script src="./regate/RegateText-0.15.0.js">&lt;/script></code></pre>
+        </li>
+
+        <li>
+          Put a container element on the page:
+
+          <pre><code class="html">&lt;div id="basic-example-container">&lt;/div></code></pre>
+        </li>
+
+        <li>
+          Insert the component markup:
+
+          <pre><code class="javascript">document.getElementById('basic-example-container').innerHTML
+    = Regate.RegateText.markup('basic-example')</code></pre>
+        </li>
+
+        <li>
+          Initialize the component:
+
+          <pre><code class="javascript">Regate.RegateText.init({
   id: 'basic-example',
   name: 'Title',
 })
 </code></pre>
-      </div>
+        </li>
+      </ol>
+
     </div>
   </div>
+
+
+
 </div>
 
 
