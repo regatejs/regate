@@ -10,7 +10,7 @@
 })"
 %}
 
-<div class="content" data-content-type="JavaScript .NET">
+<div class="content" data-content-type="JavaScript ASP.NET">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
   <p>
     This is the most basic usage of <code>RegateDropdown</code>.
@@ -32,7 +32,7 @@
     </div>
     
     <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">{{- script -}}</code></pre></div>
-    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegateDropdown.Build&lt;FruitsEnum&gt;("Fruit"))</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateDropdown.Build&lt;FruitsEnum&gt;("Fruit"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>

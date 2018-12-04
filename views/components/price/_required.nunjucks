@@ -6,7 +6,7 @@
 })"
 %}
 
-<div class="content" data-content-type="JavaScript .NET">
+<div class="content" data-content-type="JavaScript ASP.NET">
   <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
   <p>
     You can required your field with <code>isRequired</code> property.
@@ -28,7 +28,7 @@
     </div>
     
     <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">{{- script -}}</code></pre></div>
-    <div class="regate-code" data-role=".NET"><pre><code class="cshtml-razor">@Html.Raw(RegatePrice.Build("Price", isRequired: true))</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegatePrice.Build("Price", isRequired: true))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
