@@ -47,20 +47,20 @@
   <div class="row">
     <div class="col-md text-xs-center">
       <div class="display-3">
-        <i class="far fa-list-alt fa-fw"></i>
+        <i class="si si-layers"></i>
       </div>
       <h3 class="display-4">Variety</h3>
       <div>
         Regate ships with various components.
         Just browse the
         <a href="{{ siteUrl }}components/text/" class="link">components</a>
-        and find the component which you need. See examples and implement
+        and find the component which you need. See examples and use
         it inside your own project.
       </div>
     </div>
     <div class="col-md text-xs-center">
       <div class="display-3">
-        <i class="far fa-user fa-fw"></i>
+        <i class="si si-user"></i>
       </div>
       <h3 class="display-4">Friendly</h3>
       <div>
@@ -75,7 +75,7 @@
     </div>
     <div class="col-md text-xs-center">
       <div class="display-3">
-        <i class="far fa-file fa-fw"></i>
+        <i class="si si-graduation"></i>
       </div>
       <h3 class="display-4">Simple</h3>
       <div>
@@ -101,7 +101,10 @@
       </div>
       
       <div class="text-xs-left" style="margin-top: 15px;">
-        <pre><code class="javascript">document.write(Regate.RegateText.markup('basic-example'))
+        <pre><code class="html">&lt;script src="./regate/RegateText-{{ version }}.js">&lt;/script></code></pre>
+        <pre><code class="html">&lt;div id="basic-example-container">&lt;/div></code></pre>
+        <pre><code class="javascript">document.getElementById('basic-example-container').innerHTML
+    = Regate.RegateText.markup('basic-example')
 
 Regate.RegateText.init({
   id: 'basic-example',
