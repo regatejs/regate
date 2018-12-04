@@ -9,6 +9,7 @@ yarn start
 # Publishing
 ```
 yarn
+yarn build
 yarn docs
 ```
 Then commit and sync.
