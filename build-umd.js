@@ -23,6 +23,11 @@ regateComponents.forEach(component => {
     window.Regate.version = '${version}';
     ${code}
   }());`
-  
+
+  const distVersionFolder = `./dist/${version}`
+  if (! fs.existsSync(distVersionFolder))
+    fs.mkdirSync(distVersionFolder)
+
+  fs.writeFileSync(`${distVersionFolder}/${component}-${version}.js`, code)
   fs.writeFileSync(`./docs/dashmix/regate-dist/${component}.js`, code)
 })
