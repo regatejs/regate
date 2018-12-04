@@ -1,6 +1,6 @@
 {% extends '_layout/_sidebar.nunjucks' %}
 
-{% set title = 'Getting Started' %}
+{% set title = 'Integration' %}
 
 {% block body %}
 
@@ -15,8 +15,8 @@
       Regate has integration with the following frameworks and libraries:
 
       <ul>
-        <li><a class="link" href="{{ siteUrl }}integration/dotnet/">.NET</a></li>
-        <li><a class="link" href="{{ siteUrl }}integration/react/">React</a></li>
+        <li><a class="link" href="{{ siteUrl }}integration/aspdotnet/">ASP.NET</a></li>
+        {# <li><a class="link" href="{{ siteUrl }}integration/react/">React</a></li> #}
       </ul>
 
     </div>

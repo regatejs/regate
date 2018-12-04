@@ -139,6 +139,12 @@ app.get('/documentation/:doc', function (req, res) {
   res.render('documentation/' + doc + '/index', model);
 });
 
+app.get('/integration/:doc', function (req, res) {
+  var doc = req.params.doc;
+
+  res.render('integration/' + doc + '/index', model);
+});
+
 app.get('/uploader/file', function (req, res) {
   res.render('uploader/file', model);
 });

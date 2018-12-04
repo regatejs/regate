@@ -56,6 +56,11 @@ app.get('/documentation/:doc', (req, res) => {
   res.render(`documentation/${doc}/index`, model)
 })
 
+app.get('/integration/:doc', (req, res) => {
+  const { doc } = req.params
+  res.render(`integration/${doc}/index`, model)
+})
+
 app.get('/uploader/file', (req, res) => {
   res.render('uploader/file', model)
 })
@@ -68,6 +73,7 @@ app.get('/components/:component', (req, res) => {
   const { component } = req.params
   res.render(`components/${component}/index`, model)
 })
+
 
 app.get('/remark/:component', (req, res) => {
   const { component } = req.params
