@@ -61,7 +61,7 @@ RegatePrice.init = function (_ref) {
         _input.value = toPersianDigit(_input.value);
       }
     } else {
-      _hidden.value = '';
+      _hidden.value = "";
       if (price && validNumeric(price)) {
         var _mainElement = toLatinDigit(price);
         var _originPrice = parseFloat(_mainElement.toString().replace(/,/g, ''));
@@ -81,7 +81,7 @@ RegatePrice.init = function (_ref) {
   };
 
   var separator = function separator(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   var isNumberKey = function isNumberKey(evt) {
@@ -102,26 +102,26 @@ RegatePrice.init = function (_ref) {
 
   var toLatinDigit = function toLatinDigit(m) {
 
-    var num = { '۰': '0', '۱': '1', '۲': '2', '۳': '3', '۴': '4', '۵': '5', '۶': '6', '۷': '7', '۸': '8', '۹': '9', '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4', '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9', '0': '0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9' };
+    var num = { "۰": "0", "۱": "1", "۲": "2", "۳": "3", "۴": "4", "۵": "5", "۶": "6", "۷": "7", "۸": "8", "۹": "9", "٠": "0", "١": "1", "٢": "2", "٣": "3", "٤": "4", "٥": "5", "٦": "6", "٧": "7", "٨": "8", "٩": "9", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9" };
     return m.toString().replace(/./g, function (c) {
-      return typeof num[c] === 'undefined' ? /\d+/.test(c) ? c : '' : num[c];
+      return typeof num[c] === "undefined" ? /\d+/.test(c) ? c : '' : num[c];
     });
   };
 
   var toPersianDigit = function toPersianDigit(m) {
-    if (m.trim() == '') return '';
+    if (m.trim() == "") return "";
     for (var i = 0; i < m.length; i++) {
       //۰ ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹
-      m = m.replace('0', '۰');
-      m = m.replace('1', '۱');
-      m = m.replace('2', '۲');
-      m = m.replace('3', '۳');
-      m = m.replace('4', '۴');
-      m = m.replace('5', '۵');
-      m = m.replace('6', '۶');
-      m = m.replace('7', '۷');
-      m = m.replace('8', '۸');
-      m = m.replace('9', '۹');
+      m = m.replace("0", "۰");
+      m = m.replace("1", "۱");
+      m = m.replace("2", "۲");
+      m = m.replace("3", "۳");
+      m = m.replace("4", "۴");
+      m = m.replace("5", "۵");
+      m = m.replace("6", "۶");
+      m = m.replace("7", "۷");
+      m = m.replace("8", "۸");
+      m = m.replace("9", "۹");
     }
 
     return m;

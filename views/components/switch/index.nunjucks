@@ -4,6 +4,8 @@
 
 {% block body %}
 
+  <script src="{{ themeUrl }}regate-dist/RegateSwitch.js"></script>
+
   <script src="{{ themeUrl }}js/plugins/switch/switch.js"></script>
   <link rel="stylesheet" href="{{ themeUrl }}js/plugins/switch/switch.css">
 

@@ -16,8 +16,6 @@
     <link rel="stylesheet" id="css-main" href="{{ themeUrl }}css/dashmix.min.css">
     <link rel="stylesheet" href="{{ themeUrl }}js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="{{ themeUrl }}regate.umd.js"></script>
-
     <script src="{{ themeUrl }}script.js?timestamp={{ timestamp }}"></script>
     <link rel="stylesheet" href="{{ themeUrl }}style.css?timestamp={{ timestamp }}">
 </head>

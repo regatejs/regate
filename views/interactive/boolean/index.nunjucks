@@ -4,6 +4,8 @@
 
 {% block body %}
 
+  <script src="{{ themeUrl }}regate-dist/InteractiveBoolean.js"></script>
+
   {% include './_basic.nunjucks' %}
   {% include './_valuetrue.nunjucks' %}
   {% include './_valuefalse.nunjucks' %}

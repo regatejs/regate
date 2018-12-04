@@ -41,6 +41,7 @@ var umdConfig = {
   },
 }
 
+/*
 var docsConfig = {
   entry: './src/regate.js',
   output: {
@@ -58,5 +59,6 @@ var docsConfig = {
     ]
   },
 }
+*/
 
-module.exports = [serverConfig, umdConfig, docsConfig]
+module.exports = [serverConfig, umdConfig]

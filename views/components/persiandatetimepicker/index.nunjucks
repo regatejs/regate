@@ -4,6 +4,8 @@
 
 {% block body %}
 
+  <script src="{{ themeUrl }}regate-dist/RegatePersianDateTimePicker.js"></script>
+
   <script src="{{ themeUrl }}js/plugins/MD.BootstrapPersianDateTimePicker/dist/jquery.md.bootstrap.datetimepicker.js"></script>
   <link rel="stylesheet" href="{{ themeUrl }}js/plugins/MD.BootstrapPersianDateTimePicker/dist/jquery.md.bootstrap.datetimepicker.style.css" />
 

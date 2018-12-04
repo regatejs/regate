@@ -4,6 +4,8 @@
 
 {% block body %}
 
+  <script src="{{ themeUrl }}regate-dist/RegateForeignKey.js"></script>
+
   {% include './_basic.nunjucks' %}
   {% include './_value.nunjucks' %}
   {% include './_required.nunjucks' %}
