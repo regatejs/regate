@@ -50,6 +50,9 @@ const views = {
   'documentation/start/index.nunjucks': './docs/documentation/start/index.html',
   'documentation/download/index.nunjucks': './docs/documentation/download/index.html',
   'documentation/styling/index.nunjucks': './docs/documentation/styling/index.html',
+  'documentation/integration/index.nunjucks': './docs/documentation/integration/index.html',
+
+  'integration/aspdotnet/index.nunjucks': './docs/integration/aspdotnet/index.html',
 
   'uploader/file.nunjucks': './docs/uploader/file/index.html',
   'uploader/image.nunjucks': './docs/uploader/image/index.html',
