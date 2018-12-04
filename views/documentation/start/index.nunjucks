@@ -7,9 +7,11 @@
 <script src="{{ themeUrl }}regate-dist/RegateText.js"></script>
 
 <div class="content">
+  
+  <h1>Getting Started</h1>
   <div class="block block-rounded block-bordered">
     <div class="block-content block-content-full">
-      <h1>Getting Started</h1>
+      
       
 
       <ol>
@@ -47,6 +49,9 @@
 
     </div>
   </div>
+
+
+
 </div>
 
 {% endblock %}
