@@ -1,5 +1,6 @@
 ;(function () {
     window.Regate = window.Regate || {};
+    window.Regate.version = '0.15.0';
     
 
 var smile = function() {}; smile({

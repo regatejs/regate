@@ -1,8 +1,10 @@
 const fs = require('fs')
+const version = require('./version')
 const regate = require('./dist/regate')
 
 // TODO: is it possible with webpack?
 console.log('Building Regate JavaScript Standalone files')
+// console.log(version)
 
 const regateComponents = Object.keys(regate)
 
@@ -18,6 +20,7 @@ regateComponents.forEach(component => {
 
   code = `;(function () {
     window.Regate = window.Regate || {};
+    window.Regate.version = '${version}';
     ${code}
   }());`
   
