@@ -88,6 +88,8 @@ var _path2 = _interopRequireDefault(_path);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var version = __webpack_require__(5);
+
 function mkFullDir(dir) {
   var fullPath = _path2.default.normalize(dir);
   var dirName = _path2.default.dirname(fullPath);
@@ -111,6 +113,13 @@ var siteUrl = '/';
 var themeUrl = '/';
 var timestamp = Math.floor(Date.now() / 1000);
 
+var model = {
+  siteUrl: siteUrl,
+  themeUrl: themeUrl,
+  timestamp: timestamp,
+  version: version
+};
+
 _nunjucks2.default.configure('views', {
   autoescape: true,
   express: app
@@ -121,39 +130,39 @@ app.use(siteUrl, _express2.default.static('docs/dashmix'));
 app.set('view engine', 'nunjucks');
 
 app.get('/', function (req, res) {
-  res.render('homepage', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
+  res.render('homepage', model);
 });
 
 app.get('/documentation/:doc', function (req, res) {
   var doc = req.params.doc;
 
-  res.render('documentation/' + doc + '/index', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
+  res.render('documentation/' + doc + '/index', model);
 });
 
 app.get('/uploader/file', function (req, res) {
-  res.render('uploader/file', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
+  res.render('uploader/file', model);
 });
 
 app.get('/uploader/image', function (req, res) {
-  res.render('uploader/image', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
+  res.render('uploader/image', model);
 });
 
 app.get('/components/:component', function (req, res) {
   var component = req.params.component;
 
-  res.render('components/' + component + '/index', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
+  res.render('components/' + component + '/index', model);
 });
 
 app.get('/remark/:component', function (req, res) {
   var component = req.params.component;
 
-  res.render('remark/' + component + '/index', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
+  res.render('remark/' + component + '/index', model);
 });
 
 app.get('/interactive/:component', function (req, res) {
   var component = req.params.component;
 
-  res.render('interactive/' + component + '/index', { siteUrl: siteUrl, themeUrl: themeUrl, timestamp: timestamp });
+  res.render('interactive/' + component + '/index', model);
 });
 
 app.listen(port, function () {
@@ -183,6 +192,15 @@ module.exports = require("fs");
 /***/ (function(module, exports) {
 
 module.exports = require("path");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = '0.15.0';
 
 /***/ })
 /******/ ]);
