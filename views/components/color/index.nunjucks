@@ -16,7 +16,7 @@
   {# {% include './_help.nunjucks' %} #}
 
   {% include './_basic.nunjucks' %}
-  {# {% include './_value.nunjucks' %} #}
+  {% include './_value.nunjucks' %}
   {# {% include './_required.nunjucks' %} #}
 
 {% endblock %}

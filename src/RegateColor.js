@@ -20,13 +20,10 @@ RegateColor.init = function ({
   if (isRequired === true)
     _input.required = true
 
-  if (value !== undefined)
-    _input.value = value
+  
 
-  const pickr = new Pickr({
+  const options = {
     el: '#' + id + '__color',
-
-    default: '#42445A',
 
     components: {
 
@@ -51,9 +48,14 @@ RegateColor.init = function ({
       const hexCode = hsva.toHEX().toString()
       _input.value = hexCode
     },
-  })
+  }
 
+  if (value !== undefined) {
+    _input.value = value
+    options.default = value
+  }
 
+  const pickr = new Pickr(options)
 }
 
 RegateColor.update = (id, value) => {

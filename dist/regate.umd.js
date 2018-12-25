@@ -1544,12 +1544,8 @@ RegateColor.init = function (_ref) {
 
   if (isRequired === true) _input.required = true;
 
-  if (value !== undefined) _input.value = value;
-
-  var pickr = new Pickr({
+  var options = {
     el: '#' + id + '__color',
-
-    default: '#42445A',
 
     components: {
 
@@ -1574,7 +1570,14 @@ RegateColor.init = function (_ref) {
       var hexCode = hsva.toHEX().toString();
       _input.value = hexCode;
     }
-  });
+  };
+
+  if (value !== undefined) {
+    _input.value = value;
+    options.default = value;
+  }
+
+  var pickr = new Pickr(options);
 };
 
 RegateColor.update = function (id, value) {
