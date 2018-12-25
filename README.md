@@ -1,6 +1,7 @@
 # Developing
 ```
 yarn
+yarn watch
 yarn webpack -w
 yarn start
 ```
@@ -9,7 +10,7 @@ yarn start
 # Publishing
 ```
 yarn
-yarn build
+yarn umd
 yarn docs
 ```
 Then commit and sync.

@@ -1,0 +1,22 @@
+{% extends '_layout/_sidebar.nunjucks' %}
+
+{% set title = 'Color' %}
+
+{% block body %}
+
+  <script src="{{ themeUrl }}regate-dist/RegateColor.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pickr-widget/dist/pickr.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/pickr-widget/dist/pickr.min.js"></script>
+
+  <div class="alert alert-warning">
+    This component has dependencies. Read the below section for more information.
+  </div>
+
+  {# {% include './_help.nunjucks' %} #}
+
+  {% include './_basic.nunjucks' %}
+  {# {% include './_value.nunjucks' %} #}
+  {# {% include './_required.nunjucks' %} #}
+
+{% endblock %}

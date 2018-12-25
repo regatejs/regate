@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="block block-rounded block-bordered">
+    <div class="block-content block-content-full">
+      <h3>Dependency</h3>
+      
+      <p>
+        This component depends on 
+        <b><a href="https://flatpickr.js.org/" class="external">flatpickr</a></b>.
+        Be sure to include it on your page.</p>
+
+      <pre><code class="html">&lt;script src="https://cdn.jsdelivr.net/npm/flatpickr@4.5.2/dist/flatpickr.min.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.5.2/dist/flatpickr.min.css" /></code></pre>
+
+    </div>
+  </div>
+</div>

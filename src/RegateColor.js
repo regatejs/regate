@@ -1,6 +1,6 @@
-const RegateColorPicker = {}
+const RegateColor = {}
 
-RegateColorPicker.init = function ({
+RegateColor.init = function ({
   id,
   name,
   value = '',
@@ -23,15 +23,16 @@ RegateColorPicker.init = function ({
   if (value !== undefined)
     _input.value = value
 
-  
+  // hello world again 3
+
 }
 
-RegateColorPicker.update = (id, value) => {
+RegateColor.update = (id, value) => {
   const _input = document.getElementById(id + '__input')
   _input.value = value
 }
 
-RegateColorPicker._markup = `
+RegateColor._markup = `
   <input
     id='{id}__input'
     type='text'
@@ -39,15 +40,15 @@ RegateColorPicker._markup = `
   />
 `
 
-RegateColorPicker.markup = id => {
-  return RegateColorPicker.getMarkup()
+RegateColor.markup = id => {
+  return RegateColor.getMarkup()
     .replace(/{id}/g, id)
 }
 
-RegateColorPicker.setMarkup = markup =>
-  RegateColorPicker._markup = markup
+RegateColor.setMarkup = markup =>
+  RegateColor._markup = markup
 
-RegateColorPicker.getMarkup = () =>
-  RegateColorPicker._markup
+RegateColor.getMarkup = () =>
+  RegateColor._markup
 
-export default RegateColorPicker
+export default RegateColor

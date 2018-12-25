@@ -83,7 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.InteractiveBoolean = exports.RegateColorPicker = exports.RegatePrice = exports.RegateTimePicker = exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
+exports.InteractiveBoolean = exports.RegateColor = exports.RegatePrice = exports.RegateTimePicker = exports.RegateTextMulti = exports.RegateForeignKey = exports.RegateSwitch = exports.RegatePersianDateTimePicker = exports.RegateKeyword = exports.RegateNumber = exports.RegateDropdown = exports.RegateCkeditor = exports.RegateContentEditable = exports.RegateTextarea = exports.RegateImage = exports.RegateFile = exports.RegateText = undefined;
 
 var _RegateText = __webpack_require__(1);
 
@@ -145,11 +145,11 @@ var _RegatePrice = __webpack_require__(15);
 
 var _RegatePrice2 = _interopRequireDefault(_RegatePrice);
 
-var _RegateColorPicker = __webpack_require__(17);
+var _RegateColor = __webpack_require__(16);
 
-var _RegateColorPicker2 = _interopRequireDefault(_RegateColorPicker);
+var _RegateColor2 = _interopRequireDefault(_RegateColor);
 
-var _InteractiveBoolean = __webpack_require__(16);
+var _InteractiveBoolean = __webpack_require__(17);
 
 var _InteractiveBoolean2 = _interopRequireDefault(_InteractiveBoolean);
 
@@ -170,7 +170,7 @@ exports.RegateForeignKey = _RegateForeignKey2.default;
 exports.RegateTextMulti = _RegateTextMulti2.default;
 exports.RegateTimePicker = _RegateTimePicker2.default;
 exports.RegatePrice = _RegatePrice2.default;
-exports.RegateColorPicker = _RegateColorPicker2.default;
+exports.RegateColor = _RegateColor2.default;
 exports.InteractiveBoolean = _InteractiveBoolean2.default;
 
 /***/ }),
@@ -1523,6 +1523,63 @@ exports.default = RegatePrice;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var RegateColor = {};
+
+RegateColor.init = function (_ref) {
+  var id = _ref.id,
+      name = _ref.name,
+      _ref$value = _ref.value,
+      value = _ref$value === undefined ? '' : _ref$value,
+      _ref$isRequired = _ref.isRequired,
+      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired;
+
+
+  if (id === undefined) throw new Error('id is required');
+
+  var _input = document.getElementById(id + '__input');
+
+  if (_input === undefined) throw new Error('id is invalid');
+
+  _input.name = name;
+
+  if (isRequired === true) _input.required = true;
+
+  if (value !== undefined) _input.value = value;
+
+  // hello world again 3
+};
+
+RegateColor.update = function (id, value) {
+  var _input = document.getElementById(id + '__input');
+  _input.value = value;
+};
+
+RegateColor._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
+
+RegateColor.markup = function (id) {
+  return RegateColor.getMarkup().replace(/{id}/g, id);
+};
+
+RegateColor.setMarkup = function (markup) {
+  return RegateColor._markup = markup;
+};
+
+RegateColor.getMarkup = function () {
+  return RegateColor._markup;
+};
+
+exports.default = RegateColor;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -1644,61 +1701,6 @@ InteractiveBoolean.getMarkup = function () {
 };
 
 exports.default = InteractiveBoolean;
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var RegateColorPicker = {};
-
-RegateColorPicker.init = function (_ref) {
-  var id = _ref.id,
-      name = _ref.name,
-      _ref$value = _ref.value,
-      value = _ref$value === undefined ? '' : _ref$value,
-      _ref$isRequired = _ref.isRequired,
-      isRequired = _ref$isRequired === undefined ? false : _ref$isRequired;
-
-
-  if (id === undefined) throw new Error('id is required');
-
-  var _input = document.getElementById(id + '__input');
-
-  if (_input === undefined) throw new Error('id is invalid');
-
-  _input.name = name;
-
-  if (isRequired === true) _input.required = true;
-
-  if (value !== undefined) _input.value = value;
-};
-
-RegateColorPicker.update = function (id, value) {
-  var _input = document.getElementById(id + '__input');
-  _input.value = value;
-};
-
-RegateColorPicker._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
-
-RegateColorPicker.markup = function (id) {
-  return RegateColorPicker.getMarkup().replace(/{id}/g, id);
-};
-
-RegateColorPicker.setMarkup = function (markup) {
-  return RegateColorPicker._markup = markup;
-};
-
-RegateColorPicker.getMarkup = function () {
-  return RegateColorPicker._markup;
-};
-
-exports.default = RegateColorPicker;
 
 /***/ })
 /******/ ]);

@@ -1,0 +1,32 @@
+{% set script = 
+"Regate.RegateTimePicker.init({
+  id: 'value-example',
+  name: 'Hour',
+  value: '17:15:00'
+})"
+%}
+
+<div class="content" data-content-type="JavaScript ASP.NET">
+  <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateTimePicker.markup('value-example'))</script>
+            <script>{{ script|safe }}</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateTimePicker.Build("Hour", new TimeSpan(17, 15, 00)))</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

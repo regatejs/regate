@@ -6,9 +6,9 @@
 var smile = function() {}; smile({
   value: true
 });
-var RegateTimePicker = {};
+var RegateColor = {};
 
-RegateTimePicker.init = function (_ref) {
+RegateColor.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
       _ref$value = _ref.value,
@@ -29,34 +29,27 @@ RegateTimePicker.init = function (_ref) {
 
   if (value !== undefined) _input.value = value;
 
-  flatpickr(_input, {
-    dateFormat: 'H:i:S',
-    enableSeconds: true,
-    enableTime: true,
-    allowInput: true,
-    noCalendar: true,
-    time_24hr: true
-  });
+  // hello world again 3
 };
 
-RegateTimePicker.update = function (id, value) {
+RegateColor.update = function (id, value) {
   var _input = document.getElementById(id + '__input');
   _input.value = value;
 };
 
-RegateTimePicker._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
+RegateColor._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
 
-RegateTimePicker.markup = function (id) {
-  return RegateTimePicker.getMarkup().replace(/{id}/g, id);
+RegateColor.markup = function (id) {
+  return RegateColor.getMarkup().replace(/{id}/g, id);
 };
 
-RegateTimePicker.setMarkup = function (markup) {
-  return RegateTimePicker._markup = markup;
+RegateColor.setMarkup = function (markup) {
+  return RegateColor._markup = markup;
 };
 
-RegateTimePicker.getMarkup = function () {
-  return RegateTimePicker._markup;
+RegateColor.getMarkup = function () {
+  return RegateColor._markup;
 };
 
-window.Regate.RegateTimePicker = RegateTimePicker;
+window.Regate.RegateColor = RegateColor;
   }());
