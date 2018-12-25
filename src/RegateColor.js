@@ -11,7 +11,6 @@ RegateColor.init = function ({
     throw new Error('id is required')
 
   const _input = document.getElementById(id + '__input')
-  const _color = document.getElementById(id + '__color')
 
   if (_input === undefined)
     throw new Error('id is invalid')
@@ -32,13 +31,13 @@ RegateColor.init = function ({
     components: {
 
       preview: true,
-      opacity: true,
+      opacity: false,
       hue: true,
 
       interaction: {
         hex: true,
-        rgba: true,
-        hsva: true,
+        rgba: false,
+        hsva: false,
         input: true,
         clear: true,
         save: true
@@ -46,11 +45,15 @@ RegateColor.init = function ({
     },
 
     // User has clicked the save button
-    onSave(hsva, instance) {
-      console.log(hsva)
-      console.log(instance)
+    onSave(hsva) {
+      // console.log(hsva)
+      // console.log(instance)
+      const hexCode = hsva.toHEX().toString()
+      _input.value = hexCode
     },
   })
+
+
 }
 
 RegateColor.update = (id, value) => {

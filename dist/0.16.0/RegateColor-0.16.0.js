@@ -38,13 +38,13 @@ RegateColor.init = function (_ref) {
     components: {
 
       preview: true,
-      opacity: true,
+      opacity: false,
       hue: true,
 
       interaction: {
         hex: true,
-        rgba: true,
-        hsva: true,
+        rgba: false,
+        hsva: false,
         input: true,
         clear: true,
         save: true
@@ -52,9 +52,11 @@ RegateColor.init = function (_ref) {
     },
 
     // User has clicked the save button
-    onSave: function onSave(hsva, instance) {
-      console.log(hsva);
-      console.log(instance);
+    onSave: function onSave(hsva) {
+      // console.log(hsva)
+      // console.log(instance)
+      var hexCode = hsva.toHEX().toString();
+      console.log(hexCode);
     }
   });
 };
