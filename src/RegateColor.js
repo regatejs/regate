@@ -11,6 +11,7 @@ RegateColor.init = function ({
     throw new Error('id is required')
 
   const _input = document.getElementById(id + '__input')
+  const _color = document.getElementById(id + '__color')
 
   if (_input === undefined)
     throw new Error('id is invalid')
@@ -23,8 +24,33 @@ RegateColor.init = function ({
   if (value !== undefined)
     _input.value = value
 
-  // hello world again 3
+  const pickr = new Pickr({
+    el: '#' + id + '__color',
 
+    default: '#42445A',
+
+    components: {
+
+      preview: true,
+      opacity: true,
+      hue: true,
+
+      interaction: {
+        hex: true,
+        rgba: true,
+        hsva: true,
+        input: true,
+        clear: true,
+        save: true
+      }
+    },
+
+    // User has clicked the save button
+    onSave(hsva, instance) {
+      console.log(hsva)
+      console.log(instance)
+    },
+  })
 }
 
 RegateColor.update = (id, value) => {
@@ -38,6 +64,8 @@ RegateColor._markup = `
     type='text'
     class='form-control'
   />
+
+  <span id='{id}__color'></span>
 `
 
 RegateColor.markup = id => {
