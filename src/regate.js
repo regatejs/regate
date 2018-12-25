@@ -13,6 +13,7 @@ import RegateForeignKey from './RegateForeignKey'
 import RegateTextMulti from './RegateTextMulti'
 import RegateTimePicker from './RegateTimePicker'
 import RegatePrice from './RegatePrice'
+import RegateColorPicker from './RegateColorPicker'
 
 import InteractiveBoolean from './InteractiveBoolean'
 
@@ -32,6 +33,7 @@ export {
   RegateTextMulti,
   RegateTimePicker,
   RegatePrice,
+  RegateColorPicker,
   
   InteractiveBoolean,
 }
