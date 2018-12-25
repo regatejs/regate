@@ -128,6 +128,13 @@
             <span class="nav-main-link-name">Price</span>
         </a>
     </li>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{ siteUrl }}components/color/">
+            <img src="{{ themeUrl }}icons/color.svg" class="regate-icon regate-icon-color" />
+            <span class="nav-main-link-name">Color</span>
+        </a>
+    </li>
 </ul>
 
 <ul class="nav-main" style="margin: 0;">
