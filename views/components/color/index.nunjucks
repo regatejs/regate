@@ -4,6 +4,8 @@
 
 {% block body %}
 
+  <style>.pickr { top: 3px; }</style>
+
   <script src="{{ themeUrl }}regate-dist/RegateColor.js"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pickr-widget/dist/pickr.min.css"/>
