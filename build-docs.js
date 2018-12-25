@@ -44,6 +44,7 @@ const views = {
   'components/textmulti/index.nunjucks': './docs/components/textmulti/index.html',
   'components/timepicker/index.nunjucks': './docs/components/timepicker/index.html',
   'components/price/index.nunjucks': './docs/components/price/index.html',
+  'components/color/index.nunjucks': './docs/components/color/index.html',
 
   'interactive/boolean/index.nunjucks': './docs/interactive/boolean/index.html',
 
