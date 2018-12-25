@@ -62,8 +62,6 @@ RegateColor.init = function ({
     options.default = value
   }
 
-  console.log(options)
-
   const pickr = new Pickr(options)
 }
 

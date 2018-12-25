@@ -1587,8 +1587,6 @@ RegateColor.init = function (_ref) {
     options.default = value;
   }
 
-  console.log(options);
-
   var pickr = new Pickr(options);
 };
 
