@@ -4,7 +4,10 @@
 
 {% block body %}
 
-  <style>.pickr { top: 3px; }</style>
+  <style>
+    .pickr { top: 3px; }
+    #main-container { z-index: 2000; }
+  </style>
 
   <script src="{{ themeUrl }}regate-dist/RegateColor.js"></script>
 
