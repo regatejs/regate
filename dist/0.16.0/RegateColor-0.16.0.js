@@ -25,13 +25,10 @@ RegateColor.init = function (_ref) {
 
   _input.name = name;
 
-  if (isRequired === true) _input.required = true;
-
   var options = {
     el: '#' + id + '__color',
 
     components: {
-
       preview: true,
       opacity: false,
       hue: true,
@@ -50,15 +47,29 @@ RegateColor.init = function (_ref) {
     onSave: function onSave(hsva) {
       // console.log(hsva)
       // console.log(instance)
-      var hexCode = hsva.toHEX().toString();
-      _input.value = hexCode;
+      try {
+        var hexCode = hsva.toHEX().toString();
+        _input.value = hexCode;
+      } catch (e) {
+        _input.value = '';
+      }
     }
   };
 
-  if (value !== undefined) {
+  if (isRequired === true) {
+    console.log('isRequired');
+    _input.required = true;
+    _input.value = '#444444';
+    options.default = '#444444';
+    options.components.interaction.clear = false;
+  }
+
+  if (value !== '') {
     _input.value = value;
     options.default = value;
   }
+
+  console.log(options);
 
   var pickr = new Pickr(options);
 };
