@@ -65,7 +65,9 @@ RegateColor._markup = `
   <input
     id='{id}__input'
     type='text'
-    class='form-control'
+    style='position: absolute; pointer-events: none; opacity: 0; width: 0; height: 0;'
+    z-index='-1'
+    onfocus='this.blur()'
   />
 
   <span id='{id}__color'></span>

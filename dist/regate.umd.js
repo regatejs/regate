@@ -1582,7 +1582,7 @@ RegateColor.update = function (id, value) {
   _input.value = value;
 };
 
-RegateColor._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n\n  <span id=\'{id}__color\'></span>\n';
+RegateColor._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    style=\'position: absolute; pointer-events: none; opacity: 0; width: 0; height: 0;\'\n    z-index=\'-1\'\n    onfocus=\'this.blur()\'\n  />\n\n  <span id=\'{id}__color\'></span>\n';
 
 RegateColor.markup = function (id) {
   return RegateColor.getMarkup().replace(/{id}/g, id);

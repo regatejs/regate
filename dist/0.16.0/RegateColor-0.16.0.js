@@ -20,7 +20,6 @@ RegateColor.init = function (_ref) {
   if (id === undefined) throw new Error('id is required');
 
   var _input = document.getElementById(id + '__input');
-  var _color = document.getElementById(id + '__color');
 
   if (_input === undefined) throw new Error('id is invalid');
 
@@ -56,7 +55,7 @@ RegateColor.init = function (_ref) {
       // console.log(hsva)
       // console.log(instance)
       var hexCode = hsva.toHEX().toString();
-      console.log(hexCode);
+      _input.value = hexCode;
     }
   });
 };
@@ -66,7 +65,7 @@ RegateColor.update = function (id, value) {
   _input.value = value;
 };
 
-RegateColor._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n\n  <span id=\'{id}__color\'></span>\n';
+RegateColor._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    style=\'position: absolute; pointer-events: none; opacity: 0; width: 0; height: 0;\'\n    z-index=\'-1\'\n    onfocus=\'this.blur()\'\n  />\n\n  <span id=\'{id}__color\'></span>\n';
 
 RegateColor.markup = function (id) {
   return RegateColor.getMarkup().replace(/{id}/g, id);
