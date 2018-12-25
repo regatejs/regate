@@ -25,6 +25,8 @@ RegateColor.init = function (_ref) {
   var options = {
     el: '#' + id + '__color',
 
+    default: 'transparent',
+
     components: {
       preview: true,
       opacity: false,
@@ -54,7 +56,6 @@ RegateColor.init = function (_ref) {
   };
 
   if (isRequired === true) {
-    console.log('isRequired');
     _input.required = true;
     _input.value = '#444444';
     options.default = '#444444';
