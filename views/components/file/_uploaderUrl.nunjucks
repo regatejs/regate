@@ -1,0 +1,35 @@
+{% set script = 
+"Regate.RegateFile.init({
+  id: 'uploader-example',
+  name: 'MagazineCover',
+  uploaderUrl: '/some/uploader/',
+})"
+%}
+
+<div class="content" data-content-type="JavaScript ASP.NET">
+  <h2 id="uploader">Uploader <a class="permalink-anchor" href="#uploader">#</a></h2>
+  <p>
+    You can set the URL of your uploader via <code>uploaderUrl</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateFile.markup('uploader-example'))</script>
+            <script>{{ script|safe }}</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">{{- script -}}</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateFile.Build("MagazineCover", uploaderUrl: "/some/uploader/"))</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+

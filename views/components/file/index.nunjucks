@@ -9,5 +9,6 @@
   {% include './_basic.nunjucks' %}
   {% include './_value.nunjucks' %}
   {% include './_required.nunjucks' %}
+  {% include './_uploaderUrl.nunjucks' %}
 
 {% endblock %}
