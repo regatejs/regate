@@ -6,9 +6,10 @@
 
   <script src="{{ themeUrl }}regate-dist/RegateSwitch.js"></script>
 
-  <script src="{{ themeUrl }}js/plugins/switch/switch.js"></script>
-  <link rel="stylesheet" href="{{ themeUrl }}js/plugins/switch/switch.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.css" />
+  <script src="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.js"></script>
 
+  {% include './_help.nunjucks' %}
   {% include './_basic.nunjucks' %}
   {% include './_checked.nunjucks' %}
 
