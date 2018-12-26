@@ -6,7 +6,11 @@
 
   <style>
     .pickr { top: 3px; }
-    #main-container { z-index: 2000; }
+    @media (min-width: 991px) {
+      #main-container {
+        z-index: 1500;
+      }
+    }
   </style>
 
   <script src="{{ themeUrl }}regate-dist/RegateColor.js"></script>
