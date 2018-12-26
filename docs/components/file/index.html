@@ -24,8 +24,8 @@
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="/regate/dashmix/script.js?timestamp=1545819804"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1545819804">
+    <script src="/regate/dashmix/script.js?timestamp=1545820992"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1545820992">
 </head>
 <body>
 
@@ -276,7 +276,7 @@
 
   
 
-<div class="content">
+<div class="content" data-content-type="JavaScript ASP.NET">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
   <p>
     This is the most basic usage of <code>RegateFile</code>.
@@ -308,6 +308,7 @@
   id: &#39;basic-example&#39;,
   name: &#39;MagazineCover&#39;,
 })</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateFile.Build("MagazineCover"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
@@ -315,7 +316,7 @@
 
   
 
-<div class="content">
+<div class="content" data-content-type="JavaScript ASP.NET">
   <h2 id="value">Value <a class="permalink-anchor" href="#value">#</a></h2>
   <p>
     With <code>value</code> property you can set an initial value for your input.
@@ -349,6 +350,7 @@
   name: &#39;MagazineCover&#39;,
   value: &#39;magazine.pdf&#39;,
 })</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateFile.Build("MagazineCover", "magazine.pdf"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
@@ -356,7 +358,7 @@
 
   
 
-<div class="content">
+<div class="content" data-content-type="JavaScript ASP.NET">
   <h2 id="required">Required <a class="permalink-anchor" href="#required">#</a></h2>
   <p>
     You can required your field with <code>isRequired</code> property.
@@ -390,6 +392,86 @@
   name: &#39;MagazineCover&#39;,
   isRequired: true,
 })</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateFile.Build("MagazineCover", isRequired: true))</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content" data-content-type="JavaScript ASP.NET">
+  <h2 id="uploader">Uploader <a class="permalink-anchor" href="#uploader">#</a></h2>
+  <p>
+    You can set the URL of your uploader via <code>uploaderUrl</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateFile.markup('uploader-example'))</script>
+            <script>Regate.RegateFile.init({
+  id: 'uploader-example',
+  name: 'MagazineCover',
+  uploaderUrl: '/some/uploader/',
+})</script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateFile.init({
+  id: &#39;uploader-example&#39;,
+  name: &#39;MagazineCover&#39;,
+  uploaderUrl: &#39;/some/uploader/&#39;,
+})</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateFile.Build("MagazineCover", uploaderUrl: "/some/uploader/"))</code></pre></div>
+    <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
+  </div>
+</div>
+
+
+  
+
+<div class="content" data-content-type="JavaScript ASP.NET">
+  <h2 id="repository">Repository <a class="permalink-anchor" href="#repository">#</a></h2>
+  <p>
+    You can set the URL of your repository via <code>repositoryUrl</code> property.
+  </p>
+
+  <div class="regate-example-container">
+    <div class="regate-example">
+      <form method="get">
+        <div class="row">
+          <div class="col-lg-10 col-md-9">
+            <script>document.write(Regate.RegateFile.markup('repository-example'))</script>
+            <script>
+              Regate.RegateFile.init({
+                id: 'repository-example',
+                name: 'MagazineCover',
+                uploaderUrl: '/regate/uploader/file',
+                repositoryUrl: '/some/repository/',
+              })
+            </script>
+          </div>
+          <div class="col-lg-2 col-md-3">
+            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="regate-code" data-role="JavaScript"><pre><code class="javascript">Regate.RegateFile.init({
+  id: &#39;repository-example&#39;,
+  name: &#39;MagazineCover&#39;,
+  repositoryUrl: &#39;/some/repository/&#39;,
+})</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateFile.Build("MagazineCover", repositoryUrl: "/some/repository/"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
