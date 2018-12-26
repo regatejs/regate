@@ -11,6 +11,12 @@
       <pre><code class="html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.css" />
 &lt;script src="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.js">&lt;/script></code></pre>
 
+      </p>
+
+      <div class="alert alert-warning">
+        For ASP.NET, there is no need to include the packages on the page,
+        as the <code>RegateSwitch.Init()</code> will handle it automatically.
+      </div>
     </div>
   </div>
 </div>

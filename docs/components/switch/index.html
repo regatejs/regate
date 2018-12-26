@@ -24,8 +24,8 @@
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="/regate/dashmix/script.js?timestamp=1545821961"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1545821961">
+    <script src="/regate/dashmix/script.js?timestamp=1545823134"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1545823134">
 </head>
 <body>
 
@@ -290,12 +290,18 @@
       <pre><code class="html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.css" />
 &lt;script src="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.js">&lt;/script></code></pre>
 
+      </p>
+
+      <div class="alert alert-warning">
+        For ASP.NET, there is no need to include the packages on the page,
+        as the <code>RegateSwitch.Init()</code> will handle it automatically.
+      </div>
     </div>
   </div>
 </div>
   
 
-<div class="content">
+<div class="content" data-content-type="JavaScript ASP.NET">
   <h2 id="basic">Basic <a class="permalink-anchor" href="#basic">#</a></h2>
   <p>
     This is the most basic usage of <code>RegateSwitch</code>.
@@ -323,6 +329,7 @@
   id: &#39;basic-example&#39;,
   name: &#39;Agree&#39;,
 })</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateSwitch.Build("Agree"))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
@@ -330,7 +337,7 @@
 
   
 
-<div class="content">
+<div class="content" data-content-type="JavaScript ASP.NET">
   <h2 id="ischecked">Checked <a class="permalink-anchor" href="#ischecked">#</a></h2>
 
   <div class="regate-example-container">
@@ -357,6 +364,7 @@
   name: &#39;Agree&#39;,
   isChecked: true,
 })</code></pre></div>
+    <div class="regate-code" data-role="ASP.NET"><pre><code class="cshtml-razor">@Html.Raw(RegateSwitch.Build("Agree", true))</code></pre></div>
     <div class="regate-serialize bg-gray-dark text-gray-lighter"></div>
   </div>
 </div>
