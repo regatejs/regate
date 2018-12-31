@@ -24,8 +24,8 @@
     <link rel="stylesheet" id="css-main" href="/regate/dashmix/css/dashmix.min.css">
     <link rel="stylesheet" href="/regate/dashmix/js/plugins/highlightjs/styles/atom-one-light.css">
 
-    <script src="/regate/dashmix/script.js?timestamp=1545823134"></script>
-    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1545823134">
+    <script src="/regate/dashmix/script.js?timestamp=1546237763"></script>
+    <link rel="stylesheet" href="/regate/dashmix/style.css?timestamp=1546237763">
 </head>
 <body>
 
@@ -258,7 +258,7 @@
     
     <li class="nav-item">
         <a class="nav-link btn btn-outline-secondary" href="https://github.com/regatejs/regate/releases">
-            v0.16.0
+            v0.16.1
         </a>
     </li>
 </ul>
@@ -272,33 +272,14 @@
         
         
 
+  <style>
+    .regate-switch-container {
+      padding-top: 11px;
+    }
+  </style>
+
   <script src="/regate/dashmix/regate-dist/RegateSwitch.js"></script>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.css" />
-  <script src="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.js"></script>
-
-  <div class="content">
-  <div class="block block-rounded block-bordered">
-    <div class="block-content block-content-full">
-      <h3>Dependency</h3>
-      
-      <p>
-        This component depends on 
-        <b><a href="https://github.com/zhiyul/switch" class="external">Switch</a></b>.
-        Be sure to include it on your page.</p>
-
-      <pre><code class="html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.css" />
-&lt;script src="https://cdn.jsdelivr.net/npm/weatherstar-switch@1.0.7/dist/switch.js">&lt;/script></code></pre>
-
-      </p>
-
-      <div class="alert alert-warning">
-        For ASP.NET, there is no need to include the packages on the page,
-        as the <code>RegateSwitch.Init()</code> will handle it automatically.
-      </div>
-    </div>
-  </div>
-</div>
   
 
 <div class="content" data-content-type="JavaScript ASP.NET">
@@ -311,7 +292,7 @@
     <div class="regate-example">
       <form method="get">
         <div class="row">
-          <div class="col-lg-10 col-md-9">
+          <div class="col-lg-10 col-md-9 regate-switch-container">
             <script>document.write(Regate.RegateSwitch.markup('basic-example'))</script>
             <script>Regate.RegateSwitch.init({
   id: 'basic-example',
@@ -344,7 +325,7 @@
     <div class="regate-example">
       <form method="get">
         <div class="row">
-          <div class="col-lg-10 col-md-9">
+          <div class="col-lg-10 col-md-9 regate-switch-container">
             <script>document.write(Regate.RegateSwitch.markup('ischecked-example'))</script>
             <script>Regate.RegateSwitch.init({
   id: 'ischecked-example',
