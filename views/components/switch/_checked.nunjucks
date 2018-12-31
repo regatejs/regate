@@ -13,7 +13,7 @@
     <div class="regate-example">
       <form method="get">
         <div class="row">
-          <div class="col-lg-10 col-md-9">
+          <div class="col-lg-10 col-md-9 regate-switch-container">
             <script>document.write(Regate.RegateSwitch.markup('ischecked-example'))</script>
             <script>{{ script|safe }}</script>
           </div>
