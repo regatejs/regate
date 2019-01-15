@@ -1,6 +1,9 @@
-'use strict';
+;(function () {
+    window.Regate = window.Regate || {};
+    window.Regate.version = '0.16.1';
+    
 
-Object.defineProperty(exports, "__esModule", {
+var smile = function() {}; smile({
   value: true
 });
 var RegateForeignKey = {};
@@ -50,8 +53,8 @@ RegateForeignKey.init = function (_ref) {
     var newResponseList = [];
     response.forEach(function (row) {
       var newResponseObject = {};
-      newResponseObject.key = row.Key || row.key || row.KEY || row.Id || row.id || row.ID;
-      newResponseObject.value = row.Value || row.value || row.VALUE || row.Title || row.title || row.TITLE;
+      newResponseObject.key = (row.Key || row.key || row.KEY || row.Id || row.id || row.ID).toString();
+      newResponseObject.value = (row.Value || row.value || row.VALUE || row.Title || row.title || row.TITLE).toString();
 
       newResponseList.push(newResponseObject);
     });
@@ -113,4 +116,5 @@ RegateForeignKey.getMarkup = function () {
   return RegateForeignKey._markup;
 };
 
-exports.default = RegateForeignKey;
+window.Regate.RegateForeignKey = RegateForeignKey;
+  }());

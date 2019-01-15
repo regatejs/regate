@@ -1,6 +1,6 @@
 ;(function () {
     window.Regate = window.Regate || {};
-    window.Regate.version = '0.16.2';
+    window.Regate.version = '0.16.1';
     
 
 var smile = function() {}; smile({
@@ -9,9 +9,9 @@ var smile = function() {}; smile({
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var RegateText = {};
+var RegateTextarea = {};
 
-RegateText.init = function (_ref) {
+RegateTextarea.init = function (_ref) {
   var id = _ref.id,
       name = _ref.name,
       _ref$value = _ref.value,
@@ -20,6 +20,8 @@ RegateText.init = function (_ref) {
       isRequired = _ref$isRequired === undefined ? false : _ref$isRequired,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === undefined ? '' : _ref$placeholder,
+      _ref$size = _ref.size,
+      size = _ref$size === undefined ? RegateTextarea.Size.Medium : _ref$size,
       onInitialized = _ref.onInitialized,
       onChange = _ref.onChange;
 
@@ -53,26 +55,29 @@ RegateText.init = function (_ref) {
       onChange({ value: value, isValid: isValid });
     };
   }
+
+  _input.style.height = size + 'px';
 };
 
-RegateText.update = function (id, value) {
-  var _input = document.getElementById(id + '__input');
-  _input.value = value;
+RegateTextarea.Size = {
+  'Small': 150,
+  'Medium': 200,
+  'Large': 300
 };
 
-RegateText._markup = '\n  <input\n    id=\'{id}__input\'\n    type=\'text\'\n    class=\'form-control\'\n  />\n';
+RegateTextarea._markup = '\n  <textarea\n    id=\'{id}__input\'\n    class=\'form-control\'\n    style=\'resize: none;\'\n  ></textarea>\n';
 
-RegateText.markup = function (id) {
-  return RegateText.getMarkup().replace(/{id}/g, id);
+RegateTextarea.markup = function (id) {
+  return RegateTextarea.getMarkup().replace(/{id}/g, id);
 };
 
-RegateText.setMarkup = function (markup) {
-  return RegateText._markup = markup;
+RegateTextarea.setMarkup = function (markup) {
+  return RegateTextarea._markup = markup;
 };
 
-RegateText.getMarkup = function () {
-  return RegateText._markup;
+RegateTextarea.getMarkup = function () {
+  return RegateTextarea._markup;
 };
 
-window.Regate.RegateText = RegateText;
+window.Regate.RegateTextarea = RegateTextarea;
   }());

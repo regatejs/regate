@@ -1124,8 +1124,8 @@ RegateForeignKey.init = function (_ref) {
     var newResponseList = [];
     response.forEach(function (row) {
       var newResponseObject = {};
-      newResponseObject.key = (row.Key || row.key || row.KEY || row.Id || row.id || row.ID).toString();
-      newResponseObject.value = (row.Value || row.value || row.VALUE || row.Title || row.title || row.TITLE).toString();
+      newResponseObject.key = row.Key || row.key || row.KEY || row.Id || row.id || row.ID;
+      newResponseObject.value = row.Value || row.value || row.VALUE || row.Title || row.title || row.TITLE;
 
       newResponseList.push(newResponseObject);
     });
