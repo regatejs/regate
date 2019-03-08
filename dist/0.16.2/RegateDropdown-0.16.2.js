@@ -53,9 +53,9 @@ RegateDropdown.init = function (_ref) {
   if (isSelect2 === true) {
     if (typeof jQuery === typeof undefined)
       throw new Error('select2 need jQuery')
-      if (typeof jQuery.fn.select2 === typeof undefined)
+     if (typeof jQuery.fn.select2 === typeof undefined)
       throw new Error('select2 is not loaded in the page')
-      $(_input).select2()
+     $(_input).select2()
   }
   */
 };
